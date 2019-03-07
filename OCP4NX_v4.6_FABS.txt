@@ -1,0 +1,8048 @@
+// *****************************************************************************
+// * Config_SIOC ver 4.5   -     By Manuel Velez    -    www.opencockpits.com
+// *****************************************************************************
+// * FileName : OCP4NGX_v4.6.txt
+// * Date : 10/29/2018
+
+
+
+Var 0000, Value 0
+{
+  &COM1_Power_ON = 0    
+  &NAV1_Power_ON = 0    
+  &COM2_Power_ON = 0    
+  &NAV2_Power_ON = 0    
+  &ADF_Power_ON = 0    
+  &ATC_Power_ON = 0    
+  &CDU1_POWER_ON = 0    
+  &CDU2_POWER_ON = 0    
+  &MCP_POWER_ON = 0    
+  &MIP_POWER_ON = 0    
+  &AUDI1_POWER_ON = 0    
+  &AUDI2_POWER_ON = 0    
+  &AUDI3_POWER_ON = 0    
+  &sAU1ALT_NORM = 0    
+  &sAU2ALT_NORM = 0    
+  &sAU3ALT_NORM = 0    
+  &SD_DELAY = 0    
+  &MCP_R_DELAY = 0    
+  &D_MACHDP = 1    
+  &BlankOrLit = -999999    
+  &MCP_CLEAR = 0         // GET RID OF DIRT!
+  &ENG1_Servo = 512    
+  &ENG2_Servo = 512    
+  &sYAW_DAMPER = 0    
+  &sFUEL_P1_Aft = 0    
+  &sFUEL_P1_Fwd = 0    
+  &sFUEL_P2_Aft = 0    
+  &sFUEL_P2_Fwd = 0    
+  &sFUEL_PL_Ctr = 0    
+  &sFUEL_PR_Ctr = 0    
+  &sEL_CAB_UT = 0    
+  &sEL_GALLEY = 0    
+  &sEC_SUPPLY = 0    
+  &sEC_EXHAUST = 0    
+  &sWINDOW_HEAT_1 = 0    
+  &sWINDOW_HEAT_2 = 0    
+  &sWINDOW_HEAT_3 = 0    
+  &sWINDOW_HEAT_4 = 0    
+  &sWING_ANTI_ICE = 0    
+  &sHYD_ENG_L = 0    
+  &sHYD_ELEC_R = 0    
+  &sHYD_ELEC_L = 0    
+  &sHYD_ENG_R = 0    
+  &sTRIM_AIR = 0    
+  &sAPU_BLEED = 0    
+  &sENG_1_BLEED = 0    
+  &sENG_2_BLEED = 0    
+  &sRECIRC_FAN_L = 0    
+  &sRECIRC_FAN_R = 0    
+  &sENG_ANTI_ICE1 = 0    
+  &sENG_ANTI_ICE2 = 0    
+  &sPROBE_HEAT_1 = 0    
+  &sPROBE_HEAT_2 = 0    
+  &sRETRACTABLE_L = 0    
+  &sRETRACTABLE_R = 0    
+  &sFIXED_L = 0    
+  &sFIXED_R = 0    
+  &sRUNWAY_TO_L = 0    
+  &sRUNWAY_TO_R = 0    
+  &sTAXI = 0    
+  &sLOGO = 0    
+  &sANTI_COL = 0    
+  &sWING = 0    
+  &sWHEEL_WELL = 0    
+}
+
+Var 0001, name OVH_AFT_POW_ON, static
+
+Var 0002, name OVH_FWD_POW_ON, static
+{
+  IF &OVH_FWD_POW_ON = 0
+  {
+    &aTrans_Bus_1 = 0    
+    &aTrans_Bus_2 = 0    
+    &aSOURCE_OFF_1 = 0    
+    &aSOURCE_OFF_2 = 0    
+    &aFCTL_LOW_P_A = 0    
+    &aFCTL_LOW_P_B = 0    
+    &aLOW_QUANT = 0    
+    &aLOW_PRESSURE = 0    
+    &aSTDBY_RUD_ON = 0    
+    &aFEEL_D_PR = 0    
+    &aSPEED_T_FA = 0    
+    &aMACH_T_FA = 0    
+    &aAUTO_SL_FA = 0    
+    &aYAWDAMPER = 0    
+    &aFILT_BYPASS_L = 0    
+    &aFILT_BYPASS_R = 0    
+    &aLOWPR_Fwd_L = 0    
+    &aLOWPR_Fwd_R = 0    
+    &aLOWPR_Aft_L = 0    
+    &aLOWPR_Aft_R = 0    
+    &aLOWPR_Ctr_L = 0    
+    &aLOWPR_Ctr_R = 0    
+    &aBAT_DISCHARGE = 0    
+    &aTR_UNIT = 0    
+    &aELEC = 0    
+    &aSTBY_PWR_OFF = 0    
+    &aDRIVE_1 = 0    
+    &aDRIVE_2 = 0    
+    &aEquipCoSuOFF = 0    
+    &aEquipCoExhOFF = 0    
+    &aEMER_NOT_ARM = 0    
+    &aPA_IN_USE = 0    
+    &aOVERHEAT0 = 0    
+    &aOVERHEAT1 = 0    
+    &aOVERHEAT2 = 0    
+    &aOVERHEAT3 = 0    
+    &aW_HEATON_LS = 0    
+    &aW_HEATON_LF = 0    
+    &aW_HEATON_RL = 0    
+    &aW_HEATON_RS = 0    
+    &aCAPT_PITOT = 0    
+    &aELEV_PITOT_L = 0    
+    &aALPHA_VANE_L = 0    
+    &aFO_PITOT = 0    
+    &aELEV_PITOT_R = 0    
+    &aALPHA_VANE_R = 0    
+    &aAUX_PITOT = 0    
+    &aLOW_PR_ENG_L = 0    
+    &aLOW_PR_ENG_R = 0    
+    &aLOW_PR_ELEC_L = 0    
+    &aLOW_PR_ELEC_E = 0    
+    &aZoneTemp0 = 0    
+    &aZoneTemp1 = 0    
+    &aZoneTemp2 = 0    
+    &aAUTO_FAIL = 0    
+    &aOFF_SD = 0    
+    &aALTN = 0    
+    &aMANUAL = 0    
+    &aD_AFT_L = 0    
+    &aD_AFT_R = 0    
+    &aD_STAIR = 0    
+    &aD_CARGO_AFT = 0    
+    &aD_CARGO_FWD = 0    
+    &aD_EQUIP = 0    
+    &aD_FWD_L = 0    
+    &aD_FWD_R = 0    
+    &aD_OW_EXIT = 0    
+    &aD_OW_EXIT_R = 0    
+    &aD_OWL_L_2 = 0    
+    &aD_OW_R_2 = 0    
+  }
+}
+
+Var 0003, name MCP_POWER_ON, static
+{
+  &SD_DELAY = 0    
+  &MCP_R_DELAY = 0    
+  IF &MCP_POWER_ON = 0
+  {
+    &SD_DELAY = DELAY 1 ,690     // Delay 6 9 sec before shutdown
+  }
+  ELSE     // Return to default powered MCP windows an
+  {
+    &MCP_R_DELAY = DELAY 1 ,300
+  }
+}
+
+Var 0004, name MIP_POWER_ON, static
+{
+  IF &MIP_POWER_ON = 0
+  {
+    &aCPT_FIRE_W = 0    
+    &aFO_FIRE_W = 0    
+    &aCPT_MASTER_W = 0    
+    &aFO_MASTER_W = 0    
+    &aFLT_CONT = 0    
+    &aIRS = 0    
+    &aFUEL = 0    
+    &aELECn = 0    
+    &aAPU = 0    
+    &aOVHT_DET = 0    
+    &aANTI_ICE = 0    
+    &aHYD = 0    
+    &aDOORS = 0    
+    &aOVERHEAD = 0    
+    &aAIR_COND = 0    
+    &aBELOWGS_0 = 0    
+    &aBELOWGS_1 = 0    
+    &aAP_0 = 0    
+    &aAP_1 = 0    
+    &aAT_0 = 0    
+    &aAT_1 = 0    
+    &aFMC_0 = 0    
+    &aFMC_1 = 0    
+    &aSPBRAKE_ARMED = 0    
+    &aSPBRAKE_DNARM = 0    
+    &a_SPBRAKE_EXT = 0    
+    &aSTAB_OUT_O_TR = 0    
+    &aANTI_SKID = 0    
+    &aAUTOBRAKE_DIS = 0    
+    &aFLAPS_TRANSIT = 0    
+    &aFLAPS_EXTEND = 0    
+    &aNOSE_GEAR_R = 0    
+    &aLEFT_GEAR_R = 0    
+    &aRIGHT_GEAR_R = 0    
+    &aNOSE_GEAR_G = 0    
+    &aLEFT_GEAR_G = 0    
+    &aRIGHT_GEAR_G = 0    
+    &aAP_0_A = 0    
+    &aAT_0_A = 0    
+    &aAP_1_A = 0    
+    &aAT_1_A = 0    
+    &aGPWS_INOP = 0    
+  }
+}
+
+Var 0005, name CDU1_POWER_ON, static
+
+Var 0006, name CDU2_POWER_ON, static
+
+Var 0007, name TH_POWER_ON, static
+
+Var 0008, name FP_POWER_ON, static
+
+Var 0009, name AUDI1_POWER_ON, static
+{
+  IF &AUDI1_POWER_ON = 0
+  {
+    &aAU1VH2MI = 0    
+    &aAU1VH1MI = 0    
+    &rec_1 = 0    
+  }
+  ELSE
+  {
+    IF &micsel_1 = 0
+    {
+      &aAU1VH1MI = 1    
+      &aAU1VH2MI = 0    
+    }
+    IF &micsel_1 = 1
+    {
+      &aAU1VH2MI = 1    
+      &aAU1VH1MI = 0    
+    }
+  }
+}
+
+Var 0010, name AUDI2_POWER_ON, static
+{
+  IF &AUDI2_POWER_ON = 0
+  {
+    &aAU2VH2MI = 0    
+    &aAU2VH1MI = 0    
+    &rec_2 = 0    
+  }
+  ELSE
+  {
+    IF &micsel_2 = 0
+    {
+      &aAU2VH1MI = 1    
+      &aAU2VH2MI = 0    
+    }
+    IF &micsel_2 = 1
+    {
+      &aAU2VH2MI = 1    
+      &aAU2VH1MI = 0    
+    }
+  }
+}
+
+Var 0011, name AUDI3_POWER_ON, static
+{
+  IF &AUDI3_POWER_ON = 0
+  {
+    &aAU3VH2MI = 0    
+    &aAU3VH1MI = 0    
+    &rec_3 = 0    
+  }
+  ELSE
+  {
+    IF &micsel_3 = 0
+    {
+      &aAU3VH1MI = 1    
+      &aAU3VH2MI = 0    
+    }
+    IF &micsel_3 = 1
+    {
+      &aAU3VH2MI = 1    
+      &aAU3VH1MI = 0    
+    }
+  }
+}
+
+Var 0012, name COM1_Power_ON, static
+{
+  IF &COM1_Power_ON = 0
+  {
+    &D_AC_COM1 = -999999    
+    &O_AC_COM1DP = 0    
+    &D_ST_COM1 = -999999    
+    &O_ST_COM1DP = 0    
+  }
+  ELSE
+  {
+    &D_AC_COM1 = &AC_COM1 + 10000
+    &O_AC_COM1DP = 1    
+    &D_ST_COM1 = &ST_COM1 + 10000
+    &O_ST_COM1DP = 1    
+  }
+}
+
+Var 0013, name NAV1_Power_ON, static
+{
+  IF &NAV1_Power_ON = 0
+  {
+    &D_AC_NAV1 = -999999    
+    &O_AC_NAV1DP = 0    
+    &D_ST_NAV1 = -999999    
+    &O_ST_NAV1DP = 0    
+  }
+  ELSE
+  {
+    &D_AC_NAV1 = &AC_NAV1 + 10000     // display active NAV1 frequency leading 1
+    &O_AC_NAV1DP = 1    
+    &D_ST_NAV1 = &ST_NAV1 + 10000     // display standby NAV1 frequency leading 1
+    &O_ST_NAV1DP = 1    
+  }
+}
+
+Var 0014, name ADF_Power_ON, static
+{
+  IF &ADF_Power_ON = 0
+  {
+    &D_A1Act = -999999    
+    &O_A1ActDp = 0    
+    &D_A1Stb = -999999    
+    &O_A1StbDp = 0    
+    &D_A1Stb5 = -999999    
+    &D_A1Act5 = -999999    
+    &ADFSymbol1 = 0    
+    &ADFSymbol2 = 0    
+    &ANTSymbol1 = 0    
+    &ANTSymbol2 = 0    
+  }
+  ELSE
+  {
+    CALL &initSW
+    &ACT_ADF = FROMBCD &AC_ADF_BCD
+    &ST_ADF = 3330    
+    CALL &OutA1Act
+    CALL &OutA1Stb
+  }
+}
+
+Var 0015, name CFP_Power_ON, static
+
+Var 0016, name ATC_Power_ON, static
+{
+  IF &ATC_Power_ON = 0
+  {
+    &AtcDsp = -999999    
+    &Xpn_1 = 0    
+    &Xpn_2 = 0    
+    &ATC_S = 0    
+  }
+  ELSE
+  {
+    &AtcDsp = &XPDRFreq    
+    &ATC_S = 1    
+    CALL &TCAS_MODE     // drive number indicator
+  }
+}
+
+Var 0017, name COM2_Power_ON, static
+{
+  IF &COM2_Power_ON = 0
+  {
+    &D_AC_COM2 = -999999    
+    &O_AC_COM2DP = 0    
+    &D_ST_COM2 = -999999    
+    &O_ST_COM2DP = 0    
+  }
+  ELSE
+  {
+    &D_AC_COM2 = &AC_COM2 + 10000
+    &O_AC_COM2DP = 1    
+    &D_ST_COM2 = &ST_COM2 + 10000
+    &O_ST_COM2DP = 1    
+  }
+}
+
+Var 0018, name NAV2_Power_ON, static
+{
+  IF &NAV2_Power_ON = 0
+  {
+    &D_AC_NAV2 = -999999    
+    &O_AC_NAV2DP = 0    
+    &D_ST_NAV2 = -999999    
+    &O_ST_NAV2DP = 0    
+  }
+  ELSE
+  {
+    &D_AC_NAV2 = &AC_NAV2 + 10000     // display active NAV2 frequency leading 1
+    &O_AC_NAV2DP = 1    
+    &D_ST_NAV2 = &ST_NAV2 + 10000     // display standby NAV2 frequency leading 1
+    &O_ST_NAV2DP = 1    
+  }
+}
+
+Var 0020, name EL_STATE, static
+{
+  IF &EL_STATE = 0     // COLD AND DARK
+  {
+    &OVHSTATE = 0    
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &Clear_ELPANEL
+    &TransBusOff0 = 0    
+    &TransBusOff1 = 0    
+    &OVH_FWD_POW_ON = 0    
+    &OVH_AFT_POW_ON = 0    
+  }
+  IF &EL_STATE = 1     // BATTERY ON
+  {
+    CALL &Power_State_01
+    CALL &LineFA
+    CALL &LineLA
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 2     // LEFT TRANSBUS ON
+  {
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 3     // BATTERY ON + LEFT TRANSBUS ON
+  {
+    CALL &Power_State_01
+    CALL &FltAltDis
+    CALL &LandAltDis
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 4     // RIGHT TRANSBUS ON
+  {
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &Clear_ELPANEL
+  }
+  IF &EL_STATE = 5     // BATTERY ON + RIGHT TRANSBUS ON
+  {
+    CALL &Power_State_01
+    CALL &LineFA
+    CALL &LineLA
+  }
+  IF &EL_STATE = 6     // BOTH TRANSBUSES ON
+  {
+    CALL &Power_State_76
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &ELEC_PAN
+    CALL &Clear_ELPANEL
+  }
+  IF &EL_STATE = 7     // BATTERY ON + BOTH TRANSBUSES ON
+  {
+    CALL &Power_State_67
+    CALL &FltAltDis
+    CALL &LandAltDis
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 8     // STDBY POWER ON
+  {
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &Clear_ELPANEL
+    &TransBusOff0 = 0    
+    &TransBusOff1 = 0    
+  }
+  IF &EL_STATE = 9     // BATTERY ON + STDBY POWER ON
+  {
+    CALL &ELEC_PAN
+    CALL &Power_State_10
+    CALL &LineFA
+    CALL &LineLA
+  }
+  IF &EL_STATE = 10     // LEFT TRANSBUS ON + STDBY POWER ON
+  {
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+  }
+  IF &EL_STATE = 11     // BATTERY ON + LEFT TRANSBUS ON + STDBY PO
+  {
+    CALL &Power_State_11
+    CALL &FltAltDis
+    CALL &LandAltDis
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 12     // RIGHT TRANSBUS ON + STDBY POWER ON
+  {
+    CALL &Power_State_00
+    CALL &BlankFA
+    CALL &BlankLA
+  }
+  IF &EL_STATE = 13     // BATTERY ON + RIGHT TRANSBUS ON + STDBY P
+  {
+    CALL &Power_State_10
+    CALL &FltAltDis
+    CALL &LandAltDis
+    CALL &ELEC_PAN
+  }
+  IF &EL_STATE = 14     // BOTH TRANSBUSES ON + STDBY POWER ON
+  {
+    CALL &Power_State_11
+    CALL &BlankFA
+    CALL &BlankLA
+    CALL &Clear_ELPANEL
+  }
+  IF &EL_STATE = 15     // BATTERY ON + BOTH TRANSBUSES ON + STDBY 
+  {
+    &State_delay = DELAY 1 ,200
+    CALL &Power_State_11
+    CALL &FltAltDis
+    CALL &LandAltDis
+    CALL &ELEC_PAN
+  }
+}
+
+Var 2800, name OVHSTATE, static, Value 0
+
+Var 1085, name Battery_SEL, static
+{
+  &EL_STATE = CHANGEBIT 0 ,&Battery_SEL
+  C0 = TESTBIT &EL_STATE ,0
+  IF C0    
+  {
+    &OVHSTATE = 1    
+  }
+}
+
+Var 1093, name EL_STBY_PWR_ST, static
+{
+  IF &EL_STBY_PWR_ST = 1
+  {
+    &EL_STATE = CLEARBIT 3
+  }
+  IF &EL_STBY_PWR_ST = 0
+  {
+    &EL_STATE = SETBIT 3
+  }
+  IF &EL_STBY_PWR_ST = 2
+  {
+    &EL_STATE = SETBIT 3
+  }
+}
+
+Var 0019, name Power_State_00, Link SUBRUTINE
+{
+  &OVH_FWD_POW_ON = 0    
+  &OVH_AFT_POW_ON = 0    
+  &COM1_Power_ON = 0    
+  &NAV1_Power_ON = 0    
+  &COM2_Power_ON = 0    
+  &NAV2_Power_ON = 0    
+  &ADF_Power_ON = 0    
+  &ATC_Power_ON = 0    
+  &MCP_POWER_ON = 0    
+  &CDU1_POWER_ON = 0    
+  &CDU2_POWER_ON = 0    
+  &MIP_POWER_ON = 0    
+  &AUDI1_POWER_ON = 0    
+  &AUDI2_POWER_ON = 0    
+  &AUDI3_POWER_ON = 0    
+}
+
+Var 0021, name Power_State_11, Link SUBRUTINE
+{
+  &COM1_Power_ON = 1    
+  &NAV1_Power_ON = 1    
+  &COM2_Power_ON = 1    
+  &NAV2_Power_ON = 1    
+  &ADF_Power_ON = 1    
+  &ATC_Power_ON = 1    
+  &MCP_POWER_ON = 1    
+  &CDU1_POWER_ON = 1    
+  &CDU2_POWER_ON = 1    
+  &MIP_POWER_ON = 1    
+  &AUDI1_POWER_ON = 1    
+  &AUDI2_POWER_ON = 1    
+  &AUDI3_POWER_ON = 1    
+}
+
+Var 0022, name Power_State_01, Link SUBRUTINE
+{
+  &COM1_Power_ON = 0    
+  &NAV1_Power_ON = 0    
+  &COM2_Power_ON = 0    
+  &NAV2_Power_ON = 0    
+  &ADF_Power_ON = 0    
+  &ATC_Power_ON = 0    
+  &MCP_POWER_ON = 0    
+  &CDU1_POWER_ON = 0    
+  &CDU2_POWER_ON = 0    
+  &MIP_POWER_ON = 1    
+  &AUDI1_POWER_ON = 0    
+  &AUDI2_POWER_ON = 0    
+  &AUDI3_POWER_ON = 0    
+}
+
+Var 0023, name Power_State_10, Link SUBRUTINE
+{
+  &COM1_Power_ON = 1    
+  &NAV1_Power_ON = 1    
+  &COM2_Power_ON = 0    
+  &NAV2_Power_ON = 0    
+  &ADF_Power_ON = 1    
+  &ATC_Power_ON = 1    
+  &SD_DELAY = 0    
+  &MCP_POWER_ON = 0    
+  &CDU1_POWER_ON = 1    
+  &CDU2_POWER_ON = 0    
+  &MIP_POWER_ON = 1    
+  &AUDI1_POWER_ON = 0    
+  &AUDI2_POWER_ON = 0    
+  &AUDI3_POWER_ON = 0    
+}
+
+Var 0024, name Power_State_67, Link SUBRUTINE
+{
+  &COM1_Power_ON = 0    
+  &NAV1_Power_ON = 0    
+  &COM2_Power_ON = 1    
+  &NAV2_Power_ON = 1    
+  &ADF_Power_ON = 0    
+  &ATC_Power_ON = 1    
+  &MCP_POWER_ON = 1    
+  &CDU1_POWER_ON = 0    
+  &CDU2_POWER_ON = 1    
+  &MIP_POWER_ON = 1    
+}
+
+Var 0025, name Power_State_76, Link SUBRUTINE
+{
+  &COM1_Power_ON = 0    
+  &NAV1_Power_ON = 0    
+  &COM2_Power_ON = 1    
+  &NAV2_Power_ON = 1    
+  &ADF_Power_ON = 0    
+  &ATC_Power_ON = 1    
+  &MCP_POWER_ON = 1    
+  &CDU1_POWER_ON = 0    
+  &CDU2_POWER_ON = 1    
+  &MIP_POWER_ON = 0    
+}
+
+Var 0026, name BlankOrLit
+
+Var 0027, name MCP_CLEAR
+{
+  &D_MACHDP = 1    
+  &BlankOrLit = -999999    
+  CALL &MCP_LIGHTS
+}
+
+Var 0028, name BlinkDis
+{
+  IF &BlinkDis <> 0
+  {
+    CALL &MCP_LIGHTS
+  }
+  L0 = MOD &BlinkDis ,2
+  IF L0 = 0
+  {
+    &BlankOrLit = -999999    
+  }
+  ELSE
+  {
+    &BlankOrLit = 888    
+  }
+}
+
+Var 1316, name LIGHT_TEST_ON, static
+{
+  IF &LIGHT_TEST_ON = 0
+  {
+    IF &MCP_POWER_ON = 1
+    {
+      &BlankOrLit = -999999    
+      &BlinkDis = 500000         // begin value of timer
+      &BlinkDis = TIMER 0 ,-1 ,100
+    }
+  }
+  ELSE
+  {
+    &BlinkDis = 1         // equal to end value of timer 0 + 1
+    CALL &MCP_REFRESH
+  }
+}
+
+Var 0029, name SD_DELAY
+{
+  IF &SD_DELAY = 1
+  {
+    &BlankOrLit = -999999    
+    CALL &MCP_LIGHTS
+    &SD_DELAY = 0    
+  }
+}
+
+Var 0030, name MCP_R_DELAY
+{
+  IF &MCP_R_DELAY = 1
+  {
+    CALL &MCP_REFRESH
+    &MCP_R_DELAY = 0    
+  }
+}
+
+Var 0031, name MCP_REFRESH, Link SUBRUTINE
+{
+  &bBANKHDG = 0    
+  IF &IASBlank = 1
+  {
+    CALL &BLANKtIASw
+  }
+  ELSE
+  {
+    IF &IASfromNGX > 99
+    {
+      CALL &IAStMCPw
+      &D_MACHDP = 0    
+    }
+    ELSE
+    {
+      CALL &MACHtMCPw
+    }
+  }
+  CALL &CRSLtMCPw
+  CALL &HDGtMCPw
+  CALL &ALTtMCPw
+  CALL &VStMCPw
+  CALL &CRSRtMCPw
+}
+
+Var 0032, name MCP_LIGHTS, Link SUBRUTINE
+{
+  &D_CrsL = &BlankOrLit    
+  &D_IAS = &BlankOrLit    
+  &D_IAS3 = &BlankOrLit    
+  &D_IAS_IND = &BlankOrLit         // Not working show _ and not 8 when in lig
+  &D_MACHDP = 0    
+  &D_Hdg = &BlankOrLit    
+  &D_ALT = &BlankOrLit    
+  &D_ALTL0 = &BlankOrLit    
+  &D_ALTL00 = &BlankOrLit    
+  &D_VSS = &BlankOrLit    
+  &D_VS3 = &BlankOrLit    
+  &D_VS4 = &BlankOrLit    
+  &D_VS = &BlankOrLit    
+  &D_CrsR = &BlankOrLit    
+}
+
+Var 0033, name aTrans_Bus_1, Link IOCARD_OUT, Device 30, Output 11
+
+Var 0034, name aTrans_Bus_2, Link IOCARD_OUT, Device 30, Output 13
+
+Var 0035, name State_delay
+
+Var 0036, name Magic_Var
+
+Var 1101, name TransBusOff0, static
+{
+  C0 = &sLIGHT_TEST = 1
+  C1 = &EL_STATE = 8
+  C2 = &EL_STATE = 0
+  IF C1 OR C2
+  {
+    &Magic_Var = 1    
+  }
+  ELSE
+  {
+    &Magic_Var = 0    
+  }
+  C2 = &Magic_Var = 1
+  IF C0 OR C2
+  {
+    &aTrans_Bus_1 = &TransBusOff0    
+  }
+  ELSE
+  {
+    IF &TransBusOff0 = 0
+    {
+      &EL_STATE = SETBIT 1
+    }
+    ELSE
+    {
+      &EL_STATE = CLEARBIT 1
+    }
+    &aTrans_Bus_1 = &TransBusOff0    
+  }
+}
+
+Var 1102, name TransBusOff1, static
+{
+  C0 = &sLIGHT_TEST = 1
+  C1 = &EL_STATE = 8
+  C2 = &EL_STATE = 0
+  IF C1 OR C2
+  {
+    &Magic_Var = 1    
+  }
+  ELSE
+  {
+    &Magic_Var = 0    
+  }
+  C2 = &Magic_Var = 1
+  IF C0 OR C2
+  {
+    &aTrans_Bus_2 = &TransBusOff1    
+  }
+  ELSE
+  {
+    IF &TransBusOff1 = 0
+    {
+      &EL_STATE = SETBIT 2
+    }
+    ELSE
+    {
+      &EL_STATE = CLEARBIT 2
+    }
+    &aTrans_Bus_2 = &TransBusOff1    
+  }
+}
+
+Var 1103, name aSOURCE_OFF_1, static, Link IOCARD_OUT, Device 30, Output 12
+
+Var 1104, name aSOURCE_OFF_2, static, Link IOCARD_OUT, Device 30, Output 14
+
+Var 1105, name aGEN_OFF_BUS_1, static, Link IOCARD_DISPLAY, Device 30, Digit 38, Numbers 1
+
+Var 1106, name aGEN_OFF_BUS_2, static, Link IOCARD_DISPLAY, Device 30, Digit 40, Numbers 1
+
+Var 1107, name aAPU_G_OFF_BUS, static, Link IOCARD_DISPLAY, Device 30, Digit 39, Numbers 1
+
+Var 2618, name EL_BAT_G, static
+
+Var 2619, name EL_BAT_SW, static, Value 1
+
+Var 0037, name sBAT_SW, Link IOCARD_SW, Device 30, Input 72
+{
+  IF &sBAT_SW = 1
+  {
+    &EL_BAT_G = 1         // Open Guard
+    &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW OFF to NGX
+  }
+  ELSE
+  {
+    &EL_BAT_G = 0         // Close Guard
+    &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW ON to NGX
+  }
+}
+
+Var 2634, name EL_STBY_PWR_G, static
+
+Var 2635, name EL_STBY_PWR_SW, static, Value 1
+
+Var 0038, name sSTBY_PWR_L, Link IOCARD_SW, Device 30, Input 69     // Stby Pwr BAT SW
+{
+  IF &sSTBY_PWR_L = 1
+  {
+    &EL_STBY_PWR_G = 1    
+    &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
+  }
+  ELSE
+  {
+    &EL_STBY_PWR_G = 1    
+    &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
+  }
+}
+
+Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 68     // Stby Pwr AUTO SW
+{
+  IF &sSTBY_PWR_R = 1
+  {
+    &EL_STBY_PWR_G = 0    
+    &EL_STBY_PWR_SW = 2    
+  }
+  ELSE
+  {
+    &EL_STBY_PWR_G = 1    
+    &EL_STBY_PWR_SW = 1    
+  }
+}
+
+Var 2631, name EL_GRD_PWR_SW, static
+
+Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 64     // Gnd Pwr Off SW
+{
+  IF &sGND_PWR_OFF = 1
+  {
+    &EL_GRD_PWR_SW = 0    
+  }
+  ELSE
+  {
+    IF &sGND_PWR_ON = 0
+    {
+      &EL_GRD_PWR_SW = 1    
+    }
+  }
+}
+
+Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 30, Input 65     // Gnd Pwr On SW
+{
+  IF &sGND_PWR_ON = 1
+  {
+    &EL_GRD_PWR_SW = 2    
+  }
+  ELSE
+  {
+    IF &sGND_PWR_OFF = 0
+    {
+      &EL_GRD_PWR_SW = 1    
+    }
+  }
+}
+
+Var 1094, name aGND_PWR_LED, static, Link IOCARD_DISPLAY, Device 30, Digit 37, Numbers 1
+
+Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
+
+Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 99
+
+Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 100
+
+Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 140
+
+Var 2602, name bTRIM_RESET, static, Link IOCARD_SW, Device 30, Input 135
+
+Var 2605, name bCVR_ERASE, static, Link IOCARD_SW, Device 30, Input 102
+
+Var 2606, name bCVR_TEST, static, Link IOCARD_SW, Device 30, Input 103
+
+Var 2661, name bICE_TAT_T, static, Link IOCARD_SW, Device 30, Input 117
+
+Var 2603, name bCAB_ALT_HORN, static, Link IOCARD_SW, Device 30, Input 104
+
+Var 2717, name sYAW_DAMPER, static, Link IOCARD_SW, Device 30, Input 43
+
+Var 2622, name sEL_CAB_UT, static, Link IOCARD_SW, Device 30, Input 81
+
+Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 30, Input 81
+
+Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 97
+
+Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 98
+
+Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 120
+
+Var 2663, name sWINDOW_HEAT_2, static, Link IOCARD_SW, Device 30, Input 121
+
+Var 2664, name sWINDOW_HEAT_3, static, Link IOCARD_SW, Device 30, Input 124
+
+Var 2665, name sWINDOW_HEAT_4, static, Link IOCARD_SW, Device 30, Input 125
+
+Var 2667, name sWING_ANTI_ICE, static, Link IOCARD_SW, Device 30, Input 114
+
+Var 2657, name sENG_ANTI_ICE1, static, Link IOCARD_SW, Device 30, Input 115
+
+Var 2658, name sENG_ANTI_ICE2, static, Link IOCARD_SW, Device 30, Input 116
+
+Var 2659, name sPROBE_HEAT_1, static, Link IOCARD_SW, Device 30, Input 118
+
+Var 2660, name sPROBE_HEAT_2, static, Link IOCARD_SW, Device 30, Input 119
+
+Var 2586, name sTRIM_AIR, static, Link IOCARD_SW, Device 30, Input 143
+
+Var 2593, name sAPU_BLEED, static, Link IOCARD_SW, Device 30, Input 106
+
+Var 2594, name sENG_1_BLEED, static, Link IOCARD_SW, Device 30, Input 105
+
+Var 2595, name sENG_2_BLEED, static, Link IOCARD_SW, Device 30, Input 107
+
+Var 2600, name sRECIRC_FAN_L, static, Link IOCARD_SW, Device 30, Input 142
+
+Var 2601, name sRECIRC_FAN_R, static, Link IOCARD_SW, Device 30, Input 141
+
+Var 2676, name sRETRACTABLE_L, static, Link IOCARD_SW, Device 30, Input 0
+
+Var 2682, name sRETRACTABLE_R, static, Link IOCARD_SW, Device 30, Input 1
+
+Var 2674, name sFIXED_L, static, Link IOCARD_SW, Device 30, Input 2
+
+Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 30, Input 3
+
+Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 30, Input 4
+
+Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 5
+
+Var 2684, name sTAXI, static, Link IOCARD_SW, Device 30, Input 6
+
+Var 2678, name sLOGO, static, Link IOCARD_SW, Device 30, Input 18
+
+Var 2670, name sANTI_COL, static, Link IOCARD_SW, Device 30, Input 21
+
+Var 2686, name sWING, static, Link IOCARD_SW, Device 30, Input 22
+
+Var 2685, name sWHEEL_WELL, static, Link IOCARD_SW, Device 30, Input 23
+
+Var 2604, name CB_LIGHT_C, static
+
+Var 2614, name EFIS_HDG_R_T, static
+
+Var 2632, name EL_IFE, static
+
+Var 2587, name ACTY_600_L, static
+
+Var 2588, name DUMMY, static
+
+Var 2580, name ACT_S_A_800, static
+
+Var 2581, name ACT_S_C, static
+
+Var 2582, name ACT_S_C_800, static
+
+Var 2583, name ACT_S_F_800, static
+
+Var 2584, name ACT_SO_S, static
+
+Var 2585, name ACT_SO_S_800, static
+
+Var 2668, name LAND_LI_G, static
+
+Var 2672, name LI_C, static
+
+Var 2689, name NAVFMC_SEL, static
+
+Var 2699, name PANEL_L_C, static
+
+Var 2709, name TR_A_SW_T, static
+
+Var 2714, name WING_B_O_T_P, static
+
+Var 1039, name aFCTL_LOW_P_A, static, Link IOCARD_OUT, Device 30, Output 28
+
+Var 1040, name aFCTL_LOW_P_B, static, Link IOCARD_OUT, Device 30, Output 29
+
+Var 1042, name aLOW_QUANT, static, Link IOCARD_OUT, Device 30, Output 35
+
+Var 1043, name aLOW_PRESSURE, static, Link IOCARD_OUT, Device 30, Output 36
+
+Var 1044, name aSTDBY_RUD_ON, static, Link IOCARD_OUT, Device 30, Output 37
+
+Var 1045, name aFEEL_D_PR, static, Link IOCARD_OUT, Device 30, Output 30
+
+Var 1046, name aSPEED_T_FA, static, Link IOCARD_OUT, Device 30, Output 31
+
+Var 1047, name aMACH_T_FA, static, Link IOCARD_OUT, Device 30, Output 32
+
+Var 1048, name aAUTO_SL_FA, static, Link IOCARD_OUT, Device 30, Output 33
+
+Var 1041, name aYAWDAMPER, static, Link IOCARD_OUT, Device 30, Output 34
+
+Var 2639, name FCTL_A_G, static
+
+Var 2640, name FCTL_A_SW, static, Value 1
+
+Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 30, Input 47
+{
+  IF &sFCTL_SR_A = 1
+  {
+    &FCTL_A_G = 1    
+    &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
+  }
+  ELSE
+  {
+    &FCTL_A_G = 1    
+    &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
+  }
+}
+
+Var 0043, name sFCTL_A_ON, Link IOCARD_SW, Device 30, Input 48
+{
+  IF &sFCTL_A_ON = 1
+  {
+    &FCTL_A_G = 0    
+    &FCTL_A_SW = 2    
+  }
+  ELSE
+  {
+    &FCTL_A_G = 1    
+    &FCTL_A_SW = 1    
+  }
+}
+
+Var 2641, name FCTL_B_G, static
+
+Var 2642, name FCTL_B_SW, static, Value 1
+
+Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 30, Input 49
+{
+  IF &sFCTL_SR_B = 1
+  {
+    &FCTL_B_G = 1    
+    &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
+  }
+  ELSE
+  {
+    &FCTL_B_G = 1    
+    &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
+  }
+}
+
+Var 0045, name sFCTL_B_ON, Link IOCARD_SW, Device 30, Input 50
+{
+  IF &sFCTL_B_ON = 1
+  {
+    &FCTL_B_G = 0    
+    &FCTL_B_SW = 2    
+  }
+  ELSE
+  {
+    &FCTL_B_G = 1    
+    &FCTL_B_SW = 1    
+  }
+}
+
+Var 2589, name ALT_FLAPS_G, static
+
+Var 2590, name ALT_FLAPS, static
+
+Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 30, Input 51
+{
+  IF &sALT_FLAPS_ARM = 1
+  {
+    &ALT_FLAPS_G = 1    
+    &ALT_FLAPS = 1    
+  }
+  ELSE
+  {
+    &ALT_FLAPS_G = 0    
+    &ALT_FLAPS = 0    
+  }
+}
+
+Var 2591, name ALT_FLAPS_SW, static
+
+Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 30, Input 52
+{
+  IF &sALT_FLAPS_UP = 1
+  {
+    &ALT_FLAPS_SW = 0    
+  }
+  ELSE
+  {
+    &ALT_FLAPS_SW = 1    
+  }
+}
+
+Var 0048, name sALT_FLAPS_DN, Link IOCARD_SW, Device 30, Input 53
+{
+  IF &sALT_FLAPS_DN = 1
+  {
+    &ALT_FLAPS_SW = 1    
+  }
+  ELSE
+  {
+    &ALT_FLAPS_SW = 2    
+  }
+}
+
+Var 2705, name SPOILER_A_G, static
+
+Var 2706, name SPOILER_A_SW, static, Value 1
+
+Var 0049, name sSPOILER_A_OFF, Link IOCARD_SW, Device 30, Input 45
+{
+  IF &sSPOILER_A_OFF = 1
+  {
+    &SPOILER_A_G = 1    
+    &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
+  }
+  ELSE
+  {
+    &SPOILER_A_G = 0    
+    &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
+  }
+}
+
+Var 0206, name SPOILER_B_G, static
+
+Var 2708, name SPOILER_B_SW, static, Value 1
+
+Var 0050, name sSPOILER_B_OFF, Link IOCARD_SW, Device 30, Input 46
+{
+  IF &sSPOILER_B_OFF = 1
+  {
+    &SPOILER_B_G = 1    
+    &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
+  }
+  ELSE
+  {
+    &SPOILER_B_G = 0    
+    &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
+  }
+}
+
+Var 2691, name NAVVHF_SEL, static
+
+Var 0051, name sVHF_1, Link IOCARD_SW, Device 30, Input 40
+{
+  IF &sVHF_1 = 1
+  {
+    &NAVVHF_SEL = 0    
+  }
+  ELSE
+  {
+    &NAVVHF_SEL = 1    
+  }
+}
+
+Var 0052, name sVHF_2, Link IOCARD_SW, Device 30, Input 39
+{
+  IF &sVHF_2 = 1
+  {
+    &NAVVHF_SEL = 2    
+  }
+  ELSE
+  {
+    &NAVVHF_SEL = 1    
+  }
+}
+
+Var 2690, name NAVIRS_SEL, static
+
+Var 0053, name sIRS_LEFT, Link IOCARD_SW, Device 30, Input 42
+{
+  IF &sIRS_LEFT = 1
+  {
+    &NAVIRS_SEL = 0    
+  }
+  ELSE
+  {
+    &NAVIRS_SEL = 1    
+  }
+}
+
+Var 0054, name sIRS_Right, Link IOCARD_SW, Device 30, Input 41
+{
+  IF &sIRS_Right = 1
+  {
+    &NAVIRS_SEL = 2    
+  }
+  ELSE
+  {
+    &NAVIRS_SEL = 1    
+  }
+}
+
+Var 2688, name NAVDSP_D_S_S, static
+
+Var 0055, name sSOURCE_1, Link IOCARD_SW, Device 30, Input 36
+{
+  IF &sSOURCE_1 = 1
+  {
+    &NAVDSP_D_S_S = 0    
+  }
+}
+
+Var 0056, name sSOURCE_AUTO, Link IOCARD_SW, Device 30, Input 37
+{
+  IF &sSOURCE_AUTO = 1
+  {
+    &NAVDSP_D_S_S = 1    
+  }
+}
+
+Var 0057, name sSOURCE_2, Link IOCARD_SW, Device 30, Input 38
+{
+  IF &sSOURCE_2 = 1
+  {
+    &NAVDSP_D_S_S = 2    
+  }
+}
+
+Var 2687, name NAVDSP_C_P_S, static
+
+Var 0058, name sCONTROL_P_1, Link IOCARD_SW, Device 30, Input 71
+{
+  IF &sCONTROL_P_1 = 1
+  {
+    &NAVDSP_C_P_S = 0    
+  }
+  ELSE
+  {
+    &NAVDSP_C_P_S = 1    
+  }
+}
+
+Var 0059, name sCONTROL_P_2, Link IOCARD_SW, Device 30, Input 70
+{
+  IF &sCONTROL_P_2 = 1
+  {
+    &NAVDSP_C_P_S = 2    
+  }
+  ELSE
+  {
+    &NAVDSP_C_P_S = 1    
+  }
+}
+
+Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 32, Numbers 1
+
+Var 1068, name aENG_VA_CL_R, static, Link IOCARD_DISPLAY, Device 30, Digit 34, Numbers 1
+
+Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_DISPLAY, Device 30, Digit 33, Numbers 1
+
+Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_DISPLAY, Device 30, Digit 35, Numbers 1
+
+Var 1071, name aFILT_BYPASS_L, static, Link IOCARD_OUT, Device 30, Output 20
+
+Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_OUT, Device 30, Output 21
+
+Var 1073, name aXFEED_VA_O, static, Link IOCARD_DISPLAY, Device 30, Digit 36, Numbers 1
+
+Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 30, Output 25
+
+Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 30, Output 26
+
+Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 30, Output 24
+
+Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 30, Output 27
+
+Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 30, Output 22
+
+Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
+
+Var 2645, name FUEL_CRFeed, static, Value 1
+
+Var 0060, name sFUEL_CRFeed, Link IOCARD_SW, Device 30, Input 33
+{
+  &FUEL_CRFeed = CHANGEBITN 0 ,&FUEL_CRFeed
+}
+
+Var 2646, name sFUEL_P1_Aft, static, Link IOCARD_SW, Device 30, Input 27
+
+Var 2647, name sFUEL_P1_Fwd, static, Link IOCARD_SW, Device 30, Input 28
+
+Var 2648, name sFUEL_P2_Aft, static, Link IOCARD_SW, Device 30, Input 30
+
+Var 2649, name sFUEL_P2_Fwd, static, Link IOCARD_SW, Device 30, Input 29
+
+Var 2650, name sFUEL_PL_Ctr, static, Link IOCARD_SW, Device 30, Input 31
+
+Var 2651, name sFUEL_PR_Ctr, static, Link IOCARD_SW, Device 30, Input 32
+
+Var 1080, name aBAT_DISCHARGE, static, Link IOCARD_OUT, Device 30, Output 38
+
+Var 1081, name aTR_UNIT, static, Link IOCARD_OUT, Device 30, Output 39
+
+Var 1082, name aELEC, static, Link IOCARD_OUT, Device 30, Output 40
+
+Var 2623, name EL_DC_M, static
+
+Var 0061, name sSTBY_POWER, Link IOCARD_SW, Device 30, Input 73
+{
+  IF &sSTBY_POWER = 1
+  {
+    &EL_DC_M = 0    
+  }
+}
+
+Var 0062, name sBAT_BUS, Link IOCARD_SW, Device 30, Input 74
+{
+  IF &sBAT_BUS = 1
+  {
+    &EL_DC_M = 1    
+  }
+}
+
+Var 0063, name sBAT, Link IOCARD_SW, Device 30, Input 75
+{
+  IF &sBAT = 1
+  {
+    &EL_DC_M = 2    
+  }
+}
+
+Var 0064, name sAUX_BAT, Link IOCARD_SW, Device 30, Input 76
+{
+  IF &sAUX_BAT = 1
+  {
+    &EL_DC_M = 3    
+  }
+}
+
+Var 0065, name sTR1, Link IOCARD_SW, Device 30, Input 77
+{
+  IF &sTR1 = 1
+  {
+    &EL_DC_M = 4    
+  }
+}
+
+Var 0066, name sTR2, Link IOCARD_SW, Device 30, Input 78
+{
+  IF &sTR2 = 1
+  {
+    &EL_DC_M = 5    
+  }
+}
+
+Var 0067, name sTR3, Link IOCARD_SW, Device 30, Input 79
+{
+  IF &sTR3 = 1
+  {
+    &EL_DC_M = 6    
+  }
+}
+
+Var 0068, name sTEST, Link IOCARD_SW, Device 30, Input 80
+{
+  IF &sTEST = 1
+  {
+    &EL_DC_M = 7    
+  }
+}
+
+Var 2615, name EL_AC_M, static
+
+Var 0069, name sAC_SB_PWR, Link IOCARD_SW, Device 30, Input 82
+{
+  IF &sAC_SB_PWR = 1
+  {
+    &EL_AC_M = 0    
+  }
+}
+
+Var 0070, name sGRD_POWER, Link IOCARD_SW, Device 30, Input 83
+{
+  IF &sGRD_POWER = 1
+  {
+    &EL_AC_M = 1    
+  }
+}
+
+Var 0071, name sGEN1, Link IOCARD_SW, Device 30, Input 84
+{
+  IF &sGEN1 = 1
+  {
+    &EL_AC_M = 2    
+  }
+}
+
+Var 0072, name sAPU_GEN, Link IOCARD_SW, Device 30, Input 85
+{
+  IF &sAPU_GEN = 1
+  {
+    &EL_AC_M = 3    
+  }
+}
+
+Var 0073, name sGEN2, Link IOCARD_SW, Device 30, Input 86
+{
+  IF &sGEN2 = 1
+  {
+    &EL_AC_M = 4    
+  }
+}
+
+Var 0074, name sINV, Link IOCARD_SW, Device 30, Input 87
+{
+  IF &sINV = 1
+  {
+    &EL_AC_M = 5    
+  }
+}
+
+Var 0075, name sAC_TEST, Link IOCARD_SW, Device 30, Input 88
+{
+  IF &sAC_TEST = 1
+  {
+    &EL_AC_M = 6    
+  }
+}
+
+Var 1090, name aSTBY_PWR_OFF, static, Link IOCARD_OUT, Device 30, Output 42
+
+Var 1088, name aDRIVE_1, static, Link IOCARD_OUT, Device 30, Output 41
+
+Var 1089, name aDRIVE_2, static, Link IOCARD_OUT, Device 30, Output 43
+
+Var 2624, name EL_DIS_1_G, static
+
+Var 2625, name EL_DIS_1_SW, static, Value 1
+
+Var 0076, name sDRIVE_L, Link IOCARD_SW, Device 30, Input 66
+{
+  IF &sDRIVE_L = 1
+  {
+    &EL_DIS_1_G = 1    
+    &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
+  }
+  ELSE
+  {
+    &EL_DIS_1_G = 0    
+    &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
+  }
+}
+
+Var 2626, name EL_DIS_2_G, static
+
+Var 2627, name EL_DIS_2_SW, static, Value 1
+
+Var 0077, name sDRIVE_R, Link IOCARD_SW, Device 30, Input 67
+{
+  IF &sDRIVE_R = 1
+  {
+    &EL_DIS_2_G = 1    
+    &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
+  }
+  ELSE
+  {
+    &EL_DIS_2_G = 0    
+    &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
+  }
+}
+
+Var 2620, name EL_BUS_TR_G, static
+
+Var 2621, name EL_BUS_TR_SW, static, Value 1
+
+Var 0078, name sBUS_TRANSFER, Link IOCARD_SW, Device 30, Input 63
+{
+  IF &sBUS_TRANSFER = 1
+  {
+    &EL_BUS_TR_G = 1    
+    &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
+  }
+  ELSE
+  {
+    &EL_BUS_TR_G = 0    
+    &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
+  }
+}
+
+Var 2629, name EL_GEN1_SW, static
+
+Var 0079, name sGEN_1_OFF, Link IOCARD_SW, Device 30, Input 55
+{
+  IF &sGEN_1_OFF = 1
+  {
+    &EL_GEN1_SW = 0    
+  }
+  ELSE
+  {
+    IF &sGEN_1_ON = 0
+    {
+      &EL_GEN1_SW = 1    
+    }
+  }
+}
+
+Var 0080, name sGEN_1_ON, Link IOCARD_SW, Device 30, Input 56
+{
+  IF &sGEN_1_ON = 1
+  {
+    &EL_GEN1_SW = 2    
+  }
+  ELSE
+  {
+    IF &sGEN_1_OFF = 0
+    {
+      &EL_GEN1_SW = 1    
+    }
+  }
+}
+
+Var 2630, name EL_GEN2_SW, static
+
+Var 0081, name sGEN_2_OFF, Link IOCARD_SW, Device 30, Input 61
+{
+  IF &sGEN_2_OFF = 1
+  {
+    &EL_GEN2_SW = 0    
+  }
+  ELSE
+  {
+    IF &sGEN_2_ON = 0
+    {
+      &EL_GEN2_SW = 1    
+    }
+  }
+}
+
+Var 0082, name sGEN_2_ON, Link IOCARD_SW, Device 30, Input 62
+{
+  IF &sGEN_2_ON = 1
+  {
+    &EL_GEN2_SW = 2    
+  }
+  ELSE
+  {
+    IF &sGEN_2_OFF = 0
+    {
+      &EL_GEN2_SW = 1    
+    }
+  }
+}
+
+Var 2616, name EL_APU_G1_SW, static
+
+Var 0083, name sAPU_GEN_OFF_L, Link IOCARD_SW, Device 30, Input 57
+{
+  IF &sAPU_GEN_OFF_L = 1
+  {
+    &EL_APU_G1_SW = 0    
+  }
+  ELSE
+  {
+    IF &sAPU_GEN_ON_L = 0
+    {
+      &EL_APU_G1_SW = 1    
+    }
+  }
+}
+
+Var 0084, name sAPU_GEN_ON_L, Link IOCARD_SW, Device 30, Input 58
+{
+  IF &sAPU_GEN_ON_L = 1
+  {
+    &EL_APU_G1_SW = 2    
+  }
+  ELSE
+  {
+    IF &sAPU_GEN_OFF_L = 0
+    {
+      &EL_APU_G1_SW = 1    
+    }
+  }
+}
+
+Var 2617, name EL_APU_G2_SW, static
+
+Var 0085, name sAPU_GEN_OFF_R, Link IOCARD_SW, Device 30, Input 59
+{
+  IF &sAPU_GEN_OFF_R = 1
+  {
+    &EL_APU_G2_SW = 0    
+  }
+  ELSE
+  {
+    IF &sAPU_GEN_ON_R = 0
+    {
+      &EL_APU_G2_SW = 1    
+    }
+  }
+}
+
+Var 0086, name sAPU_GEN_ON_R, Link IOCARD_SW, Device 30, Input 60
+{
+  IF &sAPU_GEN_ON_R = 1
+  {
+    &EL_APU_G2_SW = 2    
+  }
+  ELSE
+  {
+    IF &sAPU_GEN_OFF_R = 0
+    {
+      &EL_APU_G2_SW = 1    
+    }
+  }
+}
+
+Var 1112, name aAPU_MAINT, static, Link IOCARD_DISPLAY, Device 30, Digit 41, Numbers 1
+
+Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_DISPLAY, Device 30, Digit 42, Numbers 1
+
+Var 1114, name aAPU_FAULT, static, Link IOCARD_DISPLAY, Device 30, Digit 43, Numbers 1
+
+Var 1115, name aAPU_OVERSP, static, Link IOCARD_DISPLAY, Device 30, Digit 44, Numbers 1
+
+Var 2715, name WIPER_L_C, static
+
+Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 54
+{
+  IF &sWIPER_L = 1
+  {
+    &WIPER_L_C = 0    
+  }
+  ELSE
+  {
+    &WIPER_L_C = 2    
+  }
+}
+
+Var 2716, name WIPER_R_C, static
+
+Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 90
+{
+  IF &sWIPER_R = 1
+  {
+    &WIPER_R_C = 0    
+  }
+  ELSE
+  {
+    &WIPER_R_C = 2    
+  }
+}
+
+Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 16
+
+Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 17
+
+Var 2636, name EM_EX_L_G, static
+
+Var 2637, name EM_EX_L_SW, static, Value 1
+
+Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 95
+{
+  IF &sEMER_EXIT_OFF = 1
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+  }
+  ELSE
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+  }
+}
+
+Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 96
+{
+  IF &sEMER_EXIT_ON = 1
+  {
+    &EM_EX_L_G = 0    
+    &EM_EX_L_SW = 2    
+  }
+  ELSE
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = 1    
+  }
+}
+
+Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 15
+
+Var 2692, name NO_S_L_SW, static
+
+Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 91
+{
+  IF &sNO_SMOKE_OFF = 1
+  {
+    &NO_S_L_SW = 0    
+  }
+  ELSE
+  {
+    &NO_S_L_SW = 1    
+  }
+}
+
+Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 92
+{
+  IF &sNO_SMOKE_ON = 1
+  {
+    &NO_S_L_SW = 2    
+  }
+  ELSE
+  {
+    &NO_S_L_SW = 0    
+  }
+}
+
+Var 2638, name FAST_B_LI_SW, static
+
+Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 93
+{
+  IF &sFAST_SEAT_OFF = 1
+  {
+    &FAST_B_LI_SW = 0    
+  }
+  ELSE
+  {
+    IF &sFAST_SEAT_ON = 0
+    {
+      &FAST_B_LI_SW = 1    
+    }
+  }
+}
+
+Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 94
+{
+  IF &sFAST_SEAT_ON = 1
+  {
+    &FAST_B_LI_SW = 2    
+  }
+  ELSE
+  {
+    IF &sFAST_SEAT_OFF = 0
+    {
+      &FAST_B_LI_SW = 1    
+    }
+  }
+}
+
+Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
+
+Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
+
+Var 1130, name aOVERHEAT0, static, Link IOCARD_OUT, Device 30, Output 75
+
+Var 1131, name aOVERHEAT1, static, Link IOCARD_OUT, Device 30, Output 76
+
+Var 1132, name aOVERHEAT2, static, Link IOCARD_OUT, Device 30, Output 77
+
+Var 1133, name aOVERHEAT3, static, Link IOCARD_OUT, Device 30, Output 84
+
+Var 1134, name aW_HEATON_LS, static, Link IOCARD_OUT, Device 30, Output 78
+
+Var 1135, name aW_HEATON_LF, static, Link IOCARD_OUT, Device 30, Output 79
+
+Var 1136, name aW_HEATON_RL, static, Link IOCARD_OUT, Device 30, Output 80
+
+Var 1137, name aW_HEATON_RS, static, Link IOCARD_OUT, Device 30, Output 85
+
+Var 2666, name ICE_W_HEAT_T, static
+
+Var 0095, name sWIN_H_OVH, Link IOCARD_SW, Device 30, Input 122
+{
+  IF &sWIN_H_OVH = 1
+  {
+    &ICE_W_HEAT_T = 0    
+  }
+  ELSE
+  {
+    IF &sWIN_H_PT = 0
+    {
+      &ICE_W_HEAT_T = 1    
+    }
+  }
+}
+
+Var 0096, name sWIN_H_PT, Link IOCARD_SW, Device 30, Input 123
+{
+  IF &sWIN_H_PT = 1
+  {
+    &ICE_W_HEAT_T = 2    
+  }
+  ELSE
+  {
+    IF &sWIN_H_OVH = 0
+    {
+      &ICE_W_HEAT_T = 1    
+    }
+  }
+}
+
+Var 1142, name aCAPT_PITOT, static, Link IOCARD_OUT, Device 30, Output 81
+
+Var 1143, name aELEV_PITOT_L, static, Link IOCARD_OUT, Device 30, Output 82
+
+Var 1144, name aALPHA_VANE_L, static, Link IOCARD_OUT, Device 30, Output 83
+
+Var 1145, name aTEMP_PROBE, static, Link IOCARD_DISPLAY, Device 30, Digit 55, Numbers 1
+
+Var 1146, name aFO_PITOT, static, Link IOCARD_OUT, Device 30, Output 86
+
+Var 1147, name aELEV_PITOT_R, static, Link IOCARD_OUT, Device 30, Output 87
+
+Var 1148, name aALPHA_VANE_R, static, Link IOCARD_OUT, Device 30, Output 88
+
+Var 1149, name aAUX_PITOT, static, Link IOCARD_OUT, Device 30, Output 89
+
+Var 1152, name aVALVE_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 58, Numbers 1
+
+Var 1153, name aVALVE_OPEN_R, static, Link IOCARD_DISPLAY, Device 30, Digit 59, Numbers 1
+
+Var 1154, name aCO_ANTI_ICE_L, static, Link IOCARD_DISPLAY, Device 30, Digit 56, Numbers 1
+
+Var 1155, name aCO_ANTI_ICE_R, static, Link IOCARD_DISPLAY, Device 30, Digit 57, Numbers 1
+
+Var 1156, name aCO_VA_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 60, Numbers 1
+
+Var 1157, name aCO_VA_OPEN_R, static, Link IOCARD_DISPLAY, Device 30, Digit 61, Numbers 1
+
+Var 1161, name aLOW_PR_ENG_L, static, Link IOCARD_OUT, Device 30, Output 102
+
+Var 1162, name aLOW_PR_ENG_R, static, Link IOCARD_OUT, Device 30, Output 105
+
+Var 1163, name aLOW_PR_ELEC_L, static, Link IOCARD_OUT, Device 30, Output 103
+
+Var 1164, name aLOW_PR_ELEC_E, static, Link IOCARD_OUT, Device 30, Output 104
+
+Var 1165, name aOVHEAT_ELEC_L, static, Link IOCARD_DISPLAY, Device 30, Digit 62, Numbers 1
+
+Var 1166, name aOVHEAT_ELEC_R, static, Link IOCARD_DISPLAY, Device 30, Digit 63, Numbers 1
+
+Var 1173, name aZoneTemp0, static, Link IOCARD_OUT, Device 30, Output 90
+
+Var 1174, name aZoneTemp1, static, Link IOCARD_OUT, Device 30, Output 91
+
+Var 1175, name aZoneTemp2, static, Link IOCARD_OUT, Device 30, Output 92
+
+Var 1176, name aDualBleed, static, Link IOCARD_DISPLAY, Device 30, Digit 46, Numbers 1
+
+Var 1177, name aRamDoor_L, static, Link IOCARD_DISPLAY, Device 30, Digit 47, Numbers 1
+
+Var 1178, name aRamDoor_R, static, Link IOCARD_DISPLAY, Device 30, Digit 48, Numbers 1
+
+Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 108
+
+Var 2654, name sHYD_ELEC_R, static, Link IOCARD_SW, Device 30, Input 109
+
+Var 2653, name sHYD_ELEC_L, static, Link IOCARD_SW, Device 30, Input 110
+
+Var 2656, name sHYD_ENG_R, static, Link IOCARD_SW, Device 30, Input 111
+
+Var 2598, name PACK_L_SW, static, Value 1
+
+Var 0097, name sPACK_OFF_L, Link IOCARD_SW, Device 30, Input 112
+{
+  IF &sPACK_OFF_L = 1
+  {
+    &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
+  }
+  ELSE
+  {
+    &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
+  }
+}
+
+Var 0098, name sPACK_HI_L, Link IOCARD_SW, Device 30, Input 113
+{
+  IF &sPACK_HI_L = 1
+  {
+    &PACK_L_SW = 2    
+  }
+  ELSE
+  {
+    &PACK_L_SW = 1    
+  }
+}
+
+Var 2596, name ISO_VALVE_C_SW, static, Value 1
+
+Var 0099, name sISO_CLOSE, Link IOCARD_SW, Device 30, Input 136
+{
+  IF &sISO_CLOSE = 1
+  {
+    &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
+  }
+  ELSE
+  {
+    &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
+  }
+}
+
+Var 0100, name sISO_OPEN, Link IOCARD_SW, Device 30, Input 137
+{
+  IF &sISO_OPEN = 1
+  {
+    &ISO_VALVE_C_SW = 2    
+  }
+  ELSE
+  {
+    &ISO_VALVE_C_SW = 1    
+  }
+}
+
+Var 2599, name PACK_R_SW, static, Value 1
+
+Var 0101, name sPACK_OFF_R, Link IOCARD_SW, Device 30, Input 138
+{
+  IF &sPACK_OFF_R = 1
+  {
+    &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
+  }
+  ELSE
+  {
+    &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
+  }
+}
+
+Var 0102, name sPACK_HI_R, Link IOCARD_SW, Device 30, Input 139
+{
+  IF &sPACK_HI_R = 1
+  {
+    &PACK_R_SW = 2    
+  }
+  ELSE
+  {
+    &PACK_R_SW = 1    
+  }
+}
+
+Var 1187, name aPackTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 49, Numbers 1
+
+Var 1188, name aPackTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 50, Numbers 1
+
+Var 1189, name aWiBodyOheat0, static, Link IOCARD_DISPLAY, Device 30, Digit 51, Numbers 1
+
+Var 1190, name aWiBodyOheat1, static, Link IOCARD_DISPLAY, Device 30, Digit 52, Numbers 1
+
+Var 1191, name aBleedTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 53, Numbers 1
+
+Var 1192, name aBleedTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 54, Numbers 1
+
+Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 30, Output 98
+
+Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 30, Output 99
+
+Var 1714, name aALTN, static, Link IOCARD_OUT, Device 30, Output 100
+
+Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 30, Output 101
+
+Var 1196, name FltAltWindow, static
+{
+  CALL &SetFlightAlt
+}
+
+Var 1200, name LandAltWindow, static
+{
+  CALL &SetLandAlt
+}
+
+Var 2700, name PRESS_F_ALT_K, static
+
+Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 126, Aceleration 3, Type 2
+{
+  &PRESS_F_ALT_K = 0    
+  IF &rF_Alt < 0
+  {
+    &PRESS_F_ALT_K = 16384    
+  }
+  ELSE
+  {
+    &PRESS_F_ALT_K = 8192    
+  }
+}
+
+Var 2701, name PRESS_L_ALT_K, static
+
+Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
+{
+  &PRESS_L_ALT_K = 0    
+  IF &rL_Alt < 0
+  {
+    &PRESS_L_ALT_K = 16384    
+  }
+  ELSE
+  {
+    &PRESS_L_ALT_K = 8192    
+  }
+}
+
+Var 0105, name FA1, Link IOCARD_DISPLAY, Device 30, Digit 64, Numbers 1
+
+Var 0106, name FA2, Link IOCARD_DISPLAY, Device 30, Digit 65, Numbers 1
+
+Var 0107, name FA3, Link IOCARD_DISPLAY, Device 30, Digit 66, Numbers 1
+
+Var 0108, name FA4, Link IOCARD_DISPLAY, Device 30, Digit 67, Numbers 1
+
+Var 0109, name FA5, Link IOCARD_DISPLAY, Device 30, Digit 68, Numbers 1
+
+Var 0110, name SetFlightAlt, Link SUBRUTINE
+{
+  CALL &FltAltDis
+}
+
+Var 0111, name FltAltDis, Link SUBRUTINE     // Example 34600
+{
+  L0 = DIV &FltAltWindow ,100     // 346
+  &FA5 = 0    
+  IF L0 = 0
+  {
+    &FA1 = -999999    
+    &FA2 = -999999    
+    &FA3 = -999999    
+    &FA4 = -999999    
+  }
+  ELSE
+  {
+    &FA4 = 0    
+    IF L0 < 0     // for negative values
+    {
+      L0 = L0 * -1
+      &FA1 = -999998    
+    }
+    ELSE
+    {
+      IF L0 > 99     // values up from 10000 ft
+      {
+        &FA1 = DIV L0 ,100     // 346 / 100 = 3.46 --> 3
+      }
+      ELSE
+      {
+        &FA1 = -999999    
+      }
+    }
+    L1 = MOD L0 ,100     // 346 / 100 = 3.46 --> 46
+    IF L0 > 9     // values up from 1000 ft
+    {
+      &FA2 = DIV L1 ,10     // 46 / 10 = 4.6 --> 4
+    }
+    ELSE
+    {
+      &FA2 = -999999    
+    }
+    &FA3 = MOD L1 ,10     // 46 / 10 = 4.6 --> 6
+  }
+}
+
+Var 0112, name SetLandAlt, Link SUBRUTINE
+{
+  CALL &LandAltDis
+}
+
+Var 0113, name LandAltDis, Link SUBRUTINE     // Example 12750
+{
+  L0 = DIV &LandAltWindow ,10     // 1275
+  &LA5 = 0    
+  IF L0 = 0
+  {
+    &LA1 = -999999    
+    &LA2 = -999999    
+    &LA3 = -999999    
+    &LA4 = -999999    
+  }
+  ELSE
+  {
+    IF L0 < 0     // for negative values
+    {
+      L0 = L0 * -1
+      &LA1 = -999998         // "-" into first digit
+    }
+    ELSE
+    {
+      IF L0 > 999     // values up from 10000 ft
+      {
+        &LA1 = DIV L0 ,1000     // 1275 / 1000 = 1.275 --> 1
+      }
+      ELSE
+      {
+        &LA1 = -999999    
+      }
+    }
+    L1 = MOD L0 ,1000     // 1275 / 1000 = 1.275 --> 275
+    IF L0 > 99     // values up from 1000 ft
+    {
+      &LA2 = DIV L1 ,100     // 275 / 100 = 2.75 --> 2
+    }
+    ELSE
+    {
+      &LA2 = -999999    
+    }
+    L1 = MOD L1 ,100     // 275 / 100 = 2.75 --> 75
+    IF L0 > 9     // values up from 100 ft
+    {
+      &LA3 = DIV L1 ,10     // 75 / 10 = 7.5 --> 7
+    }
+    ELSE
+    {
+      &LA3 = -999999    
+    }
+    &LA4 = MOD L1 ,10     // 75 / 10 = 7.5 --> 5
+  }
+}
+
+Var 0114, name LA1, Link IOCARD_DISPLAY, Device 30, Digit 69, Numbers 1
+
+Var 0115, name LA2, Link IOCARD_DISPLAY, Device 30, Digit 70, Numbers 1
+
+Var 0116, name LA3, Link IOCARD_DISPLAY, Device 30, Digit 71, Numbers 1
+
+Var 0117, name LA4, Link IOCARD_DISPLAY, Device 30, Digit 72, Numbers 1
+
+Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 73, Numbers 1
+
+Var 2703, name PRESS_V_SW, static
+
+Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
+{
+  IF &sCLOSE_VALVE = 1
+  {
+    &PRESS_V_SW = 0    
+  }
+  ELSE
+  {
+    IF &sOPEN_VALVE = 0
+    {
+      &PRESS_V_SW = 1    
+    }
+  }
+}
+
+Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
+{
+  IF &sOPEN_VALVE = 1
+  {
+    &PRESS_V_SW = 2    
+  }
+  ELSE
+  {
+    IF &sCLOSE_VALVE = 0
+    {
+      &PRESS_V_SW = 1    
+    }
+  }
+}
+
+Var 2702, name PRESS_SEL, static
+
+Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 130
+{
+  IF &sC_MODE_AUTO = 1
+  {
+    &PRESS_SEL = 0    
+  }
+}
+
+Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
+{
+  IF &sC_MODE_ALTN = 1
+  {
+    &PRESS_SEL = 1    
+  }
+}
+
+Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
+{
+  IF &sC_MODE_MAN = 1
+  {
+    &PRESS_SEL = 2    
+  }
+}
+
+Var 2671, name APU_START_SW, static
+
+Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 30, Input 7
+{
+  IF &sAPU_OFF = 1
+  {
+    &APU_START_SW = 0    
+  }
+  ELSE
+  {
+    IF &sAPU_START = 0
+    {
+      &APU_START_SW = 1    
+    }
+  }
+}
+
+Var 0125, name sAPU_START, Link IOCARD_SW, Device 30, Input 8
+{
+  IF &sAPU_START = 1
+  {
+    &APU_START_SW = 2    
+  }
+  ELSE
+  {
+    IF &sAPU_OFF = 0
+    {
+      &APU_START_SW = 1    
+    }
+  }
+}
+
+Var 0126, name ENG1_Servo, Link USB_SERVOS, Device 37, Output 6, PosL 20, PosC 400, PosR 800
+
+Var 1220, name ENG1_ST_SW_POS, static
+{
+  IF &sENG1_S_GRD = 1
+  {
+    IF &ENG1_ST_SW_POS = 1
+    {
+      &ENG1_Servo = DELAY 80 ,50     // Auto off phase I
+      &ENG1_Servo = 950         // Auto off phase II
+    }
+  }
+  IF &sENG2_S_GRD = 1
+  {
+    IF &sENG1_S_OFF = 1
+    {
+      &ENG1_Servo = 80         // Auto off phase I
+      &ENG1_Servo = DELAY 950 ,50     // Auto off phase II
+    }
+  }
+}
+
+Var 2675, name ENGINE1_SW, static
+
+Var 0127, name sENG1_S_GRD, Link IOCARD_SW, Device 30, Input 9     // Eng Start 1 Grd ROT
+{
+  IF &sENG1_S_GRD = 1
+  {
+    &ENGINE1_SW = 0    
+  }
+}
+
+Var 0128, name sENG1_S_OFF, Link IOCARD_SW, Device 30, Input 10     // Eng Start 1 Off ROT
+{
+  IF &sENG1_S_OFF = 1
+  {
+    &ENGINE1_SW = 1    
+  }
+}
+
+Var 0129, name sENG1_S_CONT, Link IOCARD_SW, Device 30, Input 11     // Eng Start 1 Cont ROT
+{
+  IF &sENG1_S_CONT = 1
+  {
+    &ENGINE1_SW = 2    
+  }
+}
+
+Var 0130, name sENG1_S_FLT, Link IOCARD_SW, Device 30, Input 12     // Eng Start 1 Flt ROT
+{
+  IF &sENG1_S_FLT = 1
+  {
+    &ENGINE1_SW = 3    
+  }
+}
+
+Var 2673, name IGN_SEL, static
+
+Var 0131, name sENG_IGN_L, Link IOCARD_SW, Device 30, Input 25
+{
+  IF &sENG_IGN_L = 1
+  {
+    &IGN_SEL = 0    
+  }
+  ELSE
+  {
+    IF &sENG_IGN_R = 0
+    {
+      &IGN_SEL = 1    
+    }
+  }
+}
+
+Var 0132, name sENG_IGN_R, Link IOCARD_SW, Device 30, Input 24
+{
+  IF &sENG_IGN_R = 1
+  {
+    &IGN_SEL = 2    
+  }
+  ELSE
+  {
+    IF &sENG_IGN_L = 0
+    {
+      &IGN_SEL = 1    
+    }
+  }
+}
+
+Var 0133, name ENG2_Servo, Link USB_SERVOS, Device 38, Output 5, PosL 20, PosC 400, PosR 800
+
+Var 1221, name ENG2_ST_SW_POS, static
+{
+  IF &sENG2_S_GRD = 1
+  {
+    IF &ENG2_ST_SW_POS = 1
+    {
+      &ENG2_Servo = DELAY 80 ,50     // Auto off phase I
+      &ENG2_Servo = 950         // Auto off phase II
+    }
+  }
+  IF &sENG2_S_OFF = 1
+  {
+    IF &ENG2_ST_SW_POS = 1
+    {
+      &ENG2_Servo = 80         // Auto off phase I
+      &ENG2_Servo = DELAY 950 ,50     // Auto off phase II
+    }
+  }
+}
+
+Var 2681, name ENGINE2_SW, static
+
+Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 30, Input 13     // Eng Start 2 Grd ROT
+{
+  IF &sENG2_S_GRD = 1
+  {
+    &ENGINE2_SW = 0    
+  }
+}
+
+Var 0135, name sENG2_S_OFF, Link IOCARD_SW, Device 30, Input 14     // Eng Start 2 Off ROT
+{
+  IF &sENG2_S_OFF = 1
+  {
+    &ENGINE2_SW = 1    
+  }
+}
+
+Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 30, Input 15     // Eng Start 2 Cont ROT
+{
+  IF &ENG2_S_CONT = 1
+  {
+    &ENGINE2_SW = 2    
+  }
+}
+
+Var 0137, name ENG2_S_FLT, Link IOCARD_SW, Device 30, Input 16     // Eng Start 2 Flt ROT
+{
+  IF &ENG2_S_FLT = 1
+  {
+    &ENGINE2_SW = 3    
+  }
+}
+
+Var 2679, name LI_POS_ST, static
+
+Var 0138, name sPOS_LIGHT, Link IOCARD_SW, Device 30, Input 19     // Position S&S SW
+{
+  IF &sPOS_LIGHT = 1
+  {
+    &LI_POS_ST = 0    
+  }
+  ELSE
+  {
+    IF &sPOS_STEADY_LI = 0
+    {
+      &LI_POS_ST = 1    
+    }
+  }
+}
+
+Var 0139, name sPOS_STEADY_LI, Link IOCARD_SW, Device 30, Input 20     // Position Steady SW
+{
+  IF &sPOS_STEADY_LI = 1
+  {
+    &LI_POS_ST = 2    
+  }
+  ELSE
+  {
+    IF &sPOS_LIGHT = 0
+    {
+      &LI_POS_ST = 1    
+    }
+  }
+}
+
+Var 0140, name SERVO_FuelTemp, Link USB_SERVOS, Device 37, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
+
+Var 1056, name TXRX_FuelTemp, static, Link SUBRUTINE
+{
+  IF &EL_STATE = 15
+  {
+    L0 = 606         // sets needle to 0
+    L1 = &TXRX_FuelTemp * 6
+    L0 = L0 + L1
+    &SERVO_FuelTemp = L0    
+  }
+  ELSE
+  {
+    &SERVO_FuelTemp = 660    
+  }
+}
+
+Var 0141, name SERVO_APU, Link USB_SERVOS, Device 37, Output 2, PosL 192, PosC 404, PosR 1000, Type 1
+
+Var 1108, name TXRX_APU, static, Value 1
+{
+  L0 = 247         // sets EGT to 0
+  L1 = &TXRX_APU * 0.67     // scaling
+  L0 = L0 + L1
+  &SERVO_APU = L0         // sends value to servo
+}
+
+Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 4, PosL 192, PosC 511, PosR 1000, Type 1
+
+Var 1534, name TXRX_CabAlt, static
+{
+  L0 = 191    
+  L1 = &TXRX_CabAlt * 0.03
+  L0 = L0 + L1
+  &SERVO_CabAlt = L0    
+}
+
+Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 3, PosL 192, PosC 511, PosR 1023, Type 1
+
+Var 1535, name TXRX_PresDiff, static, Value 1
+{
+  L0 = 189    
+  L1 = &TXRX_PresDiff * 0.9
+  L0 = L0 + L1
+  &SERVO_PresDiff = L0    
+}
+
+Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 5, PosL 192, PosC 511, PosR 1023, Type 1
+
+Var 1536, name TXRX_CabVSI, static
+{
+  L0 = &TXRX_CabVSI    
+  L0 = L0 * 0.27
+  L0 = L0 + 560
+  &SERVO_CabVSI = L0    
+}
+
+Var 0145, name SERVO_CabTemp, Link USB_SERVOS, Device 38, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
+
+Var 1538, name TXRX_CabTemp, static, Link SUBRUTINE
+{
+  IF &EL_STATE = 15
+  {
+    L0 = 278         // set needle to 0
+    L1 = &TXRX_CabTemp * 7     // scaling
+    L0 = L0 + L1
+    &SERVO_CabTemp = L0    
+  }
+  ELSE
+  {
+    &SERVO_CabTemp = 288    
+  }
+}
+
+Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 3, PosL 192, PosC 537, PosR 1023, Type 1
+
+Var 1532, name TXRX_PressL, static
+{
+  IF &EL_STATE <> 0     // BUSES CONNECTED
+  {
+    L0 = 263    
+    L1 = &TXRX_PressL * 9
+    L0 = L0 + L1
+    &SERVO_PressL = DELAY L0 ,200
+  }
+  ELSE
+  {
+    &SERVO_PressL = 263    
+  }
+}
+
+Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
+
+Var 1533, name TXRX_PressR, static
+{
+  IF &EL_STATE <> 0     // BUSES CONNECTED
+  {
+    L0 = 263    
+    L1 = &TXRX_PressR * 9
+    L0 = L0 + L1
+    &SERVO_PressR = DELAY L0 ,200
+  }
+  ELSE
+  {
+    &SERVO_PressR = 263    
+  }
+}
+
+Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 38, Output 4, PosL 192, PosC 511, PosR 1023, Type 1
+
+Var 1537, name TXRX_OF_valve, static
+{
+  L0 = 381    
+  L1 = &TXRX_OF_valve / 0.26
+  L0 = L0 + L1
+  &SERVO_OUTFLOW = L0    
+}
+
+Var 1700, name aD_AFT_L, static, Link IOCARD_OUT, Device 30, Output 109
+
+Var 1701, name aD_AFT_R, static, Link IOCARD_OUT, Device 30, Output 95
+
+Var 1702, name aD_STAIR, static, Link IOCARD_OUT, Device 30, Output 19
+
+Var 1703, name aD_CARGO_AFT, static, Link IOCARD_OUT, Device 30, Output 97
+
+Var 1704, name aD_CARGO_FWD, static, Link IOCARD_OUT, Device 30, Output 96
+
+Var 1705, name aD_EQUIP, static, Link IOCARD_OUT, Device 30, Output 19
+
+Var 1706, name aD_FWD_L, static, Link IOCARD_OUT, Device 30, Output 106
+
+Var 1707, name aD_FWD_R, static, Link IOCARD_OUT, Device 30, Output 93
+
+Var 1708, name aD_OW_EXIT, static, Link IOCARD_OUT, Device 30, Output 107
+
+Var 1709, name aD_OW_EXIT_R, static, Link IOCARD_OUT, Device 30, Output 94
+
+Var 1710, name aD_OWL_L_2, static, Link IOCARD_OUT, Device 30, Output 108
+
+Var 1711, name aD_OW_R_2, static, Link IOCARD_OUT, Device 30, Output 110
+
+Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 3, Numbers 1     // DISPLAY AC AMP 1s
+
+Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 4, Numbers 1     // DISPLAY AC AMP 10s
+
+Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 5, Numbers 1     // DISPLAY DC VOLTS 1s
+
+Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 6, Numbers 1     // DISPLAY DC VOLTS 10s
+
+Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 0, Numbers 1     // DISPLAY AC VOLT 1s
+
+Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 1, Numbers 1     // DISPLAY AC VOLT 10s
+
+Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1     // DISPLAY AC VOLT 100s
+
+Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 10, Numbers 1     // DISPLAY DC AMP 1s
+
+Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 11, Numbers 1     // DISPLAY DC AMP 10s
+
+Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 30, Digit 7, Numbers 1     // DISPLAY CPS FREQ 1s
+
+Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 30, Digit 8, Numbers 1     // DISPLAY CPS FREQ 10s
+
+Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 30, Digit 9, Numbers 1     // DISPLAY CPS FREQ 100s
+
+Var 1540, name EDCA1, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &DC_AMP1 = &EDCA1    
+  }
+}
+
+Var 1473, name EDCA0, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &DC_AMP0 = &EDCA0    
+  }
+}
+
+Var 1485, name EDCV1, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &DC_VOLT1 = &EDCV1    
+  }
+}
+
+Var 1486, name EDCV0, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &DC_VOLT0 = &EDCV0    
+  }
+}
+
+Var 1489, name EACA1, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &AC_AMP1 = &EACA1    
+  }
+}
+
+Var 1500, name EACA0, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &AC_AMP0 = &EACA0    
+  }
+}
+
+Var 1502, name EACV2, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &AC_VOLT2 = &EACV2    
+  }
+}
+
+Var 1503, name EACV1, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &AC_VOLT1 = &EACV1    
+  }
+}
+
+Var 1504, name EACV0, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &AC_VOLT0 = &EACV0    
+  }
+}
+
+Var 1479, name ECPS2, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &CPS_FREQ2 = &ECPS2    
+  }
+}
+
+Var 1480, name ECPS1, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &CPS_FREQ1 = &ECPS1    
+  }
+}
+
+Var 1481, name ECPS0, static, Link SUBRUTINE
+{
+  IF &EL_STATE <> 8
+  {
+    &CPS_FREQ0 = &ECPS0    
+  }
+}
+
+Var 0161, name ELEC_PAN, Link SUBRUTINE
+{
+  CALL &EACA0
+  CALL &EACA1
+  CALL &EDCV0
+  CALL &EDCV1
+  CALL &EACV0
+  CALL &EACV1
+  CALL &EACV2
+  CALL &EDCA0
+  CALL &EDCA1
+  CALL &ECPS0
+  CALL &ECPS1
+  CALL &ECPS2
+}
+
+Var 0162, name Clear_ELPANEL, Link SUBRUTINE
+{
+  &AC_AMP0 = -999999    
+  &AC_AMP1 = -999999    
+  &DC_VOLT0 = -999999    
+  &DC_VOLT1 = -999999    
+  &AC_VOLT0 = -999999    
+  &AC_VOLT1 = -999999    
+  &AC_VOLT2 = -999999    
+  &DC_AMP0 = -999999    
+  &DC_AMP1 = -999999    
+  &CPS_FREQ0 = -999999    
+  &CPS_FREQ1 = -999999    
+  &CPS_FREQ2 = -999999    
+}
+
+Var 0163, name BlankFA, Link SUBRUTINE
+{
+  &FA1 = -999999    
+  &FA2 = -999999    
+  &FA3 = -999999    
+  &FA4 = -999999    
+  &FA5 = -999999    
+}
+
+Var 0164, name BlankLA, Link SUBRUTINE
+{
+  &LA1 = -999999    
+  &LA2 = -999999    
+  &LA3 = -999999    
+  &LA4 = -999999    
+  &LA5 = -999999    
+}
+
+Var 0165, name LineFA, Link SUBRUTINE
+{
+  &FA1 = -999998    
+  &FA2 = -999998    
+  &FA3 = -999998    
+  &FA4 = -999998    
+  &FA5 = -999998    
+}
+
+Var 0166, name LineLA, Link SUBRUTINE
+{
+  &LA1 = -999998    
+  &LA2 = -999998    
+  &LA3 = -999998    
+  &LA4 = -999998    
+  &LA5 = -999998    
+}
+
+Var 2480, name IRS_SELECTOR_L, static
+
+Var 2755, name IRS_SELECTOR_R, static
+
+Var 0167, name sIRS_OFF_L, Link IOCARD_SW, Device 33, Input 72
+{
+  IF &sIRS_OFF_L = 1
+  {
+    &IRS_SELECTOR_L = 0    
+  }
+}
+
+Var 0168, name sIRS_ALIGN_L, Link IOCARD_SW, Device 33, Input 73
+{
+  IF &sIRS_ALIGN_L = 1
+  {
+    &IRS_SELECTOR_L = 1    
+  }
+}
+
+Var 0169, name IRS_NAV_L, Link IOCARD_SW, Device 33, Input 74
+{
+  IF &IRS_NAV_L = 1
+  {
+    &IRS_SELECTOR_L = 2    
+  }
+}
+
+Var 0170, name IRS_ATT_L, Link IOCARD_SW, Device 33, Input 75
+{
+  IF &IRS_ATT_L = 1
+  {
+    &IRS_SELECTOR_L = 3    
+  }
+}
+
+Var 0171, name sIRS_OFF_R, Link IOCARD_SW, Device 33, Input 76
+{
+  IF &sIRS_OFF_R = 1
+  {
+    &IRS_SELECTOR_R = 0    
+  }
+}
+
+Var 0172, name sIRS_ALIGN_R, Link IOCARD_SW, Device 33, Input 77
+{
+  IF &sIRS_ALIGN_R = 1
+  {
+    &IRS_SELECTOR_R = 1    
+  }
+}
+
+Var 0173, name sIRS_NAV_R, Link IOCARD_SW, Device 33, Input 78
+{
+  IF &sIRS_NAV_R = 1
+  {
+    &IRS_SELECTOR_R = 2    
+  }
+}
+
+Var 0174, name sIRS_ATT_R, Link IOCARD_SW, Device 33, Input 79
+{
+  IF &sIRS_ATT_R = 1
+  {
+    &IRS_SELECTOR_R = 3    
+  }
+}
+
+Var 1002, name aIRS_GPS, static, Link IOCARD_OUT, Device 33, Output 95     // IRS GPS INDICATOR
+
+Var 1003, name aIRS_ALIGN_L, static, Link IOCARD_OUT, Device 33, Output 96     // IRS ALIGN L INDICATOR
+
+Var 1004, name aIRS_ALIGN_R, static, Link IOCARD_OUT, Device 33, Output 100     // IRS ALIGN R INDICATOR
+
+Var 1005, name aIRS_ON_DC_L, static, Link IOCARD_OUT, Device 33, Output 98     // IRS ON DC L INDICATOR
+
+Var 1006, name aIRS_ON_DCR, static, Link IOCARD_OUT, Device 33, Output 102     // IRS ON DC R INDICATOR
+
+Var 1007, name aIRS_FAULT_L, static, Link IOCARD_OUT, Device 33, Output 97     // IRS FAULT L INDICATOR
+
+Var 1008, name aIRS_FAULTR, static, Link IOCARD_OUT, Device 33, Output 101     // IRS FAULT R INDICATOR
+
+Var 1009, name aIRS_DC_FAIL_L, static, Link IOCARD_OUT, Device 33, Output 99     // IRS DC FAIL L INDICATOR
+
+Var 1010, name aIRS_DC_FAIL_R, static, Link IOCARD_OUT, Device 33, Output 103     // IRS DC FAIL R INDICATOR
+
+Var 1013, name aIRS_PSEU, static, Link IOCARD_OUT, Device 33, Output 94     // IRS PSEU
+
+Var 2498, name IrsSysSwitch, static, Link IOCARD_SW, Device 33, Input 53     // IRS System Selector
+
+Var 2482, name IrsDsplSel, static     // IRS Display Selector
+
+Var 0175, name sIrsRotTest, Link IOCARD_SW, Device 33, Input 48     // IRS Display ROTARY SWITCH TEST
+{
+  IF &sIrsRotTest = 1
+  {
+    &IrsDsplSel = 0    
+  }
+}
+
+Var 0176, name sIrsRotTKGS, Link IOCARD_SW, Device 33, Input 49     // IRS Display ROTARY SWITCH TKGS
+{
+  IF &sIrsRotTKGS = 1
+  {
+    &IrsDsplSel = 1    
+  }
+}
+
+Var 0177, name sIrsRotPPOS, Link IOCARD_SW, Device 33, Input 50     // IRS Display ROTARY SWITCH PPOS
+{
+  IF &sIrsRotPPOS = 1
+  {
+    &IrsDsplSel = 2    
+  }
+}
+
+Var 0178, name sIrsRotWind, Link IOCARD_SW, Device 33, Input 51     // IRS Display ROTARY SWITCH WIND
+{
+  IF &sIrsRotWind = 1
+  {
+    &IrsDsplSel = 3    
+  }
+}
+
+Var 0179, name sIrsRotHDGSTS, Link IOCARD_SW, Device 33, Input 52     // IRS Display ROTARY SWITCH HDGSTS
+{
+  IF &sIrsRotHDGSTS = 1
+  {
+    &IrsDsplSel = 4    
+  }
+}
+
+Var 2485, name bIRS_KEY1, static, Link IOCARD_SW, Device 33, Input 36
+
+Var 2486, name bIRS_KEY2, static, Link IOCARD_SW, Device 33, Input 44
+
+Var 2487, name bIRS_KEY3, static, Link IOCARD_SW, Device 33, Input 42
+
+Var 2488, name bIRS_KEY4, static, Link IOCARD_SW, Device 33, Input 38
+
+Var 2489, name bIRS_KEY5, static, Link IOCARD_SW, Device 33, Input 40
+
+Var 2490, name bIRS_KEY6, static, Link IOCARD_SW, Device 33, Input 46
+
+Var 2491, name bIRS_KEY7, static, Link IOCARD_SW, Device 33, Input 43
+
+Var 2492, name bIRS_KEY8, static, Link IOCARD_SW, Device 33, Input 37
+
+Var 2493, name bIRS_KEY9, static, Link IOCARD_SW, Device 33, Input 45
+
+Var 2495, name bIRS_KEYENT, static, Link IOCARD_SW, Device 33, Input 47
+
+Var 2484, name bIRS_KEY0, static, Link IOCARD_SW, Device 33, Input 39
+
+Var 2494, name bIRS_KEYCLR, static, Link IOCARD_SW, Device 33, Input 41
+
+Var 1508, name IrsDisp01, static, Link IOCARD_DISPLAY, Device 33, Digit 14, Numbers 1     // first IRS digit
+
+Var 1509, name IrsDisp02, static, Link IOCARD_DISPLAY, Device 33, Digit 13, Numbers 1
+
+Var 1510, name IrsDisp03, static, Link IOCARD_DISPLAY, Device 33, Digit 12, Numbers 1
+
+Var 1511, name IrsDisp04, static, Link IOCARD_DISPLAY, Device 33, Digit 11, Numbers 1
+
+Var 1512, name IrsDisp05, static, Link IOCARD_DISPLAY, Device 33, Digit 10, Numbers 1
+
+Var 1513, name IrsDisp06, static, Link IOCARD_DISPLAY, Device 33, Digit 9, Numbers 1
+
+Var 1515, name IrsDisp07, static, Link IOCARD_DISPLAY, Device 33, Digit 7, Numbers 1
+
+Var 1516, name IrsDisp09, static, Link IOCARD_DISPLAY, Device 33, Digit 6, Numbers 1
+
+Var 1517, name IrsDisp10, static, Link IOCARD_DISPLAY, Device 33, Digit 5, Numbers 1
+
+Var 1518, name IrsDisp11, static, Link IOCARD_DISPLAY, Device 33, Digit 4, Numbers 1
+
+Var 1519, name IrsDisp12, static, Link IOCARD_DISPLAY, Device 33, Digit 3, Numbers 1
+
+Var 1520, name IrsDisp13, static, Link IOCARD_DISPLAY, Device 33, Digit 2, Numbers 1
+
+Var 1521, name IrsDisp14, static, Link IOCARD_DISPLAY, Device 33, Digit 1, Numbers 1     // last IRS digit
+
+Var 0180, name IrsDot1, Link IOCARD_OUT, Device 33, Output 43     // IRS Display Dot 1 from right
+
+Var 0181, name IrsDot2, Link IOCARD_OUT, Device 33, Output 44     // IRS Display Dot 2
+
+Var 0182, name IrsDot3, Link IOCARD_OUT, Device 33, Output 45     // IRS Display Dot 3
+
+Var 0183, name IrsDot4, Link IOCARD_OUT, Device 33, Output 46     // IRS Display Dot 4
+
+Var 0184, name IrsDot5, Link IOCARD_OUT, Device 33, Output 47     // IRS Display Dot 5
+
+Var 0185, name IrsDot6, Link IOCARD_OUT, Device 33, Output 48     // IRS Display Dot 6
+
+Var 1531, name IrsDot, static     // switches dots in IRS display
+{
+  &IrsDot1 = &IrsDot    
+  &IrsDot2 = &IrsDot    
+  &IrsDot3 = &IrsDot    
+  &IrsDot4 = &IrsDot    
+  &IrsDot5 = &IrsDot    
+  &IrsDot6 = &IrsDot    
+}
+
+Var 1452, name micsel_3, static, Value 2
+{
+  IF &AUDI3_POWER_ON = 1
+  {
+    IF &micsel_3 = 0
+    {
+      &aAU3VH1MI = 1    
+      &aAU3VH2MI = 0    
+    }
+    IF &micsel_3 = 1
+    {
+      &aAU3VH2MI = 1    
+      &aAU3VH1MI = 0    
+    }
+  }
+  ELSE
+  {
+    &aAU3VH2MI = 0    
+    &aAU3VH1MI = 0    
+  }
+}
+
+Var 1525, name rec_3, static
+{
+  IF &AUDI3_POWER_ON = 1
+  {
+    &aAU3VH1VO = TESTBIT &rec_3 ,0
+    &aAU3VH2VO = TESTBIT &rec_3 ,1
+    &aAU3NA1VO = TESTBIT &rec_3 ,8
+    &aAU3NA2VO = TESTBIT &rec_3 ,9
+    &aAU3AD1VO = TESTBIT &rec_3 ,10
+    &aAU3AD2VO = TESTBIT &rec_3 ,11
+    &aAU3MKRVO = TESTBIT &rec_3 ,12
+  }
+  ELSE
+  {
+    &rec_3 = 0    
+  }
+}
+
+Var 0186, name aAU3VH1MI, Link IOCARD_OUT, Device 33, Output 75     // AUDIO3 VHF1 MIC
+
+Var 0187, name aAU3VH2MI, Link IOCARD_OUT, Device 33, Output 76     // AUDIO3 VHF2 MIC
+
+Var 0188, name aAU3VH1VO, Link IOCARD_OUT, Device 33, Output 77     // AUDIO3 VHF1 VOL
+
+Var 0189, name aAU3VH2VO, Link IOCARD_OUT, Device 33, Output 78     // AUDIO3 VHF2 VOL
+
+Var 0190, name aAU3NA1VO, Link IOCARD_OUT, Device 33, Output 79     // AUDIO3 NAV1 VOL
+
+Var 0191, name aAU3NA2VO, Link IOCARD_OUT, Device 33, Output 80     // AUDIO3 NAV2 VOL
+
+Var 0192, name aAU3AD1VO, Link IOCARD_OUT, Device 33, Output 81     // AUDIO3 ADF1 VOL
+
+Var 0193, name aAU3AD2VO, Link IOCARD_OUT, Device 33, Output 82     // AUDIO3 ADF2 VOL
+
+Var 0194, name aAU3MKRVO, Link IOCARD_OUT, Device 33, Output 83     // AUDIO3 MARKER VOL
+
+Var 2078, name AU3VH1MI, static
+
+Var 2079, name AU3VH2MI, static
+
+Var 2091, name bAU3VH1VO, static, Link IOCARD_SW, Device 33, Input 56     // AUDIO3 VHF1 VOL
+
+Var 2092, name bAU3VH2VO, static, Link IOCARD_SW, Device 33, Input 57     // AUDIO3 VHF2 VOL
+
+Var 2099, name bAU3NA1VO, static, Link IOCARD_SW, Device 33, Input 58     // AUDIO3 NAV1 VOL
+
+Var 2100, name bAU3NA2VO, static, Link IOCARD_SW, Device 33, Input 59     // AUDIO3 NAV2 VOL
+
+Var 2096, name bAU3AD1VO, static, Link IOCARD_SW, Device 33, Input 60     // AUDIO3 ADF1 VOL
+
+Var 2097, name bAU3AD2VO, static, Link IOCARD_SW, Device 33, Input 61     // AUDIO3 ADF2 VOL
+
+Var 2098, name bAU3MKRVO, static, Link IOCARD_SW, Device 33, Input 62     // AUDIO3 MARKER VOL
+
+Var 2070, name sAU3ALT_NORM, static, Link IOCARD_SW, Device 33, Input 67     // AUDIO3 ALT-NORM
+
+Var 2094, name AU3RTIC, static
+
+Var 2067, name AU3FILT, static
+
+Var 0195, name bAU3VH1MI, Link IOCARD_SW, Device 33, Input 54     // AUDIO3 VHF1 MIC
+{
+  IF &bAU3VH1MI = 1
+  {
+    &AU3VH1MI = -1    
+  }
+  ELSE
+  {
+    &AU3VH1MI = 0    
+  }
+}
+
+Var 0196, name bAU3VH2MI, Link IOCARD_SW, Device 33, Input 55     // AUDIO3 VHF2 MIC
+{
+  IF &bAU3VH2MI = 1
+  {
+    &AU3VH2MI = -1    
+  }
+  ELSE
+  {
+    &AU3VH2MI = 0    
+  }
+}
+
+Var 0197, name sAU3RT, Link IOCARD_SW, Device 33, Input 65     // AUDIO3 R-T
+{
+  IF &sAU3RT = 1
+  {
+    &AU3RTIC = 0    
+  }
+  ELSE
+  {
+    IF &sAU3RT = 0
+    {
+      &AU3RTIC = 1    
+    }
+  }
+}
+
+Var 0198, name sAU3IC, Link IOCARD_SW, Device 33, Input 66     // AUDIO3 I-C
+{
+  IF &sAU3IC = 1
+  {
+    &AU3RTIC = 2    
+  }
+  ELSE
+  {
+    IF &sAU3IC = 0
+    {
+      &AU3RTIC = 1    
+    }
+  }
+}
+
+Var 0199, name sAU3FILT_V, Link IOCARD_SW, Device 33, Input 64     // AUDIO3 FILTER V ROTARY
+{
+  IF &sAU3FILT_V = 1
+  {
+    &AU3FILT = 0    
+  }
+  ELSE
+  {
+    &AU3FILT = 1    
+  }
+}
+
+Var 0200, name sAU3FILT_R, Link IOCARD_SW, Device 33, Input 63     // AUDIO3 FILTER R ROTARY
+{
+  IF &sAU3FILT_R = 1
+  {
+    &AU3FILT = 2    
+  }
+  ELSE
+  {
+    &AU3FILT = 1    
+  }
+}
+
+Var 2610, name EngEccGuardL, static
+
+Var 2611, name EngEccSwitchL, static     // **** value 1
+
+Var 0201, name sEngEccContrL, Link IOCARD_SW, Device 33, Input 69
+{
+  IF &sEngEccContrL = 1
+  {
+    &EngEccGuardL = 1    
+    &EngEccSwitchL = CHANGEBITN 0 ,&EngEccSwitchL
+  }
+  ELSE
+  {
+    &EngEccGuardL = 0    
+  }
+}
+
+Var 2612, name EngEccGuardR, static
+
+Var 2613, name EngEccSwitchR, static     // **** value 1
+
+Var 0202, name sEngEccContrR, Link IOCARD_SW, Device 33, Input 70
+{
+  IF &sEngEccContrR = 1
+  {
+    &EngEccGuardR = 1    
+    &EngEccSwitchR = CHANGEBITN 0 ,&EngEccSwitchR
+  }
+  ELSE
+  {
+    &EngEccGuardR = 0    
+  }
+}
+
+Var 2710, name bWarnTestMach1, static, Link IOCARD_SW, Device 33, Input 87
+
+Var 2711, name bWarnTestMach2, static, Link IOCARD_SW, Device 33, Input 88
+
+Var 2712, name bWarnStallTst1, static, Link IOCARD_SW, Device 33, Input 90
+
+Var 2713, name bWarnStallTst2, static, Link IOCARD_SW, Device 33, Input 91
+
+Var 2643, name FLTREC_G, static
+
+Var 2644, name FLTREC_SW, static
+
+Var 0203, name sFltRecContr, Link IOCARD_SW, Device 33, Input 84     // Flight recorder switch
+{
+  IF &sFltRecContr = 1
+  {
+    &FLTREC_G = 1    
+    &FLTREC_SW = 0    
+  }
+  ELSE
+  {
+    &FLTREC_SW = 1    
+    &FLTREC_G = 0    
+  }
+}
+
+Var 2693, name OxyPassGrd, static
+
+Var 2694, name OxyPassSw, static
+
+Var 0204, name sOxyPassContr, Link IOCARD_SW, Device 33, Input 83     // Passenger Oxy switch
+{
+  IF &sOxyPassContr = 1
+  {
+    &OxyPassGrd = 1    
+    &OxyPassSw = 1    
+  }
+  ELSE
+  {
+    &OxyPassSw = 0    
+    &OxyPassGrd = 0    
+  }
+}
+
+Var 2607, name DOME_WHITE_SW, static, Value 0
+
+Var 0205, name sDW_DIM, Link IOCARD_SW, Device 33, Input 93
+{
+  IF &sDW_DIM = 1
+  {
+    &DOME_WHITE_SW = 0    
+  }
+  ELSE
+  {
+    IF &sDW_BRIGHT = 0
+    {
+      &DOME_WHITE_SW = 1    
+    }
+  }
+}
+
+Var 2707, name Service_Phone, static, Link IOCARD_SW, Device 33, Input 86
+
+Var 0207, name sDW_BRIGHT, Link IOCARD_SW, Device 33, Input 94
+{
+  IF &sDW_BRIGHT = 1
+  {
+    &DOME_WHITE_SW = 2    
+  }
+  ELSE
+  {
+    IF &sDW_DIM = 0
+    {
+      &DOME_WHITE_SW = 1    
+    }
+  }
+}
+
+Var 1016, name EngOnL, static, Link IOCARD_OUT, Device 33, Output 85
+
+Var 1017, name EngOnR, static, Link IOCARD_OUT, Device 33, Output 87
+
+Var 1018, name aENG_RevL, static, Link IOCARD_OUT, Device 33, Output 104
+
+Var 1019, name aENG_RevR, static, Link IOCARD_OUT, Device 33, Output 105
+
+Var 1020, name aENG_EngCtrL, static, Link IOCARD_OUT, Device 33, Output 106
+
+Var 1021, name aENG_EngCtrR, static, Link IOCARD_OUT, Device 33, Output 107
+
+Var 1022, name aENG_ALTN_L, static, Link IOCARD_OUT, Device 33, Output 84
+
+Var 1023, name aENG_ALTN_R, static, Link IOCARD_OUT, Device 33, Output 86
+
+Var 1026, name aOxyPassOn, static, Link IOCARD_OUT, Device 33, Output 108
+
+Var 1027, name aGearOvhLeft, static, Link IOCARD_OUT, Device 33, Output 109
+
+Var 1028, name aGearOvhNose, static, Link IOCARD_OUT, Device 33, Output 111
+
+Var 1029, name aGearOvhRight, static, Link IOCARD_OUT, Device 33, Output 92
+
+Var 1031, name aFltRecOff, static, Link IOCARD_OUT, Device 33, Output 112
+
+Var 0208, name LE1_transit, Link IOCARD_OUT, Device 33, Output 11
+
+Var 0209, name LE1_ext, Link IOCARD_OUT, Device 33, Output 12
+
+Var 0210, name LE1_full_ext, Link IOCARD_OUT, Device 33, Output 13
+
+Var 0211, name LE2_transit, Link IOCARD_OUT, Device 33, Output 14
+
+Var 0212, name LE2_ext, Link IOCARD_OUT, Device 33, Output 15
+
+Var 0213, name LE2_full_ext, Link IOCARD_OUT, Device 33, Output 16
+
+Var 0214, name LE3_transit, Link IOCARD_OUT, Device 33, Output 17
+
+Var 0215, name LE3_ext, Link IOCARD_OUT, Device 33, Output 18
+
+Var 0216, name LE3_full_ext, Link IOCARD_OUT, Device 33, Output 19
+
+Var 0217, name LE4_transit, Link IOCARD_OUT, Device 33, Output 20
+
+Var 0218, name LE4_ext, Link IOCARD_OUT, Device 33, Output 21
+
+Var 0219, name LE4_full_ext, Link IOCARD_OUT, Device 33, Output 22
+
+Var 0220, name FL1_transit, Link IOCARD_OUT, Device 33, Output 23
+
+Var 0221, name FL1_ext, Link IOCARD_OUT, Device 33, Output 24
+
+Var 0222, name FL2_transit, Link IOCARD_OUT, Device 33, Output 25
+
+Var 0223, name FL2_ext, Link IOCARD_OUT, Device 33, Output 26
+
+Var 0224, name FL3_transit, Link IOCARD_OUT, Device 33, Output 27
+
+Var 0225, name Fl3_ext, Link IOCARD_OUT, Device 33, Output 28
+
+Var 0226, name FL4_transit, Link IOCARD_OUT, Device 33, Output 29
+
+Var 0227, name FL4_ext, Link IOCARD_OUT, Device 33, Output 30
+
+Var 0228, name LE5_transit, Link IOCARD_OUT, Device 33, Output 31
+
+Var 0229, name LE5_ext, Link IOCARD_OUT, Device 33, Output 32
+
+Var 0230, name LE5_full_ext, Link IOCARD_OUT, Device 33, Output 33
+
+Var 0231, name LE6_transit, Link IOCARD_OUT, Device 33, Output 34
+
+Var 0232, name LE6_ext, Link IOCARD_OUT, Device 33, Output 35
+
+Var 0233, name LE6_full_ext, Link IOCARD_OUT, Device 33, Output 36
+
+Var 0234, name LE7_transit, Link IOCARD_OUT, Device 33, Output 37
+
+Var 0235, name LE7_ext, Link IOCARD_OUT, Device 33, Output 38
+
+Var 0236, name LE7_full_ext, Link IOCARD_OUT, Device 33, Output 39
+
+Var 0237, name LE8_transit, Link IOCARD_OUT, Device 33, Output 40
+
+Var 0238, name LE8_ext, Link IOCARD_OUT, Device 33, Output 41
+
+Var 0239, name LE8_full_ext, Link IOCARD_OUT, Device 33, Output 42
+
+Var 0418, name FlapPosL, static     // Flaps needle left 0 to 40000
+{
+  CALL &FlapsDisplayL
+}
+
+Var 0240, name FlapsDisplayL, Link SUBRUTINE
+{
+  C0 = &AUDI3_POWER_ON = 0
+  C1 = &FlapPosL < 10
+  IF C0 OR C1
+  {
+    CALL &AllOffL
+  }
+  ELSE
+  {
+    IF &FlapPosL < 990
+    {
+      CALL &Trans1L
+    }
+    ELSE
+    {
+      IF &FlapPosL < 5010
+      {
+        CALL &Ext1L
+      }
+      ELSE
+      {
+        IF &FlapPosL < 9990
+        {
+          CALL &Trans2L
+        }
+        ELSE
+        {
+          CALL &Ext2L
+        }
+      }
+    }
+  }
+}
+
+Var 0428, name FlapPosR, static     // Flaps needle right 0 to 40000
+{
+  CALL &FlapsDisplayR
+}
+
+Var 0241, name FlapsDisplayR, Link SUBRUTINE
+{
+  C0 = &OVH_AFT_POW_ON = 0
+  C1 = &FlapPosR < 10
+  IF C0 OR C1
+  {
+    CALL &AllOffR
+  }
+  ELSE
+  {
+    IF &FlapPosR < 990
+    {
+      CALL &Trans1R
+    }
+    ELSE
+    {
+      IF &FlapPosR < 5010
+      {
+        CALL &Ext1R
+      }
+      ELSE
+      {
+        IF &FlapPosR < 9990
+        {
+          CALL &Trans2R
+        }
+        ELSE
+        {
+          CALL &Ext2R
+        }
+      }
+    }
+  }
+}
+
+Var 0242, name AllOffL, Link SUBRUTINE
+{
+  &LE1_transit = 0    
+  &LE1_ext = 0    
+  &LE1_full_ext = 0    
+  &LE2_transit = 0    
+  &LE2_ext = 0    
+  &LE2_full_ext = 0    
+  &LE3_transit = 0    
+  &LE3_ext = 0    
+  &LE3_full_ext = 0    
+  &LE4_transit = 0    
+  &LE4_ext = 0    
+  &LE4_full_ext = 0    
+  &FL1_transit = 0    
+  &FL1_ext = 0    
+  &FL2_transit = 0    
+  &FL2_ext = 0    
+}
+
+Var 0243, name AllOffR, Link SUBRUTINE
+{
+  &FL3_transit = 0    
+  &Fl3_ext = 0    
+  &FL4_transit = 0    
+  &FL4_ext = 0    
+  &LE5_transit = 0    
+  &LE5_ext = 0    
+  &LE5_full_ext = 0    
+  &LE6_transit = 0    
+  &LE6_ext = 0    
+  &LE6_full_ext = 0    
+  &LE7_transit = 0    
+  &LE7_ext = 0    
+  &LE7_full_ext = 0    
+  &LE8_transit = 0    
+  &LE8_ext = 0    
+  &LE8_full_ext = 0    
+}
+
+Var 0244, name Trans1L, Link SUBRUTINE
+{
+  &LE1_ext = 0    
+  &LE2_ext = 0    
+  &LE3_ext = 0    
+  &LE4_ext = 0    
+  &LE1_transit = 1    
+  &LE2_transit = 1    
+  &LE3_transit = 1    
+  &LE4_transit = 1    
+  &FL1_ext = 0    
+  &FL2_ext = 0    
+  &FL1_transit = 1    
+  &FL2_transit = 1    
+}
+
+Var 0245, name Trans1R, Link SUBRUTINE
+{
+  &LE5_ext = 0    
+  &LE6_ext = 0    
+  &LE7_ext = 0    
+  &LE8_ext = 0    
+  &LE5_transit = 1    
+  &LE6_transit = 1    
+  &LE7_transit = 1    
+  &LE8_transit = 1    
+  &Fl3_ext = 0    
+  &FL4_ext = 0    
+  &FL3_transit = 1    
+  &FL4_transit = 1    
+}
+
+Var 0246, name Ext1L, Link SUBRUTINE
+{
+  &LE1_transit = 0    
+  &LE2_transit = 0    
+  &LE3_transit = 0    
+  &LE4_transit = 0    
+  &LE1_ext = 1    
+  &LE2_ext = 1    
+  &LE3_ext = 1    
+  &LE4_ext = 1    
+  &FL1_transit = 0    
+  &FL2_transit = 0    
+  &FL1_ext = 1    
+  &FL2_ext = 1    
+}
+
+Var 0247, name Ext1R, Link SUBRUTINE
+{
+  &LE5_transit = 0    
+  &LE6_transit = 0    
+  &LE7_transit = 0    
+  &LE8_transit = 0    
+  &LE5_ext = 1    
+  &LE6_ext = 1    
+  &LE7_ext = 1    
+  &LE8_ext = 1    
+  &FL3_transit = 0    
+  &FL4_transit = 0    
+  &Fl3_ext = 1    
+  &FL4_ext = 1    
+}
+
+Var 0248, name Trans2L, Link SUBRUTINE
+{
+  &LE1_full_ext = 0    
+  &LE2_full_ext = 0    
+  &LE3_full_ext = 0    
+  &LE4_full_ext = 0    
+  &LE1_transit = 1    
+  &LE2_transit = 1    
+  &LE3_transit = 1    
+  &LE4_transit = 1    
+  &LE1_ext = 1    
+  &LE2_ext = 1    
+  &LE3_ext = 1    
+  &LE4_ext = 1    
+  &FL1_ext = 1    
+  &FL2_ext = 1    
+}
+
+Var 0249, name Trans2R, Link SUBRUTINE
+{
+  &LE5_transit = 1    
+  &LE6_transit = 1    
+  &LE7_transit = 1    
+  &LE8_transit = 1    
+  &LE5_ext = 1    
+  &LE6_ext = 1    
+  &LE7_ext = 1    
+  &LE8_ext = 1    
+  &LE5_full_ext = 0    
+  &LE6_full_ext = 0    
+  &LE7_full_ext = 0    
+  &LE8_full_ext = 0    
+  &Fl3_ext = 1    
+  &FL4_ext = 1    
+}
+
+Var 0250, name Ext2L, Link SUBRUTINE
+{
+  &LE1_transit = 0    
+  &LE2_transit = 0    
+  &LE3_transit = 0    
+  &LE4_transit = 0    
+  &LE1_ext = 0    
+  &LE2_ext = 0    
+  &LE3_ext = 0    
+  &LE4_ext = 0    
+  &LE1_full_ext = 1    
+  &LE2_full_ext = 1    
+  &LE3_full_ext = 1    
+  &LE4_full_ext = 1    
+  &FL1_ext = 1    
+  &FL2_ext = 1    
+}
+
+Var 0251, name Ext2R, Link SUBRUTINE
+{
+  &LE5_transit = 0    
+  &LE6_transit = 0    
+  &LE7_transit = 0    
+  &LE8_transit = 0    
+  &LE5_ext = 0    
+  &LE6_ext = 0    
+  &LE7_ext = 0    
+  &LE8_ext = 0    
+  &LE5_full_ext = 1    
+  &LE6_full_ext = 1    
+  &LE7_full_ext = 1    
+  &LE8_full_ext = 1    
+  &Fl3_ext = 1    
+  &FL4_ext = 1    
+}
+
+Var 2669, name LE_FL_Test, static, Link IOCARD_SW, Device 33, Input 68     // Test button LE Devices
+{
+  IF &LE_FL_Test = 1
+  {
+    CALL &LeflAllOn
+  }
+  ELSE
+  {
+    CALL &AllOffL
+    CALL &AllOffR
+    CALL &FlapsDisplayL
+    CALL &FlapsDisplayR
+  }
+}
+
+Var 0252, name LeflAllOn, Link SUBRUTINE
+{
+  &LE1_transit = 1    
+  &LE1_ext = 1    
+  &LE1_full_ext = 1    
+  &LE2_transit = 1    
+  &LE2_ext = 1    
+  &LE2_full_ext = 1    
+  &LE3_transit = 1    
+  &LE3_ext = 1    
+  &LE3_full_ext = 1    
+  &LE4_transit = 1    
+  &LE4_ext = 1    
+  &LE4_full_ext = 1    
+  &FL1_transit = 1    
+  &FL1_ext = 1    
+  &FL2_transit = 1    
+  &FL2_ext = 1    
+  &FL3_transit = 1    
+  &Fl3_ext = 1    
+  &FL4_transit = 1    
+  &FL4_ext = 1    
+  &LE5_transit = 1    
+  &LE5_ext = 1    
+  &LE5_full_ext = 1    
+  &LE6_transit = 1    
+  &LE6_ext = 1    
+  &LE6_full_ext = 1    
+  &LE7_transit = 1    
+  &LE7_ext = 1    
+  &LE7_full_ext = 1    
+  &LE8_transit = 1    
+  &LE8_ext = 1    
+  &LE8_full_ext = 1    
+}
+
+Var 2534, name D_CrsL, static, Link IOCARD_DISPLAY, Device 15, Digit 0, Numbers 3     // MCP
+
+Var 2532, name CRSLtoNGX, static
+
+Var 1256, name CRSLfromNGX, static
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_CrsL = &CRSLfromNGX    
+  }
+}
+
+Var 0253, name t_rot_CL, Value 500
+
+Var 0254, name tempCL, Value 0
+
+Var 0255, name ROTARY_CRSL, Link IOCARD_ENCODER, Device 15, Input 4, Aceleration 4, Type 2
+{
+  &tempCL = &t_rot_CL    
+  L0 = &ROTARY_CRSL * -1     // delete "* -1" before // if turning direc
+  &t_rot_CL = ROTATE 0 ,1000 ,L0
+  IF &tempCL > &t_rot_CL
+  {
+    &CRSLtoNGX = 8192    
+    &CRSLtoNGX = 2000    
+  }
+  ELSE
+  {
+    &CRSLtoNGX = 16384    
+    &CRSLtoNGX = 2000    
+  }
+}
+
+Var 0256, name CRSLtMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_CrsL = &CRSLfromNGX    
+  }
+}
+
+Var 0257, name BRIGHT, Link IOCARD_DISPLAY, Device 15, Digit 32, Numbers 3     // Bright control for digits - Not used i
+
+Var 0258, name D_IAS, Link IOCARD_DISPLAY, Device 15, Digit 3, Numbers 2
+
+Var 0259, name D_IAS3, Link IOCARD_DISPLAY, Device 15, Digit 5, Numbers 1
+
+Var 0260, name D_IAS_IND, Link IOCARD_DISPLAY, Device 15, Digit 22, Numbers 1     // A = -999996 B = 8
+
+Var 0261, name D_MACHDP, Link IOCARD_OUT, Device 15, Output 20
+
+Var 0262, name IAS
+
+Var 2550, name IAStoNGX, static
+
+Var 1260, name IASfromNGX, static
+{
+  IF &IASBlank = 0
+  {
+    IF &IASfromNGX > 99
+    {
+      &IAS = &IASfromNGX    
+      CALL &IAStMCPw     // Subroutine to set IAS to MCP window
+    }
+    ELSE
+    {
+      &IAS = &IASfromNGX    
+      CALL &MACHtMCPw     // Subroutine to set MACH to MCP window
+    }
+  }
+}
+
+Var 0263, name t_rot_IAS, Value 500
+
+Var 0264, name tempIAS, Value 0
+
+Var 0265, name ROTARY_IAS, Link IOCARD_ENCODER, Device 15, Input 0, Aceleration 2, Type 2
+{
+  IF &IASBlank = 0     // Respond only when Ias/Mach display on ..
+  {
+    &tempIAS = &t_rot_IAS    
+    L0 = &ROTARY_IAS * -1
+    &t_rot_IAS = ROTATE 0 ,1000 ,L0
+    IF &tempIAS > &t_rot_IAS
+    {
+      &IAStoNGX = 8192    
+      &IAStoNGX = 2000    
+    }
+    ELSE
+    {
+      &IAStoNGX = 16384    
+      &IAStoNGX = 2000    
+    }
+  }
+}
+
+Var 0266, name IAStMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_MACHDP = 0    
+    &D_IAS_IND = -999999         // blank
+    L0 = &IAS    
+    L1 = DIV L0 ,100
+    L2 = MOD L0 ,100
+    &D_IAS = L2    
+    &D_IAS3 = L1    
+  }
+}
+
+Var 0267, name MACHtMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_MACHDP = 1    
+    &D_IAS3 = -999999         // blank
+    &D_IAS_IND = -999999         // blank
+    &D_IAS = &IAS    
+  }
+}
+
+Var 0268, name BLANKtIASw, Link SUBRUTINE
+{
+  &D_MACHDP = 0    
+  &D_IAS = -999999         // blank
+  &D_IAS3 = -999999         // blank
+  &D_IAS_IND = -999999         // blank
+}
+
+Var 1264, name IASBlank, static     // var for indicating blanking or not blank
+{
+  IF &IASBlank = 1
+  {
+    CALL &BLANKtIASw
+  }
+  ELSE
+  {
+    IF &IASfromNGX > 99
+    {
+      &IAS = &IASfromNGX    
+      CALL &IAStMCPw     // Subroutine to set IAS to MCP window
+    }
+    ELSE
+    {
+      &IAS = &IASfromNGX    
+      CALL &MACHtMCPw     // Subroutine to set MACH to MCP window
+    }
+  }
+}
+
+Var 2543, name HDGtoNGX, static
+
+Var 2542, name D_Hdg, static, Link IOCARD_DISPLAY, Device 15, Digit 6, Numbers 3
+
+Var 1268, name HDGfromNGX, static     // HDG from NGX
+{
+  &D_Hdg = &HDGfromNGX    
+}
+
+Var 0269, name BANK_Val, Value 30
+
+Var 0270, name bBANKHDG, Link IOCARD_SW, Device 15, Input 34, Type P
+{
+  IF &bBANKHDG = 1
+  {
+    IF &MCP_POWER_ON = 1
+    {
+      &D_Hdg = &BANK_Val    
+    }
+  }
+  ELSE
+  {
+    CALL &HDGtMCPw
+  }
+}
+
+Var 0271, name t_rot_HDG, Value 500
+
+Var 0272, name tempHDG, Value 0
+
+Var 0273, name ROTARY_Hdg, Link IOCARD_ENCODER, Device 15, Input 6, Aceleration 4, Type 2
+{
+  IF &bBANKHDG = 0     // Turning Heading
+  {
+    &tempHDG = &t_rot_HDG    
+    L0 = &ROTARY_Hdg * -1     // turning right should be plus
+    &t_rot_HDG = ROTATE 0 ,1000 ,L0
+    IF &tempHDG > &t_rot_HDG
+    {
+      &HDGtoNGX = 8192    
+      &HDGtoNGX = 2000    
+    }
+    ELSE
+    {
+      &HDGtoNGX = 16384    
+      &HDGtoNGX = 2000    
+    }
+  }
+  ELSE     // Turning Banking
+  {
+    L0 = &ROTARY_Hdg * -1     // turning right should be plus
+    &sBANKING_SEL = LIMIT 0 ,4 ,L0
+    IF &sBANKING_SEL = 4
+    {
+      &BANK_Val = 30    
+    }
+    IF &sBANKING_SEL = 3
+    {
+      &BANK_Val = 25    
+    }
+    IF &sBANKING_SEL = 2
+    {
+      &BANK_Val = 20    
+    }
+    IF &sBANKING_SEL = 1
+    {
+      &BANK_Val = 15    
+    }
+    IF &sBANKING_SEL = 0
+    {
+      &BANK_Val = 10    
+    }
+    &D_Hdg = &BANK_Val    
+  }
+}
+
+Var 0274, name HDGtMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_Hdg = &HDGfromNGX    
+  }
+}
+
+Var 0275, name D_ALT, Link IOCARD_DISPLAY, Device 15, Digit 9, Numbers 3
+
+Var 0276, name D_ALTL00, Link IOCARD_DISPLAY, Device 15, Digit 12, Numbers 1
+
+Var 0277, name D_ALTL0, Link IOCARD_DISPLAY, Device 15, Digit 13, Numbers 1
+
+Var 2525, name ALTtoNGX, static
+
+Var 0278, name t_rot_ALT, Value 500
+
+Var 0279, name tempALT, Value 0
+
+Var 1270, name ALTfromNGX, static
+{
+  CALL &ALTtMCPw
+}
+
+Var 0280, name ROTARY_ALT, Link IOCARD_ENCODER, Device 15, Input 2, Aceleration 4, Type 2
+{
+  &tempALT = &t_rot_ALT    
+  L0 = &ROTARY_ALT * -1     // delete "* -1" before // if turning direc
+  &t_rot_ALT = ROTATE 0 ,1000 ,L0
+  IF &tempALT > &t_rot_ALT
+  {
+    &ALTtoNGX = 8192    
+    &ALTtoNGX = 2000    
+  }
+  ELSE
+  {
+    &ALTtoNGX = 16384    
+    &ALTtoNGX = 2000    
+  }
+}
+
+Var 0281, name ALTtMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    L0 = &ALTfromNGX    
+    IF L0 >= 10000
+    {
+      &D_ALTL0 = DIV L0 ,10000
+      L1 = MOD L0 ,10000
+      &D_ALTL00 = DIV L1 ,1000
+      &D_ALT = MOD L0 ,1000
+    }
+    ELSE
+    {
+      &D_ALTL0 = -999999    
+      IF L0 >= 1000
+      {
+        &D_ALTL00 = DIV L0 ,1000
+        &D_ALT = MOD L0 ,1000
+      }
+      ELSE
+      {
+        IF L0 = 0
+        {
+          &D_ALTL00 = 0    
+          &D_ALTL0 = 0    
+          &D_ALT = L0    
+        }
+        ELSE
+        {
+          &D_ALTL00 = -999999    
+          &D_ALT = L0    
+        }
+      }
+    }
+  }
+}
+
+Var 0282, name D_VS, Link IOCARD_DISPLAY, Device 15, Digit 14, Numbers 2
+
+Var 0283, name D_VS3, Link IOCARD_DISPLAY, Device 15, Digit 16, Numbers 1
+
+Var 0284, name D_VS4, Link IOCARD_DISPLAY, Device 15, Digit 17, Numbers 1
+
+Var 0285, name D_VSS, Link IOCARD_DISPLAY, Device 15, Digit 18, Numbers 1
+
+Var 0286, name ROTACTIVE_VS
+
+Var 1272, name VSfromNGX, static
+{
+  IF &ROTACTIVE_VS = 0
+  {
+    L0 = 48576    
+    IF &VSfromNGX > L0
+    {
+      L1 = 65536    
+      &VS_SET = &VSfromNGX - L1
+    }
+    ELSE
+    {
+      &VS_SET = &VSfromNGX    
+    }
+  }
+  ELSE
+  {
+  }
+}
+
+Var 0287, name tempvs
+
+Var 0288, name tempvs0
+
+Var 2555, name VS_SET, static
+{
+  &tempvs = &VS_SET    
+  &tempvs0 = 0    
+  CALL &VStMCPw
+  &ROTACTIVE_VS = DELAY 0 ,100
+}
+
+Var 1274, name VertSpeedBlank, static
+
+Var 0289, name ROTATOR_VS, Link IOCARD_ENCODER, Device 15, Input 11, Aceleration 4, Type 2
+{
+  IF &aVS = 1     // Respond only when in VS mode ...
+  {
+    &ROTACTIVE_VS = 1    
+    L0 = &ROTATOR_VS * -1
+    &tempvs0 = LIMIT -99 ,99 ,L0
+    L2 = &tempvs0 * 50
+    &VS_SET = &tempvs + L2
+  }
+}
+
+Var 0290, name VStMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON > 0
+  {
+    IF &VS_SET = -16960
+    {
+      &D_VSS = -999999         // blank all segments
+      &D_VS3 = -999999    
+      &D_VS4 = -999999    
+      &D_VS = -999999    
+    }
+    ELSE
+    {
+      L0 = &VS_SET    
+      IF L0 < 0
+      {
+        &D_VSS = -999998         // minus sign
+        L2 = L0 * -1
+        &D_VS4 = DIV L2 ,1000
+        L1 = MOD L2 ,1000
+        &D_VS3 = DIV L1 ,100
+        &D_VS = MOD L1 ,100
+      }
+      IF L0 >= 0
+      {
+        &D_VSS = -999999         // blank// blank all segments
+        &D_VS4 = DIV L0 ,1000
+        L1 = MOD L0 ,1000
+        &D_VS3 = DIV L1 ,100
+        &D_VS = MOD L1 ,100
+      }
+    }
+  }
+}
+
+Var 2535, name D_CrsR, static, Link IOCARD_DISPLAY, Device 15, Digit 19, Numbers 3
+
+Var 2533, name CRSRtoNGX, static
+
+Var 1258, name CRSRfromNGX, static
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_CrsR = &CRSRfromNGX    
+  }
+}
+
+Var 0291, name t_rot_CR, Value 500
+
+Var 0292, name tempCR, Value 0
+
+Var 0293, name ROTARY_CRSR, Link IOCARD_ENCODER, Device 15, Input 9, Aceleration 4, Type 2
+{
+  &tempCR = &t_rot_CR    
+  L0 = &ROTARY_CRSR * -1     // delete "* -1" before // if turning direc
+  &t_rot_CR = ROTATE 0 ,1000 ,L0
+  IF &tempCR > &t_rot_CR
+  {
+    &CRSRtoNGX = 8192    
+    &CRSRtoNGX = 2000    
+  }
+  ELSE
+  {
+    &CRSRtoNGX = 16384    
+    &CRSRtoNGX = 2000    
+  }
+}
+
+Var 0294, name CRSRtMCPw, Link SUBRUTINE
+{
+  IF &MCP_POWER_ON = 1
+  {
+    &D_CrsR = &CRSRfromNGX    
+  }
+}
+
+Var 2539, name FD_L, static, Value 1
+
+Var 0295, name sFD_L, Link IOCARD_SW, Device 15, Input 16
+{
+  &FD_L = CHANGEBITN 0 ,&FD_L
+}
+
+Var 2527, name AT_ARM, static, Value 1
+
+Var 0296, name sAT_ARM, Link IOCARD_SW, Device 15, Input 33
+{
+  &AT_ARM = CHANGEBITN 0 ,&AT_ARM
+}
+
+Var 2538, name DISENGAGE_BAR, static, Value 0
+
+Var 0297, name sDISENGAGE, Link IOCARD_SW, Device 15, Input 15
+{
+  &DISENGAGE_BAR = CHANGEBITN 0 ,&DISENGAGE_BAR
+}
+
+Var 2540, name FD_R, static, Value 1
+
+Var 0298, name sFD_R, Link IOCARD_SW, Device 15, Input 14
+{
+  &FD_R = CHANGEBITN 0 ,&FD_R
+}
+
+Var 2548, name bN1, static, Link IOCARD_SW, Device 15, Input 32, Type I
+
+Var 2551, name bSPEED, static, Link IOCARD_SW, Device 15, Input 31, Type I
+
+Var 2549, name bSPD_INTV, static, Link IOCARD_SW, Device 15, Input 37, Type I
+
+Var 2531, name bCO, static, Link IOCARD_SW, Device 15, Input 13, Type I
+
+Var 2552, name bVNAV, static, Link IOCARD_SW, Device 15, Input 30, Type I
+
+Var 2546, name bLVL_CHG, static, Link IOCARD_SW, Device 15, Input 29, Type I
+
+Var 2541, name bHDG_SEL, static, Link IOCARD_SW, Device 15, Input 28, Type I
+
+Var 2528, name sBANKING_SEL, static, Value 4
+
+Var 2545, name bLNAV, static, Link IOCARD_SW, Device 15, Input 27, Type I
+
+Var 2553, name bVOR_LOC, static, Link IOCARD_SW, Device 15, Input 25, Type I
+
+Var 2526, name bAPP, static, Link IOCARD_SW, Device 15, Input 24, Type I
+
+Var 2522, name bALT_HLD, static, Link IOCARD_SW, Device 15, Input 23, Type I
+
+Var 2523, name bALT_INTV, static, Link IOCARD_SW, Device 15, Input 36, Type I
+
+Var 2556, name bVS, static, Link IOCARD_SW, Device 15, Input 22, Type I
+
+Var 2529, name bCMD_A, static, Link IOCARD_SW, Device 15, Input 21, Type I
+
+Var 2536, name bCSW_A, static, Link IOCARD_SW, Device 15, Input 20, Type I
+
+Var 2530, name bCMD_B, static, Link IOCARD_SW, Device 15, Input 19, Type I
+
+Var 2537, name bCWS_B, static, Link IOCARD_SW, Device 15, Input 18, Type I
+
+Var 1280, name aFD1, static, Link IOCARD_OUT, Device 15, Output 37
+
+Var 1281, name aFD2, static, Link IOCARD_OUT, Device 15, Output 36
+
+Var 1282, name aATArm, static, Link IOCARD_OUT, Device 15, Output 22
+
+Var 1283, name aN1, static, Link IOCARD_OUT, Device 15, Output 21
+
+Var 1284, name aSPEED, static, Link IOCARD_OUT, Device 15, Output 23
+
+Var 1285, name aVNAV, static, Link IOCARD_OUT, Device 15, Output 25
+
+Var 1286, name aLVL_CHG, static, Link IOCARD_OUT, Device 15, Output 24
+
+Var 1287, name aHDG_SEL, static, Link IOCARD_OUT, Device 15, Output 26
+
+Var 1288, name aLNAV, static, Link IOCARD_OUT, Device 15, Output 29
+
+Var 1289, name aVOR_LOC, static, Link IOCARD_OUT, Device 15, Output 28
+
+Var 1290, name aAPP, static, Link IOCARD_OUT, Device 15, Output 27
+
+Var 1291, name aALT_HLD, static, Link IOCARD_OUT, Device 15, Output 30
+
+Var 1292, name aVS, static, Link IOCARD_OUT, Device 15, Output 31
+
+Var 1293, name aCMD_A, static, Link IOCARD_OUT, Device 15, Output 33
+
+Var 1294, name aCWS_A, static, Link IOCARD_OUT, Device 15, Output 32
+
+Var 1295, name aCMD_B, static, Link IOCARD_OUT, Device 15, Output 35
+
+Var 1296, name aCWS_B, static, Link IOCARD_OUT, Device 15, Output 34
+
+Var 2405, name bWXR, static, Link IOCARD_SW, Device 7, Input 27, Type P
+
+Var 2400, name bSTA, static, Link IOCARD_SW, Device 7, Input 28, Type P
+
+Var 2382, name bARPT, static, Link IOCARD_SW, Device 7, Input 30, Type P
+
+Var 2397, name bPOS, static, Link IOCARD_SW, Device 7, Input 32, Type P
+
+Var 2401, name bTERR, static, Link IOCARD_SW, Device 7, Input 33, Type P
+
+Var 2387, name bFPV, static, Link IOCARD_SW, Device 7, Input 34, Type P
+
+Var 2396, name bMTRS, static, Link IOCARD_SW, Device 7, Input 38, Type P
+
+Var 2404, name WPT, static
+
+Var 2395, name CTR, static
+
+Var 0299, name bWPT, Link IOCARD_SW, Device 7, Input 29, Type I     // WPT on EFIS
+{
+  IF &bWPT = 1
+  {
+    IF &STATE_bWPT = 0
+    {
+      &STATE_bWPT = 1    
+      &Double_WPT = 0    
+      &STATE_bWPT = DELAY 3 ,70
+    }
+    ELSE
+    {
+      IF &STATE_bWPT = 1
+      {
+        &STATE_bWPT = 2    
+      }
+    }
+  }
+  ELSE
+  {
+    IF &STATE_bWPT = 2
+    {
+      &Double_WPT = 1    
+      &CTR = CHANGEBITN 0 ,&CTR     // DOUBLE CLICKED WPT > CTR
+    }
+  }
+}
+
+Var 0300, name Double_WPT
+
+Var 0301, name STATE_bWPT
+{
+  IF &STATE_bWPT = 3
+  {
+    &STATE_bWPT = 0         // reset
+    IF &Double_WPT <> 1
+    {
+      &WPT = CHANGEBITN 0 ,&WPT     // Single CLICKED WPT > WPT
+    }
+  }
+}
+
+Var 2386, name DATA, static
+
+Var 2399, name TFC, static
+
+Var 0302, name bDATA, Link IOCARD_SW, Device 7, Input 31, Type I     // DATA on EFIS
+{
+  IF &bDATA = 1
+  {
+    IF &STATE_bDATA = 0
+    {
+      &STATE_bDATA = 1    
+      &Double_DATA = 0    
+      &STATE_bDATA = DELAY 3 ,70
+    }
+    ELSE
+    {
+      IF &STATE_bDATA = 1
+      {
+        &STATE_bDATA = 2    
+      }
+    }
+  }
+  ELSE
+  {
+    IF &STATE_bDATA = 2
+    {
+      &Double_DATA = 1    
+      &TFC = CHANGEBITN 0 ,&TFC     // DOUBLE CLICKED DATA > TFC
+    }
+  }
+}
+
+Var 0303, name Double_DATA
+
+Var 0304, name STATE_bDATA     // state of Button_2b
+{
+  IF &STATE_bDATA = 3
+  {
+    &STATE_bDATA = 0         // reset
+    IF &Double_DATA <> 1
+    {
+      &DATA = CHANGEBITN 0 ,&DATA     // Single CLICKED DATA > DATA
+    }
+  }
+}
+
+Var 2402, name VOR1ADF1, static, Value 1
+
+Var 0305, name sVOR1, Link IOCARD_SW, Device 7, Input 36
+{
+  IF &sVOR1 = 1
+  {
+    &VOR1ADF1 = CHANGEBITN 0 ,&VOR1ADF1
+  }
+  ELSE
+  {
+    &VOR1ADF1 = CHANGEBITN 0 ,&VOR1ADF1
+  }
+}
+
+Var 0306, name sADF1, Link IOCARD_SW, Device 7, Input 37
+{
+  IF &sADF1 = 1
+  {
+    &VOR1ADF1 = 2    
+  }
+  ELSE
+  {
+    &VOR1ADF1 = 1    
+  }
+}
+
+Var 2403, name VOR2ADF2, static, Value 1
+
+Var 0307, name sVOR2, Link IOCARD_SW, Device 7, Input 18
+{
+  IF &sVOR2 = 1
+  {
+    &VOR2ADF2 = CHANGEBITN 0 ,&VOR2ADF2
+  }
+  ELSE
+  {
+    &VOR2ADF2 = CHANGEBITN 0 ,&VOR2ADF2
+  }
+}
+
+Var 0308, name sADF2, Link IOCARD_SW, Device 7, Input 19
+{
+  IF &sADF2 = 1
+  {
+    &VOR2ADF2 = 2    
+  }
+  ELSE
+  {
+    &VOR2ADF2 = 1    
+  }
+}
+
+Var 2394, name MODE, static
+
+Var 0309, name sAPP_E, Link IOCARD_SW, Device 7, Input 9, Type P
+{
+  &MODE = 0    
+}
+
+Var 0310, name sVOR_E, Link IOCARD_SW, Device 7, Input 10, Type P
+{
+  &MODE = 1    
+}
+
+Var 0311, name sMAP, Link IOCARD_SW, Device 7, Input 11, Type P
+{
+  &MODE = 2    
+}
+
+Var 0312, name sPLN, Link IOCARD_SW, Device 7, Input 12, Type P
+{
+  &MODE = 3    
+}
+
+Var 2398, name RANGE, static
+
+Var 0313, name sND_5, Link IOCARD_SW, Device 7, Input 0, Type P
+{
+  &RANGE = 0    
+}
+
+Var 0314, name sND_10, Link IOCARD_SW, Device 7, Input 1, Type P
+{
+  &RANGE = 1    
+}
+
+Var 0315, name sND_20, Link IOCARD_SW, Device 7, Input 2, Type P
+{
+  &RANGE = 2    
+}
+
+Var 0316, name sND_40, Link IOCARD_SW, Device 7, Input 3, Type P
+{
+  &RANGE = 3    
+}
+
+Var 0317, name sND_80, Link IOCARD_SW, Device 7, Input 4, Type P
+{
+  &RANGE = 4    
+}
+
+Var 0318, name sND_160, Link IOCARD_SW, Device 7, Input 5, Type P
+{
+  &RANGE = 5    
+}
+
+Var 0319, name sND_320, Link IOCARD_SW, Device 7, Input 6, Type P
+{
+  &RANGE = 6    
+}
+
+Var 0320, name sND_640, Link IOCARD_SW, Device 7, Input 7, Type P
+{
+  &RANGE = 7    
+}
+
+Var 2392, name MINIMUMS, static
+
+Var 0321, name sRADIO_BARO, Value 0     // When 0 then BARO is active
+{
+  IF &sRADIO_BARO = 0
+  {
+    &MINIMUMS = 1    
+  }
+  ELSE
+  {
+    &MINIMUMS = 0    
+  }
+}
+
+Var 0322, name m_delay     // value 0
+{
+  IF &m_delay = 1
+  {
+    IF &bMINS = 1
+    {
+      &sRADIO_BARO = CHANGEBITN 0 ,&sRADIO_BARO
+    }
+    ELSE
+    {
+      &RST = CHANGEBITN 0 ,&RST
+    }
+    ELSE
+    {
+    }
+    &m_delay = 0    
+  }
+}
+
+Var 2393, name RST, static
+
+Var 0323, name bMINS, Link IOCARD_SW, Device 7, Input 25, Type I
+{
+  IF &bMINS = 1
+  {
+    &m_delay = DELAY 1 ,100
+  }
+  ELSE
+  {
+  }
+}
+
+Var 2384, name BARO, static
+
+Var 0324, name sIN_HPA, Value 0     // When 0 then HPA is active
+{
+  IF &sIN_HPA = 0
+  {
+    &BARO = 1    
+  }
+  ELSE
+  {
+    &BARO = 0    
+  }
+}
+
+Var 0325, name b_delay     // value 0
+{
+  IF &b_delay = 1
+  {
+    IF &bBARO = 1
+    {
+      &sIN_HPA = CHANGEBITN 0 ,&sIN_HPA
+    }
+    ELSE
+    {
+      &STD = CHANGEBITN 0 ,&STD
+    }
+    ELSE
+    {
+    }
+    &b_delay = 0    
+  }
+}
+
+Var 2385, name STD, static
+
+Var 0326, name bBARO, Link IOCARD_SW, Device 7, Input 22, Type I
+{
+  IF &bBARO = 1
+  {
+    &b_delay = DELAY 1 ,100
+  }
+  ELSE
+  {
+  }
+}
+
+Var 0327, name e_delay
+
+Var 0328, name t_rot_RB, Value 500
+
+Var 0329, name tempRB, Value 0
+
+Var 2390, name RADIO_BARO, static
+
+Var 0330, name eMINS_ROT, Link IOCARD_ENCODER, Device 7, Input 23, Aceleration 2, Type 2     // MINS turning
+{
+  &tempRB = &t_rot_RB    
+  L0 = &eMINS_ROT * -1     // delete "* -1" before // if turning direc
+  &t_rot_RB = ROTATE 0 ,1000 ,L0
+  IF &tempRB > &t_rot_RB
+  {
+    &RADIO_BARO = 8192    
+    &e_delay = DELAY 1 ,1
+    &RADIO_BARO = 2000    
+  }
+  ELSE
+  {
+    &RADIO_BARO = 16384    
+    &e_delay = DELAY 1 ,1
+    &RADIO_BARO = 2000    
+  }
+}
+
+Var 0331, name t_rot_IH, Value 500
+
+Var 0332, name tempIH, Value 0
+
+Var 2383, name IN_HPA, static
+
+Var 0333, name eBARO_ROT, Link IOCARD_ENCODER, Device 7, Input 20, Aceleration 2, Type 2     // BARO turning
+{
+  &tempIH = &t_rot_IH    
+  L0 = &eBARO_ROT * -1     // delete "* -1" before // if turning direc
+  &t_rot_IH = ROTATE 0 ,1000 ,L0
+  IF &tempIH > &t_rot_IH
+  {
+    &IN_HPA = 8192    
+    &e_delay = DELAY 1 ,1
+    &IN_HPA = 2000    
+  }
+  ELSE
+  {
+    &IN_HPA = 16384    
+    &e_delay = DELAY 1 ,1
+    &IN_HPA = 2000    
+  }
+}
+
+Var 2427, name bWXR_FO, static, Link IOCARD_SW, Device 17, Input 27, Type P
+
+Var 2422, name bSTA_FO, static, Link IOCARD_SW, Device 17, Input 28, Type P
+
+Var 2406, name bARPT_FO, static, Link IOCARD_SW, Device 17, Input 30, Type P
+
+Var 2419, name bPOS_FO, static, Link IOCARD_SW, Device 17, Input 32, Type P
+
+Var 2423, name bTERR_FO, static, Link IOCARD_SW, Device 17, Input 33, Type P
+
+Var 2411, name bFPV_FO, static, Link IOCARD_SW, Device 17, Input 34, Type P
+
+Var 2418, name bMTRS_FO, static, Link IOCARD_SW, Device 17, Input 38, Type P
+
+Var 2426, name WPT_FO, static
+
+Var 2417, name CTR_FO, static
+
+Var 0334, name bWPT_FO, Link IOCARD_SW, Device 17, Input 29, Type I     // WPT on EFIS
+{
+  IF &bWPT_FO = 1
+  {
+    IF &STATE_bWPT_FO = 0
+    {
+      &STATE_bWPT_FO = 1    
+      &Double_bWPT_FO = 0    
+      &STATE_bWPT_FO = DELAY 3 ,70
+    }
+    ELSE
+    {
+      IF &STATE_bWPT_FO = 1
+      {
+        &STATE_bWPT_FO = 2    
+      }
+    }
+  }
+  ELSE
+  {
+    IF &STATE_bWPT_FO = 2
+    {
+      &Double_bWPT_FO = 1    
+      &CTR_FO = CHANGEBITN 0 ,&CTR_FO     // DOUBLE CLICKED WPT > CTR
+    }
+  }
+}
+
+Var 0335, name Double_bWPT_FO
+
+Var 0336, name STATE_bWPT_FO     // state of Button_2
+{
+  IF &STATE_bWPT_FO = 3
+  {
+    &STATE_bWPT_FO = 0         // reset
+    IF &Double_bWPT_FO <> 1
+    {
+      &WPT_FO = CHANGEBITN 0 ,&WPT_FO     // Single CLICKED WPT > WPT
+    }
+  }
+}
+
+Var 2410, name DATA_FO, static
+
+Var 2421, name TFC_FO, static
+
+Var 0337, name bDATA_FO, Link IOCARD_SW, Device 17, Input 31, Type I     // DATA on EFIS
+{
+  IF &bDATA_FO = 1
+  {
+    IF &STATE_bDATA_FO = 0
+    {
+      &STATE_bDATA_FO = 1    
+      &Doubl_bDATA_FO = 0    
+      &STATE_bDATA_FO = DELAY 3 ,70
+    }
+    ELSE
+    {
+      IF &STATE_bDATA_FO = 1
+      {
+        &STATE_bDATA_FO = 2    
+      }
+    }
+  }
+  ELSE
+  {
+    IF &STATE_bDATA_FO = 2
+    {
+      &Doubl_bDATA_FO = 1    
+      &TFC_FO = CHANGEBITN 0 ,&TFC_FO     // DOUBLE CLICKED DATA > TFC
+    }
+  }
+}
+
+Var 0338, name Doubl_bDATA_FO
+
+Var 0339, name STATE_bDATA_FO     // state of Button_2b
+{
+  IF &STATE_bDATA_FO = 3
+  {
+    &STATE_bDATA_FO = 0         // reset
+    IF &Doubl_bDATA_FO <> 1
+    {
+      &DATA_FO = CHANGEBITN 0 ,&DATA_FO     // Single CLICKED DATA > DATA
+    }
+  }
+}
+
+Var 2424, name VOR1ADF1_FO, static
+
+Var 0340, name sVOR1_FO, Link IOCARD_SW, Device 17, Input 36
+{
+  IF &sVOR1_FO = 1
+  {
+    &VOR1ADF1_FO = 0    
+  }
+  ELSE
+  {
+    IF &sVOR1_FO = 0
+    {
+      &VOR1ADF1_FO = 1    
+    }
+  }
+}
+
+Var 0341, name sADF1_FO, Link IOCARD_SW, Device 17, Input 37
+{
+  IF &sADF1_FO = 1
+  {
+    &VOR1ADF1_FO = 2    
+  }
+  ELSE
+  {
+    IF &sADF1_FO = 0
+    {
+      &VOR1ADF1_FO = 1    
+    }
+  }
+}
+
+Var 2425, name VOR2ADF2_FO, static
+
+Var 0342, name sVOR2_FO, Link IOCARD_SW, Device 17, Input 18
+{
+  IF &sVOR2_FO = 1
+  {
+    &VOR2ADF2_FO = 0    
+  }
+  ELSE
+  {
+    IF &sVOR2_FO = 0
+    {
+      &VOR2ADF2_FO = 1    
+    }
+  }
+}
+
+Var 0343, name sADF2_FO, Link IOCARD_SW, Device 17, Input 19
+{
+  IF &sADF2_FO = 1
+  {
+    &VOR2ADF2_FO = 2    
+  }
+  ELSE
+  {
+    IF &sADF2_FO = 0
+    {
+      &VOR2ADF2_FO = 1    
+    }
+  }
+}
+
+Var 2416, name MODE_FO, static
+
+Var 0344, name sAPP_E_FO, Link IOCARD_SW, Device 17, Input 9, Type P
+{
+  &MODE_FO = 0    
+}
+
+Var 0345, name sVOR_E_FO, Link IOCARD_SW, Device 17, Input 10, Type P
+{
+  &MODE_FO = 1    
+}
+
+Var 0346, name sMAP_FO, Link IOCARD_SW, Device 17, Input 11, Type P
+{
+  &MODE_FO = 2    
+}
+
+Var 0347, name sPLN_FO, Link IOCARD_SW, Device 17, Input 12, Type P
+{
+  &MODE_FO = 3    
+}
+
+Var 2420, name RANGE_FO, static
+
+Var 0348, name sND_5_FO, Link IOCARD_SW, Device 17, Input 0, Type P
+{
+  &RANGE_FO = 0    
+}
+
+Var 0349, name sND_10_FO, Link IOCARD_SW, Device 17, Input 1, Type P
+{
+  &RANGE_FO = 1    
+}
+
+Var 0350, name sND_20_FO, Link IOCARD_SW, Device 17, Input 2, Type P
+{
+  &RANGE_FO = 2    
+}
+
+Var 0351, name sND_40_FO, Link IOCARD_SW, Device 17, Input 3, Type P
+{
+  &RANGE_FO = 3    
+}
+
+Var 0352, name sND_80_FO, Link IOCARD_SW, Device 17, Input 4, Type P
+{
+  &RANGE_FO = 4    
+}
+
+Var 0353, name sND_160_FO, Link IOCARD_SW, Device 17, Input 5, Type P
+{
+  &RANGE_FO = 5    
+}
+
+Var 0354, name sND_320_FO, Link IOCARD_SW, Device 17, Input 6, Type P
+{
+  &RANGE_FO = 6    
+}
+
+Var 0355, name sND_640_FO, Link IOCARD_SW, Device 17, Input 7, Type P
+{
+  &RANGE_FO = 7    
+}
+
+Var 2414, name MINIMUMS_FO, static
+
+Var 0356, name sRADIO_BARO_FO, Value 0     // When 0 then BARO is active
+{
+  IF &sRADIO_BARO_FO = 0
+  {
+    &MINIMUMS_FO = 1    
+  }
+  ELSE
+  {
+    &MINIMUMS_FO = 0    
+  }
+}
+
+Var 0357, name m_delay_FO     // value 0
+{
+  IF &m_delay_FO = 1
+  {
+    IF &bMINS_FO = 1
+    {
+      &sRADIO_BARO_FO = CHANGEBITN 0 ,&sRADIO_BARO_FO
+    }
+    ELSE
+    {
+      &RST_FO = CHANGEBITN 0 ,&RST_FO
+    }
+    ELSE
+    {
+    }
+    &m_delay_FO = 0    
+  }
+}
+
+Var 2415, name RST_FO, static
+
+Var 0358, name bMINS_FO, Link IOCARD_SW, Device 17, Input 25, Type I
+{
+  IF &bMINS_FO = 1
+  {
+    &m_delay_FO = DELAY 1 ,100
+  }
+  ELSE
+  {
+  }
+}
+
+Var 2408, name BARO_FO, static
+
+Var 0359, name sIN_HPA_FO, Value 0     // When 0 then HPA is active
+{
+  IF &sIN_HPA_FO = 0
+  {
+    &BARO_FO = 1    
+  }
+  ELSE
+  {
+    &BARO_FO = 0    
+  }
+}
+
+Var 0360, name b_delay_FO     // value 0
+{
+  IF &b_delay_FO = 1
+  {
+    IF &bBARO_FO = 1
+    {
+      &sIN_HPA_FO = CHANGEBITN 0 ,&sIN_HPA_FO
+    }
+    ELSE
+    {
+      &STD_FO = CHANGEBITN 0 ,&STD_FO
+    }
+    ELSE
+    {
+    }
+    &b_delay_FO = 0    
+  }
+}
+
+Var 2409, name STD_FO, static
+
+Var 0361, name bBARO_FO, Link IOCARD_SW, Device 17, Input 22, Type I
+{
+  IF &bBARO_FO = 1
+  {
+    &b_delay_FO = DELAY 1 ,100
+  }
+  ELSE
+  {
+  }
+}
+
+Var 0362, name e_delay_FO
+
+Var 0363, name t_rot_RB_FO, Value 500
+
+Var 0364, name tempRB_FO, Value 0
+
+Var 2412, name RADIO_BARO_FO, static
+
+Var 0365, name eMINS_ROT_FO, Link IOCARD_ENCODER, Device 17, Input 23, Aceleration 2, Type 2     // MINS turning
+{
+  &tempRB_FO = &t_rot_RB_FO    
+  L0 = &eMINS_ROT_FO * -1     // delete "* -1" before // if turning direc
+  &t_rot_RB_FO = ROTATE 0 ,1000 ,L0
+  IF &tempRB_FO > &t_rot_RB_FO
+  {
+    &RADIO_BARO_FO = 8192    
+    &e_delay_FO = DELAY 1 ,1
+    &RADIO_BARO_FO = 2000    
+  }
+  ELSE
+  {
+    &RADIO_BARO_FO = 16384    
+    &e_delay_FO = DELAY 1 ,1
+    &RADIO_BARO_FO = 2000    
+  }
+}
+
+Var 0366, name t_rot_IH_FO, Value 500
+
+Var 0367, name tempIH_FO, Value 0
+
+Var 2407, name IN_HPA_FO, static
+
+Var 0368, name eBARO_ROT_FO, Link IOCARD_ENCODER, Device 17, Input 20, Aceleration 2, Type 2     // BARO turning
+{
+  &tempIH_FO = &t_rot_IH_FO    
+  L0 = &eBARO_ROT_FO * -1     // delete "* -1" before // if turning direc
+  &t_rot_IH_FO = ROTATE 0 ,1000 ,L0
+  IF &tempIH_FO > &t_rot_IH_FO
+  {
+    &IN_HPA_FO = 8192    
+    &e_delay_FO = DELAY 1 ,1
+    &IN_HPA_FO = 2000    
+  }
+  ELSE
+  {
+    &IN_HPA_FO = 16384    
+    &e_delay_FO = DELAY 1 ,1
+    &IN_HPA_FO = 2000    
+  }
+}
+
+Var 0369, name IAS_SYMBOL
+
+Var 0370, name Blank
+
+Var 0371, name Lit
+
+Var 1265, name IASOverSpeed, static
+{
+  IF &IASOverSpeed = 1
+  {
+    &IAS_SYMBOL = 8    
+    &FL_TIMER = 1         // Timer for flashing is initiated
+    &FLASH_IND = 1    
+  }
+  ELSE
+  {
+    &CONTROL_FL = 1         // Kill timer
+    &FL_TIMER = 0         // Kill timer
+    &FLASH_IND = 0    
+  }
+}
+
+Var 1266, name IASUnderSpeed, static
+{
+  IF &IASUnderSpeed = 1
+  {
+    &IAS_SYMBOL = -999996    
+    &FL_TIMER = 1         // Timer for flashing is initiated
+    &FLASH_IND = 1    
+  }
+  ELSE
+  {
+    &CONTROL_FL = 1         // Kill timer
+    &FL_TIMER = 0         // Kill timer
+    &FLASH_IND = 0    
+  }
+}
+
+Var 0372, name FLASH_IND, Link SUBRUTINE
+{
+  IF &FLASH_IND = 0
+  {
+    &D_IAS_IND = -999999    
+  }
+  ELSE
+  {
+    IF &Blank = 1     // blank all D_IAS_IND segments
+    {
+      &D_IAS_IND = -999999    
+    }
+    IF &Lit = 1     // lit all D_IAS_IND segments
+    {
+      &D_IAS_IND = &IAS_SYMBOL         // Set to either A or B
+    }
+  }
+}
+
+Var 0373, name CONTROL_FL, Link SUBRUTINE
+{
+  &Blank = CHANGEBITN 0 ,&Blank
+  &Lit = CHANGEBITN 0 ,&Lit
+  CALL &FLASH_IND
+}
+
+Var 0374, name FL_TIMER
+{
+  IF &FL_TIMER = 1
+  {
+    &CONTROL_FL = 0    
+    &CONTROL_FL = TIMER 1 ,0 ,65
+  }
+  ELSE
+  {
+  }
+}
+
+Var 1999, name CDU1, static, Link IOCARD_KEYS, Device 13
+{
+  &CDU1 = 0    
+}
+
+Var 1377, name aCDU1_EXEC, static, Link IOCARD_OUT, Device 13, Output 2
+
+Var 1381, name aCDU1_FAIL, static, Link IOCARD_OUT, Device 13, Output 4
+
+Var 1383, name aCDU1_MSG, static, Link IOCARD_OUT, Device 13, Output 1
+
+Var 1385, name aCDU1_OFST, static, Link IOCARD_OUT, Device 13, Output 0
+
+Var 1379, name aCDU1_CALL, static, Link IOCARD_OUT, Device 13, Output 3
+
+Var 1998, name CDU2, static, Link IOCARD_KEYS, Device 23
+{
+  &CDU2 = 0    
+}
+
+Var 1378, name aCDU2_EXEC, static, Link IOCARD_OUT, Device 23, Output 2
+
+Var 1382, name aCDU2_FAIL, static, Link IOCARD_OUT, Device 23, Output 4
+
+Var 1384, name aCDU2_MSG, static, Link IOCARD_OUT, Device 23, Output 1
+
+Var 1386, name aCDU2_OFST, static, Link IOCARD_OUT, Device 23, Output 0
+
+Var 1380, name aCDU2_CALL, static, Link IOCARD_OUT, Device 23, Output 3
+
+Var 2579, name NOSE_WHEEL_G, static
+
+Var 2578, name NOSE_WHEEL_SW, static
+
+Var 0375, name sNOSE_WH_S, Link IOCARD_SW, Device 31, Input 66
+{
+  IF &sNOSE_WH_S = 0
+  {
+    &NOSE_WHEEL_G = 0    
+    &NOSE_WHEEL_SW = 1    
+  }
+  ELSE
+  {
+    &NOSE_WHEEL_G = 1    
+    &NOSE_WHEEL_SW = 0    
+  }
+}
+
+Var 2368, name bBELOW_GS, static, Link IOCARD_SW, Device 31, Input 33
+
+Var 2372, name CPT_MAIN_DU, static
+
+Var 0376, name sCPT_OUTBD_PFD, Link IOCARD_SW, Device 31, Input 0
+{
+  IF &sCPT_OUTBD_PFD = 1
+  {
+    &CPT_MAIN_DU = 0    
+  }
+}
+
+Var 0377, name sCPT_NORM, Link IOCARD_SW, Device 31, Input 1
+{
+  IF &sCPT_NORM = 1
+  {
+    &CPT_MAIN_DU = 1    
+  }
+}
+
+Var 0378, name sCPT_ENG_PRI, Link IOCARD_SW, Device 31, Input 2
+{
+  IF &sCPT_ENG_PRI = 1
+  {
+    &CPT_MAIN_DU = 2    
+  }
+}
+
+Var 0379, name sCPT_PFD, Link IOCARD_SW, Device 31, Input 3
+{
+  IF &sCPT_PFD = 1
+  {
+    &CPT_MAIN_DU = 3    
+  }
+}
+
+Var 0380, name sCPT_MFD, Link IOCARD_SW, Device 31, Input 4
+{
+  IF &sCPT_MFD = 1
+  {
+    &CPT_MAIN_DU = 4    
+  }
+}
+
+Var 2371, name CPT_LOWER_DU, static
+
+Var 0381, name sCPT_ENG_LDU, Link IOCARD_SW, Device 31, Input 5
+{
+  IF &sCPT_ENG_LDU = 1
+  {
+    &CPT_LOWER_DU = 0    
+  }
+}
+
+Var 0382, name sCPT_NORM_LDU, Link IOCARD_SW, Device 31, Input 6
+{
+  IF &sCPT_NORM_LDU = 1
+  {
+    &CPT_LOWER_DU = 1    
+  }
+}
+
+Var 0383, name sCPT_ND_LDU, Link IOCARD_SW, Device 31, Input 7
+{
+  IF &sCPT_ND_LDU = 1
+  {
+    &CPT_LOWER_DU = 2    
+  }
+}
+
+Var 2366, name bCPT_AP_RESET, static, Link IOCARD_SW, Device 31, Input 18
+
+Var 2367, name bCPT_AT_RESET, static, Link IOCARD_SW, Device 31, Input 19
+
+Var 2370, name bCPT_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 20
+
+Var 2369, name CPT_DISENGAGE, static
+
+Var 0384, name sCPT_UP_TEST, Link IOCARD_SW, Device 31, Input 21
+{
+  IF &sCPT_UP_TEST = 1
+  {
+    &CPT_DISENGAGE = 0    
+  }
+  ELSE
+  {
+    &CPT_DISENGAGE = 1    
+  }
+}
+
+Var 0385, name sCPT_DOWN_TEST, Link IOCARD_SW, Device 31, Input 22
+{
+  IF &sCPT_DOWN_TEST = 1
+  {
+    &CPT_DISENGAGE = 2    
+  }
+  ELSE
+  {
+    &CPT_DISENGAGE = 1    
+  }
+}
+
+Var 1228, name aCPT_FIRE_W, static, Link IOCARD_OUT, Device 31, Output 25
+
+Var 1229, name aFO_FIRE_W, static, Link IOCARD_OUT, Device 31, Output 50
+
+Var 1230, name aCPT_MASTER_W, static, Link IOCARD_OUT, Device 31, Output 26
+
+Var 1231, name aFO_MASTER_W, static, Link IOCARD_OUT, Device 31, Output 49
+
+Var 1232, name aFLT_CONT, static, Link IOCARD_OUT, Device 31, Output 27
+
+Var 1233, name aIRS, static, Link IOCARD_OUT, Device 31, Output 29
+
+Var 1234, name aFUEL, static, Link IOCARD_OUT, Device 31, Output 31
+
+Var 1235, name aELECn, static, Link IOCARD_OUT, Device 31, Output 28
+
+Var 1236, name aAPU, static, Link IOCARD_OUT, Device 31, Output 30
+
+Var 1237, name aOVHT_DET, static, Link IOCARD_OUT, Device 31, Output 32
+
+Var 1238, name aANTI_ICE, static, Link IOCARD_OUT, Device 31, Output 43
+
+Var 1239, name aHYD, static, Link IOCARD_OUT, Device 31, Output 45
+
+Var 1240, name aDOORS, static, Link IOCARD_OUT, Device 31, Output 47
+
+Var 1241, name aENG, static, Link IOCARD_OUT, Device 31, Output 44
+
+Var 1242, name aOVERHEAD, static, Link IOCARD_OUT, Device 31, Output 46
+
+Var 1243, name aAIR_COND, static, Link IOCARD_OUT, Device 31, Output 48
+
+Var 1298, name aBELOWGS_0, static, Link IOCARD_OUT, Device 31, Output 33
+
+Var 1299, name aBELOWGS_1, static, Link IOCARD_OUT, Device 31, Output 52
+
+Var 1304, name aAP_0, static, Link IOCARD_OUT, Device 31, Output 12
+
+Var 1305, name aAP_1, static, Link IOCARD_OUT, Device 31, Output 17
+
+Var 1306, name aAT_0, static, Link IOCARD_OUT, Device 31, Output 14
+
+Var 1307, name aAT_1, static, Link IOCARD_OUT, Device 31, Output 19
+
+Var 1308, name aFMC_0, static, Link IOCARD_OUT, Device 31, Output 15
+
+Var 1309, name aFMC_1, static, Link IOCARD_OUT, Device 31, Output 20
+
+Var 1312, name aSPBRAKE_ARMED, static, Link IOCARD_OUT, Device 31, Output 34
+
+Var 1313, name aSPBRAKE_DNARM, static, Link IOCARD_OUT, Device 31, Output 35
+
+Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 51
+
+Var 1315, name aSTAB_OUT_O_TR, static, Link IOCARD_OUT, Device 31, Output 36
+
+Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 22
+
+Var 1324, name aAUTOBRAKE_DIS, static, Link IOCARD_OUT, Device 31, Output 21
+
+Var 1325, name aFLAPS_TRANSIT, static, Link IOCARD_OUT, Device 31, Output 23
+
+Var 1326, name aFLAPS_EXTEND, static, Link IOCARD_OUT, Device 31, Output 24
+
+Var 1336, name aNOSE_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 37
+
+Var 1337, name aLEFT_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 39
+
+Var 1338, name aRIGHT_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 40
+
+Var 1339, name aNOSE_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 38
+
+Var 1340, name aLEFT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 41
+
+Var 1341, name aRIGHT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 42
+
+Var 1526, name aAP_0_A, static, Link IOCARD_OUT, Device 31, Output 11
+
+Var 1528, name aAT_0_A, static, Link IOCARD_OUT, Device 31, Output 13
+
+Var 1527, name aAP_1_A, static, Link IOCARD_OUT, Device 31, Output 16
+
+Var 1529, name aAT_1_A, static, Link IOCARD_OUT, Device 31, Output 18
+
+Var 2520, name bCPT_MASTER_R, static, Link IOCARD_SW, Device 31, Input 64
+
+Var 2444, name bCPT_FIRE_R, static, Link IOCARD_SW, Device 31, Input 63
+
+Var 2521, name bFO_MASTER_R, static, Link IOCARD_SW, Device 31, Input 17
+
+Var 2445, name bFO_FIRE_R, static, Link IOCARD_SW, Device 31, Input 23
+
+Var 2732, name bSYS_ANNUN_L, static, Link IOCARD_SW, Device 31, Input 65
+
+Var 2733, name bSYS_ANNUN_R, static, Link IOCARD_SW, Device 31, Input 8
+
+Var 2381, name FO_MAIN_DU, static
+
+Var 0386, name sFO_OUTBD_PFD, Link IOCARD_SW, Device 31, Input 16
+{
+  IF &sFO_OUTBD_PFD = 1
+  {
+    &FO_MAIN_DU = 0    
+  }
+}
+
+Var 0387, name sFO_NORM, Link IOCARD_SW, Device 31, Input 15
+{
+  IF &sFO_NORM = 1
+  {
+    &FO_MAIN_DU = 1    
+  }
+}
+
+Var 0388, name sFO_ENG_PRI, Link IOCARD_SW, Device 31, Input 14
+{
+  IF &sFO_ENG_PRI = 1
+  {
+    &FO_MAIN_DU = 2    
+  }
+}
+
+Var 0389, name sFO_PFD, Link IOCARD_SW, Device 31, Input 13
+{
+  IF &sFO_PFD = 1
+  {
+    &FO_MAIN_DU = 3    
+  }
+}
+
+Var 0390, name sFO_MFD, Link IOCARD_SW, Device 31, Input 12
+{
+  IF &sFO_MFD = 1
+  {
+    &FO_MAIN_DU = 4    
+  }
+}
+
+Var 2380, name FO_LOWER_DU, static
+
+Var 0391, name sFO_ENG_LDU, Link IOCARD_SW, Device 31, Input 11
+{
+  IF &sFO_ENG_LDU = 1
+  {
+    &FO_LOWER_DU = 0    
+  }
+}
+
+Var 0392, name sFO_NORM_LDU, Link IOCARD_SW, Device 31, Input 10
+{
+  IF &sFO_NORM_LDU = 1
+  {
+    &FO_LOWER_DU = 1    
+  }
+}
+
+Var 0393, name sFO_ND_LDU, Link IOCARD_SW, Device 31, Input 9
+{
+  IF &sFO_ND_LDU = 1
+  {
+    &FO_LOWER_DU = 2    
+  }
+}
+
+Var 2557, name AUTOBRAKE_SEL, static
+
+Var 0394, name sAUTOBRAKE_RTO, Link IOCARD_SW, Device 31, Input 54
+{
+  IF &sAUTOBRAKE_RTO = 1
+  {
+    &AUTOBRAKE_SEL = 0    
+  }
+}
+
+Var 0395, name sAUTOBRAKE_OFF, Link IOCARD_SW, Device 31, Input 55
+{
+  IF &sAUTOBRAKE_OFF = 1
+  {
+    &AUTOBRAKE_SEL = 1    
+  }
+}
+
+Var 0396, name sAUTOBRAKE_1, Link IOCARD_SW, Device 31, Input 56
+{
+  IF &sAUTOBRAKE_1 = 1
+  {
+    &AUTOBRAKE_SEL = 2    
+  }
+}
+
+Var 0397, name sAUTOBRAKE_2, Link IOCARD_SW, Device 31, Input 57
+{
+  IF &sAUTOBRAKE_2 = 1
+  {
+    &AUTOBRAKE_SEL = 3    
+  }
+}
+
+Var 0398, name sAUTOBRAKE_3, Link IOCARD_SW, Device 31, Input 58
+{
+  IF &sAUTOBRAKE_3 = 1
+  {
+    &AUTOBRAKE_SEL = 4    
+  }
+}
+
+Var 0399, name sAUTOBRAKE_MAX, Link IOCARD_SW, Device 31, Input 59
+{
+  IF &sAUTOBRAKE_MAX = 1
+  {
+    &AUTOBRAKE_SEL = 5    
+  }
+}
+
+Var 2563, name N1_SEL, static
+
+Var 0400, name sN1_2, Link IOCARD_SW, Device 31, Input 36
+{
+  IF &sN1_2 = 1
+  {
+    &N1_SEL = 0    
+  }
+}
+
+Var 0401, name sN1_1, Link IOCARD_SW, Device 31, Input 37
+{
+  IF &sN1_1 = 1
+  {
+    &N1_SEL = 1    
+  }
+}
+
+Var 0402, name sN1_AUTO, Link IOCARD_SW, Device 31, Input 38
+{
+  IF &sN1_AUTO = 1
+  {
+    &N1_SEL = 2    
+  }
+}
+
+Var 0403, name sN1_BOTH, Link IOCARD_SW, Device 31, Input 39
+{
+  IF &sN1_BOTH = 1
+  {
+    &N1_SEL = 3    
+  }
+}
+
+Var 2565, name SPD_REF_SEL, static
+
+Var 0404, name sSPD_AUTO, Link IOCARD_SW, Device 31, Input 45
+{
+  IF &sSPD_AUTO = 1
+  {
+    &SPD_REF_SEL = 1    
+  }
+}
+
+Var 0405, name sSPD_V1, Link IOCARD_SW, Device 31, Input 46
+{
+  IF &sSPD_V1 = 1
+  {
+    &SPD_REF_SEL = 2    
+  }
+}
+
+Var 0406, name sSPD_VR, Link IOCARD_SW, Device 31, Input 47
+{
+  IF &sSPD_VR = 1
+  {
+    &SPD_REF_SEL = 3    
+  }
+}
+
+Var 0407, name sSPD_WT, Link IOCARD_SW, Device 31, Input 48
+{
+  IF &sSPD_WT = 1
+  {
+    &SPD_REF_SEL = 4    
+  }
+}
+
+Var 0408, name sSPD_VREF, Link IOCARD_SW, Device 31, Input 49
+{
+  IF &sSPD_VREF = 1
+  {
+    &SPD_REF_SEL = 5    
+  }
+}
+
+Var 0409, name sSPD_D, Link IOCARD_SW, Device 31, Input 50
+{
+  IF &sSPD_D = 1
+  {
+    &SPD_REF_SEL = 6    
+  }
+}
+
+Var 0410, name sSPD_SET, Link IOCARD_SW, Device 31, Input 51
+{
+  IF &sSPD_SET = 1
+  {
+    &SPD_REF_SEL = 0    
+  }
+}
+
+Var 2560, name bENG_BUT_SEL, static, Link IOCARD_SW, Device 31, Input 60, Type P
+
+Var 2561, name bSYS_BUT_SEL, static, Link IOCARD_SW, Device 31, Input 61, Type P
+
+Var 2558, name FUEL_FLOW_SEL, static
+
+Var 0411, name sFUEL_FL_RST, Link IOCARD_SW, Device 31, Input 43
+{
+  IF &sFUEL_FL_RST = 1
+  {
+    &FUEL_FLOW_SEL = 0    
+  }
+  ELSE
+  {
+    &FUEL_FLOW_SEL = 1    
+  }
+}
+
+Var 0412, name sFUEL_FL_USED, Link IOCARD_SW, Device 31, Input 42
+{
+  IF &sFUEL_FL_USED = 1
+  {
+    &FUEL_FLOW_SEL = 2    
+  }
+  ELSE
+  {
+    &FUEL_FLOW_SEL = 1    
+  }
+}
+
+Var 2447, name GEAR_LEVER, static
+
+Var 2448, name GEAR_LEVER_OFF, static
+
+Var 2449, name GEAR_LEVER_UN, static
+
+Var 0413, name Gear_Lever_D, Link IOCARD_SW, Device 31, Input 69
+{
+  IF &Gear_Lever_D = 1
+  {
+    &GEAR_LEVER = 1    
+    &GEAR_LEVER_OFF = 0    
+  }
+  ELSE
+  {
+    &GEAR_LEVER = 0    
+    &GEAR_LEVER_OFF = 1    
+  }
+}
+
+Var 0414, name Gear_Lever_U, Link IOCARD_SW, Device 31, Input 70
+{
+  IF &Gear_Lever_U = 1
+  {
+    &GEAR_LEVER_UN = 1    
+  }
+  ELSE
+  {
+    &GEAR_LEVER_UN = 0    
+  }
+}
+
+Var 2377, name bBELOW_GS_1, static, Link IOCARD_SW, Device 31, Input 13
+
+Var 2375, name bFO_AP_RESET, static, Link IOCARD_SW, Device 31, Input 27
+
+Var 2376, name bFO_AT_RESET, static, Link IOCARD_SW, Device 31, Input 28
+
+Var 2379, name bFO_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 29
+
+Var 2378, name FO_DISENGAGE, static
+
+Var 0415, name sFO_UP_TEST, Link IOCARD_SW, Device 31, Input 30
+{
+  IF &sFO_UP_TEST = 1
+  {
+    &FO_DISENGAGE = 0    
+  }
+  ELSE
+  {
+    &FO_DISENGAGE = 1    
+  }
+}
+
+Var 0416, name sFO_DOWN_TEST, Link IOCARD_SW, Device 31, Input 31
+{
+  IF &sFO_DOWN_TEST = 1
+  {
+    &FO_DISENGAGE = 2    
+  }
+  ELSE
+  {
+    &FO_DISENGAGE = 1    
+  }
+}
+
+Var 0417, name servo_flaps, Link USB_SERVOS, Device 36, Output 1, PosL 160, PosC 511, PosR 1000
+
+Var 1328, name flaps, static, Value 0
+{
+  L0 = &flaps    
+  L2 = L0    
+  C0 = L0 >= 0
+  C1 = L0 <= 1000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 0    
+    &flaps_high_val = 1000    
+    &servo_high_val = 160    
+    &servo_low_val = 240         // 0 and 1
+  }
+  C0 = L0 >= 1000
+  C1 = L0 <= 2000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 1000    
+    &flaps_high_val = 2000    
+    &servo_high_val = 240    
+    &servo_low_val = 350         // 1 and 2
+  }
+  C0 = L0 >= 2000
+  C1 = L0 <= 5000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 2000    
+    &flaps_high_val = 5000    
+    &servo_high_val = 350    
+    &servo_low_val = 460         // 2 and 5
+  }
+  C0 = L0 >= 5000
+  C1 = L0 <= 10000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 5000    
+    &flaps_high_val = 10000    
+    &servo_high_val = 460    
+    &servo_low_val = 570         // 5 and 10
+  }
+  C0 = L0 >= 10000
+  C1 = L0 <= 15000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 10000    
+    &flaps_high_val = 15000    
+    &servo_high_val = 570    
+    &servo_low_val = 650         // 10 and 15
+  }
+  C0 = L0 >= 15000
+  C1 = L0 <= 25000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 15000    
+    &flaps_high_val = 25000    
+    &servo_high_val = 650    
+    &servo_low_val = 740         // 15 and 25
+  }
+  C0 = L0 >= 25000
+  C1 = L0 <= 30000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 25000    
+    &flaps_high_val = 30000    
+    &servo_high_val = 740    
+    &servo_low_val = 830         // 25 and 30
+  }
+  C0 = L0 >= 30000
+  C1 = L0 <= 40000
+  IF C0 AND C1
+  {
+    &flaps_low_val = 30000    
+    &flaps_high_val = 40000    
+    &servo_high_val = 830    
+    &servo_low_val = 940         // 30 and 40
+  }
+  &servo_calc = &servo_low_val - &servo_high_val
+  &flaps_calc = &flaps_high_val - &flaps_low_val
+  &flaps_val = L0 - &flaps_low_val
+  &servo_val = &servo_calc * &flaps_val
+  &servo_val = &servo_val / &flaps_calc
+  L1 = &servo_high_val + &servo_val
+  &servo_flaps = L1    
+  &FlapPosL = &flaps    
+}
+
+Var 0419, name servo_val
+
+Var 0420, name flaps_calc
+
+Var 0421, name servo_calc
+
+Var 0422, name flaps_val
+
+Var 0423, name flaps_low_val
+
+Var 0424, name flaps_high_val
+
+Var 0425, name servo_high_val
+
+Var 0426, name servo_low_val
+
+Var 0427, name servo_flaps2, Link USB_SERVOS, Device 36, Output 2, PosL 160, PosC 511, PosR 1000
+
+Var 1329, name flaps2, static, Value 0
+{
+  L0 = &flaps2    
+  L2 = L0    
+  C0 = L0 >= 0
+  C1 = L0 <= 1000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 0    
+    &flaps_high_v2 = 1000    
+    &servo_high_v2 = 169    
+    &servo_low_v2 = 281         // 0 and 1
+  }
+  C0 = L0 >= 1000
+  C1 = L0 <= 2000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 1000    
+    &flaps_high_v2 = 2000    
+    &servo_high_v2 = 281    
+    &servo_low_v2 = 480         // 1 and 2
+  }
+  C0 = L0 >= 2000
+  C1 = L0 <= 5000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 2000    
+    &flaps_high_v2 = 5000    
+    &servo_high_v2 = 480    
+    &servo_low_v2 = 536         // 2 and 5
+  }
+  C0 = L0 >= 5000
+  C1 = L0 <= 10000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 5000    
+    &flaps_high_v2 = 10000    
+    &servo_high_v2 = 536    
+    &servo_low_v2 = 642         // 5 and 10
+  }
+  C0 = L0 >= 10000
+  C1 = L0 <= 15000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 10000    
+    &flaps_high_v2 = 15000    
+    &servo_high_v2 = 642    
+    &servo_low_v2 = 745         // 10 and 15
+  }
+  C0 = L0 >= 15000
+  C1 = L0 <= 25000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 15000    
+    &flaps_high_v2 = 25000    
+    &servo_high_v2 = 745    
+    &servo_low_v2 = 835         // 15 and 25
+  }
+  C0 = L0 >= 25000
+  C1 = L0 <= 30000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 25000    
+    &flaps_high_v2 = 30000    
+    &servo_high_v2 = 835    
+    &servo_low_v2 = 932         // 25 and 30
+  }
+  C0 = L0 >= 30000
+  C1 = L0 <= 40000
+  IF C0 AND C1
+  {
+    &flaps_low_v2 = 30000    
+    &flaps_high_v2 = 40000    
+    &servo_high_v2 = 932    
+    &servo_low_v2 = 1023         // 30 and 40
+  }
+  &servo_calc2 = &servo_low_v2 - &servo_high_v2
+  &flaps_calc2 = &flaps_high_v2 - &flaps_low_v2
+  &flaps_v2 = L0 - &flaps_low_v2
+  &servo_v2 = &servo_calc2 * &flaps_v2
+  &servo_v2 = &servo_v2 / &flaps_calc2
+  L1 = &servo_high_v2 + &servo_v2
+  &servo_flaps2 = L1    
+  &FlapPosR = &flaps2    
+}
+
+Var 0429, name servo_v2
+
+Var 0430, name flaps_calc2
+
+Var 0431, name servo_calc2
+
+Var 0432, name flaps_v2
+
+Var 0433, name flaps_low_v2
+
+Var 0434, name flaps_high_v2
+
+Var 0435, name servo_high_v2
+
+Var 0436, name servo_low_v2
+
+Var 1344, name TXRX_BRK_P, static, Value 0
+{
+  L0 = 170    
+  L1 = &TXRX_BRK_P * 0.2
+  L0 = L0 + L1
+  &SERVO_BRKpress = L0    
+}
+
+Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 36, Output 4, PosL 160, PosC 550, PosR 1020, Type 1
+
+Var 2454, name bSYS_TEST, static, Link IOCARD_SW, Device 31, Input 32
+
+Var 2450, name GRDPROXFLAP_G, static
+
+Var 2451, name GRDPROXFLAP_I, static
+
+Var 0438, name sGRDPROXFLAP, Link IOCARD_SW, Device 31, Input 33
+{
+  IF &sGRDPROXFLAP = 0
+  {
+    &GRDPROXFLAP_G = 0    
+    &GRDPROXFLAP_I = 1    
+  }
+  ELSE
+  {
+    &GRDPROXFLAP_G = 1    
+    &GRDPROXFLAP_I = 0    
+  }
+}
+
+Var 2452, name GRDPROXGEAR_G, static
+
+Var 2453, name GRDPROXGEAR_I, static
+
+Var 0439, name sGRDPROXGEAR, Link IOCARD_SW, Device 31, Input 34
+{
+  IF &sGRDPROXGEAR = 0
+  {
+    &GRDPROXGEAR_G = 0    
+    &GRDPROXGEAR_I = 1    
+  }
+  ELSE
+  {
+    &GRDPROXGEAR_G = 1    
+    &GRDPROXGEAR_I = 0    
+  }
+}
+
+Var 2455, name GRDPROXTERR_G, static
+
+Var 2456, name GRDPROXTERR_I, static
+
+Var 0440, name sGRDPROXTERR, Link IOCARD_SW, Device 31, Input 35
+{
+  IF &sGRDPROXTERR = 0
+  {
+    &GRDPROXTERR_G = 0    
+    &GRDPROXTERR_I = 1    
+  }
+  ELSE
+  {
+    &GRDPROXTERR_G = 1    
+    &GRDPROXTERR_I = 0    
+  }
+}
+
+Var 1373, name aGPWS_INOP, static, Link IOCARD_OUT, Device 31, Output 53
+
+Var 2373, name MIP_LIGHT_TEST, static
+
+Var 0441, name sLIGHT_TEST, Link IOCARD_SW, Device 31, Input 68
+{
+  IF &sLIGHT_TEST = 1
+  {
+    &MIP_LIGHT_TEST = 0         // Lights Test ON sent to NGX
+  }
+  ELSE
+  {
+    &MIP_LIGHT_TEST = 1         // Lights Test OFF sent to NGX
+  }
+}
+
+Var 0442, name sLIGHT_DIM, Link IOCARD_SW, Device 31, Input 67
+{
+  IF &sLIGHT_DIM = 1
+  {
+    &MIP_LIGHT_TEST = 2    
+  }
+  ELSE
+  {
+    &MIP_LIGHT_TEST = 1    
+  }
+}
+
+Var 1394, name aENG1_OVHT, static, Link IOCARD_OUT, Device 32, Output 23
+
+Var 1395, name aENG2_OVHT, static, Link IOCARD_OUT, Device 32, Output 28
+
+Var 1400, name aFIREENG1, static, Link IOCARD_OUT, Device 32, Output 31
+
+Var 1401, name aFIREAPU, static, Link IOCARD_OUT, Device 32, Output 32
+
+Var 1402, name aFIREENG2, static, Link IOCARD_OUT, Device 32, Output 33
+
+Var 1403, name aFIREWHEEL, static, Link IOCARD_OUT, Device 32, Output 27
+
+Var 1404, name aFIRE_ENG_F, static, Link IOCARD_OUT, Device 32, Output 26
+
+Var 1405, name aAPUDETIO, static, Link IOCARD_OUT, Device 32, Output 25
+
+Var 1406, name aAPU_BDIS, static, Link IOCARD_OUT, Device 32, Output 24
+
+Var 1407, name aENG1_BDIS, static, Link IOCARD_OUT, Device 32, Output 29
+
+Var 1408, name aENG2_BDIS, static, Link IOCARD_OUT, Device 32, Output 30
+
+Var 1410, name aENG1GL, static, Link IOCARD_OUT, Device 32, Output 34
+
+Var 1411, name aAPUGL, static, Link IOCARD_OUT, Device 32, Output 35
+
+Var 1412, name aENG2GL, static, Link IOCARD_OUT, Device 32, Output 36
+
+Var 2442, name HNDENG1, static, Link IOCARD_SW, Device 32, Input 55
+
+Var 2435, name HNDENG1_L, static, Link IOCARD_SW, Device 32, Input 54
+
+Var 2436, name HNDENG1_R, static, Link IOCARD_SW, Device 32, Input 56
+
+Var 2441, name HNDAPU, static, Link IOCARD_SW, Device 32, Input 58
+
+Var 2433, name HNDAPU_L, static, Link IOCARD_SW, Device 32, Input 57
+
+Var 2434, name HNDAPU_R, static, Link IOCARD_SW, Device 32, Input 59
+
+Var 2443, name HNDENG2, static, Link IOCARD_SW, Device 32, Input 61
+
+Var 2437, name HNDENG2_L, static, Link IOCARD_SW, Device 32, Input 60
+
+Var 2438, name HNDENG2_R, static, Link IOCARD_SW, Device 32, Input 62
+
+Var 2430, name BELLCOUT_SW, static, Link IOCARD_SW, Device 32, Input 49
+
+Var 2439, name OVHTDET1, static
+
+Var 0443, name sOVHTDET1_A, Link IOCARD_SW, Device 32, Input 46
+{
+  IF &sOVHTDET1_A = 1
+  {
+    &OVHTDET1 = 0    
+  }
+  ELSE
+  {
+    &OVHTDET1 = 1    
+  }
+}
+
+Var 0444, name sOVHTDET1_B, Link IOCARD_SW, Device 32, Input 45
+{
+  IF &sOVHTDET1_B = 1
+  {
+    &OVHTDET1 = 2    
+  }
+  ELSE
+  {
+    &OVHTDET1 = 1    
+  }
+}
+
+Var 2440, name OVHTDET2, static
+
+Var 0445, name sOVHTDET2_A, Link IOCARD_SW, Device 32, Input 51
+{
+  IF &sOVHTDET2_A = 1
+  {
+    &OVHTDET2 = 0    
+  }
+  ELSE
+  {
+    &OVHTDET2 = 1    
+  }
+}
+
+Var 0446, name sOVHTDET2_B, Link IOCARD_SW, Device 32, Input 50
+{
+  IF &sOVHTDET2_B = 1
+  {
+    &OVHTDET2 = 2    
+  }
+  ELSE
+  {
+    &OVHTDET2 = 1    
+  }
+}
+
+Var 2431, name FIRENGTEST, static
+
+Var 0447, name sFIRENGT_L, Link IOCARD_SW, Device 32, Input 47
+{
+  IF &sFIRENGT_L = 1
+  {
+    &FIRENGTEST = 0    
+  }
+  ELSE
+  {
+    &FIRENGTEST = 1    
+  }
+}
+
+Var 0448, name sFIRENGT_R, Link IOCARD_SW, Device 32, Input 48
+{
+  IF &sFIRENGT_R = 1
+  {
+    &FIRENGTEST = 2    
+  }
+  ELSE
+  {
+    &FIRENGTEST = 1    
+  }
+}
+
+Var 2432, name EXTTEST, static
+
+Var 0449, name sEXTTEST1, Link IOCARD_SW, Device 32, Input 53
+{
+  IF &sEXTTEST1 = 1
+  {
+    &EXTTEST = 0    
+  }
+  ELSE
+  {
+    &EXTTEST = 1    
+  }
+}
+
+Var 0450, name sEXTTEST2, Link IOCARD_SW, Device 32, Input 52
+{
+  IF &sEXTTEST2 = 1
+  {
+    &EXTTEST = 2    
+  }
+  ELSE
+  {
+    &EXTTEST = 1    
+  }
+}
+
+Var 1413, name aEXT_TEST_FWD, static, Link IOCARD_OUT, Device 32, Output 94
+
+Var 1414, name aEXT_TEST_AFT, static, Link IOCARD_OUT, Device 32, Output 95
+
+Var 1416, name aDISCHARGE_BAR, static, Link IOCARD_OUT, Device 32, Output 88
+
+Var 1417, name aARMED_FWD, static, Link IOCARD_OUT, Device 32, Output 92
+
+Var 1418, name aARMED_AFT, static, Link IOCARD_OUT, Device 32, Output 90
+
+Var 1419, name aFWD, static, Link IOCARD_OUT, Device 32, Output 91
+
+Var 1420, name aAFT, static, Link IOCARD_OUT, Device 32, Output 89
+
+Var 1421, name aDETECT_FAULT, static, Link IOCARD_OUT, Device 32, Output 93
+
+Var 1422, name aDISCHARGE, static, Link IOCARD_OUT, Device 32, Output 87
+
+Var 2107, name F_ARM_SW_AFT, static, Link IOCARD_SW, Device 32, Input 127     // FIRE CARGO AFT ARMED KORRY SWITCH
+
+Var 2108, name F_ARM_SW_FWD, static, Link IOCARD_SW, Device 32, Input 128     // FIRE CARGO FWD ARMED KORRY SWITCH
+
+Var 2109, name F_DET_S_SW_AFT, static
+
+Var 2110, name F_DET_S_SW_FWD, static
+
+Var 2111, name F_D_SW, static
+
+Var 2112, name F_D_SW_G, static
+
+Var 2113, name F_T_SW, static, Link IOCARD_SW, Device 32, Input 117     // FIRE CARGO TEST SWITCH
+
+Var 0451, name sFDETFA, Link IOCARD_SW, Device 32, Input 123     // FIRE CARGO DET SELECT FWD A ROTARY SWITC
+{
+  IF &sFDETFA = 1
+  {
+    &F_DET_S_SW_FWD = 0    
+  }
+}
+
+Var 0452, name sFDETFNORM, Link IOCARD_SW, Device 32, Input 122     // FIRE CARGO DET SELECT FWD NORM ROTARY SW
+{
+  IF &sFDETFNORM = 1
+  {
+    &F_DET_S_SW_FWD = 1    
+  }
+}
+
+Var 0453, name sFDETFB, Link IOCARD_SW, Device 32, Input 121     // FIRE CARGO DET SELECT FWD B ROTARY SWITC
+{
+  IF &sFDETFB = 1
+  {
+    &F_DET_S_SW_FWD = 2    
+  }
+}
+
+Var 0454, name sFDETAA, Link IOCARD_SW, Device 32, Input 120     // FIRE CARGO DET SELECT AFT A ROTARY SWITC
+{
+  IF &sFDETAA = 1
+  {
+    &F_DET_S_SW_AFT = 0    
+  }
+}
+
+Var 0455, name sFDETANORM, Link IOCARD_SW, Device 32, Input 119     // FIRE CARGO DET SELECT AFT NORM ROTARY SW
+{
+  IF &sFDETANORM = 1
+  {
+    &F_DET_S_SW_AFT = 1    
+  }
+}
+
+Var 0456, name sFDETAB, Link IOCARD_SW, Device 32, Input 118     // FIRE CARGO DET SELECT AFT B ROTARY SWITC
+{
+  IF &sFDETAB = 1
+  {
+    &F_DET_S_SW_AFT = 2    
+  }
+}
+
+Var 0457, name sFDISCH, Link IOCARD_SW, Device 32, Input 126     // FIRE CARGO DISCHARGE KORRY SWITCH
+{
+  IF &sFDISCH = 1
+  {
+    &F_D_SW_G = 1    
+    &F_D_SW = 0    
+  }
+  ELSE
+  {
+    &F_D_SW = 1    
+    &F_D_SW_G = 0    
+  }
+}
+
+Var 1450, name micsel_1, static, Value 2
+{
+  IF &AUDI1_POWER_ON = 1
+  {
+    IF &micsel_1 = 0
+    {
+      &aAU1VH1MI = 1    
+      &aAU1VH2MI = 0    
+    }
+    IF &micsel_1 = 1
+    {
+      &aAU1VH2MI = 1    
+      &aAU1VH1MI = 0    
+    }
+  }
+  ELSE
+  {
+    &aAU1VH2MI = 0    
+    &aAU1VH1MI = 0    
+  }
+}
+
+Var 1523, name rec_1, static
+{
+  IF &AUDI1_POWER_ON = 1
+  {
+    &aAU1VH1VO = TESTBIT &rec_1 ,0
+    &aAU1VH2VO = TESTBIT &rec_1 ,1
+    &aAU1NA1VO = TESTBIT &rec_1 ,8
+    &aAU1NA2VO = TESTBIT &rec_1 ,9
+    &aAU1AD1VO = TESTBIT &rec_1 ,10
+    &aAU1AD2VO = TESTBIT &rec_1 ,11
+    &aAU1MKRVO = TESTBIT &rec_1 ,12
+  }
+  ELSE
+  {
+    &rec_1 = 0    
+  }
+}
+
+Var 0458, name aAU1VH1MI, Link IOCARD_OUT, Device 21, Output 0     // AUDIO1 VHF1 MIC
+
+Var 0459, name aAU1VH2MI, Link IOCARD_OUT, Device 21, Output 1     // AUDIO1 VHF2 MIC
+
+Var 0460, name aAU1VH1VO, Link IOCARD_OUT, Device 21, Output 2     // AUDIO1 VHF1 VOL
+
+Var 0461, name aAU1VH2VO, Link IOCARD_OUT, Device 21, Output 3     // AUDIO1 VHF2 VOL
+
+Var 0462, name aAU1NA1VO, Link IOCARD_OUT, Device 21, Output 4     // AUDIO1 NAV1 VOL
+
+Var 0463, name aAU1NA2VO, Link IOCARD_OUT, Device 21, Output 5     // AUDIO1 NAV2 VOL
+
+Var 0464, name aAU1AD1VO, Link IOCARD_OUT, Device 21, Output 6     // AUDIO1 ADF1 VOL
+
+Var 0465, name aAU1AD2VO, Link IOCARD_OUT, Device 21, Output 7     // AUDIO1 ADF2 VOL
+
+Var 0466, name aAU1MKRVO, Link IOCARD_OUT, Device 21, Output 8     // AUDIO1 MARKER VOL
+
+Var 2012, name AU1VH1MI, static
+
+Var 2014, name AU1VH2MI, static
+
+Var 2027, name bAU1VH1VO, static, Link IOCARD_SW, Device 21, Input 2, Type P     // AUDIO1 VHF1 VOL
+
+Var 2028, name bAU1VH2VO, static, Link IOCARD_SW, Device 21, Input 3, Type P     // AUDIO1 VHF2 VOL
+
+Var 2022, name bAU1NA1VO, static, Link IOCARD_SW, Device 21, Input 4, Type P     // AUDIO1 NAV1 VOL
+
+Var 2023, name bAU1NA2VO, static, Link IOCARD_SW, Device 21, Input 5, Type P     // AUDIO1 NAV2 VOL
+
+Var 2017, name bAU1AD1VO, static, Link IOCARD_SW, Device 21, Input 6, Type P     // AUDIO1 ADF1 VOL
+
+Var 2018, name bAU1AD2VO, static, Link IOCARD_SW, Device 21, Input 7, Type P     // AUDIO1 ADF2 VOL
+
+Var 2021, name bAU1MKRVO, static, Link IOCARD_SW, Device 21, Input 9, Type P     // AUDIO1 MARKER VOL
+
+Var 2002, name sAU1ALT_NORM, static, Link IOCARD_SW, Device 21, Input 14     // AUDIO1 ALT-NORM
+
+Var 2030, name AU1RTIC, static
+
+Var 2001, name AU1FILT, static
+
+Var 0467, name bAU1VH1MI, Link IOCARD_SW, Device 21, Input 0     // AUDIO1 VHF1 MIC
+{
+  IF &bAU1VH1MI = 1
+  {
+    &AU1VH1MI = -1    
+  }
+  ELSE
+  {
+    &AU1VH1MI = 0    
+  }
+}
+
+Var 0468, name bAU1VH2MI, Link IOCARD_SW, Device 21, Input 1     // AUDIO1 VHF2 MIC
+{
+  IF &bAU1VH2MI = 1
+  {
+    &AU1VH2MI = -1    
+  }
+  ELSE
+  {
+    &AU1VH2MI = 0    
+  }
+}
+
+Var 0469, name sAU1RT, Link IOCARD_SW, Device 21, Input 12     // AUDIO1 R-T
+{
+  IF &sAU1RT = 1
+  {
+    &AU1RTIC = 0    
+  }
+  ELSE
+  {
+    IF &sAU1RT = 0
+    {
+      &AU1RTIC = 1    
+    }
+  }
+}
+
+Var 0470, name sAU1IC, Link IOCARD_SW, Device 21, Input 13     // AUDIO1 I-C
+{
+  IF &sAU1IC = 1
+  {
+    &AU1RTIC = 2    
+  }
+  ELSE
+  {
+    IF &sAU1IC = 0
+    {
+      &AU1RTIC = 1    
+    }
+  }
+}
+
+Var 0471, name sAU1FILT_V, Link IOCARD_SW, Device 21, Input 11     // AUDIO1 FILTER V ROTARY
+{
+  IF &sAU1FILT_V = 1
+  {
+    &AU1FILT = 0    
+  }
+  ELSE
+  {
+    &AU1FILT = 1    
+  }
+}
+
+Var 0472, name sAU1FILT_R, Link IOCARD_SW, Device 21, Input 10     // AUDIO1 FILTER R ROTARY
+{
+  IF &sAU1FILT_R = 1
+  {
+    &AU1FILT = 2    
+  }
+  ELSE
+  {
+    &AU1FILT = 1    
+  }
+}
+
+Var 1451, name micsel_2, static, Value 2
+{
+  IF &AUDI2_POWER_ON = 1
+  {
+    IF &micsel_2 = 0
+    {
+      &aAU2VH1MI = 1    
+      &aAU2VH2MI = 0    
+    }
+    IF &micsel_2 = 1
+    {
+      &aAU2VH2MI = 1    
+      &aAU2VH1MI = 0    
+    }
+  }
+  ELSE
+  {
+    &aAU2VH2MI = 0    
+    &aAU2VH1MI = 0    
+  }
+}
+
+Var 1524, name rec_2, static
+{
+  IF &AUDI2_POWER_ON = 1
+  {
+    &aAU2VH1VO = TESTBIT &rec_2 ,0
+    &aAU2VH2VO = TESTBIT &rec_2 ,1
+    &aAU2NA1VO = TESTBIT &rec_2 ,8
+    &aAU2NA2VO = TESTBIT &rec_2 ,9
+    &aAU2AD1VO = TESTBIT &rec_2 ,10
+    &aAU2AD2VO = TESTBIT &rec_2 ,11
+    &aAU2MKRVO = TESTBIT &rec_2 ,12
+  }
+  ELSE
+  {
+    &rec_2 = 0    
+  }
+}
+
+Var 0473, name aAU2VH1MI, Link IOCARD_OUT, Device 21, Output 78     // AUDIO2 VHF1 MIC
+
+Var 0474, name aAU2VH2MI, Link IOCARD_OUT, Device 21, Output 79     // AUDIO2 VHF2 MIC
+
+Var 0475, name aAU2VH1VO, Link IOCARD_OUT, Device 21, Output 80     // AUDIO2 VHF1 VOL
+
+Var 0476, name aAU2VH2VO, Link IOCARD_OUT, Device 21, Output 81     // AUDIO2 VHF2 VOL
+
+Var 0477, name aAU2NA1VO, Link IOCARD_OUT, Device 21, Output 82     // AUDIO2 NAV1 VOL
+
+Var 0478, name aAU2NA2VO, Link IOCARD_OUT, Device 21, Output 83     // AUDIO2 NAV2 VOL
+
+Var 0479, name aAU2AD1VO, Link IOCARD_OUT, Device 21, Output 84     // AUDIO2 ADF1 VOL
+
+Var 0480, name aAU2AD2VO, Link IOCARD_OUT, Device 21, Output 85     // AUDIO2 ADF2 VOL
+
+Var 0481, name aAU2MKRVO, Link IOCARD_OUT, Device 21, Output 86     // AUDIO2 MARKER VOL
+
+Var 2034, name AU2VH1MI, static
+
+Var 2044, name AU2VH2MI, static
+
+Var 2057, name bAU2VH1VO, static, Link IOCARD_SW, Device 21, Input 101     // AUDIO2 VHF1 VOL
+
+Var 2058, name bAU2VH2VO, static, Link IOCARD_SW, Device 21, Input 102     // AUDIO2 VHF2 VOL
+
+Var 2052, name bAU2NA1VO, static, Link IOCARD_SW, Device 21, Input 103     // AUDIO2 NAV1 VOL
+
+Var 2053, name bAU2NA2VO, static, Link IOCARD_SW, Device 21, Input 104     // AUDIO2 NAV2 VOL
+
+Var 2047, name bAU2AD1VO, static, Link IOCARD_SW, Device 21, Input 105     // AUDIO2 ADF1 VOL
+
+Var 2048, name bAU2AD2VO, static, Link IOCARD_SW, Device 21, Input 106     // AUDIO2 ADF2 VOL
+
+Var 2051, name bAU2MKRVO, static, Link IOCARD_SW, Device 21, Input 107     // AUDIO2 MARKER VOL
+
+Var 2031, name sAU2ALT_NORM, static, Link IOCARD_SW, Device 21, Input 112     // AUDIO2 ALT-NORM
+
+Var 2060, name AU2RTIC, static
+
+Var 2033, name AU2FILT, static
+
+Var 0482, name bAU2VH1MI, Link IOCARD_SW, Device 21, Input 99     // AUDIO2 VHF1 MIC
+{
+  IF &bAU2VH1MI = 1
+  {
+    &AU2VH1MI = -1    
+  }
+  ELSE
+  {
+    &AU2VH1MI = 0    
+  }
+}
+
+Var 0483, name bAU2VH2MI, Link IOCARD_SW, Device 21, Input 100     // AUDIO2 VHF2 MIC
+{
+  IF &bAU2VH2MI = 1
+  {
+    &AU2VH2MI = -1    
+  }
+  ELSE
+  {
+    &AU2VH2MI = 0    
+  }
+}
+
+Var 0484, name sAU2RT, Link IOCARD_SW, Device 21, Input 110     // AUDIO2 R-T
+{
+  IF &sAU2RT = 1
+  {
+    &AU2RTIC = 0    
+  }
+  ELSE
+  {
+    IF &sAU2RT = 0
+    {
+      &AU2RTIC = 1    
+    }
+  }
+}
+
+Var 0485, name sAU2IC, Link IOCARD_SW, Device 21, Input 111     // AUDIO2 I-C
+{
+  IF &sAU2IC = 1
+  {
+    &AU2RTIC = 2    
+  }
+  ELSE
+  {
+    IF &sAU2IC = 0
+    {
+      &AU2RTIC = 1    
+    }
+  }
+}
+
+Var 0486, name sAU2FILT_V, Link IOCARD_SW, Device 21, Input 109     // AUDIO2 FILTER V ROTARY
+{
+  IF &sAU2FILT_V = 1
+  {
+    &AU2FILT = 0    
+  }
+  ELSE
+  {
+    &AU2FILT = 1    
+  }
+}
+
+Var 0487, name sAU2FILT_R, Link IOCARD_SW, Device 21, Input 108     // AUDIO2 FILTER R ROTARY
+{
+  IF &sAU2FILT_R = 1
+  {
+    &AU2FILT = 2    
+  }
+  ELSE
+  {
+    &AU2FILT = 1    
+  }
+}
+
+Var 0488, name S_STBOVRD, Link IOCARD_SW, Device 32, Input 135     // STAB TRIM OVERRIDE-NORM
+{
+  IF &S_STBOVRD = 1
+  {
+    &STABTRIM_G = 0    
+    &STABTRIM_I = 0    
+  }
+  ELSE
+  {
+    &STABTRIM_G = 1    
+    &STABTRIM_I = 1    
+  }
+}
+
+Var 2728, name STABTRIM_G, static
+
+Var 2727, name STABTRIM_I, static
+
+Var 0489, name R_STBDAUTO, Link IOCARD_SW, Device 32, Input 137     // STAB TRIM DOOR AUTO ROTARY
+{
+  IF &R_STBDAUTO = 1
+  {
+    &DOOR_LCK_SW = 0    
+  }
+}
+
+Var 0490, name R_STBDUNLK, Link IOCARD_SW, Device 32, Input 136     // STAB TRIM DOOR UNLOCK ROTARY
+{
+  IF &R_STBDUNLK = 1
+  {
+    &DOOR_LCK_SW = 1    
+  }
+}
+
+Var 0491, name R_STBDDENY, Link IOCARD_SW, Device 32, Input 138     // STAB TRIM DOOR DENY ROTARY
+{
+  IF &R_STBDDENY = 1
+  {
+    &DOOR_LCK_SW = 3    
+  }
+}
+
+Var 0492, name aSTBLCKL, Link IOCARD_OUT, Device 32, Output 96     // STAB TRIM LOCK FAIL INDICATOR
+
+Var 0493, name aSTBAUTOL, Link IOCARD_OUT, Device 32, Output 97     // STAB TRIM AUTOUNLOCK INDICATOR
+
+Var 2446, name DOOR_LCK_SW, static
+
+Var 0494, name AC_COM1
+
+Var 0495, name ST_COM1
+
+Var 0496, name ST_COM1Low
+
+Var 0497, name ST_COM1High
+
+Var 0498, name D_AC_COM1, Link IOCARD_DISPLAY, Device 8, Digit 1, Numbers 5     // COM1 active
+
+Var 0499, name O_AC_COM1DP, Link IOCARD_OUT, Device 8, Output 20     // Decimal Point
+
+Var 0500, name D_ST_COM1, Link IOCARD_DISPLAY, Device 8, Digit 7, Numbers 5     // COM1 standby
+
+Var 0501, name O_ST_COM1DP, Link IOCARD_OUT, Device 8, Output 21     // Decimal Point
+
+Var 2283, name bCOM1_TFR, static, Link IOCARD_SW, Device 8, Input 6, Type P     // Active/Standby swap button
+
+Var 2802, name C1STtoNGX, static
+
+Var 1800, name AC_COM1_BCD, static     // read active COM1 display from NGX
+{
+  &AC_COM1 = FROMBCD &AC_COM1_BCD     // convert to decimal
+  IF &COM1_Power_ON = 1
+  {
+    &D_AC_COM1 = &AC_COM1 + 10000     // display new active COM1 frequency leadin
+  }
+}
+
+Var 1801, name ST_COM1_BCD, static     // read standby COM1 display from NGX
+{
+  &ST_COM1 = FROMBCD &ST_COM1_BCD     // convert to decimal this is a 4 digit num
+  &ST_COM1High = DIV &ST_COM1 ,100     // update high rotary value after start or 
+  L0 = MOD &ST_COM1 ,10     // gets the last digit to test for either a
+  C0 = L0 = 2
+  C1 = L0 = 7
+  &ST_COM1Low = MOD &ST_COM1 ,100     // get the 2 rightmost digits
+  &ST_COM1Low = &ST_COM1Low * 10     // get a 3 digit update to rotary
+  IF C0 OR C1     // if either 2 or 7 is true
+  {
+    &ST_COM1Low = &ST_COM1Low + 5     // adds 5 so 020 will be 025 and 070 will b
+  }
+  &D_ST_COM1 = &ST_COM1 + 10000     // display new standby COM2 frequency leadi
+}
+
+Var 0502, name ROT_COM1_SW, Link IOCARD_ENCODER, Device 8, Input 0, Aceleration 1, Type 2
+{
+  L0 = &ROT_COM1_SW * -1     // change turning direction
+  &ST_COM1High = ROTATE 18 ,36 ,L0
+  CALL &Com1ToNGX
+}
+
+Var 0503, name ROT_COM1_SF, Link IOCARD_ENCODER, Device 8, Input 4, Aceleration 1, Type 2
+{
+  L0 = &ROT_COM1_SF * 25     // instead of acceleration that doesn't wor
+  &ST_COM1Low = ROTATE 0 ,999 ,L0
+  CALL &Com1ToNGX
+}
+
+Var 0504, name Com1ToNGX, Link SUBRUTINE
+{
+  IF &COM1_Power_ON > 0
+  {
+    L0 = &ST_COM1High * 100
+    L1 = DIV &ST_COM1Low ,10
+    &ST_COM1 = L0 + L1
+    &C1STtoNGX = TOBCD &ST_COM1
+  }
+}
+
+Var 0505, name AC_COM2
+
+Var 0506, name ST_COM2
+
+Var 0507, name ST_COM2Low
+
+Var 0508, name ST_COM2High
+
+Var 0509, name D_AC_COM2, Link IOCARD_DISPLAY, Device 18, Digit 1, Numbers 5     // COM2 active
+
+Var 0510, name O_AC_COM2DP, Link IOCARD_OUT, Device 18, Output 20     // Decimal Point
+
+Var 0511, name D_ST_COM2, Link IOCARD_DISPLAY, Device 18, Digit 7, Numbers 5     // COM2 standby
+
+Var 0512, name O_ST_COM2DP, Link IOCARD_OUT, Device 18, Output 21     // Decimal Point
+
+Var 2301, name bCOM2_TFR, static, Link IOCARD_SW, Device 18, Input 6, Type P     // Active/Standby swap button
+
+Var 2804, name C2STtoNGX, static
+
+Var 1802, name AC_COM2_BCD, static     // read active COM2 display from NGX
+{
+  &AC_COM2 = FROMBCD &AC_COM2_BCD     // convert to decimal
+  IF &COM2_Power_ON = 1
+  {
+    &D_AC_COM2 = &AC_COM2 + 10000     // display new active COM2 frequency leadin
+  }
+}
+
+Var 1803, name ST_COM2_BCD, static     // read standby COM2 display from NGX
+{
+  &ST_COM2 = FROMBCD &ST_COM2_BCD     // convert to decimal this is a 4 digit num
+  &ST_COM2High = DIV &ST_COM2 ,100     // update high rotary value after start or 
+  L0 = MOD &ST_COM2 ,10     // gets the last digit to test for either a
+  C0 = L0 = 2
+  C1 = L0 = 7
+  &ST_COM2Low = MOD &ST_COM2 ,100     // get the 2 rightmost digits
+  &ST_COM2Low = &ST_COM2Low * 10     // get a 3 digit update to rotary
+  IF C0 OR C1     // if either 2 or 7 is true
+  {
+    &ST_COM2Low = &ST_COM2Low + 5     // adds 5 so 020 will be 025 and 070 will b
+  }
+  &D_ST_COM2 = &ST_COM2 + 10000     // display new standby COM2 frequency leadi
+}
+
+Var 0513, name ROT_COM2_SW, Link IOCARD_ENCODER, Device 18, Input 0, Aceleration 1, Type 2
+{
+  L0 = &ROT_COM2_SW * -1     // change turning direction
+  &ST_COM2High = ROTATE 18 ,36 ,L0
+  CALL &Com2ToNGX
+}
+
+Var 0514, name ROT_COM2_SF, Link IOCARD_ENCODER, Device 18, Input 4, Aceleration 1, Type 2
+{
+  L0 = &ROT_COM2_SF * 25     // instead of acceleration that doesn't wor
+  &ST_COM2Low = ROTATE 0 ,999 ,L0
+  CALL &Com2ToNGX
+}
+
+Var 0515, name Com2ToNGX, Link SUBRUTINE
+{
+  IF &COM2_Power_ON > 0
+  {
+    L0 = &ST_COM2High * 100
+    L1 = DIV &ST_COM2Low ,10
+    &ST_COM2 = L0 + L1
+    &C2STtoNGX = TOBCD &ST_COM2
+  }
+}
+
+Var 0516, name AC_NAV1
+
+Var 0517, name ST_NAV1
+
+Var 0518, name ST_NAV1Low
+
+Var 0519, name ST_NAV1High
+
+Var 0520, name D_AC_NAV1, Link IOCARD_DISPLAY, Device 9, Digit 0, Numbers 5     // NAV1 active
+
+Var 0521, name O_AC_NAV1DP, Link IOCARD_OUT, Device 9, Output 20     // Decimal Point
+
+Var 0522, name D_ST_NAV1, Link IOCARD_DISPLAY, Device 9, Digit 5, Numbers 5     // NAV1 standby
+
+Var 0523, name O_ST_NAV1DP, Link IOCARD_OUT, Device 9, Output 21     // Decimal Point
+
+Var 2805, name bNAV1_TFR, static, Link IOCARD_SW, Device 9, Input 6, Type P     // Active/Standby swap button
+
+Var 2806, name N1STtoNGX, static
+
+Var 1804, name AC_NAV1_BCD, static     // read active NAV1 display from NGX
+{
+  &AC_NAV1 = FROMBCD &AC_NAV1_BCD     // convert to decimal
+  IF &NAV1_Power_ON = 1
+  {
+    &D_AC_NAV1 = &AC_NAV1 + 10000     // display new active NAV1 frequency leadin
+  }
+}
+
+Var 1805, name ST_NAV1_BCD, static     // read standby NAV1 display from NGX
+{
+  &ST_NAV1 = FROMBCD &ST_NAV1_BCD
+  &ST_NAV1High = DIV &ST_NAV1 ,100     // update high rotary value
+  &ST_NAV1Low = MOD &ST_NAV1 ,100     // update low rotary value
+  IF &NAV1_Power_ON = 1
+  {
+    &D_ST_NAV1 = &ST_NAV1 + 10000     // display new standby NAV1 frequency leadi
+  }
+}
+
+Var 0524, name ROT_NAV1_SW, Link IOCARD_ENCODER, Device 9, Input 0, Aceleration 1, Type 2
+{
+  L0 = &ROT_NAV1_SW * -1     // change turning direction
+  &ST_NAV1High = ROTATE 8 ,17 ,L0
+  CALL &Nav1ToNGX
+}
+
+Var 0525, name ROT_NAV1_SF, Link IOCARD_ENCODER, Device 9, Input 4, Aceleration 1, Type 2
+{
+  L0 = &ROT_NAV1_SF * 5     // instead of acceleration that doesn't wor
+  &ST_NAV1Low = ROTATE 0 ,99 ,L0
+  CALL &Nav1ToNGX
+}
+
+Var 0526, name Nav1ToNGX, Link SUBRUTINE
+{
+  IF &NAV1_Power_ON > 0
+  {
+    L0 = &ST_NAV1High * 100
+    &ST_NAV1 = L0 + &ST_NAV1Low
+    &N1STtoNGX = TOBCD &ST_NAV1
+  }
+}
+
+Var 0527, name AC_NAV2
+
+Var 0528, name ST_NAV2
+
+Var 0529, name ST_NAV2Low
+
+Var 0530, name ST_NAV2High
+
+Var 0531, name D_AC_NAV2, Link IOCARD_DISPLAY, Device 19, Digit 0, Numbers 5     // NAV2 active
+
+Var 0532, name O_AC_NAV2DP, Link IOCARD_OUT, Device 19, Output 20     // Decimal Point
+
+Var 0533, name D_ST_NAV2, Link IOCARD_DISPLAY, Device 19, Digit 5, Numbers 5     // NAV2 standby
+
+Var 0534, name O_ST_NAV2DP, Link IOCARD_OUT, Device 19, Output 21     // Decimal Point
+
+Var 2807, name bNAV2_TFR, static, Link IOCARD_SW, Device 19, Input 6, Type P     // Active/Standby swap button
+
+Var 2808, name N2STtoNGX, static
+
+Var 1806, name AC_NAV2_BCD, static     // read active NAV2 display from NGX
+{
+  &AC_NAV2 = FROMBCD &AC_NAV2_BCD     // convert to decimal
+  IF &NAV2_Power_ON = 1
+  {
+    &D_AC_NAV2 = &AC_NAV2 + 10000     // display new active NAV2 frequency leadin
+  }
+}
+
+Var 1807, name ST_NAV2_BCD, static     // read standby NAV2 display from NGX
+{
+  &ST_NAV2 = FROMBCD &ST_NAV2_BCD
+  &ST_NAV2High = DIV &ST_NAV2 ,100     // update high rotary value
+  &ST_NAV2Low = MOD &ST_NAV2 ,100     // update low rotary value
+  IF &NAV2_Power_ON = 1
+  {
+    &D_ST_NAV2 = &ST_NAV2 + 10000     // display new standby NAV2 frequency leadi
+  }
+}
+
+Var 0535, name ROT_NAV2_SW, Link IOCARD_ENCODER, Device 19, Input 0, Aceleration 1, Type 2
+{
+  L0 = &ROT_NAV2_SW * -1     // change turning direction
+  &ST_NAV2High = ROTATE 8 ,17 ,L0
+  CALL &Nav2ToNGX
+}
+
+Var 0536, name ROT_NAV2_SF, Link IOCARD_ENCODER, Device 19, Input 4, Aceleration 1, Type 2
+{
+  L0 = &ROT_NAV2_SF * 5     // instead of acceleration that doesn't wor
+  &ST_NAV2Low = ROTATE 0 ,99 ,L0
+  CALL &Nav2ToNGX
+}
+
+Var 0537, name Nav2ToNGX, Link SUBRUTINE
+{
+  IF &NAV2_Power_ON > 0
+  {
+    L0 = &ST_NAV2High * 100
+    &ST_NAV2 = L0 + &ST_NAV2Low
+    &N2STtoNGX = TOBCD &ST_NAV2
+  }
+}
+
+Var 2811, name ADF_TRF, static
+
+Var 0538, name AC_ADFLow
+
+Var 0539, name AC_ADFHigh
+
+Var 0540, name ST_ADFLow
+
+Var 0541, name ST_ADFHigh
+
+Var 0542, name ST_ADF
+
+Var 0543, name initSW, Link SUBRUTINE
+{
+  IF &sADF_MODE_SEL = 1
+  {
+    &ADFSymbol1 = 0    
+    &ADFSymbol2 = 0    
+    &ANTSymbol1 = 1    
+    &ANTSymbol2 = 1    
+  }
+  ELSE
+  {
+    &ADFSymbol1 = 1    
+    &ADFSymbol2 = 1    
+    &ANTSymbol1 = 0    
+    &ANTSymbol2 = 0    
+  }
+}
+
+Var 2103, name sADF_MODE_SEL, static, Link IOCARD_SW, Device 10, Input 2     // ADF
+{
+  CALL &initSW
+}
+
+Var 0544, name ADFSymbol1, Link IOCARD_OUT, Device 10, Output 22
+
+Var 0545, name ADFSymbol2, Link IOCARD_OUT, Device 10, Output 25
+
+Var 0546, name ANTSymbol1, Link IOCARD_OUT, Device 10, Output 23
+
+Var 0547, name ANTSymbol2, Link IOCARD_OUT, Device 10, Output 24
+
+Var 2105, name sADF_TONE, static, Link IOCARD_SW, Device 10, Input 7
+
+Var 0548, name ACT_ADF
+{
+  L0 = DIV &ACT_ADF ,100
+  &AC_ADFHigh = L0    
+  L1 = MOD &ACT_ADF ,100
+  &AC_ADFLow = L1    
+}
+
+Var 0549, name OutA1Act, Link SUBRUTINE
+{
+  IF &ADF_Power_ON = 1
+  {
+    IF &ACT_ADF < 10000
+    {
+      &D_A1Act5 = -999999    
+      &D_A1Act = &ACT_ADF    
+      &O_A1ActDp = 1    
+    }
+    ELSE
+    {
+      L0 = &ACT_ADF    
+      L1 = L0 - 10000
+      &D_A1Act5 = 1    
+      &D_A1Act = L1    
+      &O_A1ActDp = 1    
+    }
+  }
+}
+
+Var 0550, name OutA1Stb, Link SUBRUTINE
+{
+  IF &ADF_Power_ON = 1
+  {
+    IF &ST_ADF < 10000
+    {
+      &D_A1Stb5 = -999999    
+      &D_A1Stb = &ST_ADF    
+      &O_A1StbDp = 1    
+    }
+    ELSE
+    {
+      L0 = &ST_ADF    
+      L1 = L0 - 10000
+      &D_A1Stb5 = 1    
+      &D_A1Stb = L1    
+      &O_A1StbDp = 1    
+    }
+  }
+}
+
+Var 0551, name ROT_ADF_SW, Link IOCARD_ENCODER, Device 10, Input 0, Aceleration 1, Type 2
+{
+  IF &ADF_Power_ON > 0
+  {
+    L0 = &ROT_ADF_SW * -1
+    &ST_ADFHigh = ROTATE 19 ,175 ,L0
+    L0 = &ST_ADFHigh * 100
+    &ST_ADF = L0 + &ST_ADFLow     // + decimal
+    CALL &OutA1Stb
+  }
+}
+
+Var 0552, name ROT_ADF_SF, Link IOCARD_ENCODER, Device 10, Input 4, Aceleration 1, Type 2
+{
+  IF &ADF_Power_ON > 0
+  {
+    L0 = &ROT_ADF_SF    
+    &ST_ADFLow = ROTATE 0 ,99 ,L0
+    L0 = &ST_ADFHigh * 100
+    &ST_ADF = L0 + &ST_ADFLow     // + decimal
+    CALL &OutA1Stb
+  }
+}
+
+Var 1808, name AC_ADF_BCD, static
+{
+  L0 = FROMBCD &AC_ADF_BCD
+  &ACT_ADF = L0    
+  &AC_ADFHigh = DIV L0 ,100
+  &AC_ADFLow = MOD L0 ,100
+  CALL &OutA1Act     // display new freq value to ACTIVE
+}
+
+Var 2809, name ADFtoNGX, static
+
+Var 0553, name bADF_TFR, Link IOCARD_SW, Device 10, Input 6, Type P
+{
+  L0 = &ACT_ADF    
+  L1 = &ST_ADF    
+  &ST_ADF = L0    
+  &ACT_ADF = L1    
+  &ADFtoNGX = &ACT_ADF    
+  CALL &OutA1Stb
+  CALL &OutA1Act
+}
+
+Var 0554, name D_A1Act, Link IOCARD_DISPLAY, Device 10, Digit 0, Numbers 4
+
+Var 0555, name O_A1ActDp, Link IOCARD_OUT, Device 10, Output 20
+
+Var 0556, name D_A1Act5, Link IOCARD_DISPLAY, Device 10, Digit 4, Numbers 1
+
+Var 0557, name D_A1Stb, Link IOCARD_DISPLAY, Device 10, Digit 5, Numbers 4
+
+Var 0558, name O_A1StbDp, Link IOCARD_OUT, Device 10, Output 21
+
+Var 0559, name D_A1Stb5, Link IOCARD_DISPLAY, Device 10, Digit 9, Numbers 1
+
+Var 0560, name XPDRFreq
+
+Var 0561, name XPDRFreqLow
+
+Var 0562, name XPDRFreqHigh
+
+Var 0563, name AtcDsp, Link IOCARD_DISPLAY, Device 11, Digit 0, Numbers 4
+
+Var 0564, name ATC_S, Link IOCARD_OUT, Device 11, Output 20     // ATC symbol
+
+Var 0565, name Xpn_1, Link IOCARD_OUT, Device 11, Output 21
+
+Var 0566, name Xpn_2, Link IOCARD_OUT, Device 11, Output 22
+
+Var 1430, name XPDR_annunFAIL, static, Link IOCARD_OUT, Device 11, Output 23
+
+Var 2735, name bTCAS_IDENT, static, Link IOCARD_SW, Device 11, Input 12
+
+Var 2810, name XPDRtoNGX, static
+
+Var 1810, name XPDRfNGX, static     // XPDR code from NGX
+{
+  &XPDRFreq = FROMBCD &XPDRfNGX
+  &XPDRFreqHigh = DIV &XPDRFreq ,100     // update high rotary value
+  &XPDRFreqLow = MOD &XPDRFreq ,100     // update low rotary value
+  IF &ATC_Power_ON = 1
+  {
+    &AtcDsp = &XPDRFreq         // display new frequency
+  }
+}
+
+Var 0567, name ATC_E_RIGHT, Link IOCARD_ENCODER, Device 11, Input 10, Aceleration 1, Type 2
+{
+  L0 = &ATC_E_RIGHT * -1
+  &XPDRFreqLow = ROTATE 0 ,77 ,L0
+  L1 = MOD &XPDRFreqLow ,10
+  IF L1 = 8
+  {
+    &XPDRFreqLow = &XPDRFreqLow + 2
+  }
+  IF L1 = 9
+  {
+    &XPDRFreqLow = &XPDRFreqLow - 2
+  }
+  CALL &AtcOut
+}
+
+Var 0568, name ATC_E_LEFT, Link IOCARD_ENCODER, Device 11, Input 5, Aceleration 1, Type 2
+{
+  L0 = &ATC_E_LEFT * -1
+  &XPDRFreqHigh = ROTATE 0 ,77 ,L0
+  L1 = MOD &XPDRFreqHigh ,10
+  IF L1 = 8
+  {
+    &XPDRFreqHigh = &XPDRFreqHigh + 2
+  }
+  IF L1 = 9
+  {
+    &XPDRFreqHigh = &XPDRFreqHigh - 2
+  }
+  CALL &AtcOut
+}
+
+Var 0569, name AtcOut, Link SUBRUTINE
+{
+  IF &ATC_Power_ON = 1
+  {
+    L0 = &XPDRFreqHigh * 100
+    &XPDRFreq = L0 + &XPDRFreqLow
+    &XPDRtoNGX = TOBCD &XPDRFreq
+  }
+}
+
+Var 0570, name sXPNDR_STB, Link IOCARD_SW, Device 11, Input 0     // ATC rotary selector
+{
+  IF &sXPNDR_STB = 1
+  {
+    &TCAS_MODE = 0    
+  }
+}
+
+Var 0571, name sXPNDR_ALT, Link IOCARD_SW, Device 11, Input 1
+{
+  IF &sXPNDR_ALT = 1
+  {
+    &TCAS_MODE = 1    
+  }
+}
+
+Var 0572, name sXPNDR_XPN, Link IOCARD_SW, Device 11, Input 2
+{
+  IF &sXPNDR_XPN = 1
+  {
+    &TCAS_MODE = 2    
+  }
+}
+
+Var 0573, name sXPNDR_TAO, Link IOCARD_SW, Device 11, Input 3
+{
+  IF &sXPNDR_TAO = 1
+  {
+    &TCAS_MODE = 3    
+  }
+}
+
+Var 0574, name sXPNDR_TAR, Link IOCARD_SW, Device 11, Input 4
+{
+  IF &sXPNDR_TAR = 1
+  {
+    &TCAS_MODE = 4    
+  }
+}
+
+Var 2740, name TCAS_MODE, static, Link SUBRUTINE     // drives cockpit selector
+{
+  C0 = &ATC_Power_ON = 0
+  C1 = &TCAS_MODE = 0
+  IF C0 OR C1
+  {
+    &Xpn_1 = 0    
+    &Xpn_2 = 0    
+  }
+  ELSE
+  {
+    IF &sXPNDR = 0
+    {
+      &Xpn_1 = 1    
+      &Xpn_2 = 0    
+    }
+    ELSE
+    {
+      &Xpn_1 = 0    
+      &Xpn_2 = 1    
+    }
+  }
+}
+
+Var 2742, name sXPNDR, static, Link IOCARD_SW, Device 11, Input 7
+{
+  CALL &TCAS_MODE     // change indicators
+}
+
+Var 2734, name sALTSRC, static, Link IOCARD_SW, Device 11, Input 9
+
+Var 0575, Value 0     // Initialisation of variables
+{
+  &TdyState = 1         // Display local time
+  &Modif_DMY = 0         // no modification
+  &Modif_HHMM = 0         // no modification
+  &D_CHRBRIGHT = 60         // Display illuminance
+}
+
+Var 0576, name D_CHRBRIGHT, Link IOCARD_DISPLAY, Device 16, Digit 16, Numbers 3
+
+Var 0577, name DispUpTot, Link IOCARD_DISPLAY, Device 16, Digit 0, Numbers 4     // Upper display
+
+Var 0578, name DispUpLeft, Link IOCARD_DISPLAY, Device 16, Digit 2, Numbers 2
+
+Var 0579, name DispUpRight, Link IOCARD_DISPLAY, Device 16, Digit 0, Numbers 2
+
+Var 0580, name DecimalU, Link IOCARD_OUT, Device 16, Output 20
+
+Var 0581, name TdyState     // State for Time/Date button
+
+Var 0582, name Modif_DMY     // Activate modification day/month/year
+
+Var 0583, name Modif_HHMM     // Activate modification hour/minutes
+
+Var 0584, name YR_to_Modif     // store year for modification
+
+Var 0585, name DD_to_Modif     // store day for modification
+
+Var 0586, name MM_to_Modif     // store month for modification
+
+Var 0587, name HH_to_Modif     // store hour for modification
+
+Var 0588, name MI_to_Modif     // store minutes for modification
+
+Var 0589, name Limit_DD_Mes     // store total of days per month
+
+Var 0590, name DayofYear     // store day of year
+
+Var 0591, name UtcHour
+
+Var 0592, name UtcMin
+
+Var 1826, name UtcDay, static
+
+Var 1827, name UtcMonth, static
+
+Var 1828, name UtcDayYear, static
+
+Var 1829, name UtcYear, static
+
+Var 1824, name UtcTime, static     // UTC time of the day in sec.
+{
+  &FsSec = &UtcTime         // for update of 1.Off chrono and blinking
+  L0 = &UtcTime / 3600
+  &UtcHour = TRUNC L0
+  L0 = L0 - &UtcHour
+  L0 = L0 * 60
+  &UtcMin = TRUNC L0
+}
+
+Var 0593, name LocHour
+
+Var 0594, name LocMin
+
+Var 1832, name LocDay, static
+
+Var 1833, name LocMonth, static
+
+Var 1834, name LocDayYear, static
+
+Var 1835, name LocYear, static
+
+Var 1830, name LocTime, static     // local time of the day in sec.
+{
+  L1 = &LocTime / 3600
+  &LocHour = TRUNC L1
+  L1 = L1 - &LocHour
+  L1 = L1 * 60
+  &LocMin = TRUNC L1
+  IF &MIP_POWER_ON = 0
+  {
+    &DispUpTot = -999999    
+    &DispUpLeft = -999999    
+    &DispUpRight = -999999    
+    &DispDownLeft = -999999    
+    &DispDownRight = -999999    
+    &DecimalU = 0    
+    &DecimalC = 0    
+    &DecimalD = 0    
+  }
+  ELSE
+  {
+    IF &TdyState = 1     // local time
+    {
+      &DecimalU = 0    
+      IF &Modif_HHMM = 0     // modifications off
+      {
+        &DispUpLeft = &LocHour    
+        &DispUpRight = &LocMin    
+        &DecimalU = 1    
+        &DecimalU = DELAY 0 ,50
+      }
+      IF &Modif_HHMM = 1     // modification of hours is on
+      {
+        &DispUpLeft = &HH_to_Modif    
+        &DispUpLeft = DELAY -999999 ,50
+        &DispUpRight = &MI_to_Modif    
+      }
+      IF &Modif_HHMM = 2     // modification of minutes is on
+      {
+        &DispUpRight = &MI_to_Modif    
+        &DispUpRight = DELAY -999999 ,50
+        &DispUpLeft = &HH_to_Modif    
+      }
+    }
+    IF &TdyState = 2     // local day/month or year
+    {
+      IF &Modif_DMY = 0     // modifications off
+      {
+        L0 = MOD &FsSec ,2
+        IF L0 = 0
+        {
+          &DispUpTot = -999999    
+          &DispUpTot = &LocYear    
+          &DecimalU = 0    
+        }
+        ELSE
+        {
+          &DispUpLeft = -999999    
+          &DispUpRight = -999999    
+          &DispUpLeft = &LocDay    
+          &DispUpRight = &LocMonth    
+          &DecimalU = 1    
+        }
+      }
+      IF &Modif_DMY = 1     // modification of day on
+      {
+        &DecimalU = 1    
+        &DispUpRight = -999999    
+        &DispUpRight = &MM_to_Modif    
+        &DispUpLeft = &DD_to_Modif    
+        &DispUpLeft = DELAY -999999 ,50
+      }
+      IF &Modif_DMY = 2     // modification of month on
+      {
+        &DecimalU = 1    
+        &DispUpLeft = &DD_to_Modif    
+        &DispUpRight = &MM_to_Modif    
+        &DispUpRight = DELAY -999999 ,50
+      }
+      IF &Modif_DMY = 3     // modification of year on
+      {
+        &DecimalU = 0    
+        &DispUpTot = &YR_to_Modif    
+        &DispUpTot = DELAY -999999 ,50
+      }
+    }
+    IF &TdyState = 3     // UTC time
+    {
+      &DispUpLeft = &UtcHour    
+      &DispUpRight = &UtcMin    
+      &DecimalU = 1    
+      &DecimalU = DELAY 0 ,10
+    }
+    IF &TdyState = 4     // UTC day/month and year
+    {
+      L0 = MOD &FsSec ,2
+      IF L0 = 0
+      {
+        &DispUpTot = -999999    
+        &DispUpTot = &UtcYear    
+        &DecimalU = 0    
+      }
+      ELSE
+      {
+        &DispUpLeft = -999999    
+        &DispUpRight = -999999    
+        &DispUpLeft = &UtcDay    
+        &DispUpRight = &UtcMonth    
+        &DecimalU = 1    
+      }
+    }
+    IF &ChrState = 1
+    {
+      &ChrSec = &ChrSec + 1
+      &SecondNeedle = &SecondNeedle + 1
+      &DecimalD = 0    
+      &DecimalD = DELAY 1 ,50
+    }
+    IF &EtState = 1
+    {
+      &EtSec = &EtSec + 1
+      &DecimalC = 0    
+      &DecimalC = DELAY 1 ,50
+    }
+    IF &ChrState > 0
+    {
+      &DispDownRight = &ChrMin    
+      IF &ChrHour > 0
+      {
+        &DispDownLeft = &ChrHour    
+      }
+      ELSE
+      {
+        &DispDownLeft = -999999    
+      }
+    }
+    ELSE
+    {
+      &ChrHour = 0         // reset CHR
+      &ChrMin = 0    
+      &ChrSec = 0    
+      &SecondNeedle = 0    
+      &DecimalD = 0    
+      IF &EtState > 0
+      {
+        IF &EtHour = 0
+        {
+          &DispDownRight = &EtSec    
+          &DispDownLeft = &EtMin    
+        }
+        ELSE
+        {
+          &DispDownRight = &EtMin    
+          &DispDownLeft = &EtHour    
+        }
+      }
+      ELSE     // Neither CHR nor ET active
+      {
+        &DispDownLeft = -999999    
+        &DispDownRight = -999999    
+        &DecimalC = 0    
+      }
+    }
+  }
+}
+
+Var 2260, name TdySw, static, Link IOCARD_SW, Device 16, Input 1, Type P     // button Time/Date
+{
+  &TdyState = &TdyState + 1     // cycling content of upper display
+  &Modif_DMY = 0         // reset modifying of day/month/year
+  &Modif_HHMM = 0         // reset modifying of minutes/hours
+  IF &TdyState > 4     // check if outside limit of cycle
+  {
+    &TdyState = 1         // if yes put it back to 1
+  }
+}
+
+Var 2259, name SW_SET, static, Link IOCARD_SW, Device 16, Input 2, Type P     // button SET
+{
+  IF &TdyState = 1     // local time selected
+  {
+    &Modif_HHMM = &Modif_HHMM + 1
+    IF &Modif_HHMM = 1
+    {
+      &HH_to_Modif = &LocHour         // transfer hour into variable to be modifi
+      &MI_to_Modif = &LocMin         // transfer minutes into variable to be mod
+    }
+    IF &Modif_HHMM = 3
+    {
+      &Modif_HHMM = 0         // close modification and go back to displa
+      &LocHour = &HH_to_Modif    
+      &LocMin = &MI_to_Modif    
+    }
+  }
+  IF &TdyState = 2     // local day/month and year selected
+  {
+    &Modif_DMY = &Modif_DMY + 1
+    IF &Modif_DMY = 1
+    {
+      &DD_to_Modif = &LocDay         // transfer day into variable to be modifie
+      &MM_to_Modif = &LocMonth         // transfer month into variable to be modif
+      &YR_to_Modif = &LocYear         // transfer year into variable to be modifi
+      CALL &ChkGapYear     // test if it is a gap year
+      CALL &ChkDays
+    }
+    IF &Modif_DMY = 4
+    {
+      &Modif_DMY = 0         // close modification and store new values
+      &LocDay = &DD_to_Modif    
+      &LocMonth = &MM_to_Modif    
+    }
+  }
+}
+
+Var 2257, static, Link IOCARD_SW, Device 16, Input 3, Type P     // Button +
+{
+  IF &Modif_HHMM = 1     // if modification of hours activated
+  {
+    &HH_to_Modif = &HH_to_Modif + 1
+    IF &HH_to_Modif > 23
+    {
+      &HH_to_Modif = 0    
+    }
+    &DispUpLeft = &HH_to_Modif    
+  }
+  IF &Modif_HHMM = 2     // if modification of minutes activated
+  {
+    &MI_to_Modif = &MI_to_Modif + 1
+    IF &MI_to_Modif > 59
+    {
+      &MI_to_Modif = 0    
+    }
+    &DispUpRight = &MI_to_Modif    
+  }
+  IF &Modif_DMY = 1     // if modification of day activated
+  {
+    &DD_to_Modif = &DD_to_Modif + 1
+    IF &DD_to_Modif > &Limit_DD_Mes
+    {
+      &DD_to_Modif = 1    
+    }
+    &DispUpLeft = &DD_to_Modif    
+  }
+  IF &Modif_DMY = 2     // if modification of month activated
+  {
+    &MM_to_Modif = &MM_to_Modif + 1
+    IF &MM_to_Modif > 12
+    {
+      &MM_to_Modif = 1    
+    }
+    &DispUpRight = &MM_to_Modif    
+  }
+  IF &Modif_DMY = 3     // if modification of year activated
+  {
+    &YR_to_Modif = &YR_to_Modif + 1
+    &DispUpTot = &YR_to_Modif    
+  }
+}
+
+Var 2256, static, Link IOCARD_SW, Device 16, Input 4, Type P     // button -
+{
+  IF &Modif_HHMM = 1     // if modification of hours activated
+  {
+    &HH_to_Modif = &HH_to_Modif - 1
+    IF &HH_to_Modif < 0
+    {
+      &HH_to_Modif = 23    
+    }
+    &DispUpLeft = &HH_to_Modif    
+  }
+  IF &Modif_HHMM = 2     // if modification of minutes activated
+  {
+    &MI_to_Modif = &MI_to_Modif - 1
+    IF &MI_to_Modif < 0
+    {
+      &MI_to_Modif = 59    
+    }
+    &DispUpRight = &MI_to_Modif    
+  }
+  IF &Modif_DMY = 1     // if modification of day activated
+  {
+    &DD_to_Modif = &DD_to_Modif - 1
+    IF &DD_to_Modif < 1
+    {
+      &DD_to_Modif = &Limit_DD_Mes    
+    }
+    &DispUpLeft = &DD_to_Modif    
+  }
+  IF &Modif_DMY = 2     // if modification of month activated
+  {
+    &MM_to_Modif = &MM_to_Modif - 1
+    IF &MM_to_Modif < 1
+    {
+      &MM_to_Modif = 12    
+    }
+    &DispUpRight = &MM_to_Modif    
+  }
+  IF &Modif_DMY = 3     // if modification of year activated
+  {
+    &YR_to_Modif = &YR_to_Modif - 1
+    &DispUpTot = &YR_to_Modif    
+  }
+}
+
+Var 0595, name ChkGapYear, Link SUBRUTINE     // test if year is a gap year Schaltjahr
+{
+  L0 = MOD &UtcYear ,4     // L0 is rest of division by 4
+  IF L0 > 0
+  {
+    &ChkGapYear = 0         // no gap year 2011 2013 2014 2015 ...
+  }
+  ELSE
+  {
+    L0 = MOD &UtcYear ,400
+    IF L0 > 0
+    {
+      L0 = MOD &UtcYear ,100
+      IF L0 = 0
+      {
+        &ChkGapYear = 0         // no gap year 1900 2100 2200 ...
+      }
+      ELSE
+      {
+        &ChkGapYear = 1         // gap year 2008 2012 2016 ...
+      }
+    }
+    ELSE
+    {
+      &ChkGapYear = 1         // gap year 1600 2000 2400 ...
+    }
+  }
+}
+
+Var 0596, name ChkDays, Link SUBRUTINE     // calculate day/month and day/year
+{
+  IF &MM_to_Modif = 1     // JAN 31
+  {
+    &DayofYear = &DD_to_Modif    
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 2     // FEB 28
+  {
+    &DayofYear = &DD_to_Modif + 31
+    &Limit_DD_Mes = 28 + &ChkGapYear
+  }
+  IF &MM_to_Modif = 3     // MAR 31
+  {
+    &DayofYear = &DD_to_Modif + 59
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 4     // APR 30
+  {
+    &DayofYear = &DD_to_Modif + 90
+    &Limit_DD_Mes = 30    
+  }
+  IF &MM_to_Modif = 5     // MAY 31
+  {
+    &DayofYear = &DD_to_Modif + 120
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 6     // JUN 30
+  {
+    &DayofYear = &DD_to_Modif + 151
+    &Limit_DD_Mes = 30    
+  }
+  IF &MM_to_Modif = 7     // JUL 31
+  {
+    &DayofYear = &DD_to_Modif + 181
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 8     // AUG 31
+  {
+    &DayofYear = &DD_to_Modif + 212
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 9     // SEP 30
+  {
+    &DayofYear = &DD_to_Modif + 243
+    &Limit_DD_Mes = 30    
+  }
+  IF &MM_to_Modif = 10     // OCT 31
+  {
+    &DayofYear = &DD_to_Modif + 273
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif = 11     // NOV 30
+  {
+    &DayofYear = &DD_to_Modif + 304
+    &Limit_DD_Mes = 30    
+  }
+  IF &MM_to_Modif = 12     // DEC 31
+  {
+    &DayofYear = &DD_to_Modif + 334
+    &Limit_DD_Mes = 31    
+  }
+  IF &MM_to_Modif > 1     // in a gap year add 1 but not for January
+  {
+    &DayofYear = &DayofYear + &ChkGapYear
+  }
+  &UtcMonth = &MM_to_Modif    
+  &UtcDay = &DD_to_Modif    
+}
+
+Var 0597, name ChrState, Value 0
+
+Var 0598, name EtState, Value 0
+
+Var 0599, name M_MOTOR, Link IOCARD_MOTOR, Device 16, Output 1, Aceleration 200
+
+Var 0600, name DispDownLeft, Link IOCARD_DISPLAY, Device 16, Digit 6, Numbers 2     // Down Displays CHR - ET -> Min
+
+Var 0601, name DispDownRight, Link IOCARD_DISPLAY, Device 16, Digit 4, Numbers 2     // Down Displays CHR - ET
+
+Var 0602, name DecimalC, Link IOCARD_OUT, Device 16, Output 21
+
+Var 0603, name DecimalD, Link IOCARD_OUT, Device 16, Output 22
+
+Var 0604, name SecondNeedle
+{
+  IF &SecondNeedle = 60
+  {
+    &SecondNeedle = 0    
+  }
+  L0 = 4065 / 60
+  L0 = L0 * &SecondNeedle
+  &M_MOTOR = ROUND L0
+}
+
+Var 0605, name ChrHour     // accumulator of chrono hours
+
+Var 0606, name ChrMin     // accumulator of chrono minutes
+
+Var 0607, name ChrSec     // accumulator of chrono seconds counted up
+{
+  IF &ChrSec = 60
+  {
+    &ChrMin = &ChrMin + 1
+    &ChrSec = 0    
+    IF &ChrMin = 60
+    {
+      &ChrMin = 0    
+      &ChrHour = &ChrHour + 1
+    }
+  }
+}
+
+Var 0608, name EtHour     // accumulator hours of ET Elapsed Time
+
+Var 0609, name EtMin     // accumulator minutes of ET
+
+Var 0610, name EtSec     // accumulator seconds of ET counted up in 
+{
+  IF &EtSec = 60
+  {
+    &EtMin = &EtMin + 1
+    &EtSec = 0    
+    IF &EtMin = 60
+    {
+      &EtMin = 0    
+      &EtHour = &ChrHour + 1
+    }
+  }
+}
+
+Var 2254, name SW_CHR, static, Link IOCARD_SW, Device 16, Input 0, Type P     // button CHR
+{
+  &ChrState = &ChrState + 1
+  IF &ChrState = 3
+  {
+    &ChrState = 0    
+  }
+}
+
+Var 2255, name SW_ET, static, Link IOCARD_SW, Device 16, Input 6, Type P     // button ET
+{
+  &ResetFlag = 0         // cancels reset
+  &EtState = &EtState + 1
+  IF &EtState = 3
+  {
+    &EtState = 1         // toggle between run and stop
+  }
+}
+
+Var 0611, name ResetFlag
+
+Var 2258, name EtReset, static, Link IOCARD_SW, Device 16, Input 5, Type P     // button RST
+{
+  &EtState = 2         // stop timer
+  &ResetFlag = 1         // enables reset
+  &ResetDelay = 0    
+  &ResetDelay = DELAY 1 ,500     // reset is delayed by 5 sec.
+}
+
+Var 0612, name ResetDelay
+{
+  IF &ResetDelay = 1
+  {
+    IF &ResetFlag = 1
+    {
+      &EtState = 0         // ET counter reset
+      &EtHour = 0    
+      &EtMin = 0    
+      &EtSec = 0    
+      &DecimalC = 0    
+    }
+  }
+}
+
+Var 0613, Value 0     // Initialisation of variables
+{
+  &TdyState2 = 1         // Display local time
+  &Modif_DMY2 = 0         // no modification
+  &Modif_HHMM2 = 0         // no modification
+  &D_CHRBRIGHT2 = 60         // Display illuminance
+}
+
+Var 0614, name D_CHRBRIGHT2, Link IOCARD_DISPLAY, Device 26, Digit 16, Numbers 3
+
+Var 0615, name DispUpTot2, Link IOCARD_DISPLAY, Device 26, Digit 0, Numbers 4     // Upper display
+
+Var 0616, name DispUpLeft2, Link IOCARD_DISPLAY, Device 26, Digit 2, Numbers 2
+
+Var 0617, name DispUpRight2, Link IOCARD_DISPLAY, Device 26, Digit 0, Numbers 2
+
+Var 0618, name DecimalU2, Link IOCARD_OUT, Device 26, Output 20
+
+Var 0619, name TdyState2     // State for Time/Date button
+
+Var 0620, name Modif_DMY2     // Activate modification day/month/year
+
+Var 0621, name Modif_HHMM2     // Activate modification hour/minutes
+
+Var 0622, name FsSec     // changed by UTC time in seconds
+{
+  IF &MIP_POWER_ON = 0
+  {
+    &DispUpTot2 = -999999    
+    &DispUpLeft2 = -999999    
+    &DispUpRight2 = -999999    
+    &DispDownLeft2 = -999999    
+    &DispDownRight2 = -999999    
+    &DecimalU2 = 0    
+    &DecimalC2 = 0    
+    &DecimalD2 = 0    
+  }
+  ELSE
+  {
+    IF &TdyState2 = 1     // local time
+    {
+      &DecimalU2 = 0    
+      IF &Modif_HHMM2 = 0     // modifications off
+      {
+        &DispUpLeft2 = &LocHour    
+        &DispUpRight2 = &LocMin    
+        &DecimalU2 = 1    
+        &DecimalU2 = DELAY 0 ,50
+      }
+      IF &Modif_HHMM2 = 1     // modification of hours is on
+      {
+        &DispUpLeft2 = &HH_to_Modif    
+        &DispUpLeft2 = DELAY -999999 ,50
+        &DispUpRight2 = &MI_to_Modif    
+      }
+      IF &Modif_HHMM2 = 2     // modification of minutes is on
+      {
+        &DispUpRight2 = &MI_to_Modif    
+        &DispUpRight2 = DELAY -999999 ,50
+        &DispUpLeft2 = &HH_to_Modif    
+      }
+    }
+    IF &TdyState2 = 2     // local day/month or year
+    {
+      IF &Modif_DMY2 = 0     // modifications off
+      {
+        L0 = MOD &FsSec ,2
+        IF L0 = 0
+        {
+          &DispUpTot2 = -999999    
+          &DispUpTot2 = &LocYear    
+          &DecimalU2 = 0    
+        }
+        ELSE
+        {
+          &DispUpLeft2 = -999999    
+          &DispUpRight2 = -999999    
+          &DispUpLeft2 = &LocDay    
+          &DispUpRight2 = &LocMonth    
+          &DecimalU2 = 1    
+        }
+      }
+      IF &Modif_DMY2 = 1     // modification of day on
+      {
+        &DecimalU2 = 1    
+        &DispUpRight2 = -999999    
+        &DispUpRight2 = &MM_to_Modif    
+        &DispUpLeft2 = &DD_to_Modif    
+        &DispUpLeft2 = DELAY -999999 ,50
+      }
+      IF &Modif_DMY2 = 2     // modification of month on
+      {
+        &DecimalU2 = 1    
+        &DispUpLeft2 = &DD_to_Modif    
+        &DispUpRight2 = &MM_to_Modif    
+        &DispUpRight2 = DELAY -999999 ,50
+      }
+      IF &Modif_DMY2 = 3     // modification of year on
+      {
+        &DecimalU2 = 0    
+        &DispUpTot2 = &YR_to_Modif    
+        &DispUpTot2 = DELAY -999999 ,50
+      }
+    }
+    IF &TdyState2 = 3     // UTC time
+    {
+      &DispUpLeft2 = &UtcHour    
+      &DispUpRight2 = &UtcMin    
+      &DecimalU2 = 1    
+      &DecimalU2 = DELAY 0 ,10
+    }
+    IF &TdyState2 = 4     // UTC day/month and year
+    {
+      L0 = MOD &FsSec ,2
+      IF L0 = 0
+      {
+        &DispUpTot2 = -999999    
+        &DispUpTot2 = &UtcYear    
+        &DecimalU2 = 0    
+      }
+      ELSE
+      {
+        &DispUpLeft2 = -999999    
+        &DispUpRight2 = -999999    
+        &DispUpLeft2 = &UtcDay    
+        &DispUpRight2 = &UtcMonth    
+        &DecimalU2 = 1    
+      }
+    }
+    IF &ChrState2 = 1
+    {
+      &ChrSec2 = &ChrSec2 + 1
+      &SecondNeedle2 = &SecondNeedle2 + 1
+      &DecimalD2 = 0    
+      &DecimalD2 = DELAY 1 ,50
+    }
+    IF &EtState2 = 1
+    {
+      &EtSec2 = &EtSec2 + 1
+      &DecimalC2 = 0    
+      &DecimalC2 = DELAY 1 ,50
+    }
+    IF &ChrState2 > 0
+    {
+      &DispDownRight2 = &ChrMin2    
+      IF &ChrHour > 0
+      {
+        &DispDownLeft2 = &ChrHour2    
+      }
+      ELSE
+      {
+        &DispDownLeft2 = -999999    
+      }
+    }
+    ELSE
+    {
+      &ChrHour2 = 0         // reset CHR
+      &ChrMin2 = 0    
+      &ChrSec2 = 0    
+      &SecondNeedle2 = 0    
+      &DecimalD2 = 0    
+      IF &EtState2 > 0
+      {
+        IF &EtHour2 = 0
+        {
+          &DispDownRight2 = &EtSec2    
+          &DispDownLeft2 = &EtMin2    
+        }
+        ELSE
+        {
+          &DispDownRight2 = &EtMin2    
+          &DispDownLeft2 = &EtHour2    
+        }
+      }
+      ELSE     // Neither CHR nor ET active
+      {
+        &DispDownLeft2 = -999999    
+        &DispDownRight2 = -999999    
+        &DecimalC2 = 0    
+      }
+    }
+  }
+}
+
+Var 2267, name TdySw2, static, Link IOCARD_SW, Device 26, Input 1, Type P     // button Time/Date
+{
+  &TdyState2 = &TdyState2 + 1     // cycling content of upper display
+  &Modif_DMY2 = 0         // reset modifying of day/month/year
+  &Modif_HHMM2 = 0         // reset modifying of minutes/hours
+  IF &TdyState2 > 4     // check if outside limit of cycle
+  {
+    &TdyState2 = 1         // if yes put it back to 1
+  }
+}
+
+Var 2266, name SW_SET2, static, Link IOCARD_SW, Device 26, Input 2, Type P     // button SET
+{
+  IF &TdyState2 = 1     // local time selected
+  {
+    &Modif_HHMM2 = &Modif_HHMM2 + 1
+    IF &Modif_HHMM2 = 1
+    {
+      &HH_to_Modif = &LocHour         // transfer hour into variable to be modifi
+      &MI_to_Modif = &LocMin         // transfer minutes into variable to be mod
+    }
+    IF &Modif_HHMM2 = 3
+    {
+      &Modif_HHMM2 = 0         // close modification and go back to displa
+      &LocHour = &HH_to_Modif    
+      &LocMin = &MI_to_Modif    
+    }
+  }
+  IF &TdyState2 = 2     // local day/month and year selected
+  {
+    &Modif_DMY2 = &Modif_DMY2 + 1
+    IF &Modif_DMY2 = 1
+    {
+      &DD_to_Modif = &LocDay         // transfer day into variable to be modifie
+      &MM_to_Modif = &LocMonth         // transfer month into variable to be modif
+      &YR_to_Modif = &LocYear         // transfer year into variable to be modifi
+      CALL &ChkGapYear     // test if it is a gap year
+      CALL &ChkDays
+    }
+    IF &Modif_DMY2 = 4
+    {
+      &Modif_DMY2 = 0         // close modification and store new values
+      &LocDay = &DD_to_Modif    
+      &LocMonth = &MM_to_Modif    
+    }
+  }
+}
+
+Var 2264, static, Link IOCARD_SW, Device 26, Input 3, Type P     // Button +
+{
+  IF &Modif_HHMM2 = 1     // if modification of hours activated
+  {
+    &HH_to_Modif = &HH_to_Modif + 1
+    IF &HH_to_Modif > 23
+    {
+      &HH_to_Modif = 0    
+    }
+    &DispUpLeft2 = &HH_to_Modif    
+  }
+  IF &Modif_HHMM2 = 2     // if modification of minutes activated
+  {
+    &MI_to_Modif = &MI_to_Modif + 1
+    IF &MI_to_Modif > 59
+    {
+      &MI_to_Modif = 0    
+    }
+    &DispUpRight2 = &MI_to_Modif    
+  }
+  IF &Modif_DMY2 = 1     // if modification of day activated
+  {
+    &DD_to_Modif = &DD_to_Modif + 1
+    IF &DD_to_Modif > &Limit_DD_Mes
+    {
+      &DD_to_Modif = 1    
+    }
+    &DispUpLeft2 = &DD_to_Modif    
+  }
+  IF &Modif_DMY2 = 2     // if modification of month activated
+  {
+    &MM_to_Modif = &MM_to_Modif + 1
+    IF &MM_to_Modif > 12
+    {
+      &MM_to_Modif = 1    
+    }
+    &DispUpRight2 = &MM_to_Modif    
+  }
+  IF &Modif_DMY2 = 3     // if modification of year activated
+  {
+    &YR_to_Modif = &YR_to_Modif + 1
+    &DispUpTot2 = &YR_to_Modif    
+  }
+}
+
+Var 2263, static, Link IOCARD_SW, Device 26, Input 4, Type P     // button -
+{
+  IF &Modif_HHMM2 = 1     // if modification of hours activated
+  {
+    &HH_to_Modif = &HH_to_Modif - 1
+    IF &HH_to_Modif < 0
+    {
+      &HH_to_Modif = 23    
+    }
+    &DispUpLeft2 = &HH_to_Modif    
+  }
+  IF &Modif_HHMM2 = 2     // if modification of minutes activated
+  {
+    &MI_to_Modif = &MI_to_Modif - 1
+    IF &MI_to_Modif < 0
+    {
+      &MI_to_Modif = 59    
+    }
+    &DispUpRight2 = &MI_to_Modif    
+  }
+  IF &Modif_DMY2 = 1     // if modification of day activated
+  {
+    &DD_to_Modif = &DD_to_Modif - 1
+    IF &DD_to_Modif < 1
+    {
+      &DD_to_Modif = &Limit_DD_Mes    
+    }
+    &DispUpLeft2 = &DD_to_Modif    
+  }
+  IF &Modif_DMY2 = 2     // if modification of month activated
+  {
+    &MM_to_Modif = &MM_to_Modif - 1
+    IF &MM_to_Modif < 1
+    {
+      &MM_to_Modif = 12    
+    }
+    &DispUpRight2 = &MM_to_Modif    
+  }
+  IF &Modif_DMY2 = 3     // if modification of year activated
+  {
+    &YR_to_Modif = &YR_to_Modif - 1
+    &DispUpTot2 = &YR_to_Modif    
+  }
+}
+
+Var 0623, name ChrState2, Value 0
+
+Var 0624, name EtState2, Value 0
+
+Var 0625, name M_MOTOR2, Link IOCARD_MOTOR, Device 26, Output 1, Aceleration 200
+
+Var 0626, name DispDownLeft2, Link IOCARD_DISPLAY, Device 26, Digit 6, Numbers 2     // Down Displays CHR - ET -> Min
+
+Var 0627, name DispDownRight2, Link IOCARD_DISPLAY, Device 26, Digit 4, Numbers 2     // Down Displays CHR - ET
+
+Var 0628, name DecimalC2, Link IOCARD_OUT, Device 26, Output 21
+
+Var 0629, name DecimalD2, Link IOCARD_OUT, Device 26, Output 22
+
+Var 0630, name SecondNeedle2
+{
+  IF &SecondNeedle2 = 60
+  {
+    &SecondNeedle2 = 0    
+  }
+  L0 = 4065 / 60
+  L0 = L0 * &SecondNeedle2
+  &M_MOTOR2 = ROUND L0
+}
+
+Var 0631, name ChrHour2     // accumulator of chrono hours
+
+Var 0632, name ChrMin2     // accumulator of chrono minutes
+
+Var 0633, name ChrSec2     // accumulator of chrono seconds counted up
+{
+  IF &ChrSec2 = 60
+  {
+    &ChrMin2 = &ChrMin2 + 1
+    &ChrSec2 = 0    
+    IF &ChrMin2 = 60
+    {
+      &ChrMin2 = 0    
+      &ChrHour2 = &ChrHour2 + 1
+    }
+  }
+}
+
+Var 0634, name EtHour2     // accumulator hours of ET Elapsed Time
+
+Var 0635, name EtMin2     // accumulator minutes of ET
+
+Var 0636, name EtSec2     // accumulator seconds of ET counted up in 
+{
+  IF &EtSec2 = 60
+  {
+    &EtMin2 = &EtMin2 + 1
+    &EtSec2 = 0    
+    IF &EtMin2 = 60
+    {
+      &EtMin2 = 0    
+      &EtHour2 = &ChrHour2 + 1
+    }
+  }
+}
+
+Var 2261, name SW_CHR2, static, Link IOCARD_SW, Device 26, Input 0, Type P     // button CHR
+{
+  &ChrState2 = &ChrState2 + 1
+  IF &ChrState2 = 3
+  {
+    &ChrState2 = 0    
+  }
+}
+
+Var 2262, name SW_ET2, static, Link IOCARD_SW, Device 26, Input 6, Type P     // button ET
+{
+  &ResetFlag2 = 0         // cancels reset
+  &EtState2 = &EtState2 + 1
+  IF &EtState2 = 3
+  {
+    &EtState2 = 1         // toggle between run and stop
+  }
+}
+
+Var 0637, name ResetFlag2
+
+Var 2265, name EtReset2, static, Link IOCARD_SW, Device 26, Input 5, Type P     // button RST
+{
+  &EtState2 = 2         // stop timer
+  &ResetFlag2 = 1         // enables reset
+  &ResetDelay2 = 0    
+  &ResetDelay2 = DELAY 1 ,500     // reset is delayed by 5 sec.
+}
+
+Var 0638, name ResetDelay2
+{
+  IF &ResetDelay2 = 1
+  {
+    IF &ResetFlag2 = 1
+    {
+      &EtState2 = 0         // ET counter reset
+      &EtHour2 = 0    
+      &EtMin2 = 0    
+      &EtSec2 = 0    
+      &DecimalC2 = 0    
+    }
+  }
+}
+key
