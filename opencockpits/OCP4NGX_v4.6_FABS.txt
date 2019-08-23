@@ -31,36 +31,36 @@ Var 0000, Value 0
   &MCP_CLEAR = 0         // GET RID OF DIRT!
   &ENG1_Servo = 512    
   &ENG2_Servo = 512    
-  &sYAW_DAMPER = 0    
-  &sFUEL_P1_Aft = 0    
-  &sFUEL_P1_Fwd = 0    
-  &sFUEL_P2_Aft = 0    
-  &sFUEL_P2_Fwd = 0    
-  &sFUEL_PL_Ctr = 0    
-  &sFUEL_PR_Ctr = 0    
-  &sEL_CAB_UT = 0    
-  &sEL_GALLEY = 0    
-  &sEC_SUPPLY = 0    
-  &sEC_EXHAUST = 0    
-  &sWINDOW_HEAT_1 = 0    
-  &sWINDOW_HEAT_2 = 0    
-  &sWINDOW_HEAT_3 = 0    
-  &sWINDOW_HEAT_4 = 0    
-  &sWING_ANTI_ICE = 0    
-  &sHYD_ENG_L = 0    
-  &sHYD_ELEC_R = 0    
-  &sHYD_ELEC_L = 0    
-  &sHYD_ENG_R = 0    
-  &sTRIM_AIR = 0    
-  &sAPU_BLEED = 0    
-  &sENG_1_BLEED = 0    
-  &sENG_2_BLEED = 0    
-  &sRECIRC_FAN_L = 0    
-  &sRECIRC_FAN_R = 0    
-  &sENG_ANTI_ICE1 = 0    
-  &sENG_ANTI_ICE2 = 0    
-  &sPROBE_HEAT_1 = 0    
-  &sPROBE_HEAT_2 = 0    
+  // &sYAW_DAMPER = 0    
+  // &sFUEL_P1_Aft = 0    
+  // &sFUEL_P1_Fwd = 0    
+  // &sFUEL_P2_Aft = 0    
+  // &sFUEL_P2_Fwd = 0    
+  // &sFUEL_PL_Ctr = 0    
+  // &sFUEL_PR_Ctr = 0    
+  // &sEL_CAB_UT = 0    
+  // &sEL_GALLEY = 0    
+  // &sEC_SUPPLY = 0    
+  // &sEC_EXHAUST = 0    
+  // &sWINDOW_HEAT_1 = 0    
+  // &sWINDOW_HEAT_2 = 0    
+  // &sWINDOW_HEAT_3 = 0    
+  // &sWINDOW_HEAT_4 = 0    
+  // &sWING_ANTI_ICE = 0    
+  // &sHYD_ENG_L = 0    
+  // &sHYD_ELEC_R = 0    
+  // &sHYD_ELEC_L = 0    
+  // &sHYD_ENG_R = 0    
+  // &sTRIM_AIR = 0    
+  // &sAPU_BLEED = 0    
+  // &sENG_1_BLEED = 0    
+  // &sENG_2_BLEED = 0    
+  // &sRECIRC_FAN_L = 0    
+  // &sRECIRC_FAN_R = 0    
+  // &sENG_ANTI_ICE1 = 0    
+  // &sENG_ANTI_ICE2 = 0    
+  // &sPROBE_HEAT_1 = 0    
+  // &sPROBE_HEAT_2 = 0    
   &sRETRACTABLE_L = 0    
   &sRETRACTABLE_R = 0    
   &sFIXED_L = 0    
@@ -851,155 +851,155 @@ Var 2618, name EL_BAT_G, static
 
 Var 2619, name EL_BAT_SW, static, Value 1
 
-Var 0037, name sBAT_SW, Link IOCARD_SW, Device 30, Input 72
-{
-  IF &sBAT_SW = 1
-  {
-    &EL_BAT_G = 1         // Open Guard
-    &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW OFF to NGX
-  }
-  ELSE
-  {
-    &EL_BAT_G = 0         // Close Guard
-    &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW ON to NGX
-  }
-}
+// Var 0037, name sBAT_SW, Link IOCARD_SW, Device 30, Input 72
+// {
+//   IF &sBAT_SW = 1
+//   {
+//     &EL_BAT_G = 1         // Open Guard
+//     &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW OFF to NGX
+//   }
+//   ELSE
+//   {
+//     &EL_BAT_G = 0         // Close Guard
+//     &EL_BAT_SW = CHANGEBITN 0 ,&EL_BAT_SW     // Send Battery SW ON to NGX
+//   }
+// }
 
 Var 2634, name EL_STBY_PWR_G, static
 
 Var 2635, name EL_STBY_PWR_SW, static, Value 1
 
-Var 0038, name sSTBY_PWR_L, Link IOCARD_SW, Device 30, Input 69     // Stby Pwr BAT SW
-{
-  IF &sSTBY_PWR_L = 1
-  {
-    &EL_STBY_PWR_G = 1    
-    &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
-  }
-  ELSE
-  {
-    &EL_STBY_PWR_G = 1    
-    &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
-  }
-}
+// Var 0038, name sSTBY_PWR_L, Link IOCARD_SW, Device 30, Input 69     // Stby Pwr BAT SW
+// {
+//   IF &sSTBY_PWR_L = 1
+//   {
+//     &EL_STBY_PWR_G = 1    
+//     &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
+//   }
+//   ELSE
+//   {
+//     &EL_STBY_PWR_G = 1    
+//     &EL_STBY_PWR_SW = CHANGEBITN 0 ,&EL_STBY_PWR_SW
+//   }
+// }
 
-Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 68     // Stby Pwr AUTO SW
-{
-  IF &sSTBY_PWR_R = 1
-  {
-    &EL_STBY_PWR_G = 0    
-    &EL_STBY_PWR_SW = 2    
-  }
-  ELSE
-  {
-    &EL_STBY_PWR_G = 1    
-    &EL_STBY_PWR_SW = 1    
-  }
-}
+// Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 68     // Stby Pwr AUTO SW
+// {
+//   IF &sSTBY_PWR_R = 1
+//   {
+//     &EL_STBY_PWR_G = 0    
+//     &EL_STBY_PWR_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &EL_STBY_PWR_G = 1    
+//     &EL_STBY_PWR_SW = 1    
+//   }
+// }
 
 Var 2631, name EL_GRD_PWR_SW, static
 
-Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 64     // Gnd Pwr Off SW
-{
-  IF &sGND_PWR_OFF = 1
-  {
-    &EL_GRD_PWR_SW = 0    
-  }
-  ELSE
-  {
-    IF &sGND_PWR_ON = 0
-    {
-      &EL_GRD_PWR_SW = 1    
-    }
-  }
-}
+// Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 64     // Gnd Pwr Off SW
+// {
+//   IF &sGND_PWR_OFF = 1
+//   {
+//     &EL_GRD_PWR_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sGND_PWR_ON = 0
+//     {
+//       &EL_GRD_PWR_SW = 1    
+//     }
+//   }
+// }
 
-Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 30, Input 65     // Gnd Pwr On SW
-{
-  IF &sGND_PWR_ON = 1
-  {
-    &EL_GRD_PWR_SW = 2    
-  }
-  ELSE
-  {
-    IF &sGND_PWR_OFF = 0
-    {
-      &EL_GRD_PWR_SW = 1    
-    }
-  }
-}
+// Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 30, Input 65     // Gnd Pwr On SW
+// {
+//   IF &sGND_PWR_ON = 1
+//   {
+//     &EL_GRD_PWR_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sGND_PWR_OFF = 0
+//     {
+//       &EL_GRD_PWR_SW = 1    
+//     }
+//   }
+// }
 
-Var 1094, name aGND_PWR_LED, static, Link IOCARD_DISPLAY, Device 30, Digit 37, Numbers 1
+// Var 1094, name aGND_PWR_LED, static, Link IOCARD_DISPLAY, Device 30, Digit 37, Numbers 1
 
-Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
+// Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
 
-Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 99
+// Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 99
 
-Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 100
+// Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 100
 
-Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 140
+// Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 140
 
-Var 2602, name bTRIM_RESET, static, Link IOCARD_SW, Device 30, Input 135
+// Var 2602, name bTRIM_RESET, static, Link IOCARD_SW, Device 30, Input 135
 
-Var 2605, name bCVR_ERASE, static, Link IOCARD_SW, Device 30, Input 102
+// Var 2605, name bCVR_ERASE, static, Link IOCARD_SW, Device 30, Input 102
 
-Var 2606, name bCVR_TEST, static, Link IOCARD_SW, Device 30, Input 103
+// Var 2606, name bCVR_TEST, static, Link IOCARD_SW, Device 30, Input 103
 
-Var 2661, name bICE_TAT_T, static, Link IOCARD_SW, Device 30, Input 117
+// Var 2661, name bICE_TAT_T, static, Link IOCARD_SW, Device 30, Input 117
 
-Var 2603, name bCAB_ALT_HORN, static, Link IOCARD_SW, Device 30, Input 104
+// Var 2603, name bCAB_ALT_HORN, static, Link IOCARD_SW, Device 30, Input 104
 
-Var 2717, name sYAW_DAMPER, static, Link IOCARD_SW, Device 30, Input 43
+// Var 2717, name sYAW_DAMPER, static, Link IOCARD_SW, Device 30, Input 43
 
-Var 2622, name sEL_CAB_UT, static, Link IOCARD_SW, Device 30, Input 81
+// Var 2622, name sEL_CAB_UT, static, Link IOCARD_SW, Device 30, Input 81
 
-Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 30, Input 81
+// Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 30, Input 81
 
-Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 97
+// Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 97
 
-Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 98
+// Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 98
 
-Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 120
+// Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 120
 
-Var 2663, name sWINDOW_HEAT_2, static, Link IOCARD_SW, Device 30, Input 121
+// Var 2663, name sWINDOW_HEAT_2, static, Link IOCARD_SW, Device 30, Input 121
 
-Var 2664, name sWINDOW_HEAT_3, static, Link IOCARD_SW, Device 30, Input 124
+// Var 2664, name sWINDOW_HEAT_3, static, Link IOCARD_SW, Device 30, Input 124
 
-Var 2665, name sWINDOW_HEAT_4, static, Link IOCARD_SW, Device 30, Input 125
+// Var 2665, name sWINDOW_HEAT_4, static, Link IOCARD_SW, Device 30, Input 125
 
-Var 2667, name sWING_ANTI_ICE, static, Link IOCARD_SW, Device 30, Input 114
+// Var 2667, name sWING_ANTI_ICE, static, Link IOCARD_SW, Device 30, Input 114
 
-Var 2657, name sENG_ANTI_ICE1, static, Link IOCARD_SW, Device 30, Input 115
+// Var 2657, name sENG_ANTI_ICE1, static, Link IOCARD_SW, Device 30, Input 115
 
-Var 2658, name sENG_ANTI_ICE2, static, Link IOCARD_SW, Device 30, Input 116
+// Var 2658, name sENG_ANTI_ICE2, static, Link IOCARD_SW, Device 30, Input 116
 
-Var 2659, name sPROBE_HEAT_1, static, Link IOCARD_SW, Device 30, Input 118
+// Var 2659, name sPROBE_HEAT_1, static, Link IOCARD_SW, Device 30, Input 118
 
-Var 2660, name sPROBE_HEAT_2, static, Link IOCARD_SW, Device 30, Input 119
+// Var 2660, name sPROBE_HEAT_2, static, Link IOCARD_SW, Device 30, Input 119
 
-Var 2586, name sTRIM_AIR, static, Link IOCARD_SW, Device 30, Input 143
+// Var 2586, name sTRIM_AIR, static, Link IOCARD_SW, Device 30, Input 143
 
-Var 2593, name sAPU_BLEED, static, Link IOCARD_SW, Device 30, Input 106
+// Var 2593, name sAPU_BLEED, static, Link IOCARD_SW, Device 30, Input 106
 
-Var 2594, name sENG_1_BLEED, static, Link IOCARD_SW, Device 30, Input 105
+// Var 2594, name sENG_1_BLEED, static, Link IOCARD_SW, Device 30, Input 105
 
-Var 2595, name sENG_2_BLEED, static, Link IOCARD_SW, Device 30, Input 107
+// Var 2595, name sENG_2_BLEED, static, Link IOCARD_SW, Device 30, Input 107
 
-Var 2600, name sRECIRC_FAN_L, static, Link IOCARD_SW, Device 30, Input 142
+// Var 2600, name sRECIRC_FAN_L, static, Link IOCARD_SW, Device 30, Input 142
 
-Var 2601, name sRECIRC_FAN_R, static, Link IOCARD_SW, Device 30, Input 141
+// Var 2601, name sRECIRC_FAN_R, static, Link IOCARD_SW, Device 30, Input 141
 
-Var 2676, name sRETRACTABLE_L, static, Link IOCARD_SW, Device 30, Input 012
+Var 2676, name sRETRACTABLE_L, static, Link IOCARD_SW, Device 30, Input 016
 
-Var 2682, name sRETRACTABLE_R, static, Link IOCARD_SW, Device 30, Input 011
+Var 2682, name sRETRACTABLE_R, static, Link IOCARD_SW, Device 30, Input 017
 
-Var 2674, name sFIXED_L, static, Link IOCARD_SW, Device 30, Input 017
+Var 2674, name sFIXED_L, static, Link IOCARD_SW, Device 30, Input 013
 
-Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 30, Input 016
+Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 30, Input 011
 
-Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 30, Input 010
+Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 30, Input 012
 
-Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 013
+Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 011
 
 Var 2684, name sTAXI, static, Link IOCARD_SW, Device 30, Input 009
 
@@ -1069,249 +1069,249 @@ Var 2639, name FCTL_A_G, static
 
 Var 2640, name FCTL_A_SW, static, Value 1
 
-Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 30, Input 47
-{
-  IF &sFCTL_SR_A = 1
-  {
-    &FCTL_A_G = 1    
-    &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
-  }
-  ELSE
-  {
-    &FCTL_A_G = 1    
-    &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
-  }
-}
+// Var 0042, name sFCTL_SR_A, Link IOCARD_SW, Device 30, Input 47
+// {
+//   IF &sFCTL_SR_A = 1
+//   {
+//     &FCTL_A_G = 1    
+//     &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
+//   }
+//   ELSE
+//   {
+//     &FCTL_A_G = 1    
+//     &FCTL_A_SW = CHANGEBITN 0 ,&FCTL_A_SW
+//   }
+// }
 
-Var 0043, name sFCTL_A_ON, Link IOCARD_SW, Device 30, Input 48
-{
-  IF &sFCTL_A_ON = 1
-  {
-    &FCTL_A_G = 0    
-    &FCTL_A_SW = 2    
-  }
-  ELSE
-  {
-    &FCTL_A_G = 1    
-    &FCTL_A_SW = 1    
-  }
-}
+// Var 0043, name sFCTL_A_ON, Link IOCARD_SW, Device 30, Input 48
+// {
+//   IF &sFCTL_A_ON = 1
+//   {
+//     &FCTL_A_G = 0    
+//     &FCTL_A_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &FCTL_A_G = 1    
+//     &FCTL_A_SW = 1    
+//   }
+// }
 
 Var 2641, name FCTL_B_G, static
 
 Var 2642, name FCTL_B_SW, static, Value 1
 
-Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 30, Input 49
-{
-  IF &sFCTL_SR_B = 1
-  {
-    &FCTL_B_G = 1    
-    &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
-  }
-  ELSE
-  {
-    &FCTL_B_G = 1    
-    &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
-  }
-}
+// Var 0044, name sFCTL_SR_B, Link IOCARD_SW, Device 30, Input 49
+// {
+//   IF &sFCTL_SR_B = 1
+//   {
+//     &FCTL_B_G = 1    
+//     &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
+//   }
+//   ELSE
+//   {
+//     &FCTL_B_G = 1    
+//     &FCTL_B_SW = CHANGEBITN 0 ,&FCTL_B_SW
+//   }
+// }
 
-Var 0045, name sFCTL_B_ON, Link IOCARD_SW, Device 30, Input 50
-{
-  IF &sFCTL_B_ON = 1
-  {
-    &FCTL_B_G = 0    
-    &FCTL_B_SW = 2    
-  }
-  ELSE
-  {
-    &FCTL_B_G = 1    
-    &FCTL_B_SW = 1    
-  }
-}
+// Var 0045, name sFCTL_B_ON, Link IOCARD_SW, Device 30, Input 50
+// {
+//   IF &sFCTL_B_ON = 1
+//   {
+//     &FCTL_B_G = 0    
+//     &FCTL_B_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &FCTL_B_G = 1    
+//     &FCTL_B_SW = 1    
+//   }
+// }
 
 Var 2589, name ALT_FLAPS_G, static
 
 Var 2590, name ALT_FLAPS, static
 
-Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 30, Input 51
-{
-  IF &sALT_FLAPS_ARM = 1
-  {
-    &ALT_FLAPS_G = 1    
-    &ALT_FLAPS = 1    
-  }
-  ELSE
-  {
-    &ALT_FLAPS_G = 0    
-    &ALT_FLAPS = 0    
-  }
-}
+// Var 0046, name sALT_FLAPS_ARM, Link IOCARD_SW, Device 30, Input 51
+// {
+//   IF &sALT_FLAPS_ARM = 1
+//   {
+//     &ALT_FLAPS_G = 1    
+//     &ALT_FLAPS = 1    
+//   }
+//   ELSE
+//   {
+//     &ALT_FLAPS_G = 0    
+//     &ALT_FLAPS = 0    
+//   }
+// }
 
 Var 2591, name ALT_FLAPS_SW, static
 
-Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 30, Input 52
-{
-  IF &sALT_FLAPS_UP = 1
-  {
-    &ALT_FLAPS_SW = 0    
-  }
-  ELSE
-  {
-    &ALT_FLAPS_SW = 1    
-  }
-}
+// Var 0047, name sALT_FLAPS_UP, Link IOCARD_SW, Device 30, Input 52
+// {
+//   IF &sALT_FLAPS_UP = 1
+//   {
+//     &ALT_FLAPS_SW = 0    
+//   }
+//   ELSE
+//   {
+//     &ALT_FLAPS_SW = 1    
+//   }
+// }
 
-Var 0048, name sALT_FLAPS_DN, Link IOCARD_SW, Device 30, Input 53
-{
-  IF &sALT_FLAPS_DN = 1
-  {
-    &ALT_FLAPS_SW = 1    
-  }
-  ELSE
-  {
-    &ALT_FLAPS_SW = 2    
-  }
-}
+// Var 0048, name sALT_FLAPS_DN, Link IOCARD_SW, Device 30, Input 53
+// {
+//   IF &sALT_FLAPS_DN = 1
+//   {
+//     &ALT_FLAPS_SW = 1    
+//   }
+//   ELSE
+//   {
+//     &ALT_FLAPS_SW = 2    
+//   }
+// }
 
 Var 2705, name SPOILER_A_G, static
 
 Var 2706, name SPOILER_A_SW, static, Value 1
 
-Var 0049, name sSPOILER_A_OFF, Link IOCARD_SW, Device 30, Input 45
-{
-  IF &sSPOILER_A_OFF = 1
-  {
-    &SPOILER_A_G = 1    
-    &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
-  }
-  ELSE
-  {
-    &SPOILER_A_G = 0    
-    &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
-  }
-}
+// Var 0049, name sSPOILER_A_OFF, Link IOCARD_SW, Device 30, Input 45
+// {
+//   IF &sSPOILER_A_OFF = 1
+//   {
+//     &SPOILER_A_G = 1    
+//     &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
+//   }
+//   ELSE
+//   {
+//     &SPOILER_A_G = 0    
+//     &SPOILER_A_SW = CHANGEBITN 0 ,&SPOILER_A_SW
+//   }
+// }
 
 Var 0206, name SPOILER_B_G, static
 
 Var 2708, name SPOILER_B_SW, static, Value 1
 
-Var 0050, name sSPOILER_B_OFF, Link IOCARD_SW, Device 30, Input 46
-{
-  IF &sSPOILER_B_OFF = 1
-  {
-    &SPOILER_B_G = 1    
-    &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
-  }
-  ELSE
-  {
-    &SPOILER_B_G = 0    
-    &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
-  }
-}
+// Var 0050, name sSPOILER_B_OFF, Link IOCARD_SW, Device 30, Input 46
+// {
+//   IF &sSPOILER_B_OFF = 1
+//   {
+//     &SPOILER_B_G = 1    
+//     &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
+//   }
+//   ELSE
+//   {
+//     &SPOILER_B_G = 0    
+//     &SPOILER_B_SW = CHANGEBITN 0 ,&SPOILER_B_SW
+//   }
+// }
 
 Var 2691, name NAVVHF_SEL, static
 
-Var 0051, name sVHF_1, Link IOCARD_SW, Device 30, Input 40
-{
-  IF &sVHF_1 = 1
-  {
-    &NAVVHF_SEL = 0    
-  }
-  ELSE
-  {
-    &NAVVHF_SEL = 1    
-  }
-}
+// Var 0051, name sVHF_1, Link IOCARD_SW, Device 30, Input 40
+// {
+//   IF &sVHF_1 = 1
+//   {
+//     &NAVVHF_SEL = 0    
+//   }
+//   ELSE
+//   {
+//     &NAVVHF_SEL = 1    
+//   }
+// }
 
-Var 0052, name sVHF_2, Link IOCARD_SW, Device 30, Input 39
-{
-  IF &sVHF_2 = 1
-  {
-    &NAVVHF_SEL = 2    
-  }
-  ELSE
-  {
-    &NAVVHF_SEL = 1    
-  }
-}
+// Var 0052, name sVHF_2, Link IOCARD_SW, Device 30, Input 39
+// {
+//   IF &sVHF_2 = 1
+//   {
+//     &NAVVHF_SEL = 2    
+//   }
+//   ELSE
+//   {
+//     &NAVVHF_SEL = 1    
+//   }
+// }
 
 Var 2690, name NAVIRS_SEL, static
 
-Var 0053, name sIRS_LEFT, Link IOCARD_SW, Device 30, Input 42
-{
-  IF &sIRS_LEFT = 1
-  {
-    &NAVIRS_SEL = 0    
-  }
-  ELSE
-  {
-    &NAVIRS_SEL = 1    
-  }
-}
+// Var 0053, name sIRS_LEFT, Link IOCARD_SW, Device 30, Input 42
+// {
+//   IF &sIRS_LEFT = 1
+//   {
+//     &NAVIRS_SEL = 0    
+//   }
+//   ELSE
+//   {
+//     &NAVIRS_SEL = 1    
+//   }
+// }
 
-Var 0054, name sIRS_Right, Link IOCARD_SW, Device 30, Input 41
-{
-  IF &sIRS_Right = 1
-  {
-    &NAVIRS_SEL = 2    
-  }
-  ELSE
-  {
-    &NAVIRS_SEL = 1    
-  }
-}
+// Var 0054, name sIRS_Right, Link IOCARD_SW, Device 30, Input 41
+// {
+//   IF &sIRS_Right = 1
+//   {
+//     &NAVIRS_SEL = 2    
+//   }
+//   ELSE
+//   {
+//     &NAVIRS_SEL = 1    
+//   }
+// }
 
 Var 2688, name NAVDSP_D_S_S, static
 
-Var 0055, name sSOURCE_1, Link IOCARD_SW, Device 30, Input 36
-{
-  IF &sSOURCE_1 = 1
-  {
-    &NAVDSP_D_S_S = 0    
-  }
-}
+// Var 0055, name sSOURCE_1, Link IOCARD_SW, Device 30, Input 36
+// {
+//   IF &sSOURCE_1 = 1
+//   {
+//     &NAVDSP_D_S_S = 0    
+//   }
+// }
 
-Var 0056, name sSOURCE_AUTO, Link IOCARD_SW, Device 30, Input 37
-{
-  IF &sSOURCE_AUTO = 1
-  {
-    &NAVDSP_D_S_S = 1    
-  }
-}
+// Var 0056, name sSOURCE_AUTO, Link IOCARD_SW, Device 30, Input 37
+// {
+//   IF &sSOURCE_AUTO = 1
+//   {
+//     &NAVDSP_D_S_S = 1    
+//   }
+// }
 
-Var 0057, name sSOURCE_2, Link IOCARD_SW, Device 30, Input 38
-{
-  IF &sSOURCE_2 = 1
-  {
-    &NAVDSP_D_S_S = 2    
-  }
-}
+// Var 0057, name sSOURCE_2, Link IOCARD_SW, Device 30, Input 38
+// {
+//   IF &sSOURCE_2 = 1
+//   {
+//     &NAVDSP_D_S_S = 2    
+//   }
+// }
 
 Var 2687, name NAVDSP_C_P_S, static
 
-Var 0058, name sCONTROL_P_1, Link IOCARD_SW, Device 30, Input 71
-{
-  IF &sCONTROL_P_1 = 1
-  {
-    &NAVDSP_C_P_S = 0    
-  }
-  ELSE
-  {
-    &NAVDSP_C_P_S = 1    
-  }
-}
+// Var 0058, name sCONTROL_P_1, Link IOCARD_SW, Device 30, Input 71
+// {
+//   IF &sCONTROL_P_1 = 1
+//   {
+//     &NAVDSP_C_P_S = 0    
+//   }
+//   ELSE
+//   {
+//     &NAVDSP_C_P_S = 1    
+//   }
+// }
 
-Var 0059, name sCONTROL_P_2, Link IOCARD_SW, Device 30, Input 70
-{
-  IF &sCONTROL_P_2 = 1
-  {
-    &NAVDSP_C_P_S = 2    
-  }
-  ELSE
-  {
-    &NAVDSP_C_P_S = 1    
-  }
-}
+// Var 0059, name sCONTROL_P_2, Link IOCARD_SW, Device 30, Input 70
+// {
+//   IF &sCONTROL_P_2 = 1
+//   {
+//     &NAVDSP_C_P_S = 2    
+//   }
+//   ELSE
+//   {
+//     &NAVDSP_C_P_S = 1    
+//   }
+// }
 
 Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 32, Numbers 1
 
@@ -1341,22 +1341,22 @@ Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
 
 Var 2645, name FUEL_CRFeed, static, Value 1
 
-Var 0060, name sFUEL_CRFeed, Link IOCARD_SW, Device 30, Input 33
-{
-  &FUEL_CRFeed = CHANGEBITN 0 ,&FUEL_CRFeed
-}
+// Var 0060, name sFUEL_CRFeed, Link IOCARD_SW, Device 30, Input 33
+// {
+//   &FUEL_CRFeed = CHANGEBITN 0 ,&FUEL_CRFeed
+// }
 
-Var 2646, name sFUEL_P1_Aft, static, Link IOCARD_SW, Device 30, Input 27
+// Var 2646, name sFUEL_P1_Aft, static, Link IOCARD_SW, Device 30, Input 27
 
-Var 2647, name sFUEL_P1_Fwd, static, Link IOCARD_SW, Device 30, Input 28
+// Var 2647, name sFUEL_P1_Fwd, static, Link IOCARD_SW, Device 30, Input 28
 
-Var 2648, name sFUEL_P2_Aft, static, Link IOCARD_SW, Device 30, Input 30
+// Var 2648, name sFUEL_P2_Aft, static, Link IOCARD_SW, Device 30, Input 30
 
-Var 2649, name sFUEL_P2_Fwd, static, Link IOCARD_SW, Device 30, Input 29
+// Var 2649, name sFUEL_P2_Fwd, static, Link IOCARD_SW, Device 30, Input 29
 
-Var 2650, name sFUEL_PL_Ctr, static, Link IOCARD_SW, Device 30, Input 31
+// Var 2650, name sFUEL_PL_Ctr, static, Link IOCARD_SW, Device 30, Input 31
 
-Var 2651, name sFUEL_PR_Ctr, static, Link IOCARD_SW, Device 30, Input 32
+// Var 2651, name sFUEL_PR_Ctr, static, Link IOCARD_SW, Device 30, Input 32
 
 Var 1080, name aBAT_DISCHARGE, static, Link IOCARD_OUT, Device 30, Output 38
 
@@ -1366,127 +1366,127 @@ Var 1082, name aELEC, static, Link IOCARD_OUT, Device 30, Output 40
 
 Var 2623, name EL_DC_M, static
 
-Var 0061, name sSTBY_POWER, Link IOCARD_SW, Device 30, Input 73
-{
-  IF &sSTBY_POWER = 1
-  {
-    &EL_DC_M = 0    
-  }
-}
+// Var 0061, name sSTBY_POWER, Link IOCARD_SW, Device 30, Input 73
+// {
+//   IF &sSTBY_POWER = 1
+//   {
+//     &EL_DC_M = 0    
+//   }
+// }
 
-Var 0062, name sBAT_BUS, Link IOCARD_SW, Device 30, Input 74
-{
-  IF &sBAT_BUS = 1
-  {
-    &EL_DC_M = 1    
-  }
-}
+// Var 0062, name sBAT_BUS, Link IOCARD_SW, Device 30, Input 74
+// {
+//   IF &sBAT_BUS = 1
+//   {
+//     &EL_DC_M = 1    
+//   }
+// }
 
-Var 0063, name sBAT, Link IOCARD_SW, Device 30, Input 75
-{
-  IF &sBAT = 1
-  {
-    &EL_DC_M = 2    
-  }
-}
+// Var 0063, name sBAT, Link IOCARD_SW, Device 30, Input 75
+// {
+//   IF &sBAT = 1
+//   {
+//     &EL_DC_M = 2    
+//   }
+// }
 
-Var 0064, name sAUX_BAT, Link IOCARD_SW, Device 30, Input 76
-{
-  IF &sAUX_BAT = 1
-  {
-    &EL_DC_M = 3    
-  }
-}
+// Var 0064, name sAUX_BAT, Link IOCARD_SW, Device 30, Input 76
+// {
+//   IF &sAUX_BAT = 1
+//   {
+//     &EL_DC_M = 3    
+//   }
+// }
 
-Var 0065, name sTR1, Link IOCARD_SW, Device 30, Input 77
-{
-  IF &sTR1 = 1
-  {
-    &EL_DC_M = 4    
-  }
-}
+// Var 0065, name sTR1, Link IOCARD_SW, Device 30, Input 77
+// {
+//   IF &sTR1 = 1
+//   {
+//     &EL_DC_M = 4    
+//   }
+//}
 
-Var 0066, name sTR2, Link IOCARD_SW, Device 30, Input 78
-{
-  IF &sTR2 = 1
-  {
-    &EL_DC_M = 5    
-  }
-}
+// Var 0066, name sTR2, Link IOCARD_SW, Device 30, Input 78
+// {
+//   IF &sTR2 = 1
+//   {
+//     &EL_DC_M = 5    
+//   }
+// }
 
-Var 0067, name sTR3, Link IOCARD_SW, Device 30, Input 79
-{
-  IF &sTR3 = 1
-  {
-    &EL_DC_M = 6    
-  }
-}
+// Var 0067, name sTR3, Link IOCARD_SW, Device 30, Input 79
+// {
+//   IF &sTR3 = 1
+//   {
+//     &EL_DC_M = 6    
+//   }
+// }
 
-Var 0068, name sTEST, Link IOCARD_SW, Device 30, Input 80
-{
-  IF &sTEST = 1
-  {
-    &EL_DC_M = 7    
-  }
-}
+// Var 0068, name sTEST, Link IOCARD_SW, Device 30, Input 80
+// {
+//   IF &sTEST = 1
+//   {
+//     &EL_DC_M = 7    
+//   }
+// }
 
-Var 2615, name EL_AC_M, static
+// Var 2615, name EL_AC_M, static
 
-Var 0069, name sAC_SB_PWR, Link IOCARD_SW, Device 30, Input 82
-{
-  IF &sAC_SB_PWR = 1
-  {
-    &EL_AC_M = 0    
-  }
-}
+// Var 0069, name sAC_SB_PWR, Link IOCARD_SW, Device 30, Input 82
+// {
+//   IF &sAC_SB_PWR = 1
+//   {
+//     &EL_AC_M = 0    
+//   }
+// }
 
-Var 0070, name sGRD_POWER, Link IOCARD_SW, Device 30, Input 83
-{
-  IF &sGRD_POWER = 1
-  {
-    &EL_AC_M = 1    
-  }
-}
+// Var 0070, name sGRD_POWER, Link IOCARD_SW, Device 30, Input 83
+// {
+//   IF &sGRD_POWER = 1
+//   {
+//     &EL_AC_M = 1    
+//   }
+// }
 
-Var 0071, name sGEN1, Link IOCARD_SW, Device 30, Input 84
-{
-  IF &sGEN1 = 1
-  {
-    &EL_AC_M = 2    
-  }
-}
+// Var 0071, name sGEN1, Link IOCARD_SW, Device 30, Input 84
+// {
+//   IF &sGEN1 = 1
+//   {
+//     &EL_AC_M = 2    
+//   }
+// }
 
-Var 0072, name sAPU_GEN, Link IOCARD_SW, Device 30, Input 85
-{
-  IF &sAPU_GEN = 1
-  {
-    &EL_AC_M = 3    
-  }
-}
+// Var 0072, name sAPU_GEN, Link IOCARD_SW, Device 30, Input 85
+// {
+//   IF &sAPU_GEN = 1
+//   {
+//     &EL_AC_M = 3    
+//   }
+// }
 
-Var 0073, name sGEN2, Link IOCARD_SW, Device 30, Input 86
-{
-  IF &sGEN2 = 1
-  {
-    &EL_AC_M = 4    
-  }
-}
+// Var 0073, name sGEN2, Link IOCARD_SW, Device 30, Input 86
+// {
+//   IF &sGEN2 = 1
+//   {
+//     &EL_AC_M = 4    
+//   }
+// }
 
-Var 0074, name sINV, Link IOCARD_SW, Device 30, Input 87
-{
-  IF &sINV = 1
-  {
-    &EL_AC_M = 5    
-  }
-}
+// Var 0074, name sINV, Link IOCARD_SW, Device 30, Input 87
+// {
+//   IF &sINV = 1
+//   {
+//     &EL_AC_M = 5    
+//   }
+// }
 
-Var 0075, name sAC_TEST, Link IOCARD_SW, Device 30, Input 88
-{
-  IF &sAC_TEST = 1
-  {
-    &EL_AC_M = 6    
-  }
-}
+// Var 0075, name sAC_TEST, Link IOCARD_SW, Device 30, Input 88
+// {
+//   IF &sAC_TEST = 1
+//   {
+//     &EL_AC_M = 6    
+//   }
+// }
 
 Var 1090, name aSTBY_PWR_OFF, static, Link IOCARD_OUT, Device 30, Output 42
 
@@ -1498,183 +1498,183 @@ Var 2624, name EL_DIS_1_G, static
 
 Var 2625, name EL_DIS_1_SW, static, Value 1
 
-Var 0076, name sDRIVE_L, Link IOCARD_SW, Device 30, Input 66
-{
-  IF &sDRIVE_L = 1
-  {
-    &EL_DIS_1_G = 1    
-    &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
-  }
-  ELSE
-  {
-    &EL_DIS_1_G = 0    
-    &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
-  }
-}
+// Var 0076, name sDRIVE_L, Link IOCARD_SW, Device 30, Input 66
+// {
+//   IF &sDRIVE_L = 1
+//   {
+//     &EL_DIS_1_G = 1    
+//     &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
+//   }
+//   ELSE
+//   {
+//     &EL_DIS_1_G = 0    
+//     &EL_DIS_1_SW = CHANGEBITN 0 ,&EL_DIS_1_SW
+//   }
+// }
 
 Var 2626, name EL_DIS_2_G, static
 
 Var 2627, name EL_DIS_2_SW, static, Value 1
 
-Var 0077, name sDRIVE_R, Link IOCARD_SW, Device 30, Input 67
-{
-  IF &sDRIVE_R = 1
-  {
-    &EL_DIS_2_G = 1    
-    &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
-  }
-  ELSE
-  {
-    &EL_DIS_2_G = 0    
-    &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
-  }
-}
+// Var 0077, name sDRIVE_R, Link IOCARD_SW, Device 30, Input 67
+// {
+//   IF &sDRIVE_R = 1
+//   {
+//     &EL_DIS_2_G = 1    
+//     &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
+//   }
+//   ELSE
+//   {
+//     &EL_DIS_2_G = 0    
+//     &EL_DIS_2_SW = CHANGEBITN 0 ,&EL_DIS_2_SW
+//   }
+// }
 
 Var 2620, name EL_BUS_TR_G, static
 
 Var 2621, name EL_BUS_TR_SW, static, Value 1
 
-Var 0078, name sBUS_TRANSFER, Link IOCARD_SW, Device 30, Input 63
-{
-  IF &sBUS_TRANSFER = 1
-  {
-    &EL_BUS_TR_G = 1    
-    &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
-  }
-  ELSE
-  {
-    &EL_BUS_TR_G = 0    
-    &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
-  }
-}
+// Var 0078, name sBUS_TRANSFER, Link IOCARD_SW, Device 30, Input 63
+// {
+//   IF &sBUS_TRANSFER = 1
+//   {
+//     &EL_BUS_TR_G = 1    
+//     &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
+//   }
+//   ELSE
+//   {
+//     &EL_BUS_TR_G = 0    
+//     &EL_BUS_TR_SW = CHANGEBITN 0 ,&EL_BUS_TR_SW
+//   }
+// }
 
 Var 2629, name EL_GEN1_SW, static
 
-Var 0079, name sGEN_1_OFF, Link IOCARD_SW, Device 30, Input 55
-{
-  IF &sGEN_1_OFF = 1
-  {
-    &EL_GEN1_SW = 0    
-  }
-  ELSE
-  {
-    IF &sGEN_1_ON = 0
-    {
-      &EL_GEN1_SW = 1    
-    }
-  }
-}
+// Var 0079, name sGEN_1_OFF, Link IOCARD_SW, Device 30, Input 55
+// {
+//   IF &sGEN_1_OFF = 1
+//   {
+//     &EL_GEN1_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sGEN_1_ON = 0
+//     {
+//       &EL_GEN1_SW = 1    
+//     }
+//   }
+// }
 
-Var 0080, name sGEN_1_ON, Link IOCARD_SW, Device 30, Input 56
-{
-  IF &sGEN_1_ON = 1
-  {
-    &EL_GEN1_SW = 2    
-  }
-  ELSE
-  {
-    IF &sGEN_1_OFF = 0
-    {
-      &EL_GEN1_SW = 1    
-    }
-  }
-}
+// Var 0080, name sGEN_1_ON, Link IOCARD_SW, Device 30, Input 56
+// {
+//   IF &sGEN_1_ON = 1
+//   {
+//     &EL_GEN1_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sGEN_1_OFF = 0
+//     {
+//       &EL_GEN1_SW = 1    
+//     }
+//   }
+// }
 
-Var 2630, name EL_GEN2_SW, static
+// Var 2630, name EL_GEN2_SW, static
 
-Var 0081, name sGEN_2_OFF, Link IOCARD_SW, Device 30, Input 61
-{
-  IF &sGEN_2_OFF = 1
-  {
-    &EL_GEN2_SW = 0    
-  }
-  ELSE
-  {
-    IF &sGEN_2_ON = 0
-    {
-      &EL_GEN2_SW = 1    
-    }
-  }
-}
+// Var 0081, name sGEN_2_OFF, Link IOCARD_SW, Device 30, Input 61
+// {
+//   IF &sGEN_2_OFF = 1
+//   {
+//     &EL_GEN2_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sGEN_2_ON = 0
+//     {
+//       &EL_GEN2_SW = 1    
+//     }
+//   }
+// }
 
-Var 0082, name sGEN_2_ON, Link IOCARD_SW, Device 30, Input 62
-{
-  IF &sGEN_2_ON = 1
-  {
-    &EL_GEN2_SW = 2    
-  }
-  ELSE
-  {
-    IF &sGEN_2_OFF = 0
-    {
-      &EL_GEN2_SW = 1    
-    }
-  }
-}
+// Var 0082, name sGEN_2_ON, Link IOCARD_SW, Device 30, Input 62
+// {
+//   IF &sGEN_2_ON = 1
+//   {
+//     &EL_GEN2_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sGEN_2_OFF = 0
+//     {
+//       &EL_GEN2_SW = 1    
+//     }
+//   }
+// }
 
-Var 2616, name EL_APU_G1_SW, static
+// Var 2616, name EL_APU_G1_SW, static
 
-Var 0083, name sAPU_GEN_OFF_L, Link IOCARD_SW, Device 30, Input 57
-{
-  IF &sAPU_GEN_OFF_L = 1
-  {
-    &EL_APU_G1_SW = 0    
-  }
-  ELSE
-  {
-    IF &sAPU_GEN_ON_L = 0
-    {
-      &EL_APU_G1_SW = 1    
-    }
-  }
-}
+// Var 0083, name sAPU_GEN_OFF_L, Link IOCARD_SW, Device 30, Input 57
+// {
+//   IF &sAPU_GEN_OFF_L = 1
+//   {
+//     &EL_APU_G1_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sAPU_GEN_ON_L = 0
+//     {
+//       &EL_APU_G1_SW = 1    
+//     }
+//   }
+// }
 
-Var 0084, name sAPU_GEN_ON_L, Link IOCARD_SW, Device 30, Input 58
-{
-  IF &sAPU_GEN_ON_L = 1
-  {
-    &EL_APU_G1_SW = 2    
-  }
-  ELSE
-  {
-    IF &sAPU_GEN_OFF_L = 0
-    {
-      &EL_APU_G1_SW = 1    
-    }
-  }
-}
+// Var 0084, name sAPU_GEN_ON_L, Link IOCARD_SW, Device 30, Input 58
+// {
+//   IF &sAPU_GEN_ON_L = 1
+//   {
+//     &EL_APU_G1_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sAPU_GEN_OFF_L = 0
+//     {
+//       &EL_APU_G1_SW = 1    
+//     }
+//   }
+// }
 
-Var 2617, name EL_APU_G2_SW, static
+// Var 2617, name EL_APU_G2_SW, static
 
-Var 0085, name sAPU_GEN_OFF_R, Link IOCARD_SW, Device 30, Input 59
-{
-  IF &sAPU_GEN_OFF_R = 1
-  {
-    &EL_APU_G2_SW = 0    
-  }
-  ELSE
-  {
-    IF &sAPU_GEN_ON_R = 0
-    {
-      &EL_APU_G2_SW = 1    
-    }
-  }
-}
+// Var 0085, name sAPU_GEN_OFF_R, Link IOCARD_SW, Device 30, Input 59
+// {
+//   IF &sAPU_GEN_OFF_R = 1
+//   {
+//     &EL_APU_G2_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sAPU_GEN_ON_R = 0
+//     {
+//       &EL_APU_G2_SW = 1    
+//     }
+//   }
+// }
 
-Var 0086, name sAPU_GEN_ON_R, Link IOCARD_SW, Device 30, Input 60
-{
-  IF &sAPU_GEN_ON_R = 1
-  {
-    &EL_APU_G2_SW = 2    
-  }
-  ELSE
-  {
-    IF &sAPU_GEN_OFF_R = 0
-    {
-      &EL_APU_G2_SW = 1    
-    }
-  }
-}
+// Var 0086, name sAPU_GEN_ON_R, Link IOCARD_SW, Device 30, Input 60
+// {
+//   IF &sAPU_GEN_ON_R = 1
+//   {
+//     &EL_APU_G2_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sAPU_GEN_OFF_R = 0
+//     {
+//       &EL_APU_G2_SW = 1    
+//     }
+//   }
+// }
 
 Var 1112, name aAPU_MAINT, static, Link IOCARD_DISPLAY, Device 30, Digit 41, Numbers 1
 
@@ -1686,31 +1686,31 @@ Var 1115, name aAPU_OVERSP, static, Link IOCARD_DISPLAY, Device 30, Digit 44, Nu
 
 Var 2715, name WIPER_L_C, static
 
-Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 54
-{
-  IF &sWIPER_L = 1
-  {
-    &WIPER_L_C = 0    
-  }
-  ELSE
-  {
-    &WIPER_L_C = 2    
-  }
-}
+// Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 54
+// {
+//   IF &sWIPER_L = 1
+//   {
+//     &WIPER_L_C = 0    
+//   }
+//   ELSE
+//   {
+//     &WIPER_L_C = 2    
+//   }
+// }
 
-Var 2716, name WIPER_R_C, static
+// Var 2716, name WIPER_R_C, static
 
-Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 90
-{
-  IF &sWIPER_R = 1
-  {
-    &WIPER_R_C = 0    
-  }
-  ELSE
-  {
-    &WIPER_R_C = 2    
-  }
-}
+// Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 90
+// {
+//   IF &sWIPER_R = 1
+//   {
+//     &WIPER_R_C = 0    
+//   }
+//   ELSE
+//   {
+//     &WIPER_R_C = 2    
+//   }
+// }
 
 Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 16
 
@@ -1720,93 +1720,93 @@ Var 2636, name EM_EX_L_G, static
 
 Var 2637, name EM_EX_L_SW, static, Value 1
 
-Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 95
-{
-  IF &sEMER_EXIT_OFF = 1
-  {
-    &EM_EX_L_G = 1    
-    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
-  }
-  ELSE
-  {
-    &EM_EX_L_G = 1    
-    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
-  }
-}
+// Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 95
+// {
+//   IF &sEMER_EXIT_OFF = 1
+//   {
+//     &EM_EX_L_G = 1    
+//     &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+//   }
+//   ELSE
+//   {
+//     &EM_EX_L_G = 1    
+//     &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+//   }
+// }
 
-Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 96
-{
-  IF &sEMER_EXIT_ON = 1
-  {
-    &EM_EX_L_G = 0    
-    &EM_EX_L_SW = 2    
-  }
-  ELSE
-  {
-    &EM_EX_L_G = 1    
-    &EM_EX_L_SW = 1    
-  }
-}
+// Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 96
+// {
+//   IF &sEMER_EXIT_ON = 1
+//   {
+//     &EM_EX_L_G = 0    
+//     &EM_EX_L_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &EM_EX_L_G = 1    
+//     &EM_EX_L_SW = 1    
+//   }
+// }
 
-Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 15
+ Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 15
 
-Var 2692, name NO_S_L_SW, static
+// Var 2692, name NO_S_L_SW, static
 
-Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 91
-{
-  IF &sNO_SMOKE_OFF = 1
-  {
-    &NO_S_L_SW = 0    
-  }
-  ELSE
-  {
-    &NO_S_L_SW = 1    
-  }
-}
+// Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 91
+// {
+//   IF &sNO_SMOKE_OFF = 1
+//   {
+//     &NO_S_L_SW = 0    
+//   }
+//   ELSE
+//   {
+//     &NO_S_L_SW = 1    
+//   }
+// }
 
-Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 92
-{
-  IF &sNO_SMOKE_ON = 1
-  {
-    &NO_S_L_SW = 2    
-  }
-  ELSE
-  {
-    &NO_S_L_SW = 0    
-  }
-}
+// Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 92
+// {
+//   IF &sNO_SMOKE_ON = 1
+//   {
+//     &NO_S_L_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &NO_S_L_SW = 0    
+//   }
+// }
 
-Var 2638, name FAST_B_LI_SW, static
+// Var 2638, name FAST_B_LI_SW, static
 
-Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 93
-{
-  IF &sFAST_SEAT_OFF = 1
-  {
-    &FAST_B_LI_SW = 0    
-  }
-  ELSE
-  {
-    IF &sFAST_SEAT_ON = 0
-    {
-      &FAST_B_LI_SW = 1    
-    }
-  }
-}
+// Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 93
+// {
+//   IF &sFAST_SEAT_OFF = 1
+//   {
+//     &FAST_B_LI_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sFAST_SEAT_ON = 0
+//     {
+//       &FAST_B_LI_SW = 1    
+//     }
+//   }
+// }
 
-Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 94
-{
-  IF &sFAST_SEAT_ON = 1
-  {
-    &FAST_B_LI_SW = 2    
-  }
-  ELSE
-  {
-    IF &sFAST_SEAT_OFF = 0
-    {
-      &FAST_B_LI_SW = 1    
-    }
-  }
-}
+// Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 94
+// {
+//   IF &sFAST_SEAT_ON = 1
+//   {
+//     &FAST_B_LI_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sFAST_SEAT_OFF = 0
+//     {
+//       &FAST_B_LI_SW = 1    
+//     }
+//   }
+// }
 
 Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
 
@@ -1830,35 +1830,35 @@ Var 1137, name aW_HEATON_RS, static, Link IOCARD_OUT, Device 30, Output 85
 
 Var 2666, name ICE_W_HEAT_T, static
 
-Var 0095, name sWIN_H_OVH, Link IOCARD_SW, Device 30, Input 122
-{
-  IF &sWIN_H_OVH = 1
-  {
-    &ICE_W_HEAT_T = 0    
-  }
-  ELSE
-  {
-    IF &sWIN_H_PT = 0
-    {
-      &ICE_W_HEAT_T = 1    
-    }
-  }
-}
+// Var 0095, name sWIN_H_OVH, Link IOCARD_SW, Device 30, Input 122
+// {
+//   IF &sWIN_H_OVH = 1
+//   {
+//     &ICE_W_HEAT_T = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sWIN_H_PT = 0
+//     {
+//       &ICE_W_HEAT_T = 1    
+//     }
+//   }
+// }
 
-Var 0096, name sWIN_H_PT, Link IOCARD_SW, Device 30, Input 123
-{
-  IF &sWIN_H_PT = 1
-  {
-    &ICE_W_HEAT_T = 2    
-  }
-  ELSE
-  {
-    IF &sWIN_H_OVH = 0
-    {
-      &ICE_W_HEAT_T = 1    
-    }
-  }
-}
+// Var 0096, name sWIN_H_PT, Link IOCARD_SW, Device 30, Input 123
+// {
+//   IF &sWIN_H_PT = 1
+//   {
+//     &ICE_W_HEAT_T = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sWIN_H_OVH = 0
+//     {
+//       &ICE_W_HEAT_T = 1    
+//     }
+//   }
+// }
 
 Var 1142, name aCAPT_PITOT, static, Link IOCARD_OUT, Device 30, Output 81
 
@@ -1912,91 +1912,91 @@ Var 1177, name aRamDoor_L, static, Link IOCARD_DISPLAY, Device 30, Digit 47, Num
 
 Var 1178, name aRamDoor_R, static, Link IOCARD_DISPLAY, Device 30, Digit 48, Numbers 1
 
-Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 108
+// Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 108
 
-Var 2654, name sHYD_ELEC_R, static, Link IOCARD_SW, Device 30, Input 109
+// Var 2654, name sHYD_ELEC_R, static, Link IOCARD_SW, Device 30, Input 109
 
-Var 2653, name sHYD_ELEC_L, static, Link IOCARD_SW, Device 30, Input 110
+// Var 2653, name sHYD_ELEC_L, static, Link IOCARD_SW, Device 30, Input 110
 
-Var 2656, name sHYD_ENG_R, static, Link IOCARD_SW, Device 30, Input 111
+// Var 2656, name sHYD_ENG_R, static, Link IOCARD_SW, Device 30, Input 111
 
-Var 2598, name PACK_L_SW, static, Value 1
+// Var 2598, name PACK_L_SW, static, Value 1
 
-Var 0097, name sPACK_OFF_L, Link IOCARD_SW, Device 30, Input 112
-{
-  IF &sPACK_OFF_L = 1
-  {
-    &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
-  }
-  ELSE
-  {
-    &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
-  }
-}
+// Var 0097, name sPACK_OFF_L, Link IOCARD_SW, Device 30, Input 112
+// {
+//   IF &sPACK_OFF_L = 1
+//   {
+//     &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
+//   }
+//   ELSE
+//   {
+//     &PACK_L_SW = CHANGEBITN 0 ,&PACK_L_SW
+//   }
+// }
 
-Var 0098, name sPACK_HI_L, Link IOCARD_SW, Device 30, Input 113
-{
-  IF &sPACK_HI_L = 1
-  {
-    &PACK_L_SW = 2    
-  }
-  ELSE
-  {
-    &PACK_L_SW = 1    
-  }
-}
+// Var 0098, name sPACK_HI_L, Link IOCARD_SW, Device 30, Input 113
+// {
+//   IF &sPACK_HI_L = 1
+//   {
+//     &PACK_L_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &PACK_L_SW = 1    
+//   }
+// }
 
-Var 2596, name ISO_VALVE_C_SW, static, Value 1
+// Var 2596, name ISO_VALVE_C_SW, static, Value 1
 
-Var 0099, name sISO_CLOSE, Link IOCARD_SW, Device 30, Input 136
-{
-  IF &sISO_CLOSE = 1
-  {
-    &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
-  }
-  ELSE
-  {
-    &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
-  }
-}
+// Var 0099, name sISO_CLOSE, Link IOCARD_SW, Device 30, Input 136
+// {
+//   IF &sISO_CLOSE = 1
+//   {
+//     &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
+//   }
+//   ELSE
+//   {
+//     &ISO_VALVE_C_SW = CHANGEBITN 0 ,&ISO_VALVE_C_SW
+//   }
+// }
 
-Var 0100, name sISO_OPEN, Link IOCARD_SW, Device 30, Input 137
-{
-  IF &sISO_OPEN = 1
-  {
-    &ISO_VALVE_C_SW = 2    
-  }
-  ELSE
-  {
-    &ISO_VALVE_C_SW = 1    
-  }
-}
+// Var 0100, name sISO_OPEN, Link IOCARD_SW, Device 30, Input 137
+// {
+//   IF &sISO_OPEN = 1
+//   {
+//     &ISO_VALVE_C_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &ISO_VALVE_C_SW = 1    
+//   }
+// }
 
-Var 2599, name PACK_R_SW, static, Value 1
+// Var 2599, name PACK_R_SW, static, Value 1
 
-Var 0101, name sPACK_OFF_R, Link IOCARD_SW, Device 30, Input 138
-{
-  IF &sPACK_OFF_R = 1
-  {
-    &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
-  }
-  ELSE
-  {
-    &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
-  }
-}
+// Var 0101, name sPACK_OFF_R, Link IOCARD_SW, Device 30, Input 138
+// {
+//   IF &sPACK_OFF_R = 1
+//   {
+//     &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
+//   }
+//   ELSE
+//   {
+//     &PACK_R_SW = CHANGEBITN 0 ,&PACK_R_SW
+//   }
+// }
 
-Var 0102, name sPACK_HI_R, Link IOCARD_SW, Device 30, Input 139
-{
-  IF &sPACK_HI_R = 1
-  {
-    &PACK_R_SW = 2    
-  }
-  ELSE
-  {
-    &PACK_R_SW = 1    
-  }
-}
+// Var 0102, name sPACK_HI_R, Link IOCARD_SW, Device 30, Input 139
+// {
+//   IF &sPACK_HI_R = 1
+//   {
+//     &PACK_R_SW = 2    
+//   }
+//   ELSE
+//   {
+//     &PACK_R_SW = 1    
+//   }
+// }
 
 Var 1187, name aPackTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 49, Numbers 1
 
@@ -2030,33 +2030,33 @@ Var 1200, name LandAltWindow, static
 
 Var 2700, name PRESS_F_ALT_K, static
 
-Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 126, Aceleration 3, Type 2
-{
-  &PRESS_F_ALT_K = 0    
-  IF &rF_Alt < 0
-  {
-    &PRESS_F_ALT_K = 16384    
-  }
-  ELSE
-  {
-    &PRESS_F_ALT_K = 8192    
-  }
-}
+// Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 126, Aceleration 3, Type 2
+// {
+//   &PRESS_F_ALT_K = 0    
+//   IF &rF_Alt < 0
+//   {
+//     &PRESS_F_ALT_K = 16384    
+//   }
+//   ELSE
+//   {
+//     &PRESS_F_ALT_K = 8192    
+//   }
+// }
 
-Var 2701, name PRESS_L_ALT_K, static
+// Var 2701, name PRESS_L_ALT_K, static
 
-Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
-{
-  &PRESS_L_ALT_K = 0    
-  IF &rL_Alt < 0
-  {
-    &PRESS_L_ALT_K = 16384    
-  }
-  ELSE
-  {
-    &PRESS_L_ALT_K = 8192    
-  }
-}
+// Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
+// {
+//   &PRESS_L_ALT_K = 0    
+//   IF &rL_Alt < 0
+//   {
+//     &PRESS_L_ALT_K = 16384    
+//   }
+//   ELSE
+//   {
+//     &PRESS_L_ALT_K = 8192    
+//   }
+// }
 
 Var 0105, name FA1, Link IOCARD_DISPLAY, Device 30, Digit 64, Numbers 1
 
@@ -2184,61 +2184,61 @@ Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 73, Numbers 1
 
 Var 2703, name PRESS_V_SW, static
 
-Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
-{
-  IF &sCLOSE_VALVE = 1
-  {
-    &PRESS_V_SW = 0    
-  }
-  ELSE
-  {
-    IF &sOPEN_VALVE = 0
-    {
-      &PRESS_V_SW = 1    
-    }
-  }
-}
+// Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
+// {
+//   IF &sCLOSE_VALVE = 1
+//   {
+//     &PRESS_V_SW = 0    
+//   }
+//   ELSE
+//   {
+//     IF &sOPEN_VALVE = 0
+//     {
+//       &PRESS_V_SW = 1    
+//     }
+//   }
+// }
 
-Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
-{
-  IF &sOPEN_VALVE = 1
-  {
-    &PRESS_V_SW = 2    
-  }
-  ELSE
-  {
-    IF &sCLOSE_VALVE = 0
-    {
-      &PRESS_V_SW = 1    
-    }
-  }
-}
+// Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
+// {
+//   IF &sOPEN_VALVE = 1
+//   {
+//     &PRESS_V_SW = 2    
+//   }
+//   ELSE
+//   {
+//     IF &sCLOSE_VALVE = 0
+//     {
+//       &PRESS_V_SW = 1    
+//     }
+//   }
+// }
 
 Var 2702, name PRESS_SEL, static
 
-Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 130
-{
-  IF &sC_MODE_AUTO = 1
-  {
-    &PRESS_SEL = 0    
-  }
-}
+// Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 130
+// {
+//   IF &sC_MODE_AUTO = 1
+//   {
+//     &PRESS_SEL = 0    
+//   }
+// }
 
-Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
-{
-  IF &sC_MODE_ALTN = 1
-  {
-    &PRESS_SEL = 1    
-  }
-}
+// Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
+// {
+//   IF &sC_MODE_ALTN = 1
+//   {
+//     &PRESS_SEL = 1    
+//   }
+// }
 
-Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
-{
-  IF &sC_MODE_MAN = 1
-  {
-    &PRESS_SEL = 2    
-  }
-}
+// Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
+// {
+//   IF &sC_MODE_MAN = 1
+//   {
+//     &PRESS_SEL = 2    
+//   }
+// }
 
 Var 2671, name APU_START_SW, static
 
@@ -2272,7 +2272,7 @@ Var 2671, name APU_START_SW, static
 //   }
 // }
 
-Var 0126, name ENG1_Servo, Link USB_SERVOS, Device 37, Output 6, PosL 20, PosC 400, PosR 800
+Var 0126, name ENG1_Servo, Link USB_SERVOS, Device 37, Output 1, PosL 500, PosC 800, PosR 1023
 
 Var 1220, name ENG1_ST_SW_POS, static
 {
@@ -2280,16 +2280,16 @@ Var 1220, name ENG1_ST_SW_POS, static
   {
     IF &ENG1_ST_SW_POS = 1
     {
-      &ENG1_Servo = DELAY 80 ,50     // Auto off phase I
-      &ENG1_Servo = 950         // Auto off phase II
+      &ENG1_Servo = DELAY 680 ,50     // Auto off phase I
+      &ENG1_Servo = 680         // Auto off phase II
     }
   }
   IF &sENG2_S_GRD = 1
   {
     IF &sENG1_S_OFF = 1
     {
-      &ENG1_Servo = 80         // Auto off phase I
-      &ENG1_Servo = DELAY 950 ,50     // Auto off phase II
+      &ENG1_Servo = 1023        // Auto off phase I
+      &ENG1_Servo = DELAY 1023 ,50     // Auto off phase II
     }
   }
 }
@@ -2360,7 +2360,7 @@ Var 0132, name sENG_IGN_R, Link IOCARD_SW, Device 30, Input 19
   }
 }
 
-Var 0133, name ENG2_Servo, Link USB_SERVOS, Device 38, Output 5, PosL 20, PosC 400, PosR 800
+Var 0133, name ENG2_Servo, Link USB_SERVOS, Device 37, Output 2, PosL 0, PosC 300, PosR 600
 
 Var 1221, name ENG2_ST_SW_POS, static
 {
@@ -2368,16 +2368,16 @@ Var 1221, name ENG2_ST_SW_POS, static
   {
     IF &ENG2_ST_SW_POS = 1
     {
-      &ENG2_Servo = DELAY 80 ,50     // Auto off phase I
-      &ENG2_Servo = 950         // Auto off phase II
+      &ENG2_Servo = DELAY 0 ,50     // Auto off phase I
+      &ENG2_Servo = 0         // Auto off phase II
     }
   }
   IF &sENG2_S_OFF = 1
   {
     IF &ENG2_ST_SW_POS = 1
     {
-      &ENG2_Servo = 80         // Auto off phase I
-      &ENG2_Servo = DELAY 950 ,50     // Auto off phase II
+      &ENG2_Servo = 550         // Auto off phase I
+      &ENG2_Servo = DELAY 550 ,50     // Auto off phase II
     }
   }
 }
@@ -2448,44 +2448,45 @@ Var 0139, name sPOS_STEADY_LI, Link IOCARD_SW, Device 30, Input 21     // Positi
   }
 }
 
-Var 0140, name SERVO_FuelTemp, Link USB_SERVOS, Device 37, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
+// Var 0140, name SERVO_FuelTemp, Link USB_SERVOS, Device 37, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
 
-Var 1056, name TXRX_FuelTemp, static, Link SUBRUTINE
-{
-  IF &EL_STATE = 15
-  {
-    L0 = 606         // sets needle to 0
-    L1 = &TXRX_FuelTemp * 6
-    L0 = L0 + L1
-    &SERVO_FuelTemp = L0    
-  }
-  ELSE
-  {
-    &SERVO_FuelTemp = 660    
-  }
-}
+// Var 1056, name TXRX_FuelTemp, static, Link SUBRUTINE
+// {
+//   IF &EL_STATE = 15
+//   {
+//     L0 = 606         // sets needle to 0
+//     L1 = &TXRX_FuelTemp * 6
+//     L0 = L0 + L1
+//     &SERVO_FuelTemp = L0    
+//   }
+//   ELSE
+//   {
+//     &SERVO_FuelTemp = 660    
+//   }
+// }
 
-Var 0141, name SERVO_APU, Link USB_SERVOS, Device 37, Output 2, PosL 192, PosC 404, PosR 1000, Type 1
+// Var 0141, name SERVO_APU, Link USB_SERVOS, Device 37, Output 2, PosL 192, PosC 404, PosR 1000, Type 1
 
-Var 1108, name TXRX_APU, static, Value 1
-{
-  L0 = 247         // sets EGT to 0
-  L1 = &TXRX_APU * 0.67     // scaling
-  L0 = L0 + L1
-  &SERVO_APU = L0         // sends value to servo
-}
+// Var 1108, name TXRX_APU, static, Value 1
+// {
+//   L0 = 247         // sets EGT to 0
+//   L1 = &TXRX_APU * 0.67     // scaling
+//   L0 = L0 + L1
+//   &SERVO_APU = L0         // sends value to servo
+// }
 
-Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 4, PosL 192, PosC 511, PosR 1000, Type 1
+Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 192, PosC 511, PosR 1000, Type 1
 
 Var 1534, name TXRX_CabAlt, static
 {
   L0 = 191    
-  L1 = &TXRX_CabAlt * 0.03
+//  L1 = &TXRX_CabAlt * 0.03
+  L1 = &TXRX_CabAlt * 1
   L0 = L0 + L1
   &SERVO_CabAlt = L0    
 }
 
-Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 3, PosL 192, PosC 511, PosR 1023, Type 1
+Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 511, PosR 1023, Type 1
 
 Var 1535, name TXRX_PresDiff, static, Value 1
 {
@@ -2495,7 +2496,7 @@ Var 1535, name TXRX_PresDiff, static, Value 1
   &SERVO_PresDiff = L0    
 }
 
-Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 5, PosL 192, PosC 511, PosR 1023, Type 1
+Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 4, PosL 192, PosC 511, PosR 1023, Type 1
 
 Var 1536, name TXRX_CabVSI, static
 {
@@ -2505,58 +2506,58 @@ Var 1536, name TXRX_CabVSI, static
   &SERVO_CabVSI = L0    
 }
 
-Var 0145, name SERVO_CabTemp, Link USB_SERVOS, Device 38, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
+// Var 0145, name SERVO_CabTemp, Link USB_SERVOS, Device 38, Output 1, PosL 192, PosC 511, PosR 1023, Type 1
 
-Var 1538, name TXRX_CabTemp, static, Link SUBRUTINE
-{
-  IF &EL_STATE = 15
-  {
-    L0 = 278         // set needle to 0
-    L1 = &TXRX_CabTemp * 7     // scaling
-    L0 = L0 + L1
-    &SERVO_CabTemp = L0    
-  }
-  ELSE
-  {
-    &SERVO_CabTemp = 288    
-  }
-}
+// Var 1538, name TXRX_CabTemp, static, Link SUBRUTINE
+// {
+//   IF &EL_STATE = 15
+//   {
+//     L0 = 278         // set needle to 0
+//     L1 = &TXRX_CabTemp * 7     // scaling
+//     L0 = L0 + L1
+//     &SERVO_CabTemp = L0    
+//   }
+//   ELSE
+//   {
+//     &SERVO_CabTemp = 288    
+//   }
+// }
 
-Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 3, PosL 192, PosC 537, PosR 1023, Type 1
+// Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 3, PosL 192, PosC 537, PosR 1023, Type 1
 
-Var 1532, name TXRX_PressL, static
-{
-  IF &EL_STATE <> 0     // BUSES CONNECTED
-  {
-    L0 = 263    
-    L1 = &TXRX_PressL * 9
-    L0 = L0 + L1
-    &SERVO_PressL = DELAY L0 ,200
-  }
-  ELSE
-  {
-    &SERVO_PressL = 263    
-  }
-}
+// Var 1532, name TXRX_PressL, static
+// {
+//   IF &EL_STATE <> 0     // BUSES CONNECTED
+//   {
+//     L0 = 263    
+//     L1 = &TXRX_PressL * 9
+//     L0 = L0 + L1
+//     &SERVO_PressL = DELAY L0 ,200
+//   }
+//   ELSE
+//   {
+//     &SERVO_PressL = 263    
+//   }
+// }
 
-Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
+// Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
 
-Var 1533, name TXRX_PressR, static
-{
-  IF &EL_STATE <> 0     // BUSES CONNECTED
-  {
-    L0 = 263    
-    L1 = &TXRX_PressR * 9
-    L0 = L0 + L1
-    &SERVO_PressR = DELAY L0 ,200
-  }
-  ELSE
-  {
-    &SERVO_PressR = 263    
-  }
-}
-
-Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 38, Output 4, PosL 192, PosC 511, PosR 1023, Type 1
+// Var 1533, name TXRX_PressR, static
+// {
+//   IF &EL_STATE <> 0     // BUSES CONNECTED
+//   {
+//     L0 = 263    
+//     L1 = &TXRX_PressR * 9
+//     L0 = L0 + L1
+//     &SERVO_PressR = DELAY L0 ,200
+//   }
+//   ELSE
+//   {
+//     &SERVO_PressR = 263    
+//   }
+// }
+// // VALVE
+Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 37, Output 3, PosL 192, PosC 511, PosR 1023, Type 1
 
 Var 1537, name TXRX_OF_valve, static
 {
