@@ -40,8 +40,8 @@ Var 0000, Value 0
   // &sFUEL_PR_Ctr = 0    
   // &sEL_CAB_UT = 0    
   // &sEL_GALLEY = 0    
-  // &sEC_SUPPLY = 0    
-  // &sEC_EXHAUST = 0    
+  &sEC_SUPPLY = 0    
+  &sEC_EXHAUST = 0    
   // &sWINDOW_HEAT_1 = 0    
   // &sWINDOW_HEAT_2 = 0    
   // &sWINDOW_HEAT_3 = 0    
@@ -110,7 +110,8 @@ Var 0002, name OVH_FWD_POW_ON, static
     &aDRIVE_2 = 0    
     &aEquipCoSuOFF = 0    
     &aEquipCoExhOFF = 0    
-    &aEMER_NOT_ARM = 0    
+    &aEMER_NOT_ARM = 0 
+    &aCALL = 0   
     &aPA_IN_USE = 0    
     &aOVERHEAT0 = 0    
     &aOVERHEAT1 = 0    
@@ -765,7 +766,7 @@ Var 0032, name MCP_LIGHTS, Link SUBRUTINE
   &D_CrsR = &BlankOrLit    
 }
 
-Var 0033, name aTrans_Bus_1, Link IOCARD_OUT, Device 30, Output 11
+Var 0033, name aTrans_Bus_1, Link IOCARD_OUT, Device 30, Output 91
 
 Var 0034, name aTrans_Bus_2, Link IOCARD_OUT, Device 30, Output 13
 
@@ -933,9 +934,9 @@ Var 2631, name EL_GRD_PWR_SW, static
 
 // Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
 
-// Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 99
+Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 38
 
-// Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 100
+Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 40
 
 // Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 140
 
@@ -955,9 +956,9 @@ Var 2631, name EL_GRD_PWR_SW, static
 
 // Var 2628, name sEL_GALLEY, static, Link IOCARD_SW, Device 30, Input 81
 
-// Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 97
+Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 35
 
-// Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 98
+Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 34
 
 // Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 120
 
@@ -999,17 +1000,17 @@ Var 2680, name sFIXED_R, static, Link IOCARD_SW, Device 30, Input 011
 
 Var 2677, name sRUNWAY_TO_L, static, Link IOCARD_SW, Device 30, Input 012
 
-Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 011
+Var 2683, name sRUNWAY_TO_R, static, Link IOCARD_SW, Device 30, Input 010
 
 Var 2684, name sTAXI, static, Link IOCARD_SW, Device 30, Input 009
 
-Var 2678, name sLOGO, static, Link IOCARD_SW, Device 30, Input 22
+Var 2678, name sLOGO, static, Link IOCARD_SW, Device 30, Input 022
 
-Var 2670, name sANTI_COL, static, Link IOCARD_SW, Device 30, Input 26
+Var 2670, name sANTI_COL, static, Link IOCARD_SW, Device 30, Input 021
 
-Var 2686, name sWING, static, Link IOCARD_SW, Device 30, Input 018
+Var 2686, name sWING, static, Link IOCARD_SW, Device 30, Input 024
 
-Var 2685, name sWHEEL_WELL, static, Link IOCARD_SW, Device 30, Input 24
+Var 2685, name sWHEEL_WELL, static, Link IOCARD_SW, Device 30, Input 018
 
 Var 2604, name CB_LIGHT_C, static
 
@@ -1686,7 +1687,7 @@ Var 1115, name aAPU_OVERSP, static, Link IOCARD_DISPLAY, Device 30, Digit 44, Nu
 
 Var 2715, name WIPER_L_C, static
 
-// Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 54
+// Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 43
 // {
 //   IF &sWIPER_L = 1
 //   {
@@ -1698,117 +1699,119 @@ Var 2715, name WIPER_L_C, static
 //   }
 // }
 
-// Var 2716, name WIPER_R_C, static
+Var 2716, name WIPER_R_C, static
 
-// Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 90
-// {
-//   IF &sWIPER_R = 1
-//   {
-//     &WIPER_R_C = 0    
-//   }
-//   ELSE
-//   {
-//     &WIPER_R_C = 2    
-//   }
-// }
+Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 44
+{
+  IF &sWIPER_R = 1
+  {
+    &WIPER_R_C = 0    
+  }
+  ELSE
+  {
+    &WIPER_R_C = 2    
+  }
+}
 
-Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 16
+Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 12 // Supply Off
 
-Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 17
+Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 14 // Exhaust Off
 
 Var 2636, name EM_EX_L_G, static
 
 Var 2637, name EM_EX_L_SW, static, Value 1
 
-// Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 95
-// {
-//   IF &sEMER_EXIT_OFF = 1
-//   {
-//     &EM_EX_L_G = 1    
-//     &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
-//   }
-//   ELSE
-//   {
-//     &EM_EX_L_G = 1    
-//     &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
-//   }
-// }
+Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 33
+{
+  IF &sEMER_EXIT_OFF = 1
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+  }
+  ELSE
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = CHANGEBITN 0 ,&EM_EX_L_SW
+  }
+}
 
-// Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 96
-// {
-//   IF &sEMER_EXIT_ON = 1
-//   {
-//     &EM_EX_L_G = 0    
-//     &EM_EX_L_SW = 2    
-//   }
-//   ELSE
-//   {
-//     &EM_EX_L_G = 1    
-//     &EM_EX_L_SW = 1    
-//   }
-// }
+Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 27
+{
+  IF &sEMER_EXIT_ON = 1
+  {
+    &EM_EX_L_G = 0    
+    &EM_EX_L_SW = 2    
+  }
+  ELSE
+  {
+    &EM_EX_L_G = 1    
+    &EM_EX_L_SW = 1    
+  }
+}
 
- Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 15
+Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 011
 
-// Var 2692, name NO_S_L_SW, static
+Var 2692, name NO_S_L_SW, static
 
-// Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 91
-// {
-//   IF &sNO_SMOKE_OFF = 1
-//   {
-//     &NO_S_L_SW = 0    
-//   }
-//   ELSE
-//   {
-//     &NO_S_L_SW = 1    
-//   }
-// }
+Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 29
+{
+  IF &sNO_SMOKE_OFF = 1
+  {
+    &NO_S_L_SW = 0    
+  }
+  ELSE
+  {
+    &NO_S_L_SW = 1    
+  }
+}
 
-// Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 92
-// {
-//   IF &sNO_SMOKE_ON = 1
-//   {
-//     &NO_S_L_SW = 2    
-//   }
-//   ELSE
-//   {
-//     &NO_S_L_SW = 0    
-//   }
-// }
+Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 28
+{
+  IF &sNO_SMOKE_ON = 1
+  {
+    &NO_S_L_SW = 2    
+  }
+  ELSE
+  {
+    &NO_S_L_SW = 0    
+  }
+}
 
-// Var 2638, name FAST_B_LI_SW, static
+Var 2638, name FAST_B_LI_SW, static
 
-// Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 93
-// {
-//   IF &sFAST_SEAT_OFF = 1
-//   {
-//     &FAST_B_LI_SW = 0    
-//   }
-//   ELSE
-//   {
-//     IF &sFAST_SEAT_ON = 0
-//     {
-//       &FAST_B_LI_SW = 1    
-//     }
-//   }
-// }
+Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 31
+{
+  IF &sFAST_SEAT_OFF = 1
+  {
+    &FAST_B_LI_SW = 0    
+  }
+  ELSE
+  {
+    IF &sFAST_SEAT_ON = 0
+    {
+      &FAST_B_LI_SW = 1    
+    }
+  }
+}
 
-// Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 94
-// {
-//   IF &sFAST_SEAT_ON = 1
-//   {
-//     &FAST_B_LI_SW = 2    
-//   }
-//   ELSE
-//   {
-//     IF &sFAST_SEAT_OFF = 0
-//     {
-//       &FAST_B_LI_SW = 1    
-//     }
-//   }
-// }
+Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 30
+{
+  IF &sFAST_SEAT_ON = 1
+  {
+    &FAST_B_LI_SW = 2    
+  }
+  ELSE
+  {
+    IF &sFAST_SEAT_OFF = 0
+    {
+      &FAST_B_LI_SW = 1    
+    }
+  }
+}
 
-Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
+//Var 1128, name aCALL, static, Link IOCARD_DISPLAY, Device 30, Digit 45, Numbers 1
+
+Var 1128, name aCALL, static, Link IOCARD_OUT, Device 30, Output 15
 
 Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
@@ -2296,7 +2299,7 @@ Var 1220, name ENG1_ST_SW_POS, static
 
 Var 2675, name ENGINE1_SW, static
 
-Var 0127, name sENG1_S_GRD, Link IOCARD_SW, Device 30, Input 002     // Eng Start 1 Grd ROT
+Var 0127, name sENG1_S_GRD, Link IOCARD_SW, Device 30, Input 001     // Eng Start 1 Grd ROT
 {
   IF &sENG1_S_GRD = 1
   {
@@ -2304,7 +2307,7 @@ Var 0127, name sENG1_S_GRD, Link IOCARD_SW, Device 30, Input 002     // Eng Star
   }
 }
 
-Var 0128, name sENG1_S_OFF, Link IOCARD_SW, Device 30, Input 001     // Eng Start 1 Off ROT
+Var 0128, name sENG1_S_OFF, Link IOCARD_SW, Device 30, Input 002     // Eng Start 1 Off ROT
 {
   IF &sENG1_S_OFF = 1
   {
@@ -2312,7 +2315,7 @@ Var 0128, name sENG1_S_OFF, Link IOCARD_SW, Device 30, Input 001     // Eng Star
   }
 }
 
-Var 0129, name sENG1_S_CONT, Link IOCARD_SW, Device 30, Input 008     // Eng Start 1 Cont ROT
+Var 0129, name sENG1_S_CONT, Link IOCARD_SW, Device 30, Input 004     // Eng Start 1 Cont ROT
 {
   IF &sENG1_S_CONT = 1
   {
@@ -2384,7 +2387,7 @@ Var 1221, name ENG2_ST_SW_POS, static
 
 Var 2681, name ENGINE2_SW, static
 
-Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 30, Input 007    // Eng Start 2 Grd ROT
+Var 0134, name sENG2_S_GRD, Link IOCARD_SW, Device 30, Input 003    // Eng Start 2 Grd ROT
 {
   IF &sENG2_S_GRD = 1
   {
@@ -2400,7 +2403,7 @@ Var 0135, name sENG2_S_OFF, Link IOCARD_SW, Device 30, Input 000     // Eng Star
   }
 }
 
-Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 30, Input 003     // Eng Start 2 Cont ROT
+Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 30, Input 007     // Eng Start 2 Cont ROT
 {
   IF &ENG2_S_CONT = 1
   {
@@ -2408,7 +2411,7 @@ Var 0136, name ENG2_S_CONT, Link IOCARD_SW, Device 30, Input 003     // Eng Star
   }
 }
 
-Var 0137, name ENG2_S_FLT, Link IOCARD_SW, Device 30, Input 004     // Eng Start 2 Flt ROT
+Var 0137, name ENG2_S_FLT, Link IOCARD_SW, Device 30, Input 008     // Eng Start 2 Flt ROT
 {
   IF &ENG2_S_FLT = 1
   {
@@ -2433,7 +2436,7 @@ Var 0138, name sPOS_LIGHT, Link IOCARD_SW, Device 30, Input 25    // Position S&
   }
 }
 
-Var 0139, name sPOS_STEADY_LI, Link IOCARD_SW, Device 30, Input 21     // Position Steady SW
+Var 0139, name sPOS_STEADY_LI, Link IOCARD_SW, Device 30, Input 26     // Position Steady SW
 {
   IF &sPOS_STEADY_LI = 1
   {
@@ -2557,11 +2560,11 @@ Var 1536, name TXRX_CabVSI, static
 //   }
 // }
 // // VALVE
-Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 37, Output 3, PosL 192, PosC 511, PosR 1023, Type 1
+Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 37, Output 3, PosL 418, PosC 530, PosR 650, Type 1
 
 Var 1537, name TXRX_OF_valve, static
 {
-  L0 = 381    
+  L0 = 418    
   L1 = &TXRX_OF_valve / 0.26
   L0 = L0 + L1
   &SERVO_OUTFLOW = L0    
