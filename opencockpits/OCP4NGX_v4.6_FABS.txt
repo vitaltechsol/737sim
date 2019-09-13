@@ -766,9 +766,9 @@ Var 0032, name MCP_LIGHTS, Link SUBRUTINE
   &D_CrsR = &BlankOrLit    
 }
 
-Var 0033, name aTrans_Bus_1, Link IOCARD_OUT, Device 30, Output 91
+Var 0033, name aTrans_Bus_1, Link IOCARD_OUT, Device 30, Output 17
 
-Var 0034, name aTrans_Bus_2, Link IOCARD_OUT, Device 30, Output 13
+Var 0034, name aTrans_Bus_2, Link IOCARD_OUT, Device 30, Output 22
 
 Var 0035, name State_delay
 
@@ -838,15 +838,15 @@ Var 1102, name TransBusOff1, static
   }
 }
 
-Var 1103, name aSOURCE_OFF_1, static, Link IOCARD_OUT, Device 30, Output 12
+Var 1103, name aSOURCE_OFF_1, static, Link IOCARD_OUT, Device 30, Output 16
 
-Var 1104, name aSOURCE_OFF_2, static, Link IOCARD_OUT, Device 30, Output 14
+Var 1104, name aSOURCE_OFF_2, static, Link IOCARD_OUT, Device 30, Output 21
 
-Var 1105, name aGEN_OFF_BUS_1, static, Link IOCARD_DISPLAY, Device 30, Digit 38, Numbers 1
+Var 1105, name aGEN_OFF_BUS_1, static, Link IOCARD_OUT, Device 30, Output 20
 
-Var 1106, name aGEN_OFF_BUS_2, static, Link IOCARD_DISPLAY, Device 30, Digit 40, Numbers 1
+Var 1106, name aGEN_OFF_BUS_2, static, Link IOCARD_OUT, Device 30, Output 23
 
-Var 1107, name aAPU_G_OFF_BUS, static, Link IOCARD_DISPLAY, Device 30, Digit 39, Numbers 1
+Var 1107, name aAPU_G_OFF_BUS, static, Link IOCARD_OUT, Device 30, Output 19
 
 Var 2618, name EL_BAT_G, static
 
@@ -930,7 +930,7 @@ Var 2631, name EL_GRD_PWR_SW, static
 //   }
 // }
 
-// Var 1094, name aGND_PWR_LED, static, Link IOCARD_DISPLAY, Device 30, Digit 37, Numbers 1
+Var 1094, name aGND_PWR_LED, static, Link IOCARD_OUT, Device 30, Output 18 // GRD Power Available
 
 // Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
 
@@ -1677,13 +1677,13 @@ Var 2629, name EL_GEN1_SW, static
 //   }
 // }
 
-Var 1112, name aAPU_MAINT, static, Link IOCARD_DISPLAY, Device 30, Digit 41, Numbers 1
+Var 1112, name aAPU_MAINT, static, Link IOCARD_OUT, Device 30, Output 24
 
-Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_DISPLAY, Device 30, Digit 42, Numbers 1
+Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_OUT, Device 30, Output 25
 
-Var 1114, name aAPU_FAULT, static, Link IOCARD_DISPLAY, Device 30, Digit 43, Numbers 1
+Var 1114, name aAPU_FAULT, static, Link IOCARD_OUT, Device 30, Output 26
 
-Var 1115, name aAPU_OVERSP, static, Link IOCARD_DISPLAY, Device 30, Digit 44, Numbers 1
+Var 1115, name aAPU_OVERSP, static, Link IOCARD_OUT, Device 30, Output 27
 
 Var 2715, name WIPER_L_C, static
 
@@ -1909,11 +1909,11 @@ Var 1174, name aZoneTemp1, static, Link IOCARD_OUT, Device 30, Output 91
 
 Var 1175, name aZoneTemp2, static, Link IOCARD_OUT, Device 30, Output 92
 
-Var 1176, name aDualBleed, static, Link IOCARD_DISPLAY, Device 30, Digit 46, Numbers 1
+Var 1176, name aDualBleed, static, Link IOCARD_OUT, Device 30, Output 149
 
-Var 1177, name aRamDoor_L, static, Link IOCARD_DISPLAY, Device 30, Digit 47, Numbers 1
+Var 1177, name aRamDoor_L, static, Link IOCARD_OUT, Device 30, Output 150
 
-Var 1178, name aRamDoor_R, static, Link IOCARD_DISPLAY, Device 30, Digit 48, Numbers 1
+Var 1178, name aRamDoor_R, static, Link IOCARD_OUT, Device 30, Output 151
 
 // Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 108
 
@@ -2001,25 +2001,25 @@ Var 1178, name aRamDoor_R, static, Link IOCARD_DISPLAY, Device 30, Digit 48, Num
 //   }
 // }
 
-Var 1187, name aPackTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 49, Numbers 1
+Var 1187, name aPackTripOff0, static, Link IOCARD_OUT, Device 30, Output 142
 
-Var 1188, name aPackTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 50, Numbers 1
+Var 1188, name aPackTripOff1, static, Link IOCARD_OUT, Device 30, Output 147
 
-Var 1189, name aWiBodyOheat0, static, Link IOCARD_DISPLAY, Device 30, Digit 51, Numbers 1
+Var 1189, name aWiBodyOheat0, static, Link IOCARD_OUT, Device 30, Output 143
 
-Var 1190, name aWiBodyOheat1, static, Link IOCARD_DISPLAY, Device 30, Digit 52, Numbers 1
+Var 1190, name aWiBodyOheat1, static, Link IOCARD_OUT, Device 30, Output 148
 
-Var 1191, name aBleedTripOff0, static, Link IOCARD_DISPLAY, Device 30, Digit 53, Numbers 1
+Var 1191, name aBleedTripOff0, static, Link IOCARD_OUT, Device 30, Output 146
 
-Var 1192, name aBleedTripOff1, static, Link IOCARD_DISPLAY, Device 30, Digit 54, Numbers 1
+Var 1192, name aBleedTripOff1, static, Link IOCARD_OUT, Device 30, Output 140
 
-Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 30, Output 98
+Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 30, Output 144
 
-Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 30, Output 99
+Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 30, Output 141
 
-Var 1714, name aALTN, static, Link IOCARD_OUT, Device 30, Output 100
+Var 1714, name aALTN, static, Link IOCARD_OUT, Device 30, Output 145
 
-Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 30, Output 101
+Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 30, Output 139
 
 Var 1196, name FltAltWindow, static
 {
@@ -2284,7 +2284,7 @@ Var 1220, name ENG1_ST_SW_POS, static
     IF &ENG1_ST_SW_POS = 1
     {
       &ENG1_Servo = DELAY 680 ,50     // Auto off phase I
-      &ENG1_Servo = 680         // Auto off phase II
+      &ENG1_Servo = 575         // Auto off phase II
     }
   }
   IF &sENG2_S_GRD = 1
@@ -2371,7 +2371,7 @@ Var 1221, name ENG2_ST_SW_POS, static
   {
     IF &ENG2_ST_SW_POS = 1
     {
-      &ENG2_Servo = DELAY 0 ,50     // Auto off phase I
+      &ENG2_Servo = DELAY 20 ,50     // Auto off phase I
       &ENG2_Servo = 0         // Auto off phase II
     }
   }
@@ -2379,8 +2379,8 @@ Var 1221, name ENG2_ST_SW_POS, static
   {
     IF &ENG2_ST_SW_POS = 1
     {
-      &ENG2_Servo = 550         // Auto off phase I
-      &ENG2_Servo = DELAY 550 ,50     // Auto off phase II
+      &ENG2_Servo = 375         // Auto off phase I
+      &ENG2_Servo = DELAY 300 ,50     // Auto off phase II
     }
   }
 }
@@ -2482,7 +2482,7 @@ Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 192, Pos
 
 Var 1534, name TXRX_CabAlt, static
 {
-  L0 = 191    
+  L0 = 321    
 //  L1 = &TXRX_CabAlt * 0.03
   L1 = &TXRX_CabAlt * 1
   L0 = L0 + L1
@@ -2493,7 +2493,7 @@ Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 6, PosL 192, P
 
 Var 1535, name TXRX_PresDiff, static, Value 1
 {
-  L0 = 189    
+  L0 = 191    
   L1 = &TXRX_PresDiff * 0.9
   L0 = L0 + L1
   &SERVO_PresDiff = L0    
