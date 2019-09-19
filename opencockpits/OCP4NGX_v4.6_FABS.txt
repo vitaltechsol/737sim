@@ -94,14 +94,14 @@ Var 0002, name OVH_FWD_POW_ON, static
     &aMACH_T_FA = 0    
     &aAUTO_SL_FA = 0    
     &aYAWDAMPER = 0    
-    &aFILT_BYPASS_L = 0    
-    &aFILT_BYPASS_R = 0    
-    &aLOWPR_Fwd_L = 0    
-    &aLOWPR_Fwd_R = 0    
-    &aLOWPR_Aft_L = 0    
-    &aLOWPR_Aft_R = 0    
-    &aLOWPR_Ctr_L = 0    
-    &aLOWPR_Ctr_R = 0    
+    // &aFILT_BYPASS_L = 0    
+    // &aFILT_BYPASS_R = 0    
+    // &aLOWPR_Fwd_L = 0    
+    // &aLOWPR_Fwd_R = 0    
+    // &aLOWPR_Aft_L = 0    
+    // &aLOWPR_Aft_R = 0    
+    // &aLOWPR_Ctr_L = 0    
+    // &aLOWPR_Ctr_R = 0    
     &aBAT_DISCHARGE = 0    
     &aTR_UNIT = 0    
     &aELEC = 0    
@@ -1315,31 +1315,31 @@ Var 2687, name NAVDSP_C_P_S, static
 //   }
 // }
 
-Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 32, Numbers 1
+Var 1067, name aENG_VA_CL_L, static, Link IOCARD_DISPLAY, Device 30, Digit 5, Numbers 1
 
-Var 1068, name aENG_VA_CL_R, static, Link IOCARD_DISPLAY, Device 30, Digit 34, Numbers 1
+Var 1068, name aENG_VA_CL_R, static, Link IOCARD_DISPLAY, Device 30, Digit 4, Numbers 1
 
-Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_DISPLAY, Device 30, Digit 33, Numbers 1
+Var 1069, name aSPAR_VA_CL_1, static, Link IOCARD_DISPLAY, Device 30, Digit 1, Numbers 1
 
-Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_DISPLAY, Device 30, Digit 35, Numbers 1
+Var 1070, name aSPAR_VA_CL_2, static, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1
 
-Var 1071, name aFILT_BYPASS_L, static, Link IOCARD_OUT, Device 30, Output 20
+Var 1071, name aFILT_BYPASS_L, static, Link IOCARD_DISPLAY, Device 30, Digit 6, Numbers 1
 
-Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_OUT, Device 30, Output 21
+Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_DISPLAY, Device 30, Digit 0, Numbers 1
 
-Var 1073, name aXFEED_VA_O, static, Link IOCARD_DISPLAY, Device 30, Digit 36, Numbers 1
+Var 1073, name aXFEED_VA_O, static, Link IOCARD_DISPLAY, Device 30, Digit 3, Numbers 1
 
-Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 30, Output 25
+// Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 30, Output 25
 
-Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 30, Output 26
+// Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 30, Output 26
 
-Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 30, Output 24
+// Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 30, Output 24
 
-Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 30, Output 27
+// Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 30, Output 27
 
-Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 30, Output 22
+// Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 30, Output 22
 
-Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
+// Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
 
 Var 2645, name FUEL_CRFeed, static, Value 1
 
@@ -1880,7 +1880,7 @@ Var 1148, name aALPHA_VANE_R, static, Link IOCARD_OUT, Device 30, Output 88
 
 Var 1149, name aAUX_PITOT, static, Link IOCARD_OUT, Device 30, Output 89
 
-Var 1152, name aVALVE_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 58, Numbers 1
+Var 1152, name aVALVE_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1
 
 Var 1153, name aVALVE_OPEN_R, static, Link IOCARD_DISPLAY, Device 30, Digit 59, Numbers 1
 
@@ -2595,29 +2595,29 @@ Var 1710, name aD_OWL_L_2, static, Link IOCARD_OUT, Device 30, Output 108
 
 Var 1711, name aD_OW_R_2, static, Link IOCARD_OUT, Device 30, Output 110
 
-Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 3, Numbers 1     // DISPLAY AC AMP 1s
+Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 39, Digit 3, Numbers 1     // DISPLAY AC AMP 1s
 
-Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 4, Numbers 1     // DISPLAY AC AMP 10s
+Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 39, Digit 4, Numbers 1     // DISPLAY AC AMP 10s
 
-Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 5, Numbers 1     // DISPLAY DC VOLTS 1s
+Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 39, Digit 5, Numbers 1     // DISPLAY DC VOLTS 1s
 
-Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 6, Numbers 1     // DISPLAY DC VOLTS 10s
+Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 39, Digit 6, Numbers 1     // DISPLAY DC VOLTS 10s
 
-Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 0, Numbers 1     // DISPLAY AC VOLT 1s
+Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 39, Digit 0, Numbers 1     // DISPLAY AC VOLT 1s
 
-Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 1, Numbers 1     // DISPLAY AC VOLT 10s
+Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 39, Digit 1, Numbers 1     // DISPLAY AC VOLT 10s
 
-Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1     // DISPLAY AC VOLT 100s
+Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 39, Digit 2, Numbers 1     // DISPLAY AC VOLT 100s
 
-Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 10, Numbers 1     // DISPLAY DC AMP 1s
+Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 39, Digit 10, Numbers 1     // DISPLAY DC AMP 1s
 
-Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 11, Numbers 1     // DISPLAY DC AMP 10s
+Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 39, Digit 11, Numbers 1     // DISPLAY DC AMP 10s
 
-Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 30, Digit 7, Numbers 1     // DISPLAY CPS FREQ 1s
+Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 39, Digit 7, Numbers 1     // DISPLAY CPS FREQ 1s
 
-Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 30, Digit 8, Numbers 1     // DISPLAY CPS FREQ 10s
+Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 39, Digit 8, Numbers 1     // DISPLAY CPS FREQ 10s
 
-Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 30, Digit 9, Numbers 1     // DISPLAY CPS FREQ 100s
+Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 39, Digit 9, Numbers 1     // DISPLAY CPS FREQ 100s
 
 Var 1540, name EDCA1, static, Link SUBRUTINE
 {
@@ -8059,3 +8059,28 @@ Var 0638, name ResetDelay2
     }
   }
 }
+
+//Sample dim levels 
+// Var 3000, Value 0
+// {
+//  V3001 = 2 // V0001 On with intensity control enabled
+//  V3003 = 0 // counter initialized
+// }
+// Var 3002, Link IOCARD_DISPLAY, Device 30, Digit 1, Numbers 1 // to manage the brightness
+// Var 3001, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1
+// Var 3003, Link SUBRUTINE // intensity up and down from 0 to 15
+// {
+//  V3002 = -999994 // intensity Command
+//  V3002 = V3003
+//  IF V3003 = 15
+//  {
+//  V3003 = TIMER 0 ,-1 ,20
+//  }
+//  ELSE
+//  {
+//  IF V3003 = 0
+//  {
+//  V3003 = TIMER 15 ,1 ,20
+//  }
+//  }
+// } 
