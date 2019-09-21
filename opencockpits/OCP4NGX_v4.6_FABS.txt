@@ -2284,16 +2284,16 @@ Var 1220, name ENG1_ST_SW_POS, static
   {
     IF &ENG1_ST_SW_POS = 1
     {
-      &ENG1_Servo = DELAY 680 ,50     // Auto off phase I
-      &ENG1_Servo = 575         // Auto off phase II
+      &ENG1_Servo = DELAY 280 ,50     // Auto off phase I
+      &ENG1_Servo = 900          // Auto off phase II
     }
   }
-  IF &sENG2_S_GRD = 1
+  IF &sENG1_S_OFF = 1
   {
-    IF &sENG1_S_OFF = 1
+    IF &ENG1_ST_SW_POS = 1
     {
-      &ENG1_Servo = 1023        // Auto off phase I
-      &ENG1_Servo = DELAY 1023 ,50     // Auto off phase II
+      &ENG1_Servo = 900        // Auto off phase I
+      &ENG1_Servo = DELAY 280 ,50     // Auto off phase II
     }
   }
 }
