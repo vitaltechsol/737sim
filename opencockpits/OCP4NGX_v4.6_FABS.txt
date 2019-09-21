@@ -934,9 +934,9 @@ Var 1094, name aGND_PWR_LED, static, Link IOCARD_OUT, Device 30, Output 18 // GR
 
 // Var 2633, name bEL_MAINT, static, Link IOCARD_SW, Device 30, Input 89
 
-Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 38
+Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 40
 
-Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 40
+Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 39
 
 Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156
 
