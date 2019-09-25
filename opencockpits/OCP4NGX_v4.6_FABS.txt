@@ -32,12 +32,12 @@ Var 0000, Value 0
   &ENG1_Servo = 512    
   &ENG2_Servo = 512    
   // &sYAW_DAMPER = 0    
-  // &sFUEL_P1_Aft = 0    
-  // &sFUEL_P1_Fwd = 0    
-  // &sFUEL_P2_Aft = 0    
-  // &sFUEL_P2_Fwd = 0    
-  // &sFUEL_PL_Ctr = 0    
-  // &sFUEL_PR_Ctr = 0    
+  &sFUEL_P1_Aft = 0    
+  &sFUEL_P1_Fwd = 0    
+  &sFUEL_P2_Aft = 0    
+  &sFUEL_P2_Fwd = 0    
+  &sFUEL_PL_Ctr = 0    
+  &sFUEL_PR_Ctr = 0    
   // &sEL_CAB_UT = 0    
   // &sEL_GALLEY = 0    
   &sEC_SUPPLY = 0    
@@ -96,12 +96,12 @@ Var 0002, name OVH_FWD_POW_ON, static
     &aYAWDAMPER = 0    
     // &aFILT_BYPASS_L = 0    
     // &aFILT_BYPASS_R = 0    
-    // &aLOWPR_Fwd_L = 0    
-    // &aLOWPR_Fwd_R = 0    
-    // &aLOWPR_Aft_L = 0    
-    // &aLOWPR_Aft_R = 0    
-    // &aLOWPR_Ctr_L = 0    
-    // &aLOWPR_Ctr_R = 0    
+    &aLOWPR_Fwd_L = 0    
+    &aLOWPR_Fwd_R = 0    
+    &aLOWPR_Aft_L = 0    
+    &aLOWPR_Aft_R = 0    
+    &aLOWPR_Ctr_L = 0    
+    &aLOWPR_Ctr_R = 0    
     &aBAT_DISCHARGE = 0    
     &aTR_UNIT = 0    
     &aELEC = 0    
@@ -1329,36 +1329,36 @@ Var 1072, name aFILT_BYPASS_R, static, Link IOCARD_DISPLAY, Device 30, Digit 0, 
 
 Var 1073, name aXFEED_VA_O, static, Link IOCARD_DISPLAY, Device 30, Digit 3, Numbers 1
 
-// Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_OUT, Device 30, Output 25
+Var 1074, name aLOWPR_Fwd_L, static, Link IOCARD_DISPLAY, Device 30, Digit 9, Numbers 1
 
-// Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_OUT, Device 30, Output 26
+Var 1075, name aLOWPR_Fwd_R, static, Link IOCARD_DISPLAY, Device 30, Digit 11, Numbers 1
 
-// Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_OUT, Device 30, Output 24
+Var 1076, name aLOWPR_Aft_L, static, Link IOCARD_DISPLAY, Device 30, Digit 7, Numbers 1
 
-// Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_OUT, Device 30, Output 27
+Var 1077, name aLOWPR_Aft_R, static, Link IOCARD_DISPLAY, Device 30, Digit 10, Numbers 1
 
-// Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_OUT, Device 30, Output 22
+Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_DISPLAY, Device 30, Digit 12, Numbers 1
 
-// Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_OUT, Device 30, Output 23
+Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_DISPLAY, Device 30, Digit 8, Numbers 1
 
 Var 2645, name FUEL_CRFeed, static, Value 1
 
-// Var 0060, name sFUEL_CRFeed, Link IOCARD_SW, Device 30, Input 33
-// {
-//   &FUEL_CRFeed = CHANGEBITN 0 ,&FUEL_CRFeed
-// }
+Var 0060, name sFUEL_CRFeed, Link IOCARD_SW, Device 30, Input 56
+{
+  &FUEL_CRFeed = CHANGEBITN 0 ,&FUEL_CRFeed
+}
 
-// Var 2646, name sFUEL_P1_Aft, static, Link IOCARD_SW, Device 30, Input 27
+Var 2646, name sFUEL_P1_Aft, static, Link IOCARD_SW, Device 30, Input 60
 
-// Var 2647, name sFUEL_P1_Fwd, static, Link IOCARD_SW, Device 30, Input 28
+Var 2647, name sFUEL_P1_Fwd, static, Link IOCARD_SW, Device 30, Input 54
 
-// Var 2648, name sFUEL_P2_Aft, static, Link IOCARD_SW, Device 30, Input 30
+Var 2648, name sFUEL_P2_Aft, static, Link IOCARD_SW, Device 30, Input 61
 
-// Var 2649, name sFUEL_P2_Fwd, static, Link IOCARD_SW, Device 30, Input 29
+Var 2649, name sFUEL_P2_Fwd, static, Link IOCARD_SW, Device 30, Input 62
 
-// Var 2650, name sFUEL_PL_Ctr, static, Link IOCARD_SW, Device 30, Input 31
+Var 2650, name sFUEL_PL_Ctr, static, Link IOCARD_SW, Device 30, Input 58
 
-// Var 2651, name sFUEL_PR_Ctr, static, Link IOCARD_SW, Device 30, Input 32
+Var 2651, name sFUEL_PR_Ctr, static, Link IOCARD_SW, Device 30, Input 57
 
 Var 1080, name aBAT_DISCHARGE, static, Link IOCARD_OUT, Device 30, Output 38
 
