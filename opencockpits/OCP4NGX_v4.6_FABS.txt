@@ -2571,29 +2571,29 @@ Var 1537, name TXRX_OF_valve, static
   &SERVO_OUTFLOW = L0    
 }
 
-Var 1700, name aD_AFT_L, static, Link IOCARD_OUT, Device 30, Output 109
+Var 1700, name aD_AFT_L, static, Link IOCARD_OUT, Device 30, Output 157
 
-Var 1701, name aD_AFT_R, static, Link IOCARD_OUT, Device 30, Output 95
+Var 1701, name aD_AFT_R, static, Link IOCARD_OUT, Device 30, Output 154
 
 Var 1702, name aD_STAIR, static, Link IOCARD_OUT, Device 30, Output 19
 
-Var 1703, name aD_CARGO_AFT, static, Link IOCARD_OUT, Device 30, Output 97
+Var 1703, name aD_CARGO_AFT, static, Link IOCARD_OUT, Device 30, Output 153
 
-Var 1704, name aD_CARGO_FWD, static, Link IOCARD_OUT, Device 30, Output 96
+Var 1704, name aD_CARGO_FWD, static, Link IOCARD_OUT, Device 30, Output 160
 
-Var 1705, name aD_EQUIP, static, Link IOCARD_OUT, Device 30, Output 19
+Var 1705, name aD_EQUIP, static, Link IOCARD_OUT, Device 30, Output 159
 
-Var 1706, name aD_FWD_L, static, Link IOCARD_OUT, Device 30, Output 106
+Var 1706, name aD_FWD_L, static, Link IOCARD_OUT, Device 30, Output 161
 
-Var 1707, name aD_FWD_R, static, Link IOCARD_OUT, Device 30, Output 93
+Var 1707, name aD_FWD_R, static, Link IOCARD_OUT, Device 30, Output 162
+// Overwing
+Var 1708, name aD_OW_EXIT, static, Link IOCARD_OUT, Device 30, Output 156
 
-Var 1708, name aD_OW_EXIT, static, Link IOCARD_OUT, Device 30, Output 107
+Var 1709, name aD_OW_EXIT_R, static, Link IOCARD_OUT, Device 30, Output 152
+// Service
+Var 1710, name aD_OWL_L_2, static, Link IOCARD_OUT, Device 30, Output 158
 
-Var 1709, name aD_OW_EXIT_R, static, Link IOCARD_OUT, Device 30, Output 94
-
-Var 1710, name aD_OWL_L_2, static, Link IOCARD_OUT, Device 30, Output 108
-
-Var 1711, name aD_OW_R_2, static, Link IOCARD_OUT, Device 30, Output 110
+Var 1711, name aD_OW_R_2, static, Link IOCARD_OUT, Device 30, Output 155
 
 Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 39, Digit 3, Numbers 1     // DISPLAY AC AMP 1s
 
