@@ -47,10 +47,10 @@ Var 0000, Value 0
   // &sWINDOW_HEAT_3 = 0    
   // &sWINDOW_HEAT_4 = 0    
   // &sWING_ANTI_ICE = 0    
-  // &sHYD_ENG_L = 0    
-  // &sHYD_ELEC_R = 0    
-  // &sHYD_ELEC_L = 0    
-  // &sHYD_ENG_R = 0    
+  &sHYD_ENG_L = 0    
+  &sHYD_ELEC_R = 0    
+  &sHYD_ELEC_L = 0    
+  &sHYD_ENG_R = 0    
   // &sTRIM_AIR = 0    
   // &sAPU_BLEED = 0    
   // &sENG_1_BLEED = 0    
@@ -131,7 +131,7 @@ Var 0002, name OVH_FWD_POW_ON, static
     &aLOW_PR_ENG_L = 0    
     &aLOW_PR_ENG_R = 0    
     &aLOW_PR_ELEC_L = 0    
-    &aLOW_PR_ELEC_E = 0    
+    &aLOW_PR_ELEC_R = 0    
     &aZoneTemp0 = 0    
     &aZoneTemp1 = 0    
     &aZoneTemp2 = 0    
@@ -1892,17 +1892,17 @@ Var 1156, name aCO_VA_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 60, 
 
 Var 1157, name aCO_VA_OPEN_R, static, Link IOCARD_DISPLAY, Device 30, Digit 61, Numbers 1
 
-Var 1161, name aLOW_PR_ENG_L, static, Link IOCARD_OUT, Device 30, Output 102
+Var 1161, name aLOW_PR_ENG_L, static, Link IOCARD_OUT, Device 30, Output 167
 
-Var 1162, name aLOW_PR_ENG_R, static, Link IOCARD_OUT, Device 30, Output 105
+Var 1162, name aLOW_PR_ENG_R, static, Link IOCARD_OUT, Device 30, Output 163
 
-Var 1163, name aLOW_PR_ELEC_L, static, Link IOCARD_OUT, Device 30, Output 103
+Var 1163, name aLOW_PR_ELEC_L, static, Link IOCARD_OUT, Device 30, Output 165
 
-Var 1164, name aLOW_PR_ELEC_E, static, Link IOCARD_OUT, Device 30, Output 104
+Var 1164, name aLOW_PR_ELEC_R, static, Link IOCARD_OUT, Device 30, Output 166
+// Overheat
+Var 1165, name aOVHEAT_ELEC_L, static, Link IOCARD_OUT, Device 30, Output 164
 
-Var 1165, name aOVHEAT_ELEC_L, static, Link IOCARD_DISPLAY, Device 30, Digit 62, Numbers 1
-
-Var 1166, name aOVHEAT_ELEC_R, static, Link IOCARD_DISPLAY, Device 30, Digit 63, Numbers 1
+Var 1166, name aOVHEAT_ELEC_R, static, Link IOCARD_OUT, Device 30, Output 168
 
 Var 1173, name aZoneTemp0, static, Link IOCARD_OUT, Device 30, Output 90
 
@@ -1916,13 +1916,13 @@ Var 1177, name aRamDoor_L, static, Link IOCARD_OUT, Device 30, Output 150
 
 Var 1178, name aRamDoor_R, static, Link IOCARD_OUT, Device 30, Output 151
 
-// Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 108
+Var 2655, name sHYD_ENG_L, static, Link IOCARD_SW, Device 30, Input 160
 
-// Var 2654, name sHYD_ELEC_R, static, Link IOCARD_SW, Device 30, Input 109
+Var 2654, name sHYD_ELEC_R, static, Link IOCARD_SW, Device 30, Input 153
 
-// Var 2653, name sHYD_ELEC_L, static, Link IOCARD_SW, Device 30, Input 110
+Var 2653, name sHYD_ELEC_L, static, Link IOCARD_SW, Device 30, Input 159
 
-// Var 2656, name sHYD_ENG_R, static, Link IOCARD_SW, Device 30, Input 111
+Var 2656, name sHYD_ENG_R, static, Link IOCARD_SW, Device 30, Input 158
 
 Var 2598, name PACK_L_SW, static, Value 1
 
