@@ -898,6 +898,20 @@ Var 2635, name EL_STBY_PWR_SW, static, Value 1
 //   }
 // }
 
+Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 68     // Stby Pwr AUTO SW
+{
+  IF &sSTBY_PWR_R = 0
+  {
+    &EL_STBY_PWR_G = 0    
+    &EL_STBY_PWR_SW = 2    
+  }
+  ELSE
+  {
+    &EL_STBY_PWR_G = 0   
+    &EL_STBY_PWR_SW = 2    
+  }
+}
+
 Var 2631, name EL_GRD_PWR_SW, static
 
 Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 42     // Gnd Pwr Off SW
@@ -2246,35 +2260,35 @@ Var 2702, name PRESS_SEL, static
 
 Var 2671, name APU_START_SW, static
 
-// Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 30, Input 7
-// {
-//   IF &sAPU_OFF = 1
-//   {
-//     &APU_START_SW = 0    
-//   }
-//   ELSE
-//   {
-//     IF &sAPU_START = 0
-//     {
-//       &APU_START_SW = 1    
-//     }
-//   }
-// }
+Var 0124, name sAPU_OFF, Link IOCARD_SW, Device 30, Input 15
+{
+  IF &sAPU_OFF = 1
+  {
+    &APU_START_SW = 0    
+  }
+  ELSE
+  {
+    IF &sAPU_START = 0
+    {
+      &APU_START_SW = 1    
+    }
+  }
+}
 
-// Var 0125, name sAPU_START, Link IOCARD_SW, Device 30, Input 8
-// {
-//   IF &sAPU_START = 1
-//   {
-//     &APU_START_SW = 2    
-//   }
-//   ELSE
-//   {
-//     IF &sAPU_OFF = 0
-//     {
-//       &APU_START_SW = 1    
-//     }
-//   }
-// }
+Var 0125, name sAPU_START, Link IOCARD_SW, Device 30, Input 14
+{
+  IF &sAPU_START = 1
+  {
+    &APU_START_SW = 2    
+  }
+  ELSE
+  {
+    IF &sAPU_OFF = 0
+    {
+      &APU_START_SW = 1    
+    }
+  }
+}
 
 Var 0126, name ENG1_Servo, Link USB_SERVOS, Device 37, Output 1, PosL 500, PosC 800, PosR 1023
 
