@@ -42,10 +42,10 @@ Var 0000, Value 0
   // &sEL_GALLEY = 0    
   &sEC_SUPPLY = 0    
   &sEC_EXHAUST = 0    
-  // &sWINDOW_HEAT_1 = 0    
-  // &sWINDOW_HEAT_2 = 0    
-  // &sWINDOW_HEAT_3 = 0    
-  // &sWINDOW_HEAT_4 = 0    
+  &sWINDOW_HEAT_1 = 0    
+  &sWINDOW_HEAT_2 = 0    
+  &sWINDOW_HEAT_3 = 0    
+  &sWINDOW_HEAT_4 = 0    
   // &sWING_ANTI_ICE = 0    
   &sHYD_ENG_L = 0    
   &sHYD_ELEC_R = 0    
@@ -59,8 +59,8 @@ Var 0000, Value 0
   // &sRECIRC_FAN_R = 0    
   // &sENG_ANTI_ICE1 = 0    
   // &sENG_ANTI_ICE2 = 0    
-  // &sPROBE_HEAT_1 = 0    
-  // &sPROBE_HEAT_2 = 0    
+  &sPROBE_HEAT_1 = 0    
+  &sPROBE_HEAT_2 = 0    
   &sRETRACTABLE_L = 0    
   &sRETRACTABLE_R = 0    
   &sFIXED_L = 0    
@@ -952,7 +952,7 @@ Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 40
 
 Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 39
 
-Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156
+Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156 // PACKS
 
 //Trip reset
 Var 2602, name bTRIM_RESET, static, Link IOCARD_SW, Device 30, Input 157
@@ -975,13 +975,13 @@ Var 2609, name sEC_SUPPLY, static, Link IOCARD_SW, Device 30, Input 35
 
 Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 34
 
-// Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 120
+Var 2662, name sWINDOW_HEAT_1, static, Link IOCARD_SW, Device 30, Input 165
 
-// Var 2663, name sWINDOW_HEAT_2, static, Link IOCARD_SW, Device 30, Input 121
+Var 2663, name sWINDOW_HEAT_2, static, Link IOCARD_SW, Device 30, Input 166
 
-// Var 2664, name sWINDOW_HEAT_3, static, Link IOCARD_SW, Device 30, Input 124
+Var 2664, name sWINDOW_HEAT_3, static, Link IOCARD_SW, Device 30, Input 164
 
-// Var 2665, name sWINDOW_HEAT_4, static, Link IOCARD_SW, Device 30, Input 125
+Var 2665, name sWINDOW_HEAT_4, static, Link IOCARD_SW, Device 30, Input 163
 
 // Var 2667, name sWING_ANTI_ICE, static, Link IOCARD_SW, Device 30, Input 114
 
@@ -989,9 +989,9 @@ Var 2608, name sEC_EXHAUST, static, Link IOCARD_SW, Device 30, Input 34
 
 // Var 2658, name sENG_ANTI_ICE2, static, Link IOCARD_SW, Device 30, Input 116
 
-// Var 2659, name sPROBE_HEAT_1, static, Link IOCARD_SW, Device 30, Input 118
+Var 2659, name sPROBE_HEAT_1, static, Link IOCARD_SW, Device 30, Input 169
 
-// Var 2660, name sPROBE_HEAT_2, static, Link IOCARD_SW, Device 30, Input 119
+Var 2660, name sPROBE_HEAT_2, static, Link IOCARD_SW, Device 30, Input 170
 
 // Var 2586, name sTRIM_AIR, static, Link IOCARD_SW, Device 30, Input 143
 
@@ -1830,69 +1830,69 @@ Var 1128, name aCALL, static, Link IOCARD_OUT, Device 30, Output 15
 
 Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
-Var 1130, name aOVERHEAT0, static, Link IOCARD_OUT, Device 30, Output 75
+Var 1130, name aOVERHEAT0, static, Link IOCARD_DISPLAY, Device 30, Digit 22, Numbers 1
 
-Var 1131, name aOVERHEAT1, static, Link IOCARD_OUT, Device 30, Output 76
+Var 1131, name aOVERHEAT1, static, Link IOCARD_DISPLAY, Device 30, Digit 21, Numbers 1
 
-Var 1132, name aOVERHEAT2, static, Link IOCARD_OUT, Device 30, Output 77
+Var 1132, name aOVERHEAT2, static, Link IOCARD_DISPLAY, Device 30, Digit 25, Numbers 1
 
-Var 1133, name aOVERHEAT3, static, Link IOCARD_OUT, Device 30, Output 84
+Var 1133, name aOVERHEAT3, static, Link IOCARD_DISPLAY, Device 30, Digit 23, Numbers 1
 
-Var 1134, name aW_HEATON_LS, static, Link IOCARD_OUT, Device 30, Output 78
+Var 1134, name aW_HEATON_LS, static, Link IOCARD_DISPLAY, Device 30, Digit 27, Numbers 1
 
-Var 1135, name aW_HEATON_LF, static, Link IOCARD_OUT, Device 30, Output 79
+Var 1135, name aW_HEATON_LF, static, Link IOCARD_DISPLAY, Device 30, Digit 28, Numbers 1
 
-Var 1136, name aW_HEATON_RL, static, Link IOCARD_OUT, Device 30, Output 80
+Var 1136, name aW_HEATON_RL, static, Link IOCARD_DISPLAY, Device 30, Digit 24, Numbers 1
 
-Var 1137, name aW_HEATON_RS, static, Link IOCARD_OUT, Device 30, Output 85
+Var 1137, name aW_HEATON_RS, static, Link IOCARD_DISPLAY, Device 30, Digit 26, Numbers 1
 
 Var 2666, name ICE_W_HEAT_T, static
 
-// Var 0095, name sWIN_H_OVH, Link IOCARD_SW, Device 30, Input 122
-// {
-//   IF &sWIN_H_OVH = 1
-//   {
-//     &ICE_W_HEAT_T = 0    
-//   }
-//   ELSE
-//   {
-//     IF &sWIN_H_PT = 0
-//     {
-//       &ICE_W_HEAT_T = 1    
-//     }
-//   }
-// }
+Var 0095, name sWIN_H_OVH, Link IOCARD_SW, Device 30, Input 162 // OVHT HEAT
+{
+  IF &sWIN_H_OVH = 1
+  {
+    &ICE_W_HEAT_T = 0    
+  }
+  ELSE
+  {
+    IF &sWIN_H_PT = 0
+    {
+      &ICE_W_HEAT_T = 1    
+    }
+  }
+}
 
-// Var 0096, name sWIN_H_PT, Link IOCARD_SW, Device 30, Input 123
-// {
-//   IF &sWIN_H_PT = 1
-//   {
-//     &ICE_W_HEAT_T = 2    
-//   }
-//   ELSE
-//   {
-//     IF &sWIN_H_OVH = 0
-//     {
-//       &ICE_W_HEAT_T = 1    
-//     }
-//   }
-// }
+Var 0096, name sWIN_H_PT, Link IOCARD_SW, Device 30, Input 168 // PWR TEST
+{
+  IF &sWIN_H_PT = 1
+  {
+    &ICE_W_HEAT_T = 2    
+  }
+  ELSE
+  {
+    IF &sWIN_H_OVH = 0
+    {
+      &ICE_W_HEAT_T = 1    
+    }
+  }
+}
 
-Var 1142, name aCAPT_PITOT, static, Link IOCARD_OUT, Device 30, Output 81
+Var 1142, name aCAPT_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 14, Numbers 1
 
-Var 1143, name aELEV_PITOT_L, static, Link IOCARD_OUT, Device 30, Output 82
+Var 1143, name aELEV_PITOT_L, static, Link IOCARD_DISPLAY, Device 30, Digit 13, Numbers 1
 
-Var 1144, name aALPHA_VANE_L, static, Link IOCARD_OUT, Device 30, Output 83
+Var 1144, name aALPHA_VANE_L, static, Link IOCARD_DISPLAY, Device 30, Digit 16, Numbers 1
 
-Var 1145, name aTEMP_PROBE, static, Link IOCARD_DISPLAY, Device 30, Digit 55, Numbers 1
+Var 1145, name aTEMP_PROBE, static, Link IOCARD_DISPLAY, Device 30, Digit 15, Numbers 1
 
-Var 1146, name aFO_PITOT, static, Link IOCARD_OUT, Device 30, Output 86
+Var 1146, name aFO_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 18, Numbers 1
 
-Var 1147, name aELEV_PITOT_R, static, Link IOCARD_OUT, Device 30, Output 87
+Var 1147, name aELEV_PITOT_R, static, Link IOCARD_DISPLAY, Device 30, Digit 20, Numbers 1
 
-Var 1148, name aALPHA_VANE_R, static, Link IOCARD_OUT, Device 30, Output 88
+Var 1148, name aALPHA_VANE_R, static, Link IOCARD_DISPLAY, Device 30, Digit 19, Numbers 1
 
-Var 1149, name aAUX_PITOT, static, Link IOCARD_OUT, Device 30, Output 89
+Var 1149, name aAUX_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 17, Numbers 1
 
 Var 1152, name aVALVE_OPEN_L, static, Link IOCARD_DISPLAY, Device 30, Digit 2, Numbers 1
 
