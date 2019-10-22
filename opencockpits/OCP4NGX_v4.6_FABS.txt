@@ -2483,32 +2483,32 @@ Var 0139, name sPOS_STEADY_LI, Link IOCARD_SW, Device 30, Input 26     // Positi
 //   }
 // }
 
-// Var 0141, name SERVO_APU, Link USB_SERVOS, Device 37, Output 2, PosL 192, PosC 404, PosR 1000, Type 1
+Var 0141, name SERVO_APU, Link USB_SERVOS, Device 38, Output 4, PosL 424, PosC 600, PosR 820, Type 1
 
-// Var 1108, name TXRX_APU, static, Value 1
-// {
-//   L0 = 247         // sets EGT to 0
-//   L1 = &TXRX_APU * 0.67     // scaling
-//   L0 = L0 + L1
-//   &SERVO_APU = L0         // sends value to servo
-// }
+Var 1108, name TXRX_APU, static, Value 1
+{
+  L0 = 424         // sets EGT to 0
+  L1 = &TXRX_APU * 0.27     // scaling
+  L0 = L0 + L1
+  &SERVO_APU = L0         // sends value to servo
+}
 
-Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 192, PosC 511, PosR 1000, Type 1
+Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 315, PosC 600, PosR 1000, Type 1
 
 Var 1534, name TXRX_CabAlt, static
 {
-  L0 = 321    
+  L0 = 330 
 //  L1 = &TXRX_CabAlt * 0.03
-  L1 = &TXRX_CabAlt * 1
+  L1 = &TXRX_CabAlt * 0.5
   L0 = L0 + L1
   &SERVO_CabAlt = L0    
 }
 
-Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 511, PosR 1023, Type 1
+Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 6, PosL 176, PosC 511, PosR 857, Type 1
 
 Var 1535, name TXRX_PresDiff, static, Value 1
 {
-  L0 = 191    
+  L0 = 176
   L1 = &TXRX_PresDiff * 0.9
   L0 = L0 + L1
   &SERVO_PresDiff = L0    
@@ -2520,7 +2520,7 @@ Var 1536, name TXRX_CabVSI, static
 {
   L0 = &TXRX_CabVSI    
   L0 = L0 * 0.27
-  L0 = L0 + 560
+  L0 = L0 + 539
   &SERVO_CabVSI = L0    
 }
 
