@@ -2032,43 +2032,43 @@ Var 1200, name LandAltWindow, static
 
 Var 2700, name PRESS_F_ALT_K, static
 
-// Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 126, Aceleration 3, Type 2
-// {
-//   &PRESS_F_ALT_K = 0    
-//   IF &rF_Alt < 0
-//   {
-//     &PRESS_F_ALT_K = 16384    
-//   }
-//   ELSE
-//   {
-//     &PRESS_F_ALT_K = 8192    
-//   }
-// }
+Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 173, Aceleration 3, Type 2
+{
+  &PRESS_F_ALT_K = 0    
+  IF &rF_Alt < 0
+  {
+    &PRESS_F_ALT_K = 16384    
+  }
+  ELSE
+  {
+    &PRESS_F_ALT_K = 8192    
+  }
+}
 
-// Var 2701, name PRESS_L_ALT_K, static
+Var 2701, name PRESS_L_ALT_K, static
 
-// Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
-// {
-//   &PRESS_L_ALT_K = 0    
-//   IF &rL_Alt < 0
-//   {
-//     &PRESS_L_ALT_K = 16384    
-//   }
-//   ELSE
-//   {
-//     &PRESS_L_ALT_K = 8192    
-//   }
-// }
+Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
+{
+  &PRESS_L_ALT_K = 0    
+  IF &rL_Alt < 0
+  {
+    &PRESS_L_ALT_K = 16384    
+  }
+  ELSE
+  {
+    &PRESS_L_ALT_K = 8192    
+  }
+}
 
-Var 0105, name FA1, Link IOCARD_DISPLAY, Device 30, Digit 64, Numbers 1
+Var 0105, name FA1, Link IOCARD_DISPLAY, Device 30, Digit 168, Numbers 1
 
-Var 0106, name FA2, Link IOCARD_DISPLAY, Device 30, Digit 65, Numbers 1
+Var 0106, name FA2, Link IOCARD_DISPLAY, Device 30, Digit 169, Numbers 1
 
-Var 0107, name FA3, Link IOCARD_DISPLAY, Device 30, Digit 66, Numbers 1
+Var 0107, name FA3, Link IOCARD_DISPLAY, Device 30, Digit 166, Numbers 1
 
-Var 0108, name FA4, Link IOCARD_DISPLAY, Device 30, Digit 67, Numbers 1
+Var 0108, name FA4, Link IOCARD_DISPLAY, Device 30, Digit 167, Numbers 1
 
-Var 0109, name FA5, Link IOCARD_DISPLAY, Device 30, Digit 68, Numbers 1
+Var 0109, name FA5, Link IOCARD_DISPLAY, Device 30, Digit 164, Numbers 1
 
 Var 0110, name SetFlightAlt, Link SUBRUTINE
 {
@@ -2174,15 +2174,15 @@ Var 0113, name LandAltDis, Link SUBRUTINE     // Example 12750
   }
 }
 
-Var 0114, name LA1, Link IOCARD_DISPLAY, Device 30, Digit 69, Numbers 1
+Var 0114, name LA1, Link IOCARD_DISPLAY, Device 30, Digit 165, Numbers 1
 
-Var 0115, name LA2, Link IOCARD_DISPLAY, Device 30, Digit 70, Numbers 1
+Var 0115, name LA2, Link IOCARD_DISPLAY, Device 30, Digit 162, Numbers 1
 
-Var 0116, name LA3, Link IOCARD_DISPLAY, Device 30, Digit 71, Numbers 1
+Var 0116, name LA3, Link IOCARD_DISPLAY, Device 30, Digit 163, Numbers 1
 
-Var 0117, name LA4, Link IOCARD_DISPLAY, Device 30, Digit 72, Numbers 1
+Var 0117, name LA4, Link IOCARD_DISPLAY, Device 30, Digit 160, Numbers 1
 
-Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 73, Numbers 1
+Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 161, Numbers 1
 
 Var 2703, name PRESS_V_SW, static
 
@@ -2542,20 +2542,20 @@ Var 1532, name TXRX_PressL, static
   }
 }
 
-Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
+Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 372, PosC 537, PosR 800, Type 1
 
 Var 1533, name TXRX_PressR, static
 {
   IF &EL_STATE <> 0     // BUSES CONNECTED
   {
-    L0 = 263    
-    L1 = &TXRX_PressR * 9
+    L0 = 372    
+    L1 = &TXRX_PressR * 0.9
     L0 = L0 + L1
     &SERVO_PressR = DELAY L0 ,200
   }
   ELSE
   {
-    &SERVO_PressR = 263    
+    &SERVO_PressR = 372    
   }
 }
 // // VALVE
