@@ -2471,40 +2471,40 @@ Var 0141, name SERVO_APU, Link USB_SERVOS, Device 38, Output 4, PosL 200, PosC 6
 
 Var 1108, name TXRX_APU, static, Value 1
 {
-  L0 = 210         // sets EGT to 0
+  L0 = 240         // sets EGT to 0
   L1 = &TXRX_APU * 0.40     // scaling
   L0 = L0 + L1
   &SERVO_APU = L0         // sends value to servo
 }
 
-Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 315, PosC 600, PosR 1000, Type 1
+Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 315, PosC 600, PosR 820, Type 1
 
 Var 1534, name TXRX_CabAlt, static
 {
   L0 = 330 
 //  L1 = &TXRX_CabAlt * 0.03
-  L1 = &TXRX_CabAlt * 0.5
+  L1 = &TXRX_CabAlt * 0.05
   L0 = L0 + L1
   &SERVO_CabAlt = L0    
 }
 
-Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 6, PosL 176, PosC 511, PosR 857, Type 1
+Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 4, PosL 185, PosC 511, PosR 857, Type 1
 
 Var 1535, name TXRX_PresDiff, static, Value 1
 {
-  L0 = 176
-  L1 = &TXRX_PresDiff * 0.9
+  L0 = 175
+  L1 = &TXRX_PresDiff * 0.4
   L0 = L0 + L1
   &SERVO_PresDiff = L0    
 }
 
-Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 4, PosL 192, PosC 511, PosR 1023, Type 1
+Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 511, PosR 1023, Type 1
 
 Var 1536, name TXRX_CabVSI, static
 {
   L0 = &TXRX_CabVSI    
   L0 = L0 * 0.27
-  L0 = L0 + 539
+  L0 = L0 + 700
   &SERVO_CabVSI = L0    
 }
 
@@ -2525,24 +2525,25 @@ Var 1536, name TXRX_CabVSI, static
 //   }
 // }
 
-Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 3, PosL 192, PosC 537, PosR 1023, Type 1
+Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
 
 Var 1532, name TXRX_PressL, static
 {
   IF &EL_STATE <> 0     // BUSES CONNECTED
   {
-    L0 = 263    
-    L1 = &TXRX_PressL * 9
+    L0 = 339    
+    L1 = &TXRX_PressL * 8
     L0 = L0 + L1
-    &SERVO_PressL = DELAY L0 ,200
+    &SERVO_PressL = L0
+    // &SERVO_PressL = DELAY L0 ,200
   }
   ELSE
   {
-    &SERVO_PressL = 263    
+    &SERVO_PressL = 439    
   }
 }
 
-Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 2, PosL 372, PosC 537, PosR 800, Type 1
+Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 3, PosL 372, PosC 537, PosR 800, Type 1
 
 Var 1533, name TXRX_PressR, static
 {
