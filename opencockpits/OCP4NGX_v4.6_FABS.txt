@@ -2032,7 +2032,7 @@ Var 1200, name LandAltWindow, static
 
 Var 2700, name PRESS_F_ALT_K, static
 
-Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 173, Aceleration 3, Type 2
+Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 172, Aceleration 1, Type 2
 {
   &PRESS_F_ALT_K = 0    
   IF &rF_Alt < 0
@@ -2047,7 +2047,7 @@ Var 0103, name rF_Alt, Link IOCARD_ENCODER, Device 30, Input 173, Aceleration 3,
 
 Var 2701, name PRESS_L_ALT_K, static
 
-Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 128, Aceleration 3, Type 2
+Var 0104, name rL_Alt, Link IOCARD_ENCODER, Device 30, Input 174, Aceleration 1, Type 2
 {
   &PRESS_L_ALT_K = 0    
   IF &rL_Alt < 0
@@ -2186,45 +2186,45 @@ Var 0118, name LA5, Link IOCARD_DISPLAY, Device 30, Digit 161, Numbers 1
 
 Var 2703, name PRESS_V_SW, static
 
-// Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 134
-// {
-//   IF &sCLOSE_VALVE = 1
-//   {
-//     &PRESS_V_SW = 0    
-//   }
-//   ELSE
-//   {
-//     IF &sOPEN_VALVE = 0
-//     {
-//       &PRESS_V_SW = 1    
-//     }
-//   }
-// }
+Var 0119, name sCLOSE_VALVE, Link IOCARD_SW, Device 30, Input 178
+{
+  IF &sCLOSE_VALVE = 1
+  {
+    &PRESS_V_SW = 0    
+  }
+  ELSE
+  {
+    IF &sOPEN_VALVE = 0
+    {
+      &PRESS_V_SW = 1    
+    }
+  }
+}
 
-// Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 133
-// {
-//   IF &sOPEN_VALVE = 1
-//   {
-//     &PRESS_V_SW = 2    
-//   }
-//   ELSE
-//   {
-//     IF &sCLOSE_VALVE = 0
-//     {
-//       &PRESS_V_SW = 1    
-//     }
-//   }
-// }
+Var 0120, name sOPEN_VALVE, Link IOCARD_SW, Device 30, Input 179
+{
+  IF &sOPEN_VALVE = 1
+  {
+    &PRESS_V_SW = 2    
+  }
+  ELSE
+  {
+    IF &sCLOSE_VALVE = 0
+    {
+      &PRESS_V_SW = 1    
+    }
+  }
+}
 
 Var 2702, name PRESS_SEL, static
 
-// Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 130
-// {
-//   IF &sC_MODE_AUTO = 1
-//   {
-//     &PRESS_SEL = 0    
-//   }
-// }
+Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 171
+{
+  IF &sC_MODE_AUTO = 1
+  {
+    &PRESS_SEL = 0    
+  }
+}
 
 // Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
 // {
@@ -2234,13 +2234,13 @@ Var 2702, name PRESS_SEL, static
 //   }
 // }
 
-// Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 132
-// {
-//   IF &sC_MODE_MAN = 1
-//   {
-//     &PRESS_SEL = 2    
-//   }
-// }
+Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 177
+{
+  IF &sC_MODE_MAN = 1
+  {
+    &PRESS_SEL = 2    
+  }
+}
 
 Var 2671, name APU_START_SW, static
 
@@ -2525,21 +2525,21 @@ Var 1536, name TXRX_CabVSI, static
 //   }
 // }
 
-Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 2, PosL 192, PosC 537, PosR 1023, Type 1
+Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 2, PosL 280, PosC 537, PosR 814, Type 1
 
 Var 1532, name TXRX_PressL, static
 {
   IF &EL_STATE <> 0     // BUSES CONNECTED
   {
-    L0 = 339    
-    L1 = &TXRX_PressL * 8
+    L0 = 300    
+    L1 = &TXRX_PressL * 0.5
     L0 = L0 + L1
     &SERVO_PressL = L0
     // &SERVO_PressL = DELAY L0 ,200
   }
   ELSE
   {
-    &SERVO_PressL = 439    
+    &SERVO_PressL = 300    
   }
 }
 
@@ -2560,14 +2560,15 @@ Var 1533, name TXRX_PressR, static
   }
 }
 // // VALVE
-Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 37, Output 3, PosL 418, PosC 530, PosR 650, Type 1
+Var 0148, name SERVO_OUTFLOW, Link USB_SERVOS, Device 37, Output 3, PosL 700, PosC 900, PosR 1000, Type 1
 
 Var 1537, name TXRX_OF_valve, static
 {
-  L0 = 418    
-  L1 = &TXRX_OF_valve / 0.26
+  L0 = 750  
+  L1 = &TXRX_OF_valve / 0.40
   L0 = L0 + L1
-  &SERVO_OUTFLOW = L0    
+  // &SERVO_OUTFLOW = L0    
+  &SERVO_OUTFLOW = DELAY L0 ,900
 }
 
 Var 1700, name aD_AFT_L, static, Link IOCARD_OUT, Device 30, Output 157
@@ -2792,7 +2793,7 @@ Var 2480, name IRS_SELECTOR_L, static
 
 Var 2755, name IRS_SELECTOR_R, static
 
-Var 0167, name sIRS_OFF_L, Link IOCARD_SW, Device 33, Input 72
+Var 0167, name sIRS_OFF_L, Link IOCARD_SW, Device 32, Input 72
 {
   IF &sIRS_OFF_L = 1
   {
@@ -2800,7 +2801,7 @@ Var 0167, name sIRS_OFF_L, Link IOCARD_SW, Device 33, Input 72
   }
 }
 
-Var 0168, name sIRS_ALIGN_L, Link IOCARD_SW, Device 33, Input 73
+Var 0168, name sIRS_ALIGN_L, Link IOCARD_SW, Device 32, Input 76
 {
   IF &sIRS_ALIGN_L = 1
   {
@@ -2808,7 +2809,7 @@ Var 0168, name sIRS_ALIGN_L, Link IOCARD_SW, Device 33, Input 73
   }
 }
 
-Var 0169, name IRS_NAV_L, Link IOCARD_SW, Device 33, Input 74
+Var 0169, name IRS_NAV_L, Link IOCARD_SW, Device 32, Input 73
 {
   IF &IRS_NAV_L = 1
   {
@@ -2816,7 +2817,7 @@ Var 0169, name IRS_NAV_L, Link IOCARD_SW, Device 33, Input 74
   }
 }
 
-Var 0170, name IRS_ATT_L, Link IOCARD_SW, Device 33, Input 75
+Var 0170, name IRS_ATT_L, Link IOCARD_SW, Device 32, Input 75
 {
   IF &IRS_ATT_L = 1
   {
@@ -2824,7 +2825,7 @@ Var 0170, name IRS_ATT_L, Link IOCARD_SW, Device 33, Input 75
   }
 }
 
-Var 0171, name sIRS_OFF_R, Link IOCARD_SW, Device 33, Input 76
+Var 0171, name sIRS_OFF_R, Link IOCARD_SW, Device 32, Input 80
 {
   IF &sIRS_OFF_R = 1
   {
@@ -2832,7 +2833,7 @@ Var 0171, name sIRS_OFF_R, Link IOCARD_SW, Device 33, Input 76
   }
 }
 
-Var 0172, name sIRS_ALIGN_R, Link IOCARD_SW, Device 33, Input 77
+Var 0172, name sIRS_ALIGN_R, Link IOCARD_SW, Device 32, Input 74
 {
   IF &sIRS_ALIGN_R = 1
   {
@@ -2840,7 +2841,7 @@ Var 0172, name sIRS_ALIGN_R, Link IOCARD_SW, Device 33, Input 77
   }
 }
 
-Var 0173, name sIRS_NAV_R, Link IOCARD_SW, Device 33, Input 78
+Var 0173, name sIRS_NAV_R, Link IOCARD_SW, Device 32, Input 78
 {
   IF &sIRS_NAV_R = 1
   {
@@ -2848,7 +2849,7 @@ Var 0173, name sIRS_NAV_R, Link IOCARD_SW, Device 33, Input 78
   }
 }
 
-Var 0174, name sIRS_ATT_R, Link IOCARD_SW, Device 33, Input 79
+Var 0174, name sIRS_ATT_R, Link IOCARD_SW, Device 32, Input 79
 {
   IF &sIRS_ATT_R = 1
   {
@@ -2856,23 +2857,23 @@ Var 0174, name sIRS_ATT_R, Link IOCARD_SW, Device 33, Input 79
   }
 }
 
-Var 1002, name aIRS_GPS, static, Link IOCARD_OUT, Device 33, Output 95     // IRS GPS INDICATOR
+Var 1002, name aIRS_GPS, static, Link IOCARD_OUT, Device 32, Output 84     // IRS GPS INDICATOR
 
-Var 1003, name aIRS_ALIGN_L, static, Link IOCARD_OUT, Device 33, Output 96     // IRS ALIGN L INDICATOR
+Var 1003, name aIRS_ALIGN_L, static, Link IOCARD_OUT, Device 32, Output 78     // IRS ALIGN L INDICATOR
 
-Var 1004, name aIRS_ALIGN_R, static, Link IOCARD_OUT, Device 33, Output 100     // IRS ALIGN R INDICATOR
+Var 1004, name aIRS_ALIGN_R, static, Link IOCARD_OUT, Device 32, Output 82     // IRS ALIGN R INDICATOR
 
-Var 1005, name aIRS_ON_DC_L, static, Link IOCARD_OUT, Device 33, Output 98     // IRS ON DC L INDICATOR
+Var 1005, name aIRS_ON_DC_L, static, Link IOCARD_OUT, Device 32, Output 76     // IRS ON DC L INDICATOR
 
-Var 1006, name aIRS_ON_DCR, static, Link IOCARD_OUT, Device 33, Output 102     // IRS ON DC R INDICATOR
+Var 1006, name aIRS_ON_DCR, static, Link IOCARD_OUT, Device 32, Output 80     // IRS ON DC R INDICATOR
 
-Var 1007, name aIRS_FAULT_L, static, Link IOCARD_OUT, Device 33, Output 97     // IRS FAULT L INDICATOR
+Var 1007, name aIRS_FAULT_L, static, Link IOCARD_OUT, Device 32, Output 81     // IRS FAULT L INDICATOR
 
-Var 1008, name aIRS_FAULTR, static, Link IOCARD_OUT, Device 33, Output 101     // IRS FAULT R INDICATOR
+Var 1008, name aIRS_FAULTR, static, Link IOCARD_OUT, Device 32, Output 77     // IRS FAULT R INDICATOR
 
-Var 1009, name aIRS_DC_FAIL_L, static, Link IOCARD_OUT, Device 33, Output 99     // IRS DC FAIL L INDICATOR
+Var 1009, name aIRS_DC_FAIL_L, static, Link IOCARD_OUT, Device 32, Output 75     // IRS DC FAIL L INDICATOR
 
-Var 1010, name aIRS_DC_FAIL_R, static, Link IOCARD_OUT, Device 33, Output 103     // IRS DC FAIL R INDICATOR
+Var 1010, name aIRS_DC_FAIL_R, static, Link IOCARD_OUT, Device 32, Output 79     // IRS DC FAIL R INDICATOR
 
 Var 1013, name aIRS_PSEU, static, Link IOCARD_OUT, Device 33, Output 94     // IRS PSEU
 
@@ -5682,7 +5683,7 @@ Var 0425, name servo_high_val
 
 Var 0426, name servo_low_val
 
-Var 0427, name servo_flaps2, Link USB_SERVOS, Device 36, Output 2, PosL 160, PosC 511, PosR 1000
+Var 0427, name servo_flaps2, Link USB_SERVOS, Device 36, Output 3, PosL 160, PosC 511, PosR 1000
 
 Var 1329, name flaps2, static, Value 0
 {
@@ -5788,13 +5789,13 @@ Var 0436, name servo_low_v2
 
 Var 1344, name TXRX_BRK_P, static, Value 0
 {
-  L0 = 170    
-  L1 = &TXRX_BRK_P * 0.2
+  L0 = 510
+  L1 = &TXRX_BRK_P * 0.12
   L0 = L0 + L1
-  &SERVO_BRKpress = L0    
+  &SERVO_BRKpress = L0 - 50    
 }
 
-Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 43, Output 4, PosL 160, PosC 550, PosR 1020, Type 1
+Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 36, Output 2, PosL 500, PosC 700, PosR 900, Type 1
 
 Var 2454, name bSYS_TEST, static, Link IOCARD_SW, Device 31, Input 32
 
@@ -5880,57 +5881,57 @@ Var 0442, name sLIGHT_DIM, Link IOCARD_SW, Device 31, Input 67
   }
 }
 
-Var 1394, name aENG1_OVHT, static, Link IOCARD_OUT, Device 32, Output 23
+Var 1394, name aENG1_OVHT, static, Link IOCARD_OUT, Device 33, Output 23
 
-Var 1395, name aENG2_OVHT, static, Link IOCARD_OUT, Device 32, Output 28
+Var 1395, name aENG2_OVHT, static, Link IOCARD_OUT, Device 33, Output 28
 
-Var 1400, name aFIREENG1, static, Link IOCARD_OUT, Device 32, Output 31
+Var 1400, name aFIREENG1, static, Link IOCARD_OUT, Device 33, Output 31
 
-Var 1401, name aFIREAPU, static, Link IOCARD_OUT, Device 32, Output 32
+Var 1401, name aFIREAPU, static, Link IOCARD_OUT, Device 33, Output 32
 
-Var 1402, name aFIREENG2, static, Link IOCARD_OUT, Device 32, Output 33
+Var 1402, name aFIREENG2, static, Link IOCARD_OUT, Device 33, Output 33
 
-Var 1403, name aFIREWHEEL, static, Link IOCARD_OUT, Device 32, Output 27
+Var 1403, name aFIREWHEEL, static, Link IOCARD_OUT, Device 33, Output 27
 
-Var 1404, name aFIRE_ENG_F, static, Link IOCARD_OUT, Device 32, Output 26
+Var 1404, name aFIRE_ENG_F, static, Link IOCARD_OUT, Device 33, Output 26
 
-Var 1405, name aAPUDETIO, static, Link IOCARD_OUT, Device 32, Output 25
+Var 1405, name aAPUDETIO, static, Link IOCARD_OUT, Device 33, Output 25
 
-Var 1406, name aAPU_BDIS, static, Link IOCARD_OUT, Device 32, Output 24
+Var 1406, name aAPU_BDIS, static, Link IOCARD_OUT, Device 33, Output 24
 
-Var 1407, name aENG1_BDIS, static, Link IOCARD_OUT, Device 32, Output 29
+Var 1407, name aENG1_BDIS, static, Link IOCARD_OUT, Device 33, Output 29
 
-Var 1408, name aENG2_BDIS, static, Link IOCARD_OUT, Device 32, Output 30
+Var 1408, name aENG2_BDIS, static, Link IOCARD_OUT, Device 33, Output 30
 
-Var 1410, name aENG1GL, static, Link IOCARD_OUT, Device 32, Output 34
+Var 1410, name aENG1GL, static, Link IOCARD_OUT, Device 33, Output 34
 
-Var 1411, name aAPUGL, static, Link IOCARD_OUT, Device 32, Output 35
+Var 1411, name aAPUGL, static, Link IOCARD_OUT, Device 33, Output 35
 
-Var 1412, name aENG2GL, static, Link IOCARD_OUT, Device 32, Output 36
+Var 1412, name aENG2GL, static, Link IOCARD_OUT, Device 33, Output 36
 
-Var 2442, name HNDENG1, static, Link IOCARD_SW, Device 32, Input 55
+Var 2442, name HNDENG1, static, Link IOCARD_SW, Device 33, Input 55
 
-Var 2435, name HNDENG1_L, static, Link IOCARD_SW, Device 32, Input 54
+Var 2435, name HNDENG1_L, static, Link IOCARD_SW, Device 33, Input 54
 
-Var 2436, name HNDENG1_R, static, Link IOCARD_SW, Device 32, Input 56
+Var 2436, name HNDENG1_R, static, Link IOCARD_SW, Device 33, Input 56
 
-Var 2441, name HNDAPU, static, Link IOCARD_SW, Device 32, Input 58
+Var 2441, name HNDAPU, static, Link IOCARD_SW, Device 33, Input 58
 
-Var 2433, name HNDAPU_L, static, Link IOCARD_SW, Device 32, Input 57
+Var 2433, name HNDAPU_L, static, Link IOCARD_SW, Device 33, Input 57
 
-Var 2434, name HNDAPU_R, static, Link IOCARD_SW, Device 32, Input 59
+Var 2434, name HNDAPU_R, static, Link IOCARD_SW, Device 33, Input 59
 
-Var 2443, name HNDENG2, static, Link IOCARD_SW, Device 32, Input 61
+Var 2443, name HNDENG2, static, Link IOCARD_SW, Device 33, Input 61
 
-Var 2437, name HNDENG2_L, static, Link IOCARD_SW, Device 32, Input 60
+Var 2437, name HNDENG2_L, static, Link IOCARD_SW, Device 33, Input 60
 
-Var 2438, name HNDENG2_R, static, Link IOCARD_SW, Device 32, Input 62
+Var 2438, name HNDENG2_R, static, Link IOCARD_SW, Device 33, Input 62
 
-Var 2430, name BELLCOUT_SW, static, Link IOCARD_SW, Device 32, Input 49
+Var 2430, name BELLCOUT_SW, static, Link IOCARD_SW, Device 33, Input 49
 
 Var 2439, name OVHTDET1, static
 
-Var 0443, name sOVHTDET1_A, Link IOCARD_SW, Device 32, Input 46
+Var 0443, name sOVHTDET1_A, Link IOCARD_SW, Device 33, Input 46
 {
   IF &sOVHTDET1_A = 1
   {
@@ -5942,7 +5943,7 @@ Var 0443, name sOVHTDET1_A, Link IOCARD_SW, Device 32, Input 46
   }
 }
 
-Var 0444, name sOVHTDET1_B, Link IOCARD_SW, Device 32, Input 45
+Var 0444, name sOVHTDET1_B, Link IOCARD_SW, Device 33, Input 45
 {
   IF &sOVHTDET1_B = 1
   {
@@ -5956,7 +5957,7 @@ Var 0444, name sOVHTDET1_B, Link IOCARD_SW, Device 32, Input 45
 
 Var 2440, name OVHTDET2, static
 
-Var 0445, name sOVHTDET2_A, Link IOCARD_SW, Device 32, Input 51
+Var 0445, name sOVHTDET2_A, Link IOCARD_SW, Device 33, Input 51
 {
   IF &sOVHTDET2_A = 1
   {
@@ -5968,7 +5969,7 @@ Var 0445, name sOVHTDET2_A, Link IOCARD_SW, Device 32, Input 51
   }
 }
 
-Var 0446, name sOVHTDET2_B, Link IOCARD_SW, Device 32, Input 50
+Var 0446, name sOVHTDET2_B, Link IOCARD_SW, Device 33, Input 50
 {
   IF &sOVHTDET2_B = 1
   {
@@ -5982,7 +5983,7 @@ Var 0446, name sOVHTDET2_B, Link IOCARD_SW, Device 32, Input 50
 
 Var 2431, name FIRENGTEST, static
 
-Var 0447, name sFIRENGT_L, Link IOCARD_SW, Device 32, Input 47
+Var 0447, name sFIRENGT_L, Link IOCARD_SW, Device 33, Input 47
 {
   IF &sFIRENGT_L = 1
   {
@@ -5994,7 +5995,7 @@ Var 0447, name sFIRENGT_L, Link IOCARD_SW, Device 32, Input 47
   }
 }
 
-Var 0448, name sFIRENGT_R, Link IOCARD_SW, Device 32, Input 48
+Var 0448, name sFIRENGT_R, Link IOCARD_SW, Device 33, Input 48
 {
   IF &sFIRENGT_R = 1
   {
@@ -6008,7 +6009,7 @@ Var 0448, name sFIRENGT_R, Link IOCARD_SW, Device 32, Input 48
 
 Var 2432, name EXTTEST, static
 
-Var 0449, name sEXTTEST1, Link IOCARD_SW, Device 32, Input 53
+Var 0449, name sEXTTEST1, Link IOCARD_SW, Device 33, Input 53
 {
   IF &sEXTTEST1 = 1
   {
@@ -6020,7 +6021,7 @@ Var 0449, name sEXTTEST1, Link IOCARD_SW, Device 32, Input 53
   }
 }
 
-Var 0450, name sEXTTEST2, Link IOCARD_SW, Device 32, Input 52
+Var 0450, name sEXTTEST2, Link IOCARD_SW, Device 33, Input 52
 {
   IF &sEXTTEST2 = 1
   {
@@ -6032,27 +6033,27 @@ Var 0450, name sEXTTEST2, Link IOCARD_SW, Device 32, Input 52
   }
 }
 
-Var 1413, name aEXT_TEST_FWD, static, Link IOCARD_OUT, Device 32, Output 94
+Var 1413, name aEXT_TEST_FWD, static, Link IOCARD_OUT, Device 33, Output 94
 
-Var 1414, name aEXT_TEST_AFT, static, Link IOCARD_OUT, Device 32, Output 95
+Var 1414, name aEXT_TEST_AFT, static, Link IOCARD_OUT, Device 33, Output 95
 
-Var 1416, name aDISCHARGE_BAR, static, Link IOCARD_OUT, Device 32, Output 88
+Var 1416, name aDISCHARGE_BAR, static, Link IOCARD_OUT, Device 33, Output 88
 
-Var 1417, name aARMED_FWD, static, Link IOCARD_OUT, Device 32, Output 92
+Var 1417, name aARMED_FWD, static, Link IOCARD_OUT, Device 33, Output 92
 
-Var 1418, name aARMED_AFT, static, Link IOCARD_OUT, Device 32, Output 90
+Var 1418, name aARMED_AFT, static, Link IOCARD_OUT, Device 33, Output 90
 
-Var 1419, name aFWD, static, Link IOCARD_OUT, Device 32, Output 91
+Var 1419, name aFWD, static, Link IOCARD_OUT, Device 33, Output 91
 
-Var 1420, name aAFT, static, Link IOCARD_OUT, Device 32, Output 89
+Var 1420, name aAFT, static, Link IOCARD_OUT, Device 33, Output 89
 
-Var 1421, name aDETECT_FAULT, static, Link IOCARD_OUT, Device 32, Output 93
+Var 1421, name aDETECT_FAULT, static, Link IOCARD_OUT, Device 33, Output 93
 
-Var 1422, name aDISCHARGE, static, Link IOCARD_OUT, Device 32, Output 87
+Var 1422, name aDISCHARGE, static, Link IOCARD_OUT, Device 33, Output 87
 
-Var 2107, name F_ARM_SW_AFT, static, Link IOCARD_SW, Device 32, Input 127     // FIRE CARGO AFT ARMED KORRY SWITCH
+Var 2107, name F_ARM_SW_AFT, static, Link IOCARD_SW, Device 33, Input 127     // FIRE CARGO AFT ARMED KORRY SWITCH
 
-Var 2108, name F_ARM_SW_FWD, static, Link IOCARD_SW, Device 32, Input 128     // FIRE CARGO FWD ARMED KORRY SWITCH
+Var 2108, name F_ARM_SW_FWD, static, Link IOCARD_SW, Device 33, Input 128     // FIRE CARGO FWD ARMED KORRY SWITCH
 
 Var 2109, name F_DET_S_SW_AFT, static
 
@@ -6062,9 +6063,9 @@ Var 2111, name F_D_SW, static
 
 Var 2112, name F_D_SW_G, static
 
-Var 2113, name F_T_SW, static, Link IOCARD_SW, Device 32, Input 117     // FIRE CARGO TEST SWITCH
+Var 2113, name F_T_SW, static, Link IOCARD_SW, Device 33, Input 117     // FIRE CARGO TEST SWITCH
 
-Var 0451, name sFDETFA, Link IOCARD_SW, Device 32, Input 123     // FIRE CARGO DET SELECT FWD A ROTARY SWITC
+Var 0451, name sFDETFA, Link IOCARD_SW, Device 33, Input 123     // FIRE CARGO DET SELECT FWD A ROTARY SWITC
 {
   IF &sFDETFA = 1
   {
@@ -6072,7 +6073,7 @@ Var 0451, name sFDETFA, Link IOCARD_SW, Device 32, Input 123     // FIRE CARGO D
   }
 }
 
-Var 0452, name sFDETFNORM, Link IOCARD_SW, Device 32, Input 122     // FIRE CARGO DET SELECT FWD NORM ROTARY SW
+Var 0452, name sFDETFNORM, Link IOCARD_SW, Device 33, Input 122     // FIRE CARGO DET SELECT FWD NORM ROTARY SW
 {
   IF &sFDETFNORM = 1
   {
@@ -6080,7 +6081,7 @@ Var 0452, name sFDETFNORM, Link IOCARD_SW, Device 32, Input 122     // FIRE CARG
   }
 }
 
-Var 0453, name sFDETFB, Link IOCARD_SW, Device 32, Input 121     // FIRE CARGO DET SELECT FWD B ROTARY SWITC
+Var 0453, name sFDETFB, Link IOCARD_SW, Device 33, Input 121     // FIRE CARGO DET SELECT FWD B ROTARY SWITC
 {
   IF &sFDETFB = 1
   {
@@ -6088,7 +6089,7 @@ Var 0453, name sFDETFB, Link IOCARD_SW, Device 32, Input 121     // FIRE CARGO D
   }
 }
 
-Var 0454, name sFDETAA, Link IOCARD_SW, Device 32, Input 120     // FIRE CARGO DET SELECT AFT A ROTARY SWITC
+Var 0454, name sFDETAA, Link IOCARD_SW, Device 33, Input 120     // FIRE CARGO DET SELECT AFT A ROTARY SWITC
 {
   IF &sFDETAA = 1
   {
@@ -6096,7 +6097,7 @@ Var 0454, name sFDETAA, Link IOCARD_SW, Device 32, Input 120     // FIRE CARGO D
   }
 }
 
-Var 0455, name sFDETANORM, Link IOCARD_SW, Device 32, Input 119     // FIRE CARGO DET SELECT AFT NORM ROTARY SW
+Var 0455, name sFDETANORM, Link IOCARD_SW, Device 33, Input 119     // FIRE CARGO DET SELECT AFT NORM ROTARY SW
 {
   IF &sFDETANORM = 1
   {
@@ -6104,7 +6105,7 @@ Var 0455, name sFDETANORM, Link IOCARD_SW, Device 32, Input 119     // FIRE CARG
   }
 }
 
-Var 0456, name sFDETAB, Link IOCARD_SW, Device 32, Input 118     // FIRE CARGO DET SELECT AFT B ROTARY SWITC
+Var 0456, name sFDETAB, Link IOCARD_SW, Device 33, Input 118     // FIRE CARGO DET SELECT AFT B ROTARY SWITC
 {
   IF &sFDETAB = 1
   {
@@ -6112,7 +6113,7 @@ Var 0456, name sFDETAB, Link IOCARD_SW, Device 32, Input 118     // FIRE CARGO D
   }
 }
 
-Var 0457, name sFDISCH, Link IOCARD_SW, Device 32, Input 126     // FIRE CARGO DISCHARGE KORRY SWITCH
+Var 0457, name sFDISCH, Link IOCARD_SW, Device 33, Input 126     // FIRE CARGO DISCHARGE KORRY SWITCH
 {
   IF &sFDISCH = 1
   {
@@ -6446,7 +6447,7 @@ Var 0487, name sAU2FILT_R, Link IOCARD_SW, Device 21, Input 108     // AUDIO2 FI
   }
 }
 
-Var 0488, name S_STBOVRD, Link IOCARD_SW, Device 32, Input 135     // STAB TRIM OVERRIDE-NORM
+Var 0488, name S_STBOVRD, Link IOCARD_SW, Device 33, Input 135     // STAB TRIM OVERRIDE-NORM
 {
   IF &S_STBOVRD = 1
   {
@@ -6464,7 +6465,7 @@ Var 2728, name STABTRIM_G, static
 
 Var 2727, name STABTRIM_I, static
 
-Var 0489, name R_STBDAUTO, Link IOCARD_SW, Device 32, Input 137     // STAB TRIM DOOR AUTO ROTARY
+Var 0489, name R_STBDAUTO, Link IOCARD_SW, Device 33, Input 137     // STAB TRIM DOOR AUTO ROTARY
 {
   IF &R_STBDAUTO = 1
   {
@@ -6472,7 +6473,7 @@ Var 0489, name R_STBDAUTO, Link IOCARD_SW, Device 32, Input 137     // STAB TRIM
   }
 }
 
-Var 0490, name R_STBDUNLK, Link IOCARD_SW, Device 32, Input 136     // STAB TRIM DOOR UNLOCK ROTARY
+Var 0490, name R_STBDUNLK, Link IOCARD_SW, Device 33, Input 136     // STAB TRIM DOOR UNLOCK ROTARY
 {
   IF &R_STBDUNLK = 1
   {
@@ -6480,7 +6481,7 @@ Var 0490, name R_STBDUNLK, Link IOCARD_SW, Device 32, Input 136     // STAB TRIM
   }
 }
 
-Var 0491, name R_STBDDENY, Link IOCARD_SW, Device 32, Input 138     // STAB TRIM DOOR DENY ROTARY
+Var 0491, name R_STBDDENY, Link IOCARD_SW, Device 33, Input 138     // STAB TRIM DOOR DENY ROTARY
 {
   IF &R_STBDDENY = 1
   {
@@ -6488,9 +6489,9 @@ Var 0491, name R_STBDDENY, Link IOCARD_SW, Device 32, Input 138     // STAB TRIM
   }
 }
 
-Var 0492, name aSTBLCKL, Link IOCARD_OUT, Device 32, Output 96     // STAB TRIM LOCK FAIL INDICATOR
+Var 0492, name aSTBLCKL, Link IOCARD_OUT, Device 33, Output 96     // STAB TRIM LOCK FAIL INDICATOR
 
-Var 0493, name aSTBAUTOL, Link IOCARD_OUT, Device 32, Output 97     // STAB TRIM AUTOUNLOCK INDICATOR
+Var 0493, name aSTBAUTOL, Link IOCARD_OUT, Device 33, Output 97     // STAB TRIM AUTOUNLOCK INDICATOR
 
 Var 2446, name DOOR_LCK_SW, static
 
