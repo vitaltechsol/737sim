@@ -1,0 +1,116 @@
+// *** MIP LIGHTS ***
+
+Var 1228, name aCPT_FIRE_W, static, Link IOCARD_OUT, Device 31, Output 18
+
+Var 1229, name aFO_FIRE_W, static, Link IOCARD_OUT, Device 31, Output 19
+
+Var 1230, name aCPT_MASTER_W, static, Link IOCARD_OUT, Device 31, Output 11
+
+Var 1231, name aFO_MASTER_W, static, Link IOCARD_OUT, Device 31, Output 26
+
+Var 1232, name aFLT_CONT, static, Link IOCARD_OUT, Device 31, Output 16
+
+Var 1233, name aIRS, static, Link IOCARD_OUT, Device 31, Output 15
+
+Var 1234, name aFUEL, static, Link IOCARD_OUT, Device 31, Output 17
+
+Var 1235, name aELECn, static, Link IOCARD_OUT, Device 31, Output 13
+
+Var 1236, name aAPU, static, Link IOCARD_OUT, Device 31, Output 14
+
+Var 1237, name aOVHT_DET, static, Link IOCARD_OUT, Device 31, Output 12
+
+Var 1238, name aANTI_ICE, static, Link IOCARD_OUT, Device 31, Output 23
+
+Var 1239, name aHYD, static, Link IOCARD_OUT, Device 31, Output 24
+
+Var 1240, name aDOORS, static, Link IOCARD_OUT, Device 31, Output 21
+
+Var 1241, name aENG, static, Link IOCARD_OUT, Device 31, Output 25
+
+Var 1242, name aOVERHEAD, static, Link IOCARD_OUT, Device 31, Output 22
+
+Var 1243, name aAIR_COND, static, Link IOCARD_OUT, Device 31, Output 20
+
+Var 1298, name aBELOWGS_0, static, Link IOCARD_OUT, Device 31, Output 54
+
+var 1299, name aBELOWGS_1, static, Link IOCARD_OUT, Device 31, Output 48
+
+// RED LEDS
+Var 1304, name aAP_0, static, Link IOCARD_OUT, Device 31, Output 30
+
+// Var 1305, name aAP_1, static, Link IOCARD_OUT, Device 31, Output 21
+
+Var 1306, name aAT_0, static, Link IOCARD_OUT, Device 31, Output 28
+
+// Var 1307, name aAT_1, static, Link IOCARD_OUT, Device 31, Output 19
+
+// AMBER LED
+Var 1308, name aFMC_0, static, Link IOCARD_OUT, Device 31, Output 34
+
+// Var 1309, name aFMC_1, static, Link IOCARD_OUT, Device 31, Output 13
+
+Var 1312, name aSPBRAKE_ARMED, static, Link IOCARD_OUT, Device 31, Output 53
+
+// Var 1312, name aSPBRAKE_ARMED_2, static, Link IOCARD_OUT, Device 31, Output 47
+
+Var 1313, name aSPBRAKE_DNARM, static, Link IOCARD_OUT, Device 31, Output 50
+
+Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 46
+
+// Var 1315, name aSTAB_OUT_O_TR, static, Link IOCARD_OUT, Device 31, Output 36
+
+Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 35
+
+Var 1324, name aAUTOBRAKE_DIS, static, Link IOCARD_OUT, Device 31, Output 40
+
+Var 1325, name aFLAPS_TRANSIT, static, Link IOCARD_OUT, Device 31, Output 41
+
+Var 1326, name aFLAPS_EXTEND, static, Link IOCARD_OUT, Device 31, Output 37
+
+Var 1336, name aNOSE_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 39
+
+Var 1337, name aLEFT_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 42
+
+Var 1338, name aRIGHT_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 38
+
+Var 1339, name aNOSE_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 36
+
+Var 1340, name aLEFT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 45
+
+Var 1341, name aRIGHT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 44
+
+
+// *** MIP SWITCHES ***
+
+Var 2447, name GEAR_LEVER, static
+
+Var 2448, name GEAR_LEVER_OFF, static
+
+Var 2449, name GEAR_LEVER_UN, static
+
+Var 0413, name Gear_Lever_UP, Link IOCARD_SW, Device 31, Input 16
+{
+  IF &Gear_Lever_UP = 1
+  {
+    &GEAR_LEVER = 1    
+    &GEAR_LEVER_OFF = 0    
+  }
+  ELSE
+  {
+    &GEAR_LEVER = 0    
+    &GEAR_LEVER_OFF = 1    
+  }
+}
+
+Var 0414, name Gear_Lever_DN, Link IOCARD_SW, Device 31, Input 17
+{
+  IF &Gear_Lever_DN = 1
+  {
+    &GEAR_LEVER_UN = 1    
+  }
+  ELSE
+  {
+    &GEAR_LEVER_UN = 0    
+  }
+}
