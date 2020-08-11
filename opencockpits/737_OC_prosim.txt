@@ -1,4 +1,18 @@
-// *** MIP LIGHTS ***
+// *** MIP ***
+
+// 6 PACK //
+
+Var 2520, name bCPT_MASTER_R, static, Link IOCARD_SW, Device 31, Input 06
+
+Var 2444, name bCPT_FIRE_R, static, Link IOCARD_SW, Device 31, Input 00
+
+// Var 2521, name bFO_MASTER_R, static, Link IOCARD_SW, Device 31, Input 17
+
+// Var 2445, name bFO_FIRE_R, static, Link IOCARD_SW, Device 31, Input 23
+
+Var 2732, name bSYS_ANNUN_L, static, Link IOCARD_SW, Device 31, Input 08
+
+// Var 2733, name bSYS_ANNUN_R, static, Link IOCARD_SW, Device 31, Input 8
 
 Var 1228, name aCPT_FIRE_W, static, Link IOCARD_OUT, Device 31, Output 18
 
@@ -32,42 +46,21 @@ Var 1242, name aOVERHEAD, static, Link IOCARD_OUT, Device 31, Output 22
 
 Var 1243, name aAIR_COND, static, Link IOCARD_OUT, Device 31, Output 20
 
-Var 1298, name aBELOWGS_0, static, Link IOCARD_OUT, Device 31, Output 54
 
-var 1299, name aBELOWGS_1, static, Link IOCARD_OUT, Device 31, Output 48
+// MAIN PANEL DUS
+// Var 0376, name sCPT_OUTBD_PFD, Link IOCARD_SW, Device 31, Input 0
 
-// RED LEDS
-Var 1304, name aAP_0, static, Link IOCARD_OUT, Device 31, Output 30
+Var 0377, name sCPT_NORM, Link IOCARD_SW, Device 31, Input 42
 
-// Var 1305, name aAP_1, static, Link IOCARD_OUT, Device 31, Output 21
+Var 0378, name sCPT_ENG_PRI, Link IOCARD_SW, Device 31, Input 39
 
-Var 1306, name aAT_0, static, Link IOCARD_OUT, Device 31, Output 28
+Var 0379, name sCPT_PFD, Link IOCARD_SW, Device 31, Input 44
 
-// Var 1307, name aAT_1, static, Link IOCARD_OUT, Device 31, Output 19
+Var 0380, name sCPT_MFD, Link IOCARD_SW, Device 31, Input 43
 
-// AMBER LED
-Var 1308, name aFMC_0, static, Link IOCARD_OUT, Device 31, Output 34
 
-// Var 1309, name aFMC_1, static, Link IOCARD_OUT, Device 31, Output 13
 
-Var 1312, name aSPBRAKE_ARMED, static, Link IOCARD_OUT, Device 31, Output 53
-
-// Var 1312, name aSPBRAKE_ARMED_2, static, Link IOCARD_OUT, Device 31, Output 47
-
-Var 1313, name aSPBRAKE_DNARM, static, Link IOCARD_OUT, Device 31, Output 50
-
-Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 46
-
-// Var 1315, name aSTAB_OUT_O_TR, static, Link IOCARD_OUT, Device 31, Output 36
-
-Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 35
-
-Var 1324, name aAUTOBRAKE_DIS, static, Link IOCARD_OUT, Device 31, Output 40
-
-Var 1325, name aFLAPS_TRANSIT, static, Link IOCARD_OUT, Device 31, Output 41
-
-Var 1326, name aFLAPS_EXTEND, static, Link IOCARD_OUT, Device 31, Output 37
-
+// GEAR //
 Var 1336, name aNOSE_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 39
 
 Var 1337, name aLEFT_GEAR_R, static, Link IOCARD_OUT, Device 31, Output 42
@@ -80,8 +73,6 @@ Var 1340, name aLEFT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 45
 
 Var 1341, name aRIGHT_GEAR_G, static, Link IOCARD_OUT, Device 31, Output 44
 
-
-// *** MIP SWITCHES ***
 
 Var 2447, name GEAR_LEVER, static
 
@@ -114,3 +105,67 @@ Var 0414, name Gear_Lever_DN, Link IOCARD_SW, Device 31, Input 17
     &GEAR_LEVER_UN = 0    
   }
 }
+
+Var 2560, name bENG_BUT_SEL, static, Link IOCARD_SW, Device 31, Input 09, Type P
+
+Var 2561, name bSYS_BUT_SEL, static, Link IOCARD_SW, Device 31, Input 15, Type P
+
+
+
+// ASA //
+
+// Red 
+Var 1304, name aAP_0, static, Link IOCARD_OUT, Device 31, Output 30
+
+// Var 1305, name aAP_1, static, Link IOCARD_OUT, Device 31, Output 21
+
+Var 1306, name aAT_0, static, Link IOCARD_OUT, Device 31, Output 28
+
+// Var 1307, name aAT_1, static, Link IOCARD_OUT, Device 31, Output 19
+
+// Amber
+Var 1308, name aFMC_0, static, Link IOCARD_OUT, Device 31, Output 34
+
+// Var 1309, name aFMC_1, static, Link IOCARD_OUT, Device 31, Output 13
+
+Var 1526, name aAP_0_A, static, Link IOCARD_OUT, Device 31, Output 27
+
+// Var 1527, name aAP_1_A, static, Link IOCARD_OUT, Device 31, Output 17
+
+Var 1528, name aAT_0_A, static, Link IOCARD_OUT, Device 31, Output 33
+
+// Var 1529, name aAT_1_A, static, Link IOCARD_OUT, Device 31, Output 19
+
+
+Var 2366, name bCPT_AP_RESET, static, Link IOCARD_SW, Device 31, Input 02
+
+Var 2367, name bCPT_AT_RESET, static, Link IOCARD_SW, Device 31, Input 07
+
+Var 2370, name bCPT_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 03
+
+// Var 2375, name bFO_AP_RESET, static, Link IOCARD_SW, Device 31, Input 0
+
+// Var 2376, name bFO_AT_RESET, static, Link IOCARD_SW, Device 31, Input 08
+
+// Var 2379, name bFO_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 04
+
+
+Var 0384, name sCPT_UP_TEST, Link IOCARD_SW, Device 31, Input 05
+
+Var 0385, name sCPT_DOWN_TEST, Link IOCARD_SW, Device 31, Input 01
+
+
+// LIGHT TEST //
+
+Var 2373, name sLIGHT_TEST, Link IOCARD_SW, Device 31, Input 40
+
+
+// FLAPS
+var 9417, Value 0
+{
+ &servo_flaps = 160
+}
+Var 0417, name servo_flaps, Link USB_SERVOS, Device 36, Output 1, PosL 160, PosC 511, PosR 1000, Type 1
+
+// BRAKE PRESS
+Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 36, Output 2, PosL 500, PosC 700, PosR 900, Type 1
