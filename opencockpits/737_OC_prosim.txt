@@ -151,7 +151,7 @@ Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 4, PosL 185, P
 Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 511, PosR 1023, Type 1
 Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 2, PosL 280, PosC 537, PosR 814, Type 1
 Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 3, PosL 372, PosC 537, PosR 800, Type 1
-Var 0148, name SERVO_OUTFL_VALVE, Link USB_SERVOS, Device 37, Output 3, PosL 700, PosC 900, PosR 1000, Type 1
+Var 0148, name SERVO_OTFL_VLV, Link USB_SERVOS, Device 37, Output 3, PosL 700, PosC 900, PosR 1000, Type 1 // Outflow Valve
 Var 0145, name SERVO_CabTemp, Link USB_SERVOS, Device 38, Output 1, PosL 192, PosC 390, PosR 1023, Type 1
 
 // APU
@@ -216,7 +216,7 @@ Var 1089, name aDRIVE_2, static, Link IOCARD_OUT, Device 30, Output 28
 
 Var 0041, name sGND_PWR_ON, Link IOCARD_SW, Device 30, Input 41     // GRD Pwr On SW
 Var 0040, name sGND_PWR_OFF, Link IOCARD_SW, Device 30, Input 42     // GRD Pwr Off SW
-Var 0078, name sBUS_TRANSFER_OFF, Link IOCARD_SW, Device 30, Input 36 
+Var 0078, name sBUS_TRANS_OFF, Link IOCARD_SW, Device 30, Input 36 
 Var 0079, name sGEN_1_OFF, Link IOCARD_SW, Device 30, Input 46
 Var 0080, name sGEN_1_ON, Link IOCARD_SW, Device 30, Input 47
 Var 0081, name sGEN_2_OFF, Link IOCARD_SW, Device 30, Input 53
@@ -253,25 +253,53 @@ Var 1161, name aLOW_PR_ENG_1, static, Link IOCARD_OUT, Device 30, Output 167
 Var 1162, name aLOW_PR_ENG_2, static, Link IOCARD_OUT, Device 30, Output 163
 Var 1163, name aLOW_PR_ELEC_1, static, Link IOCARD_OUT, Device 30, Output 165
 Var 1164, name aLOW_PR_ELEC_2, static, Link IOCARD_OUT, Device 30, Output 166
-Var 1165, name aOVHEAT_ELEC_1, static, Link IOsCARD_OUT, Device 30, Output 164 // Overheat
+Var 1165, name aOVHEAT_ELEC_1, static, Link IOCARD_OUT, Device 30, Output 164 // Overheat
 Var 1166, name aOVHEAT_ELEC_2, static, Link IOCARD_OUT, Device 30, Output 168
+
+
+// DOORS
+
+Var 1706, name aD_FWD_ENTRY, static, Link IOCARD_OUT, Device 30, Output 161
+Var 1707, name aD_FWD_SERVICE, static, Link IOCARD_OUT, Device 30, Output 162
+Var 1700, name aD_AFT_ENTRY, static, Link IOCARD_OUT, Device 30, Output 157
+Var 1701, name aD_AFT_SERCICE, static, Link IOCARD_OUT, Device 30, Output 154
+Var 1702, name aD_STAIRS, static, Link IOCARD_OUT, Device 30, Output 19
+Var 1703, name aD_AFT_CARGO, static, Link IOCARD_OUT, Device 30, Output 153
+Var 1704, name aD_FWD_CARGO, static, Link IOCARD_OUT, Device 30, Output 160
+Var 1705, name aD_EQUIP, static, Link IOCARD_OUT, Device 30, Output 159
+Var 1708, name aD_OW_L_FWD, static, Link IOCARD_OUT, Device 30, Output 156
+Var 1709, name aD_OW_R_FWD, static, Link IOCARD_OUT, Device 30, Output 152
+Var 1710, name aD_OW_L_AFT, static, Link IOCARD_OUT, Device 30, Output 158
+Var 1711, name aD_OW_R_AFT, static, Link IOCARD_OUT, Device 30, Output 155
+
 
 // ENGINE BLEED
 
 Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156 // PACKS
-Var 2600, name sRECIRC_FAN_L, static, Link IOCARD_SW, Device 30, Input 151
-Var 2601, name sRECIRC_FAN_R, static, Link IOCARD_SW, Device 30, Input 152
+Var 2602, name bTRIP_RESET, static, Link IOCARD_SW, Device 30, Input 157
+
+Var 2600, name sREC_FAN_L_ATO, static, Link IOCARD_SW, Device 30, Input 151
+Var 2601, name sREC_FAN_R_ATO, static, Link IOCARD_SW, Device 30, Input 152
 Var 0097, name sPACK_1_OFF, Link IOCARD_SW, Device 30, Input 148
 Var 0098, name sPACK_1_HI, Link IOCARD_SW, Device 30, Input 147
 Var 0101, name sPACK_2_OFF, Link IOCARD_SW, Device 30, Input 146
 Var 0102, name sPACK_2_HI, Link IOCARD_SW, Device 30, Input 145
 Var 0099, name sISO_CLOSE, Link IOCARD_SW, Device 30, Input 144
 Var 0100, name sISO_OPEN, Link IOCARD_SW, Device 30, Input 150
-
 Var 2593, name sAPU_BLEED, static, Link IOCARD_SW, Device 30, Input 155
 Var 2594, name sENG_1_BLEED, static, Link IOCARD_SW, Device 30, Input 161
 Var 2595, name sENG_2_BLEED, static, Link IOCARD_SW, Device 30, Input 154
 
+Var 1187, name aPackTripOff_L, static, Link IOCARD_OUT, Device 30, Output 142
+Var 1188, name aPackTripOff_R, static, Link IOCARD_OUT, Device 30, Output 147
+Var 1189, name aWiBodyOheat0, static, Link IOCARD_OUT, Device 30, Output 143
+Var 1190, name aWiBodyOheat1, static, Link IOCARD_OUT, Device 30, Output 148
+Var 1191, name aBleedTripOff1, static, Link IOCARD_OUT, Device 30, Output 146
+Var 1192, name aBleedTripOff2, static, Link IOCARD_OUT, Device 30, Output 140
+Var 1712, name aAUTO_FAIL, static, Link IOCARD_OUT, Device 30, Output 144
+Var 1713, name aOFF_SD, static, Link IOCARD_OUT, Device 30, Output 141
+Var 1714, name aALTN, static, Link IOCARD_OUT, Device 30, Output 145
+Var 1715, name aMANUAL, static, Link IOCARD_OUT, Device 30, Output 139
 
 
 // LIGHTS
