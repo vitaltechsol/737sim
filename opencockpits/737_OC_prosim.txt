@@ -201,11 +201,180 @@ Var 1078, name aLOWPR_Ctr_L, static, Link IOCARD_DISPLAY, Device 30, Digit 12, N
 Var 1079, name aLOWPR_Ctr_R, static, Link IOCARD_DISPLAY, Device 30, Digit 8, Numbers 1
 
 
+// AC/DC POWER
+Var 1080, name aBAT_DISCHARGE, static, Link IOCARD_OUT, Device 30, Output 171
+Var 1081, name aTR_UNIT, static, Link IOCARD_OUT, Device 30, Output 169
+Var 1082, name aELEC, static, Link IOCARD_OUT, Device 30, Output 170
+
+Var 0037, name sBAT_SW, Link IOCARD_SW, Device 30, Input 195
+
+Var 0061, name sSTBY_POWER, Link IOCARD_SW, Device 30, Input 183
+Var 0062, name sBAT_BUS, Link IOCARD_SW, Device 30, Input 184
+Var 0063, name sBAT, Link IOCARD_SW, Device 30, Input 182
+Var 0064, name sAUX_BAT, Link IOCARD_SW, Device 30, Input 181
+Var 0065, name sTR1, Link IOCARD_SW, Device 30, Input 188
+Var 0066, name sTR2, Link IOCARD_SW, Device 30, Input 187
+Var 0067, name sTR3, Link IOCARD_SW, Device 30, Input 180
+Var 0068, name sTEST, Link IOCARD_SW, Device 30, Input 186
+Var 2615, name EL_AC_M, static
+Var 0069, name sAC_SB_PWR, Link IOCARD_SW, Device 30, Input 190
+Var 0070, name sGRD_POWER, Link IOCARD_SW, Device 30, Input 191
+Var 0071, name sGEN1, Link IOCARD_SW, Device 30, Input 193
+Var 0072, name sAPU_GEN, Link IOCARD_SW, Device 30, Input 192
+Var 0073, name sGEN2, Link IOCARD_SW, Device 30, Input 197
+Var 0074, name sINV, Link IOCARD_SW, Device 30, Input 196
+Var 0075, name sAC_TEST, Link IOCARD_SW, Device 30, Input 189
+
+
+Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 186, Numbers 1     // DISPLAY DC AMP 1s
+Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 187, Numbers 1     // DISPLAY DC AMP 10s
+Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 30, Digit 183, Numbers 1     // DISPLAY CPS FREQ 1s
+Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 30, Digit 184, Numbers 1     // DISPLAY CPS FREQ 10s
+Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 30, Digit 185, Numbers 1       // DISPLAY CPS FREQ 100s
+Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 181, Numbers 1     // DISPLAY DC VOLTS 1s
+Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 182, Numbers 1     // DISPLAY DC VOLTS 10s
+Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 179, Numbers 1     // DISPLAY AC AMP 1s
+Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 180, Numbers 1     // DISPLAY AC AMP 10s
+Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 176, Numbers 1     // DISPLAY AC VOLT 1s
+Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 177, Numbers 1     // DISPLAY AC VOLT 10s
+Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 30, Digit 178, Numbers 1     // DISPLAY AC VOLT 100s
+
+
+Var 1540, name EDCA1, static, Link SUBRUTINE
+{
+    &DC_AMP1 = &EDCA1    
+}
+
+Var 1473, name EDCA0, static, Link SUBRUTINE
+{
+    &DC_AMP0 = &EDCA0    
+}
+
+Var 1485, name EDCV1, static, Link SUBRUTINE
+{
+    &DC_VOLT1 = &EDCV1    
+}
+
+Var 1486, name EDCV0, static, Link SUBRUTINE
+{
+    &DC_VOLT0 = &EDCV0    
+}
+
+Var 1489, name EACA1, static, Link SUBRUTINE
+{
+    &AC_AMP1 = &EACA1    
+}
+
+Var 1500, name EACA0, static, Link SUBRUTINE
+{
+    &AC_AMP0 = &EACA0    
+}
+
+Var 1502, name EACV2, static, Link SUBRUTINE
+{
+    &AC_VOLT2 = &EACV2    
+}
+
+Var 1503, name EACV1, static, Link SUBRUTINE
+{
+    &AC_VOLT1 = &EACV1    
+}
+
+Var 1504, name EACV0, static, Link SUBRUTINE
+{
+    &AC_VOLT0 = &EACV0    
+}
+
+Var 1479, name ECPS2, static, Link SUBRUTINE
+{
+    &CPS_FREQ2 = &ECPS2    
+}
+
+Var 1480, name ECPS1, static, Link SUBRUTINE
+{
+    &CPS_FREQ1 = &ECPS1    
+}
+
+Var 1481, name ECPS0, static, Link SUBRUTINE
+{
+    &CPS_FREQ0 = &ECPS0    
+}
+
+Var 0161, name ELEC_PAN, Link SUBRUTINE
+{
+  CALL &EACA0
+  CALL &EACA1
+  CALL &EDCV0
+  CALL &EDCV1
+  CALL &EACV0
+  CALL &EACV1
+  CALL &EACV2
+  CALL &EDCA0
+  CALL &EDCA1
+  CALL &ECPS0
+  CALL &ECPS1
+  CALL &ECPS2
+}
+
+Var 0162, name Clear_ELPANEL, Link SUBRUTINE
+{
+  &AC_AMP0 = -999999    
+  &AC_AMP1 = -999999    
+  &DC_VOLT0 = -999999    
+  &DC_VOLT1 = -999999    
+  &AC_VOLT0 = -999999    
+  &AC_VOLT1 = -999999    
+  &AC_VOLT2 = -999999    
+  &DC_AMP0 = -999999    
+  &DC_AMP1 = -999999    
+  &CPS_FREQ0 = -999999    
+  &CPS_FREQ1 = -999999    
+  &CPS_FREQ2 = -999999    
+}
+
+Var 0163, name BlankFA, Link SUBRUTINE
+{
+  &FA1 = -999999    
+  &FA2 = -999999    
+  &FA3 = -999999    
+  &FA4 = -999999    
+  &FA5 = -999999    
+}
+
+Var 0164, name BlankLA, Link SUBRUTINE
+{
+  &LA1 = -999999    
+  &LA2 = -999999    
+  &LA3 = -999999    
+  &LA4 = -999999    
+  &LA5 = -999999    
+}
+
+Var 0165, name LineFA, Link SUBRUTINE
+{
+  &FA1 = -999998    
+  &FA2 = -999998    
+  &FA3 = -999998    
+  &FA4 = -999998    
+  &FA5 = -999998    
+}
+
+Var 0166, name LineLA, Link SUBRUTINE
+{
+  &LA1 = -999998    
+  &LA2 = -999998    
+  &LA3 = -999998    
+  &LA4 = -999998    
+  &LA5 = -999998    
+}
+
+
 // STANBY POWER
 
 Var 0076, name sDRIVE_L, Link IOCARD_SW, Device 30, Input 65 // DISCONNECT POWER
 Var 0077, name sDRIVE_R, Link IOCARD_SW, Device 30, Input 64
-Var 0069, name sAC_SB_PWR, Link IOCARD_SW, Device 30, Input 190
+Var 0038, name sSTBY_PWR_L, Link IOCARD_SW, Device 30, Input 66     // Stby Pwr BAT SW
+Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 67     // Stby Pwr AUTO SW
 
 Var 1090, name aSTBY_PWR_OFF, static, Link IOCARD_OUT, Device 30, Output 29 // STANDBY PWR OFF
 Var 1088, name aDRIVE_1, static, Link IOCARD_OUT, Device 30, Output 30
@@ -240,6 +409,25 @@ Var 1112, name aAPU_MAINT, static, Link IOCARD_OUT, Device 30, Output 24
 Var 1113, name aAPU_LOW_OIL, static, Link IOCARD_OUT, Device 30, Output 25
 Var 1114, name aAPU_FAULT, static, Link IOCARD_OUT, Device 30, Output 26
 Var 1115, name aAPU_OVERSP, static, Link IOCARD_OUT, Device 30, Output 27
+
+// MID PANEL
+
+Var 0087, name sWIPER_L, Link IOCARD_SW, Device 30, Input 37
+Var 0088, name sWIPER_R, Link IOCARD_SW, Device 30, Input 44
+Var 0089, name sEMER_EXIT_OFF, Link IOCARD_SW, Device 30, Input 33
+Var 0090, name sEMER_EXIT_ON, Link IOCARD_SW, Device 30, Input 27
+Var 0091, name sNO_SMOKE_OFF, Link IOCARD_SW, Device 30, Input 29
+Var 0092, name sNO_SMOKE_ON, Link IOCARD_SW, Device 30, Input 28
+Var 0093, name sFAST_SEAT_OFF, Link IOCARD_SW, Device 30, Input 31
+Var 0094, name sFAST_SEAT_ON, Link IOCARD_SW, Device 30, Input 30
+Var 2592, name bATTEND, static, Link IOCARD_SW, Device 30, Input 40
+Var 2652, name bGRD_CALL, static, Link IOCARD_SW, Device 30, Input 39
+
+Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 011
+Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 12 // Supply Off
+Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 14 // Exhaust Off
+Var 1128, name aCALL, static, Link IOCARD_OUT, Device 30, Output 15
+Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
 
 // HYD PUMPS
@@ -290,6 +478,9 @@ Var 2593, name sAPU_BLEED, static, Link IOCARD_SW, Device 30, Input 155
 Var 2594, name sENG_1_BLEED, static, Link IOCARD_SW, Device 30, Input 161
 Var 2595, name sENG_2_BLEED, static, Link IOCARD_SW, Device 30, Input 154
 
+Var 1176, name aDualBleed, static, Link IOCARD_OUT, Device 30, Output 149
+Var 1177, name aRamDoor_L, static, Link IOCARD_OUT, Device 30, Output 150
+Var 1178, name aRamDoor_R, static, Link IOCARD_OUT, Device 30, Output 151
 Var 1187, name aPackTripOff_L, static, Link IOCARD_OUT, Device 30, Output 142
 Var 1188, name aPackTripOff_R, static, Link IOCARD_OUT, Device 30, Output 147
 Var 1189, name aWiBodyOheat0, static, Link IOCARD_OUT, Device 30, Output 143
