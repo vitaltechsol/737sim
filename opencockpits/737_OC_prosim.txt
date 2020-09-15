@@ -206,7 +206,7 @@ Var 1080, name aBAT_DISCHARGE, static, Link IOCARD_OUT, Device 30, Output 171
 Var 1081, name aTR_UNIT, static, Link IOCARD_OUT, Device 30, Output 169
 Var 1082, name aELEC, static, Link IOCARD_OUT, Device 30, Output 170
 
-Var 0037, name sBAT_SW, Link IOCARD_SW, Device 30, Input 195
+Var 0037, name sBAT_SW_OFF, Link IOCARD_SW, Device 30, Input 195
 
 Var 0061, name sSTBY_POWER, Link IOCARD_SW, Device 30, Input 183
 Var 0062, name sBAT_BUS, Link IOCARD_SW, Device 30, Input 184
@@ -429,6 +429,36 @@ Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 14 // 
 Var 1128, name aCALL, static, Link IOCARD_OUT, Device 30, Output 15
 Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
+// WINDOW HEAT
+
+
+Var 0096, name sWIND_H_PT, Link IOCARD_SW, Device 30, Input 168 // PWR TEST
+Var 2662, name sWIND_HEAT_SL, static, Link IOCARD_SW, Device 30, Input 165
+Var 2663, name sWIND_HEAT_FL, static, Link IOCARD_SW, Device 30, Input 166
+Var 2664, name sWIND_HEAT_FR, static, Link IOCARD_SW, Device 30, Input 164
+Var 2665, name sWIND_HEAT_SR, static, Link IOCARD_SW, Device 30, Input 163
+Var 2659, name sPROBE_HEAT_A, static, Link IOCARD_SW, Device 30, Input 169
+Var 2660, name sPROBE_HEAT_B, static, Link IOCARD_SW, Device 30, Input 170
+// Var 2661, name bICE_TAT_T, static, Link IOCARD_SW, Device 30, Input 117
+
+
+Var 1130, name aOVERHEAT_SL, static, Link IOCARD_DISPLAY, Device 30, Digit 22, Numbers 1
+Var 1131, name aOVERHEAT_FL, static, Link IOCARD_DISPLAY, Device 30, Digit 21, Numbers 1
+Var 1132, name aOVERHEAT_FR, static, Link IOCARD_DISPLAY, Device 30, Digit 25, Numbers 1
+Var 1133, name aOVERHEAT_SR, static, Link IOCARD_DISPLAY, Device 30, Digit 23, Numbers 1
+Var 1134, name aW_HEATON_SL, static, Link IOCARD_DISPLAY, Device 30, Digit 27, Numbers 1
+Var 1135, name aW_HEATON_FL, static, Link IOCARD_DISPLAY, Device 30, Digit 28, Numbers 1
+Var 1136, name aW_HEATON_FR, static, Link IOCARD_DISPLAY, Device 30, Digit 24, Numbers 1
+Var 1137, name aW_HEATON_SR, static, Link IOCARD_DISPLAY, Device 30, Digit 26, Numbers 1
+
+Var 1142, name aCAPT_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 14, Numbers 1
+Var 1143, name aELEV_PITOT_L, static, Link IOCARD_DISPLAY, Device 30, Digit 13, Numbers 1
+Var 1144, name aALPHA_VANE_L, static, Link IOCARD_DISPLAY, Device 30, Digit 16, Numbers 1
+Var 1145, name aTEMP_PROBE, static, Link IOCARD_DISPLAY, Device 30, Digit 15, Numbers 1
+Var 1146, name aFO_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 18, Numbers 1
+Var 1147, name aELEV_PITOT_R, static, Link IOCARD_DISPLAY, Device 30, Digit 20, Numbers 1
+Var 1148, name aALPHA_VANE_R, static, Link IOCARD_DISPLAY, Device 30, Digit 19, Numbers 1
+Var 1149, name aAUX_PITOT, static, Link IOCARD_DISPLAY, Device 30, Digit 17, Numbers 1
 
 // HYD PUMPS
 
@@ -674,3 +704,39 @@ Var 0121, name sC_MODE_AUTO, Link IOCARD_SW, Device 30, Input 171
 // Var 0122, name sC_MODE_ALTN, Link IOCARD_SW, Device 30, Input 131
 
 Var 0123, name sC_MODE_MAN, Link IOCARD_SW, Device 30, Input 177
+
+
+/////////
+// AFT //
+/////////
+
+// IRS
+
+Var 0167, name sIRS_OFF_L, Link IOCARD_SW, Device 32, Input 72
+Var 0168, name sIRS_ALIGN_L, Link IOCARD_SW, Device 32, Input 76
+Var 0169, name IRS_NAV_L, Link IOCARD_SW, Device 32, Input 73
+Var 0170, name IRS_ATT_L, Link IOCARD_SW, Device 32, Input 75
+Var 0171, name sIRS_OFF_R, Link IOCARD_SW, Device 32, Input 80
+Var 0172, name sIRS_ALIGN_R, Link IOCARD_SW, Device 32, Input 74
+Var 0173, name sIRS_NAV_R, Link IOCARD_SW, Device 32, Input 78
+Var 0174, name sIRS_ATT_R, Link IOCARD_SW, Device 32, Input 79
+
+Var 1000, name aIRS_GLS, static, Link IOCARD_OUT, Device 32, Output 85     // IRS GLS INDICATOR
+Var 1001, name aIRS_ILS, static, Link IOCARD_OUT, Device 32, Output 83     // IRS ILS INDICATOR
+Var 1002, name aIRS_GPS, static, Link IOCARD_OUT, Device 32, Output 84     // IRS GPS INDICATOR
+Var 1003, name aIRS_ALIGN_L, static, Link IOCARD_OUT, Device 32, Output 78     // IRS ALIGN L INDICATOR
+Var 1004, name aIRS_ALIGN_R, static, Link IOCARD_OUT, Device 32, Output 82     // IRS ALIGN R INDICATOR
+Var 1005, name aIRS_ON_DC_L, static, Link IOCARD_OUT, Device 32, Output 76     // IRS ON DC L INDICATOR
+Var 1006, name aIRS_ON_DC_R, static, Link IOCARD_OUT, Device 32, Output 80     // IRS ON DC R INDICATOR
+Var 1007, name aIRS_FAULT_L, static, Link IOCARD_OUT, Device 32, Output 81     // IRS FAULT L INDICATOR
+Var 1008, name aIRS_FAULT_R, static, Link IOCARD_OUT, Device 32, Output 77     // IRS FAULT R INDICATOR
+Var 1009, name aIRS_DC_FAIL_L, static, Link IOCARD_OUT, Device 32, Output 75     // IRS DC FAIL L INDICATOR
+Var 1010, name aIRS_DC_FAIL_R, static, Link IOCARD_OUT, Device 32, Output 79     // IRS DC FAIL R INDICATOR
+
+
+
+// Throttle Quadrant
+
+// TRIM INDICATOR
+Var 8001, name servo_trim, Link IOCARD_SERVO, Device 40, Output 1, PosL 0, PosC 511, PosR 1000
+Var 8002, name servo_spd_bk, Link IOCARD_SERVO, Device 40, Output 2, PosL 1000, PosC 511, PosR 0

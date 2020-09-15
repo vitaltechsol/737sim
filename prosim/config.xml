@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <hardware>
+    <system type="[System]" serial="" inputs="1" outputs="0" gauge="false" lcd="false" numerical="false" analog="0" encoders="0" />
+    <sdk type="[SDK]" serial="" inputs="0" outputs="0" gauge="false" lcd="false" numerical="false" analog="1" encoders="0" />
+    <FDS type="FDS 737-MX MCP" serial="03EA00001D7F" inputs="128" outputs="49" gauge="false" lcd="false" numerical="false" analog="0" encoders="0" />
+    <iocp type="IOCP" serial="0" inputs="9999" outputs="9999" gauge="true" lcd="false" numerical="true" analog="9999" encoders="9999" />
+    <FDS type="FDS 737-MX MCP" serial="03EA" inputs="128" outputs="49" gauge="false" lcd="false" numerical="false" analog="0" encoders="0" />
+    <fsuipc type="FSUIPC" serial="8 bit U" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="0" />
+    <fsuipc type="FSUIPC" serial="8 bit S" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="1" />
+    <fsuipc type="FSUIPC" serial="16 bit S" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="1" />
+    <fsuipc type="FSUIPC" serial="16 bit U" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="0" />
+    <fsuipc type="FSUIPC" serial="32 bit S" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="1" />
+    <fsuipc type="FSUIPC" serial="32 bit U" inputs="65535" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="0" />
+    <fsuipc type="FSUIPC" serial="Float 32" inputs="0" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="0" />
+    <fsuipc type="FSUIPC" serial="Float 64" inputs="0" outputs="65535" gauge="true" lcd="false" numerical="true" analog="1" encoders="0" />
+    <directinput type="BU0836 Interface" serial="1d387730-ccb8-11ea-8001-444553540000" inputs="32" outputs="0" gauge="false" lcd="false" numerical="false" analog="2" encoders="0" />
+    <directinput type="PEDALS CAP.     " serial="3fd95770-cd1f-11ea-8001-444553540000" inputs="24" outputs="0" gauge="false" lcd="false" numerical="false" analog="5" encoders="0" />
+    <directinput type="BU0836-LC Interface" serial="49de1020-d1e4-11ea-8001-444553540000" inputs="32" outputs="0" gauge="false" lcd="false" numerical="false" analog="5" encoders="0" />
+  </hardware>
+  <mappings>
+    <mapping connection="Gear left">
+      <iocp serial="0" port="1340" />
+    </mapping>
+    <mapping connection="Gear left transit">
+      <iocp serial="0" port="1337" />
+    </mapping>
+    <mapping connection="Gear nose">
+      <iocp serial="0" port="1339" />
+    </mapping>
+    <mapping connection="Gear nose transit">
+      <iocp serial="0" port="1336" />
+    </mapping>
+    <mapping connection="Gear right">
+      <iocp serial="0" port="1341" />
+    </mapping>
+    <mapping connection="Gear right transit">
+      <iocp serial="0" port="1338" />
+    </mapping>
+    <mapping connection="Gear Down">
+      <iocp serial="0" port="414" />
+    </mapping>
+    <mapping connection="Gear Up">
+      <iocp serial="0" port="413" />
+    </mapping>
+    <mapping connection="MFD ENG Normal">
+      <iocp serial="0" port="2560" />
+    </mapping>
+    <mapping connection="MFD SYS Normal">
+      <iocp serial="0" port="2561" />
+    </mapping>
+    <mapping connection="Main Panel DUs Capt Norm">
+      <iocp serial="0" port="377" />
+    </mapping>
+    <mapping connection="Main Panel DUs Capt Outbd PFD">
+      <iocp serial="0" port="0" />
+    </mapping>
+    <mapping connection="Main Panel DUs Capt Eng Pri">
+      <iocp serial="0" port="378" />
+    </mapping>
+    <mapping connection="Main Panel DUs Capt PFD">
+      <iocp serial="0" port="379" />
+    </mapping>
+    <mapping connection="Main Panel DUs Capt MFD">
+      <iocp serial="0" port="380" />
+    </mapping>
+    <mapping connection="ASA A/P reset Capt Pushed">
+      <iocp serial="0" port="2366" />
+    </mapping>
+    <mapping connection="ASA A/T reset Capt Pushed">
+      <iocp serial="0" port="2367" />
+    </mapping>
+    <mapping connection="ASA FMC reset Capt Pushed">
+      <iocp serial="0" port="2370" />
+    </mapping>
+    <mapping connection="ASA Test Capt 1">
+      <iocp serial="0" port="384" />
+    </mapping>
+    <mapping connection="ASA Test Capt 2">
+      <iocp serial="0" port="385" />
+    </mapping>
+    <mapping connection="Master caution 1 Pushed">
+      <iocp serial="0" port="2520" />
+    </mapping>
+    <mapping connection="Fire warning 1 Pushed">
+      <iocp serial="0" port="2444" />
+    </mapping>
+    <mapping connection="Recall 1 Pushed">
+      <iocp serial="0" port="2732" />
+    </mapping>
+    <mapping connection="Fire warning 1">
+      <iocp serial="0" port="1228" />
+    </mapping>
+    <mapping connection="Fire warning 2">
+      <iocp serial="0" port="1229" />
+    </mapping>
+    <mapping connection="Master caution 1">
+      <iocp serial="0" port="1230" />
+    </mapping>
+    <mapping connection="Master caution 2">
+      <iocp serial="0" port="1231" />
+    </mapping>
+    <mapping connection="Warn AIR_COND">
+      <iocp serial="0" port="1243" />
+    </mapping>
+    <mapping connection="Warn ANTI_ICE">
+      <iocp serial="0" port="1238" />
+    </mapping>
+    <mapping connection="Warn APU">
+      <iocp serial="0" port="1236" />
+    </mapping>
+    <mapping connection="Warn DOORS">
+      <iocp serial="0" port="1240" />
+    </mapping>
+    <mapping connection="Warn ELEC">
+      <iocp serial="0" port="1235" />
+    </mapping>
+    <mapping connection="Warn ENG">
+      <iocp serial="0" port="1241" />
+    </mapping>
+    <mapping connection="Warn FLT_CONT">
+      <iocp serial="0" port="1232" />
+    </mapping>
+    <mapping connection="Warn FUEL">
+      <iocp serial="0" port="1234" />
+    </mapping>
+    <mapping connection="Warn HYD">
+      <iocp serial="0" port="1239" />
+    </mapping>
+    <mapping connection="Warn IRS">
+      <iocp serial="0" port="1233" />
+    </mapping>
+    <mapping connection="Warn OVERHEAD">
+      <iocp serial="0" port="1242" />
+    </mapping>
+    <mapping connection="Warn OVHT_DET">
+      <iocp serial="0" port="1237" />
+    </mapping>
+    <mapping connection="ASA A/P Amber Capt">
+      <iocp serial="0" port="1526" />
+    </mapping>
+    <mapping connection="ASA A/P Red Capt">
+      <iocp serial="0" port="1304" />
+    </mapping>
+    <mapping connection="ASA A/T Amber Capt">
+      <iocp serial="0" port="1528" />
+    </mapping>
+    <mapping connection="ASA A/T Red Capt">
+      <iocp serial="0" port="1306" />
+    </mapping>
+    <mapping connection="ASA FMC Capt">
+      <iocp serial="0" port="1308" />
+    </mapping>
+    <mapping connection="Light Test Test">
+      <iocp serial="0" port="2373" />
+    </mapping>
+    <mapping connection="Flap">
+      <iocp serial="0" port="417">
+        <calibrator>
+          <calibration input="0" output="232" margin="0" rawInput="0" />
+          <calibration input="1" output="291" margin="0" rawInput="0" />
+          <calibration input="2" output="354" margin="0" rawInput="0" />
+          <calibration input="3" output="408" margin="0" rawInput="0" />
+          <calibration input="4" output="468" margin="0" rawInput="0" />
+          <calibration input="5" output="543" margin="0" rawInput="0" />
+          <calibration input="6" output="603" margin="0" rawInput="0" />
+          <calibration input="7" output="657" margin="0" rawInput="0" />
+          <calibration input="8" output="720" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Brake pressure">
+      <iocp serial="0" port="437">
+        <calibrator>
+          <calibration input="0" output="465" margin="0" rawInput="0" />
+          <calibration input="1000" output="571" margin="0" rawInput="0" />
+          <calibration input="2000" output="708" margin="0" rawInput="0" />
+          <calibration input="3000" output="795" margin="0" rawInput="0" />
+          <calibration input="4000" output="891" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Cabin altitude">
+      <iocp serial="0" port="142">
+        <calibrator>
+          <calibration input="0" output="235" margin="0" rawInput="0" />
+          <calibration input="10" output="403" margin="0" rawInput="0" />
+          <calibration input="20" output="555" margin="0" rawInput="0" />
+          <calibration input="25" output="619" margin="0" rawInput="0" />
+          <calibration input="30" output="649" margin="0" rawInput="0" />
+          <calibration input="50" output="888" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Outflow valve position">
+      <iocp serial="0" port="148">
+        <calibrator>
+          <calibration input="0" output="583" margin="0" rawInput="0" />
+          <calibration input="50" output="705" margin="0" rawInput="0" />
+          <calibration input="100" output="861" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Pressure Left">
+      <iocp serial="0" port="146">
+        <calibrator>
+          <calibration input="0" output="348" margin="0" rawInput="0" />
+          <calibration input="40" output="550" margin="0" rawInput="0" />
+          <calibration input="80" output="777" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Pressure Right">
+      <iocp serial="0" port="147">
+        <calibrator>
+          <calibration input="0" output="192" margin="0" rawInput="0" />
+          <calibration input="40" output="366" margin="0" rawInput="0" />
+          <calibration input="80" output="523" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Pressure differential">
+      <iocp serial="0" port="143">
+        <calibrator>
+          <calibration input="0" output="177" margin="0" rawInput="0" />
+          <calibration input="1" output="228" margin="0" rawInput="0" />
+          <calibration input="2" output="303" margin="0" rawInput="0" />
+          <calibration input="3" output="348" margin="0" rawInput="0" />
+          <calibration input="8" output="706" margin="0" rawInput="0" />
+          <calibration input="10" output="856" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="APU">
+      <iocp serial="0" port="141">
+        <calibrator>
+          <calibration input="0" output="334" margin="0" rawInput="0" />
+          <calibration input="1000" output="512" margin="0" rawInput="0" />
+          <calibration input="1100" output="512" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Crossfeed Off">
+      <iocp serial="0" port="60" />
+    </mapping>
+    <mapping connection="Fuel Center Left On">
+      <iocp serial="0" port="2650" />
+    </mapping>
+    <mapping connection="Fuel Center Right On">
+      <iocp serial="0" port="2651" />
+    </mapping>
+    <mapping connection="Fuel Left Aft On">
+      <iocp serial="0" port="2646" />
+    </mapping>
+    <mapping connection="Fuel Left Fwd On">
+      <iocp serial="0" port="2647" />
+    </mapping>
+    <mapping connection="Fuel Right Aft On">
+      <iocp serial="0" port="2648" />
+    </mapping>
+    <mapping connection="Fuel Right Fwd On">
+      <iocp serial="0" port="2649" />
+    </mapping>
+    <mapping connection="Crossfeed indicator">
+      <iocp serial="0" port="1073" />
+    </mapping>
+    <mapping connection="ENG Valve Closed L">
+      <iocp serial="0" port="1067" />
+    </mapping>
+    <mapping connection="ENG Valve Closed R">
+      <iocp serial="0" port="1068" />
+    </mapping>
+    <mapping connection="Filter Bypass L">
+      <iocp serial="0" port="1071" />
+    </mapping>
+    <mapping connection="Filter Bypass R">
+      <iocp serial="0" port="1072" />
+    </mapping>
+    <mapping connection="Fuel Center Left LP">
+      <iocp serial="0" port="1078" />
+    </mapping>
+    <mapping connection="Fuel Center Right LP">
+      <iocp serial="0" port="1079" />
+    </mapping>
+    <mapping connection="Fuel Left Aft LP">
+      <iocp serial="0" port="1076" />
+    </mapping>
+    <mapping connection="Fuel Left Fwd LP">
+      <iocp serial="0" port="1074" />
+    </mapping>
+    <mapping connection="Fuel Right Aft LP">
+      <iocp serial="0" port="1077" />
+    </mapping>
+    <mapping connection="Fuel Right Fwd LP">
+      <iocp serial="0" port="1075" />
+    </mapping>
+    <mapping connection="SPAR Valve Closed L">
+      <iocp serial="0" port="1069" />
+    </mapping>
+    <mapping connection="SPAR Valve Closed R">
+      <iocp serial="0" port="1070" />
+    </mapping>
+    <mapping connection="Cruise alt">
+      <iocp serial="0" port="1196" />
+    </mapping>
+    <mapping connection="Land alt">
+      <iocp serial="0" port="1200" />
+    </mapping>
+    <mapping connection="Flight alt in encoder">
+      <iocp serial="0" port="103" />
+    </mapping>
+    <mapping connection="Land alt in encoder">
+      <iocp serial="0" port="104" />
+    </mapping>
+    <mapping connection="APU switch Off">
+      <iocp serial="0" port="124" />
+    </mapping>
+    <mapping connection="APU switch Start">
+      <iocp serial="0" port="125" />
+    </mapping>
+    <mapping connection="Fuel Temperature">
+      <iocp serial="0" port="140">
+        <calibrator>
+          <calibration input="-56" output="205" margin="0" rawInput="0" />
+          <calibration input="-40" output="295" margin="0" rawInput="0" />
+          <calibration input="0" output="501" margin="0" rawInput="0" />
+          <calibration input="40" output="742" margin="0" rawInput="0" />
+          <calibration input="56" output="876" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Cabin temperature">
+      <iocp serial="0" port="145">
+        <calibrator>
+          <calibration input="-15" output="45" margin="0" rawInput="0" />
+          <calibration input="0" output="115" margin="0" rawInput="0" />
+          <calibration input="20" output="208" margin="0" rawInput="0" />
+          <calibration input="40" output="331" margin="0" rawInput="0" />
+          <calibration input="60" output="414" margin="0" rawInput="0" />
+          <calibration input="80" output="565" margin="0" rawInput="0" />
+          <calibration input="100" output="676" margin="0" rawInput="0" />
+        </calibrator>
+      </iocp>
+    </mapping>
+    <mapping connection="Grd Pwr available">
+      <iocp serial="0" port="1094" />
+    </mapping>
+    <mapping connection="Ground Power Off">
+      <iocp serial="0" port="40" />
+    </mapping>
+    <mapping connection="Ground Power On">
+      <iocp serial="0" port="41" />
+    </mapping>
+    <mapping connection="Ignition select Left">
+      <iocp serial="0" port="131" />
+    </mapping>
+    <mapping connection="Ignition select Right">
+      <iocp serial="0" port="132" />
+    </mapping>
+    <mapping connection="Hyd ELEC1 On">
+      <iocp serial="0" port="2653" />
+    </mapping>
+    <mapping connection="Hyd ELEC2 On">
+      <iocp serial="0" port="2654" />
+    </mapping>
+    <mapping connection="Hyd ENG1 On">
+      <iocp serial="0" port="2655" />
+    </mapping>
+    <mapping connection="Hyd ENG2 On">
+      <iocp serial="0" port="2656" />
+    </mapping>
+    <mapping connection="Bleed 1 On">
+      <iocp serial="0" port="2594" />
+    </mapping>
+    <mapping connection="Bleed 2 On">
+      <iocp serial="0" port="2595" />
+    </mapping>
+    <mapping connection="Bleed APU On">
+      <iocp serial="0" port="2593" />
+    </mapping>
+    <mapping connection="Pack 1 Off">
+      <iocp serial="0" port="97" />
+    </mapping>
+    <mapping connection="Pack 1 High">
+      <iocp serial="0" port="98" />
+    </mapping>
+    <mapping connection="Pack 2 Off">
+      <iocp serial="0" port="101" />
+    </mapping>
+    <mapping connection="Pack 2 High">
+      <iocp serial="0" port="102" />
+    </mapping>
+    <mapping connection="Recirc Fan L Auto">
+      <iocp serial="0" port="2600" />
+    </mapping>
+    <mapping connection="Recirc Fan R Auto">
+      <iocp serial="0" port="2601" />
+    </mapping>
+    <mapping connection="Start 1 Off">
+      <iocp serial="0" port="128" />
+    </mapping>
+    <mapping connection="Start 1 GRD">
+      <iocp serial="0" port="127" />
+    </mapping>
+    <mapping connection="Start 1 CONT">
+      <iocp serial="0" port="128" />
+    </mapping>
+    <mapping connection="Start 1 FLT">
+      <iocp serial="0" port="130" />
+    </mapping>
+    <mapping connection="Start 2 Off">
+      <iocp serial="0" port="135" />
+    </mapping>
+    <mapping connection="Start 2 GRD">
+      <iocp serial="0" port="134" />
+    </mapping>
+    <mapping connection="Start 2 CONT">
+      <iocp serial="0" port="136" />
+    </mapping>
+    <mapping connection="Start 2 FLT">
+      <iocp serial="0" port="137" />
+    </mapping>
+    <mapping connection="Bus transfer switch Off">
+      <iocp serial="0" port="78" />
+    </mapping>
+    <mapping connection="APU GEN OFF BUS">
+      <iocp serial="0" port="1107" />
+    </mapping>
+    <mapping connection="GEN BUS OFF 1">
+      <iocp serial="0" port="1105" />
+    </mapping>
+    <mapping connection="GEN BUS OFF 2">
+      <iocp serial="0" port="1106" />
+    </mapping>
+    <mapping connection="Transfer bus OFF 1">
+      <iocp serial="0" port="33" />
+    </mapping>
+    <mapping connection="Transfer bus OFF 2">
+      <iocp serial="0" port="34" />
+    </mapping>
+    <mapping connection="APU GEN 1 Off">
+      <iocp serial="0" port="83" />
+    </mapping>
+    <mapping connection="APU GEN 1 On">
+      <iocp serial="0" port="84" />
+    </mapping>
+    <mapping connection="APU GEN 2 Off">
+      <iocp serial="0" port="85" />
+    </mapping>
+    <mapping connection="APU GEN 2 On">
+      <iocp serial="0" port="86" />
+    </mapping>
+    <mapping connection="GEN 1 Off">
+      <iocp serial="0" port="79" />
+    </mapping>
+    <mapping connection="GEN 1 On">
+      <iocp serial="0" port="80" />
+    </mapping>
+    <mapping connection="GEN 2 Off">
+      <iocp serial="0" port="81" />
+    </mapping>
+    <mapping connection="GEN 2 On">
+      <iocp serial="0" port="82" />
+    </mapping>
+    <mapping connection="APU FAULT">
+      <iocp serial="0" port="1114" />
+    </mapping>
+    <mapping connection="APU Low oil pressure">
+      <iocp serial="0" port="1113" />
+    </mapping>
+    <mapping connection="APU Maint">
+      <iocp serial="0" port="1112" />
+    </mapping>
+    <mapping connection="APU Overspeed">
+      <iocp serial="0" port="1115" />
+    </mapping>
+    <mapping connection="Drive 1">
+      <iocp serial="0" port="1088" />
+    </mapping>
+    <mapping connection="Drive 2">
+      <iocp serial="0" port="1089" />
+    </mapping>
+    <mapping connection="Source OFF 1">
+      <iocp serial="0" port="1103" />
+    </mapping>
+    <mapping connection="Source OFF 2">
+      <iocp serial="0" port="1104" />
+    </mapping>
+    <mapping connection="TR UNIT">
+      <iocp serial="0" port="1090" />
+    </mapping>
+    <mapping connection="Hyd ELEC1 LP">
+      <iocp serial="0" port="1163" />
+    </mapping>
+    <mapping connection="Hyd ELEC1 OVHT">
+      <iocp serial="0" port="1165" />
+    </mapping>
+    <mapping connection="Hyd ELEC2 LP">
+      <iocp serial="0" port="1164" />
+    </mapping>
+    <mapping connection="Hyd ELEC2 OVHT">
+      <iocp serial="0" port="1166" />
+    </mapping>
+    <mapping connection="Hyd ENG1 LP">
+      <iocp serial="0" port="1161" />
+    </mapping>
+    <mapping connection="Hyd ENG2 LP">
+      <iocp serial="0" port="1162" />
+    </mapping>
+    <mapping connection="OVHT test On">
+      <iocp serial="0" port="2597" />
+    </mapping>
+    <mapping connection="Pneumatic Isolation switch Close">
+      <iocp serial="0" port="99" />
+    </mapping>
+    <mapping connection="Pneumatic Isolation switch Open">
+      <iocp serial="0" port="100" />
+    </mapping>
+    <mapping connection="Trip reset On">
+      <iocp serial="0" port="2602" />
+    </mapping>
+    <mapping connection="Light Main Fixed L On">
+      <iocp serial="0" port="2674" />
+    </mapping>
+    <mapping connection="Light Main Fixed R On">
+      <iocp serial="0" port="2680" />
+    </mapping>
+    <mapping connection="Light Main Retract L On">
+      <iocp serial="0" port="2676" />
+    </mapping>
+    <mapping connection="Light Main Retract R On">
+      <iocp serial="0" port="2682" />
+    </mapping>
+    <mapping connection="Lights Anti collision On">
+      <iocp serial="0" port="2670" />
+    </mapping>
+    <mapping connection="Lights Logo On">
+      <iocp serial="0" port="2678" />
+    </mapping>
+    <mapping connection="Lights Runway turnoff L On">
+      <iocp serial="0" port="2677" />
+    </mapping>
+    <mapping connection="Lights Runway turnoff R On">
+      <iocp serial="0" port="2683" />
+    </mapping>
+    <mapping connection="Lights Taxi On">
+      <iocp serial="0" port="2684" />
+    </mapping>
+    <mapping connection="Lights Wheel well On">
+      <iocp serial="0" port="2685" />
+    </mapping>
+    <mapping connection="Lights Wing On">
+      <iocp serial="0" port="2686" />
+    </mapping>
+    <mapping connection="Bleed trip off 1">
+      <iocp serial="0" port="1191" />
+    </mapping>
+    <mapping connection="Bleed trip off 2">
+      <iocp serial="0" port="1192" />
+    </mapping>
+    <mapping connection="Off sched descent">
+      <iocp serial="0" port="1713" />
+    </mapping>
+    <mapping connection="Pack L">
+      <iocp serial="0" port="1187" />
+    </mapping>
+    <mapping connection="Pack R">
+      <iocp serial="0" port="1188" />
+    </mapping>
+    <mapping connection="Pressurization altn">
+      <iocp serial="0" port="1714" />
+    </mapping>
+    <mapping connection="Pressurization auto fail">
+      <iocp serial="0" port="1712" />
+    </mapping>
+    <mapping connection="Pressurization manual">
+      <iocp serial="0" port="1715" />
+    </mapping>
+    <mapping connection="Wing-body overheat 1">
+      <iocp serial="0" port="1189" />
+    </mapping>
+    <mapping connection="Wing-body overheat 2">
+      <iocp serial="0" port="1190" />
+    </mapping>
+    <mapping connection="Door Equip">
+      <iocp serial="0" port="1705" />
+    </mapping>
+    <mapping connection="Door Aft Cargo">
+      <iocp serial="0" port="1703" />
+    </mapping>
+    <mapping connection="Door Aft Entry">
+      <iocp serial="0" port="1700" />
+    </mapping>
+    <mapping connection="Door Aft Service">
+      <iocp serial="0" port="1701" />
+    </mapping>
+    <mapping connection="Door Air Stairs">
+      <iocp serial="0" port="1702" />
+    </mapping>
+    <mapping connection="Door Fwd Cargo">
+      <iocp serial="0" port="1704" />
+    </mapping>
+    <mapping connection="Door Fwd Service">
+      <iocp serial="0" port="1707" />
+    </mapping>
+    <mapping connection="Door Fwd entry">
+      <iocp serial="0" port="1706" />
+    </mapping>
+    <mapping connection="Door Left Aft Overwing">
+      <iocp serial="0" port="1710" />
+    </mapping>
+    <mapping connection="Door Left Fwd Overwing">
+      <iocp serial="0" port="1708" />
+    </mapping>
+    <mapping connection="Door Right Aft Overwing">
+      <iocp serial="0" port="1711" />
+    </mapping>
+    <mapping connection="Door Right Fwd Overwing">
+      <iocp serial="0" port="1709" />
+    </mapping>
+    <mapping connection="Disconnect 1 Off">
+      <iocp serial="0" port="76" />
+    </mapping>
+    <mapping connection="Disconnect 2 Off">
+      <iocp serial="0" port="77" />
+    </mapping>
+    <mapping connection="Standby power switch Auto">
+      <iocp serial="0" port="39" />
+    </mapping>
+    <mapping connection="Standby power switch Bat">
+      <iocp serial="0" port="38" />
+    </mapping>
+    <mapping connection="Standby pwr off">
+      <iocp serial="0" port="1090" />
+    </mapping>
+    <mapping connection="Speedbrake input">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="2">
+        <calibrator>
+          <calibration input="0" output="0" margin="0" rawInput="0" />
+          <calibration input="255" output="255" margin="0" rawInput="255" />
+          <calibration input="255" output="1" margin="0" rawInput="255" />
+        </calibrator>
+      </directinput>
+    </mapping>
+    <mapping connection="Throttle left reverser switch Reverse">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="4" />
+    </mapping>
+    <mapping connection="Throttle right reverser switch Reverse">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="5" />
+    </mapping>
+    <mapping connection="AP Disconnect Yoke Capt Normal">
+      <directinput serial="1d387730-ccb8-11ea-8001-444553540000" port="2" />
+    </mapping>
+    <mapping connection="AT Disengage Pushed">
+      <directinput serial="3fd95770-cd1f-11ea-8001-444553540000" port="2" />
+    </mapping>
+    <mapping connection="Fuel cutoff left Cutoff">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="6" />
+    </mapping>
+    <mapping connection="Fuel cutoff right Cutoff">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="7" />
+    </mapping>
+    <mapping connection="TOGA Pushed">
+      <directinput serial="49de1020-d1e4-11ea-8001-444553540000" port="3" />
+    </mapping>
+    <mapping connection="Battery switch On">
+      <iocp serial="0" port="37" />
+    </mapping>
+    <mapping connection="Elec Pnl AC STBY PWR">
+      <iocp serial="0" port="69" />
+    </mapping>
+    <mapping connection="Elec Pnl AC GRD PWR">
+      <iocp serial="0" port="70" />
+    </mapping>
+    <mapping connection="Elec Pnl AC GEN1">
+      <iocp serial="0" port="71" />
+    </mapping>
+    <mapping connection="Elec Pnl AC APU GEN">
+      <iocp serial="0" port="72" />
+    </mapping>
+    <mapping connection="Elec Pnl AC GEN2">
+      <iocp serial="0" port="73" />
+    </mapping>
+    <mapping connection="Elec Pnl AC INV">
+      <iocp serial="0" port="74" />
+    </mapping>
+    <mapping connection="Elec Pnl AC TEST">
+      <iocp serial="0" port="75" />
+    </mapping>
+    <mapping connection="Elec Pnl DC STBY PWR">
+      <iocp serial="0" port="61" />
+    </mapping>
+    <mapping connection="Elec Pnl DC BAT BUS">
+      <iocp serial="0" port="62" />
+    </mapping>
+    <mapping connection="Elec Pnl DC BAT">
+      <iocp serial="0" port="63" />
+    </mapping>
+    <mapping connection="Elec Pnl DC AUX BAT">
+      <iocp serial="0" port="64" />
+    </mapping>
+    <mapping connection="Elec Pnl DC TR1">
+      <iocp serial="0" port="65" />
+    </mapping>
+    <mapping connection="Elec Pnl DC TR2">
+      <iocp serial="0" port="66" />
+    </mapping>
+    <mapping connection="Elec Pnl DC TR3">
+      <iocp serial="0" port="67" />
+    </mapping>
+    <mapping connection="Elec Pnl DC TEST">
+      <iocp serial="0" port="68" />
+    </mapping>
+    <mapping connection="Electric Panel Upper left">
+      <iocp serial="0" port="1473" />
+    </mapping>
+    <mapping connection="Electric Panel Upper right">
+      <iocp serial="0" port="158" />
+    </mapping>
+    <mapping connection="Wiper left High">
+      <iocp serial="0" port="87" />
+    </mapping>
+    <mapping connection="Wiper right High">
+      <iocp serial="0" port="88" />
+    </mapping>
+    <mapping connection="Emer Exit Lights Off">
+      <iocp serial="0" port="89" />
+    </mapping>
+    <mapping connection="Emer Exit Lights On">
+      <iocp serial="0" port="90" />
+    </mapping>
+    <mapping connection="No Smoking Off">
+      <iocp serial="0" port="91" />
+    </mapping>
+    <mapping connection="No Smoking On">
+      <iocp serial="0" port="92" />
+    </mapping>
+    <mapping connection="Seatbelt Off">
+      <iocp serial="0" port="93" />
+    </mapping>
+    <mapping connection="Seatbelt On">
+      <iocp serial="0" port="94" />
+    </mapping>
+    <mapping connection="Attend Pushed">
+      <iocp serial="0" port="2592" />
+    </mapping>
+    <mapping connection="Ground call On">
+      <iocp serial="0" port="2652" />
+    </mapping>
+    <mapping connection="Dual bleed">
+      <iocp serial="0" port="1176" />
+    </mapping>
+    <mapping connection="Ram door full open L">
+      <iocp serial="0" port="1177" />
+    </mapping>
+    <mapping connection="Ram door full open R">
+      <iocp serial="0" port="1178" />
+    </mapping>
+  </mappings>
+  <leds>
+    <intensity color="YELLOW" high="40" low="80" />
+    <intensity color="BLUE" high="40" low="80" />
+    <intensity color="GREEN" high="40" low="80" />
+    <intensity color="RED" high="40" low="80" />
+    <intensity color="WARNING_RED" high="40" low="80" />
+    <intensity color="WARNING_YELLOW" high="40" low="80" />
+    <intensity color="WHITE" high="40" low="80" />
+  </leds>
+  <showQuickstart value="true" />
+  <startMinimized value="false" />
+  <enableEmbeddedMCP value="true" />
+  <allowNegativeFreq value="true" />
+  <debugMode value="false" />
+  <autoRestart value="true" />
+  <situation value="Ready" />
+  <autoFailure amount="0" />
+  <webserver port="8080" />
+  <acars host="acars.prosim-ar.com" profile="Silent" tailNumber="" printMarginLeft="0" printMarginTop="0" />
+  <logLevel level="Normal" />
+  <updates level="1" monitorBetaVersions="False" />
+  <gaugeSmoothing value="50" />
+  <viewpoints>
+    <captain x="0" y="0" z="0" pitch="0" bank="0" heading="0" />
+    <center x="0" y="0" z="0" pitch="0" bank="0" heading="0" />
+    <firstOfficer x="0" y="0" z="0" pitch="0" bank="0" heading="0" />
+  </viewpoints>
+  <speedbrakeServoFree value="false" />
+  <simulator value="MSFS" />
+  <audioAddons />
+  <companyRouteSources />
+  <requiredHardware />
+  <Phidget22Support value="false" voltage="Default" motorSpeed="50" motorSpeed2="50" motorReverse1="false" motorReverse2="false" />
+  <genericCOMportSupport value="false" baud="115200" stopBits="One" parity="None" dataBits="8" tcpPort="8091" tcpGlobal="true" tcpMixed="false" />
+  <directInputEnabled value="true" />
+  <ehid>
+    <brightness>100</brightness>
+  </ehid>
+  <fds value="true" mcpSupport="true">
+    <encoders reverse1="false" reverse2="false" reverse3="false" reverse4="false" reverse5="false" reverse6="false" reverse7="false" reverse8="false" reverse9="false" reverse10="false" reverse11="false" />
+    <device id="04-91-62-09-05-F5-02">
+      <captain>true</captain>
+    </device>
+    <device id="04-91-62-09-05-F5-03">
+      <radio>NAV1</radio>
+    </device>
+    <device id="04-91-62-09-05-F5-04">
+      <radio>ADF1</radio>
+    </device>
+  </fds>
+  <fscStickShaker />
+  <fsuipcSupport value="true" />
+  <IOC_CONNECT />
+  <poldragonetv2 />
+  <flightIllusionPort port="[Not installed]" altSpeedCombined="false" />
+  <fsbusPort />
+  <goflightSupport value="false" />
+  <ICS delay="2" inverseCrossfeed="false" />
+  <matrixOrbitalSupport value="false" />
+  <phidgetSupport value="false" voltage="Default" currentLimit="Default" motorSpeed="50" motorSpeed2="50" motorReverse1="false" motorReverse2="false" />
+  <pimOverhead port="[Not installed]" />
+  <pimAlt />
+  <pimIRS />
+  <poldragonet port="[Not installed]" inverseGear="false" inverseMFD="false" />
+  <poldragonetOverhead port="[Not installed]" manualConfigure="false" />
+  <simio value="false" />
+  <simsystems />
+  <simworld value="false" />
+  <sismoSupport value="false" brightness="15">
+    <MCP hasEfisCpt="true" hasEfisFo="true" invertMinsMode="false" />
+    <Modules enabledModules="" />
+    <encoders>
+      <encoder id="CRS1" gain="10" clicks="3" isShifted="false" />
+      <encoder id="SPD" gain="10" clicks="3" isShifted="false" />
+      <encoder id="HDG" gain="10" clicks="3" isShifted="false" />
+      <encoder id="ALT" gain="10" clicks="3" isShifted="false" />
+      <encoder id="VS" gain="10" clicks="3" isShifted="false" />
+      <encoder id="CRS2" gain="10" clicks="3" isShifted="false" />
+      <encoder id="BARO1" gain="10" clicks="3" isShifted="false" />
+      <encoder id="MINS1" gain="10" clicks="3" isShifted="false" />
+      <encoder id="BARO2" gain="10" clicks="3" isShifted="false" />
+      <encoder id="MINS2" gain="10" clicks="3" isShifted="false" />
+    </encoders>
+  </sismoSupport>
+  <VRInsightOvhdSupport />
+  <fscTq>
+    <revertBacklight>false</revertBacklight>
+    <revertTrimWheel>false</revertTrimWheel>
+  </fscTq>
+  <CPFlightV2 value="false">
+    <ISFD enabled="false" ipAddress="127.0.0.1" port="5000" />
+    <CaptainCDU enabled="false" ipAddress="127.0.0.1" port="6000" />
+    <FirstOfficerCDU enabled="false" ipAddress="127.0.0.1" port="6000" />
+  </CPFlightV2>
+  <CPFlight value="false">
+    <sendGaugeData>true</sendGaugeData>
+    <reverseRudderTrimGauge>true</reverseRudderTrimGauge>
+    <useTiller>false</useTiller>
+  </CPFlight>
+  <CPFlightDirect />
+  <IOCP server="192.168.86.141" port="8092" use5DigitsComNav="false" />
+  <pokeysSupport value="false" autoConfig="true" offload="false" fastInterface="true" udp="true" pollerEnabled="true" pokeysLog="false">
+    <inhibit></inhibit>
+  </pokeysSupport>
+  <pololu value="false" />
+  <activesky>
+    <host>localhost</host>
+    <port>0</port>
+    <isactive>false</isactive>
+  </activesky>
+</config>
