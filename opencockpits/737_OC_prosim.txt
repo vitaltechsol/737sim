@@ -378,6 +378,12 @@ Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 67     // Stby Pwr 
 
 Var 1090, name aSTBY_PWR_OFF, static, Link IOCARD_OUT, Device 30, Output 29 // STANDBY PWR OFF
 Var 1088, name aDRIVE_1, static, Link IOCARD_OUT, Device 30, Output 30
+{ 
+V1088 = 2 // Activation of output 1with software's control
+V1088 = -999994 // Setting to change the intensity
+V1088 = 15
+}
+
 Var 1089, name aDRIVE_2, static, Link IOCARD_OUT, Device 30, Output 28
 
 
@@ -427,7 +433,6 @@ Var 1124, name aEMER_NOT_ARM, static, Link IOCARD_OUT, Device 30, Output 011
 Var 1122, name aEquipCoSuOFF, static, Link IOCARD_OUT, Device 30, Output 12 // Supply Off
 Var 1123, name aEquipCoExhOFF, static, Link IOCARD_OUT, Device 30, Output 14 // Exhaust Off
 Var 1128, name aCALL, static, Link IOCARD_OUT, Device 30, Output 15
-Var 1129, name aPA_IN_USE, static, Link IOCARD_OUT, Device 30, Output 18
 
 // WINDOW HEAT
 
