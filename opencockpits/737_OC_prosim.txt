@@ -107,28 +107,37 @@ Var 1528, name aAT_0_A, static, Link IOCARD_OUT, Device 31, Output 33
 
 // Var 1529, name aAT_1_A, static, Link IOCARD_OUT, Device 31, Output 19
 
-
 Var 2366, name bCPT_AP_RESET, static, Link IOCARD_SW, Device 31, Input 02
-
 Var 2367, name bCPT_AT_RESET, static, Link IOCARD_SW, Device 31, Input 07
-
 Var 2370, name bCPT_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 03
-
 // Var 2375, name bFO_AP_RESET, static, Link IOCARD_SW, Device 31, Input 0
-
 // Var 2376, name bFO_AT_RESET, static, Link IOCARD_SW, Device 31, Input 08
-
-// Var 2379, name bFO_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 04
-
-
+// Var 2379, name bFO_FMC_RESET, static, Link IOCARD_SW, Device 31, Input 0
 Var 0384, name sCPT_UP_TEST, Link IOCARD_SW, Device 31, Input 05
-
 Var 0385, name sCPT_DOWN_TEST, Link IOCARD_SW, Device 31, Input 01
 
 
 // LIGHT TEST //
-
 Var 2373, name sLIGHT_TEST, Link IOCARD_SW, Device 31, Input 40
+
+// ANNUNCIATORS
+Var 1320, name bBELOW_GS_1, static, Link IOCARD_OUT, Device 31, Output 46 // Bellow GS CP
+Var 1321, name bBELOW_GS_2, static, Link IOCARD_OUT, Device 31, Output 53 // Bellow GS FO
+
+Var 1312, name aSPBRAKE_ARMED, static, Link IOCARD_OUT, Device 31, Output 53 // spoiler armed
+Var 1313, name aSPBRAKE_DNARM, static, Link IOCARD_OUT, Device 31, Output 50 // Spped Brake Do Not arm
+Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 46 // Spped Brake extended
+Var 1315, name aSTAB_OUT_O_TR, static, Link IOCARD_OUT, Device 31, Output 49 // Stabout trim
+Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 35 // Anti Skid
+Var 1324, name aAUTOBRAKE_DIS, static, Link IOCARD_OUT, Device 31, Output 40 // Auo Brake disarm
+Var 1325, name aFLAPS_TRANSIT, static, Link IOCARD_OUT, Device 31, Output 41 // LE Flaps Transit
+Var 1326, name aFLAPS_EXTEND, static, Link IOCARD_OUT, Device 31, Output 37 // LE Flaps extneded
+
+Var 1316, name aTKO_CFG, static, Link IOCARD_OUT, Device 31, Output 43 // takeoff config
+Var 1317, name aTKO_CFG2, static, Link IOCARD_OUT, Device 31, Output 55 // takeoff config
+Var 1318, name aCABIN_ALT, static, Link IOCARD_OUT, Device 31, Output 47 // cabin altitude FO
+Var 1319, name aCABIN_ALT2, static, Link IOCARD_OUT, Device 31, Output 51 // cabin altitude FO
+
 
 
 // FLAPS
@@ -378,12 +387,6 @@ Var 0039, name sSTBY_PWR_R, Link IOCARD_SW, Device 30, Input 67     // Stby Pwr 
 
 Var 1090, name aSTBY_PWR_OFF, static, Link IOCARD_OUT, Device 30, Output 29 // STANDBY PWR OFF
 Var 1088, name aDRIVE_1, static, Link IOCARD_OUT, Device 30, Output 30
-{ 
-V1088 = 2 // Activation of output 1with software's control
-V1088 = -999994 // Setting to change the intensity
-V1088 = 15
-}
-
 Var 1089, name aDRIVE_2, static, Link IOCARD_OUT, Device 30, Output 28
 
 
@@ -498,7 +501,7 @@ Var 1711, name aD_OW_R_AFT, static, Link IOCARD_OUT, Device 30, Output 155
 
 // ENGINE BLEED
 
-Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156 // PACKS
+Var 2597, name bOVHT_TEST, static, Link IOCARD_SW, Device 30, Input 156 // temp shaker test
 Var 2602, name bTRIP_RESET, static, Link IOCARD_SW, Device 30, Input 157
 
 Var 2600, name sREC_FAN_L_ATO, static, Link IOCARD_SW, Device 30, Input 151
@@ -745,3 +748,20 @@ Var 1010, name aIRS_DC_FAIL_R, static, Link IOCARD_OUT, Device 32, Output 79    
 // TRIM INDICATOR
 Var 8001, name servo_trim, Link IOCARD_SERVO, Device 40, Output 1, PosL 0, PosC 511, PosR 1000
 Var 8002, name servo_spd_bk, Link IOCARD_SERVO, Device 40, Output 2, PosL 1000, PosC 511, PosR 0
+
+
+
+// RELAYS
+Var 0001, name rel_shkr1, Link USB_RELAYS, Device 3, Output 2 // Stick shakers
+Var 0002, name rel_yokes, Link USB_RELAYS, Device 3, Output 3 // yoke power
+Var 0003, name yoke_pwer, static, Link IOCARD_SW, Device 30, Input 35 // temp yoke power
+{
+ If &yoke_pwer = 1
+ {
+ &rel_yokes = 1
+ }
+ ELSE
+ {
+ &rel_yokes = 0
+ }
+} 
