@@ -122,26 +122,28 @@ Var 2373, name sLIGHT_TEST, Link IOCARD_SW, Device 31, Input 40
 
 // ANNUNCIATORS
 Var 1320, name bBELOW_GS_1, static, Link IOCARD_OUT, Device 31, Output 46 // Bellow GS CP
-Var 1321, name bBELOW_GS_2, static, Link IOCARD_OUT, Device 31, Output 53 // Bellow GS FO
-
+Var 1316, name aTKO_CFG, static, Link IOCARD_OUT, Device 31, Output 43 // takeoff config
+Var 1318, name aCABIN_ALT, static, Link IOCARD_OUT, Device 31, Output 47 // cabin altitude FO
 Var 1312, name aSPBRAKE_ARMED, static, Link IOCARD_OUT, Device 31, Output 53 // spoiler armed
 Var 1313, name aSPBRAKE_DNARM, static, Link IOCARD_OUT, Device 31, Output 50 // Spped Brake Do Not arm
-Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 46 // Spped Brake extended
 Var 1315, name aSTAB_OUT_O_TR, static, Link IOCARD_OUT, Device 31, Output 49 // Stabout trim
-Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 35 // Anti Skid
+
 Var 1324, name aAUTOBRAKE_DIS, static, Link IOCARD_OUT, Device 31, Output 40 // Auo Brake disarm
+Var 1323, name aANTI_SKID, static, Link IOCARD_OUT, Device 31, Output 35 // Anti Skid
 Var 1325, name aFLAPS_TRANSIT, static, Link IOCARD_OUT, Device 31, Output 41 // LE Flaps Transit
 Var 1326, name aFLAPS_EXTEND, static, Link IOCARD_OUT, Device 31, Output 37 // LE Flaps extneded
 
-Var 1316, name aTKO_CFG, static, Link IOCARD_OUT, Device 31, Output 43 // takeoff config
-Var 1317, name aTKO_CFG2, static, Link IOCARD_OUT, Device 31, Output 55 // takeoff config
-Var 1318, name aCABIN_ALT, static, Link IOCARD_OUT, Device 31, Output 47 // cabin altitude FO
 Var 1319, name aCABIN_ALT2, static, Link IOCARD_OUT, Device 31, Output 51 // cabin altitude FO
+Var 1317, name aTKO_CFG2, static, Link IOCARD_OUT, Device 31, Output 55 // takeoff config
+Var 1314, name a_SPBRAKE_EXT, static, Link IOCARD_OUT, Device 31, Output 46 // Spped Brake extended
+Var 1321, name bBELOW_GS_2, static, Link IOCARD_OUT, Device 31, Output 53 // Bellow GS FO
 
-
+// Lower
+Var 2454, name bSYS_TEST, static, Link IOCARD_SW, Device 31, Input 14
 
 // FLAPS
 Var 0417, name servo_flaps, Link USB_SERVOS, Device 36, Output 1, PosL 160, PosC 511, PosR 1000, Type 1
+Var 0418, name servo_flaps_2, Link USB_SERVOS, Device 36, Output 4, PosL 160, PosC 511, PosR 1000, Type 1
 
 // BRAKE PRESS
 Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 36, Output 2, PosL 500, PosC 700, PosR 900, Type 1
@@ -149,19 +151,8 @@ Var 0437, name SERVO_BRKpress, Link USB_SERVOS, Device 36, Output 2, PosL 500, P
 
 
 
+
 ///// OVERHEAD ////
-
-// GAUGES
-
-Var 0140, name SERVO_FuelTemp, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 470, PosR 900, Type 1
-Var 0141, name SERVO_APU, Link USB_SERVOS, Device 38, Output 4, PosL 200, PosC 600, PosR 820, Type 1
-Var 0142, name SERVO_CabAlt, Link USB_SERVOS, Device 37, Output 5, PosL 315, PosC 600, PosR 820, Type 1
-Var 0143, name SERVO_PresDiff, Link USB_SERVOS, Device 37, Output 4, PosL 185, PosC 511, PosR 857, Type 1
-Var 0144, name SERVO_CabVSI, Link USB_SERVOS, Device 37, Output 6, PosL 192, PosC 511, PosR 1023, Type 1
-Var 0146, name SERVO_PressL, Link USB_SERVOS, Device 38, Output 2, PosL 280, PosC 537, PosR 814, Type 1
-Var 0147, name SERVO_PressR, Link USB_SERVOS, Device 38, Output 3, PosL 372, PosC 537, PosR 800, Type 1
-Var 0148, name SERVO_OTFL_VLV, Link USB_SERVOS, Device 37, Output 3, PosL 700, PosC 900, PosR 1000, Type 1 // Outflow Valve
-Var 0145, name SERVO_CabTemp, Link USB_SERVOS, Device 38, Output 1, PosL 192, PosC 390, PosR 1023, Type 1
 
 // APU
 
@@ -235,110 +226,234 @@ Var 0074, name sINV, Link IOCARD_SW, Device 30, Input 196
 Var 0075, name sAC_TEST, Link IOCARD_SW, Device 30, Input 189
 
 
-Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 186, Numbers 1     // DISPLAY DC AMP 1s
-Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 187, Numbers 1     // DISPLAY DC AMP 10s
-Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 30, Digit 183, Numbers 1     // DISPLAY CPS FREQ 1s
-Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 30, Digit 184, Numbers 1     // DISPLAY CPS FREQ 10s
-Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 30, Digit 185, Numbers 1       // DISPLAY CPS FREQ 100s
-Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 181, Numbers 1     // DISPLAY DC VOLTS 1s
-Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 182, Numbers 1     // DISPLAY DC VOLTS 10s
-Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 179, Numbers 1     // DISPLAY AC AMP 1s
-Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 180, Numbers 1     // DISPLAY AC AMP 10s
-Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 176, Numbers 1     // DISPLAY AC VOLT 1s
-Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 177, Numbers 1     // DISPLAY AC VOLT 10s
-Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 30, Digit 178, Numbers 1     // DISPLAY AC VOLT 100s
+
+// ELECTRICAL PANEL
 
 
-Var 1540, name EDCA1, static, Link SUBRUTINE
+// Var 0156, name DC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 186, Numbers 1     // DISPLAY DC AMP 1s
+// Var 0157, name DC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 187, Numbers 1     // DISPLAY DC AMP 10s
+// Var 0158, name CPS_FREQ0, Link IOCARD_DISPLAY, Device 30, Digit 183, Numbers 1     // DISPLAY CPS FREQ 1s
+// Var 0159, name CPS_FREQ1, Link IOCARD_DISPLAY, Device 30, Digit 184, Numbers 1     // DISPLAY CPS FREQ 10s
+// Var 0160, name CPS_FREQ2, Link IOCARD_DISPLAY, Device 30, Digit 185, Numbers 1       // DISPLAY CPS FREQ 100s
+// Var 0151, name DC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 181, Numbers 1     // DISPLAY DC VOLTS 1s
+// Var 0152, name DC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 182, Numbers 1     // DISPLAY DC VOLTS 10s
+// Var 0149, name AC_AMP0, Link IOCARD_DISPLAY, Device 30, Digit 179, Numbers 1     // DISPLAY AC AMP 1s
+// Var 0150, name AC_AMP1, Link IOCARD_DISPLAY, Device 30, Digit 180, Numbers 1     // DISPLAY AC AMP 10s
+// Var 0153, name AC_VOLT0, Link IOCARD_DISPLAY, Device 30, Digit 176, Numbers 1     // DISPLAY AC VOLT 1s
+// Var 0154, name AC_VOLT1, Link IOCARD_DISPLAY, Device 30, Digit 177, Numbers 1     // DISPLAY AC VOLT 10s
+// Var 0155, name AC_VOLT2, Link IOCARD_DISPLAY, Device 30, Digit 178, Numbers 1     // DISPLAY AC VOLT 100s
+
+
+
+//Displays
+Var 182, NAME ACVOLTS1, static, Link IOCARD_DISPLAY, Device 30, Digit 176, Numbers 1 // Elec panel down right - AC Volts
+Var 183, NAME ACVOLTS2, static, Link IOCARD_DISPLAY, Device 30, Digit 177, Numbers 1 // Elec panel down right - AC Volts
+Var 184, NAME ACVOLTS3, static, Link IOCARD_DISPLAY, Device 30, Digit 178, Numbers 1 // Elec panel down right - AC Volts
+
+Var 185, NAME ACAMPS1, static, Link IOCARD_DISPLAY, Device 30, Digit 179, Numbers 1 // Elec panel down center - AC Amps
+Var 186, NAME ACAMPS2, static, Link IOCARD_DISPLAY, Device 30, Digit 180, Numbers 1 // Elec panel down center - AC Amps
+
+Var 188, NAME DCVOLTS1, static, Link IOCARD_DISPLAY, Device 30, Digit 181, Numbers 1 // Elec panel down left - DC Volts
+Var 189, NAME DCVOLTS2, static, Link IOCARD_DISPLAY, Device 30, Digit 182, Numbers 1 // Elec panel down left - DC Volts
+
+Var 190, NAME CPSFREQ1, static, Link IOCARD_DISPLAY, Device 30, Digit 183, Numbers 1 // Elec panel upper right - CPS Freq
+Var 191, NAME CPSFREQ2, static, Link IOCARD_DISPLAY, Device 30, Digit 184, Numbers 1 // Elec panel upper right - CPS Freq
+Var 192, NAME CPSFREQ3, static, Link IOCARD_DISPLAY, Device 30, Digit 185, Numbers 1 // Elec panel upper right - CPS Freq
+
+Var 193, NAME DCAMPS1, static, Link IOCARD_DISPLAY, Device 30, Digit 186, Numbers 1 // Elec panel upper left - DC Amps - Digit 1
+Var 194, NAME DCAMPS2, static, Link IOCARD_DISPLAY, Device 30, Digit 187, Numbers 1 // Elec panel upper left - DC Amps - Digit 2
+
+// Lower Right
+Var 195, name ACVOLT
 {
-    &DC_AMP1 = &EDCA1    
+IF &ACVOLT = -1
+  {
+    &ACVOLTS3 = -999999    
+    &ACVOLTS2 = -999999    
+    &ACVOLTS1 = -999999    
+  }
+  ELSE
+  {
+	L0 = &ACVOLT
+   	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&ACVOLTS1 = L1
+	L0 = L0 - L1
+	L0 = DIV L0 10
+   	L1 = MOD L0 10 // Value / 10 gives us the middle digit
+	L2 = DIV L0 10 // Value / 10 gives us the middle digit
+   	IF L2 = 0 // if 0 do not write but send blank display code for last remainig digits
+   	{
+		IF L1 = 0
+		{
+	     		&ACVOLTS3 = -999999 // blank
+			&ACVOLTS2 = -999999 // blank
+		}
+		ELSE
+		{
+			&ACVOLTS2 = L1
+			&ACVOLTS3 = -999999 // blank
+		}
+   	}
+   	ELSE
+   	{
+     		&ACVOLTS2 = L1
+		&ACVOLTS3 = L2
+   	}
+  }
 }
 
-Var 1473, name EDCA0, static, Link SUBRUTINE
+// Lower center
+Var 196, name ACAMP
 {
-    &DC_AMP0 = &EDCA0    
+  IF &ACAMP = -1
+  {
+    &ACAMPS1 = -999999    
+    &ACAMPS2 = -999999    
+  }
+  ELSE
+  {
+	L0 = &ACAMP
+   	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&ACAMPS1 = L1
+	L0 = L0 - L1
+	L0 = DIV L0 10
+   	L1 = MOD L0 10 // Value / 10 gives us the middle digit
+	L2 = DIV L0 10 // Value / 10 gives us the middle digit
+   	IF L2 = 0 // if 0 do not write but send blank display code for last remainig digits
+   	{
+		IF L1 = 0
+		{
+	     	&ACAMPS2 = -999999 // blank
+		}
+		ELSE
+		{
+			&ACAMPS2 = L1
+		}
+   	}
+   	ELSE
+   	{
+     	&ACAMPS2 = L1
+   	}
+  }
 }
 
-Var 1485, name EDCV1, static, Link SUBRUTINE
+// Lower left
+Var 197, name DCVOLT
 {
-    &DC_VOLT1 = &EDCV1    
+  IF &DCVOLT = -1
+  {
+    &DCVOLTS2 = -999999    
+    &DCVOLTS1 = -999999    
+  }
+  ELSE
+  {
+   // Need to cope with negative numbers
+   L0 = &DCVOLT
+   IF L0 >= 0
+   {
+  	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&DCVOLTS1 = L1
+   	L1 = DIV L0 10 // Value / 10 gives us the left digit
+   	IF L1 = 0 // if 0 do not write but send blank display code
+   	{
+     		&DCVOLTS2 = -999999 // blank
+  	}
+   	ELSE
+   	{
+     	&DCVOLTS2 = L1
+   	}
+  }
+   ELSE
+	{
+	L0 = ABS L0
+	IF L0 > 9
+	{
+		L0 = 9
+	}
+ 	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+	&DCVOLTS1 = L1
+	&DCVOLTS2 = -999998 // blank
+}
+  }
 }
 
-Var 1486, name EDCV0, static, Link SUBRUTINE
+// Upper Right
+Var 198, name CPSFREQ
 {
-    &DC_VOLT0 = &EDCV0    
-}
+IF &CPSFREQ = -1
+  {
+    &CPSFREQ1 = -999999    
+    &CPSFREQ2 = -999999   
+    &CPSFREQ3 = -999999    
+  }
+  ELSE
+  {
+	L0 = &CPSFREQ
+   	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&CPSFREQ1 = L1
+	L0 = L0 - L1
+	L0 = DIV L0 10
+   	L1 = MOD L0 10 // Value / 10 gives us the middle digit
+	L2 = DIV L0 10 // Value / 10 gives us the middle digit
+   	IF L2 = 0 // if 0 do not write but send blank display code for last remainig digits
+   	{
+		IF L1 = 0
+		{
+	     		&CPSFREQ2 = -999999 // blank
+			&CPSFREQ3 = -999999 // blank
+		}
+		ELSE
+		{
+			&CPSFREQ2 = L1
+			&CPSFREQ3 = -999999 // blank
+		}
+   	}
+   	ELSE
+   	{
+     		&CPSFREQ2 = L1
+		&CPSFREQ3 = L2
+   	}
+  }
 
-Var 1489, name EACA1, static, Link SUBRUTINE
-{
-    &AC_AMP1 = &EACA1    
 }
-
-Var 1500, name EACA0, static, Link SUBRUTINE
+// Upper Left
+Var 199, name DCAMP
 {
-    &AC_AMP0 = &EACA0    
+  IF &DCAMP = -1
+  {
+    &DCAMPS1 = -999999    
+    &DCAMPS2 = -999999    
+  }
+  ELSE
+  {
+   // Need to cope with negative numbers
+   L0 = &DCAMP
+   IF L0 >= 0
+   {
+   	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&DCAMPS1 = L1
+   	L1 = DIV L0 10 // Value / 10 gives us the left digit
+   	IF L1 = 0 // if 0 do not write but send blank display code
+   	{
+     		&DCAMPS2 = -999999 // blank
+   	}
+   	ELSE
+   	{
+     	&DCAMPS2 = L1
+   	}
+   }
+   ELSE
+	{
+	L0 = ABS L0
+	IF L0 > 9
+	{
+		L0 = 9
+	}
+   	L1 = MOD L0 10 // value Modulo 10 gives the right digit
+   	&DCAMPS1 = L1
+	&DCAMPS2 = -999998 // blank
 }
-
-Var 1502, name EACV2, static, Link SUBRUTINE
-{
-    &AC_VOLT2 = &EACV2    
-}
-
-Var 1503, name EACV1, static, Link SUBRUTINE
-{
-    &AC_VOLT1 = &EACV1    
-}
-
-Var 1504, name EACV0, static, Link SUBRUTINE
-{
-    &AC_VOLT0 = &EACV0    
-}
-
-Var 1479, name ECPS2, static, Link SUBRUTINE
-{
-    &CPS_FREQ2 = &ECPS2    
-}
-
-Var 1480, name ECPS1, static, Link SUBRUTINE
-{
-    &CPS_FREQ1 = &ECPS1    
-}
-
-Var 1481, name ECPS0, static, Link SUBRUTINE
-{
-    &CPS_FREQ0 = &ECPS0    
-}
-
-Var 0161, name ELEC_PAN, Link SUBRUTINE
-{
-  CALL &EACA0
-  CALL &EACA1
-  CALL &EDCV0
-  CALL &EDCV1
-  CALL &EACV0
-  CALL &EACV1
-  CALL &EACV2
-  CALL &EDCA0
-  CALL &EDCA1
-  CALL &ECPS0
-  CALL &ECPS1
-  CALL &ECPS2
-}
-
-Var 0162, name Clear_ELPANEL, Link SUBRUTINE
-{
-  &AC_AMP0 = -999999    
-  &AC_AMP1 = -999999    
-  &DC_VOLT0 = -999999    
-  &DC_VOLT1 = -999999    
-  &AC_VOLT0 = -999999    
-  &AC_VOLT1 = -999999    
-  &AC_VOLT2 = -999999    
-  &DC_AMP0 = -999999    
-  &DC_AMP1 = -999999    
-  &CPS_FREQ0 = -999999    
-  &CPS_FREQ1 = -999999    
-  &CPS_FREQ2 = -999999    
+  }
 }
 
 Var 0163, name BlankFA, Link SUBRUTINE
@@ -765,3 +880,5 @@ Var 0003, name yoke_pwer, static, Link IOCARD_SW, Device 30, Input 35 // temp yo
  &rel_yokes = 0
  }
 } 
+Var 0005, name rel_ohlite, Link USB_RELAYS, Device 3, Output 5 // Overhead 12v
+Var 0006, name rel_fan, Link USB_RELAYS, Device 3, Output 6 // AC Fan
